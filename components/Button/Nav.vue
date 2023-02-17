@@ -4,7 +4,7 @@
     target="_blank"
     class="text-light flex gap-3 items-center py-3 px-4 hover:bg-dark-hover rounded-lg text-lg"
   >
-    <nuxt-icon :name="`social/${icon}`" filled class="text-2xl" />
+    <nuxt-icon :name="`social/${icon}`" filled class="text-xl" />
     <span>{{ props.name }}</span>
   </a>
 </template>

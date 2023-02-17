@@ -1,6 +1,6 @@
 <template>
   <div class="flex flex-col flex-grow min-h-screen items-center">
-    <Header />
+    <Header v-motion-fade-visible-once />
     <article
       class="grid justify-center grid-cols-12 gap-5 mx-auto w-[1180px] grow"
     >
@@ -8,6 +8,6 @@
         <slot />
       </div>
     </article>
-    <Footer />
+    <Footer v-motion-fade-visible />
   </div>
 </template>

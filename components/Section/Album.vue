@@ -1,6 +1,11 @@
 <template>
   <div class="flex gap-8">
-    <Bandcamp />
+    <Bandcamp
+      v-motion
+      :initial="{ opacity: 0 }"
+      :visibleOnce="{ opacity: 1 }"
+      :delay="200"
+    />
     <div class="flex flex-col gap-[1.125rem]">
       <div class="flex flex-col gap-1.5">
         <span class="text-4xl text-highlight-secondary font-bold"
@@ -25,6 +30,10 @@
           <br />
         </div>
         <iframe
+          v-motion
+          :initial="{ opacity: 0 }"
+          :visibleOnce="{ opacity: 1 }"
+          :delay="200"
           class="w-[47.875rem] h-[26.93rem] rounded-lg"
           src="https://www.youtube-nocookie.com/embed/sTOCdJFvKYs"
           title="YouTube video player"

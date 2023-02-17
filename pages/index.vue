@@ -1,5 +1,5 @@
 <template>
   <SectionAbout />
-  <SectionSupport />
-  <SectionAlbum />
+  <SectionSupport v-motion-slide-visible-once-bottom />
+  <SectionAlbum v-motion-slide-visible-once-bottom />
 </template>
