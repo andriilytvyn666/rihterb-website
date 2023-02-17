@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    user-select: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-smooth: never;
+    font-family: 'Inter';
+  }
+
+  body {
+    @apply bg-dark;
+  }
+
+  img {
+    pointer-events: none;
+  }
+
+  .nuxt-icon svg {
+    margin-bottom: 0 !important;
+  }
+}
