@@ -1,7 +1,5 @@
 <template>
-  <footer
-    class="w-[1180px] flex justify-between items-center mx-auto py-6 font-medium text-light-secondary"
-  >
+  <footer class="custom-footer">
     <div class="flex flex-col gap">
       <span>Copyright © 2023 Василь Ріхтер</span>
       <a
@@ -52,3 +50,10 @@
     </div>
   </footer>
 </template>
+
+<style class="postcss">
+.custom-footer {
+  @apply font-medium text-light-secondary;
+  @apply flex justify-between items-center mx-auto py-6 mt-20 w-[1180px];
+}
+</style>
