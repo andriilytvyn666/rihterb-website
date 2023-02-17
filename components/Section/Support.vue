@@ -3,9 +3,15 @@
     <div class="custom-mask">
       <div class="flex justify-between h-64 items-center pr-12 pl-16">
         <div class="grid grid-cols-2 grid-rows-2 gap-6">
-          <ButtonSupport icon="tiktok" text="TikTok" type="patreon" />
-          <ButtonSupport icon="tiktok" text="TikTok" type="bandcamp" />
-          <ButtonSupport icon="tiktok" text="TikTok" type="diaka" />
+          <ButtonSupport
+            link="https://www.patreon.com/vasilyrichter"
+            type="patreon"
+          />
+          <ButtonSupport
+            link="https://vasilyrichter.bandcamp.com/"
+            type="bandcamp"
+          />
+          <ButtonSupport link="https://rihterb.diaka.ua/donate" type="diaka" />
         </div>
         <div class="flex flex-col gap-4 font-bold w-[32rem] text-right">
           <span class="text-highlight text-4xl">Підтримайте мене</span>

@@ -1,28 +1,37 @@
 <template>
-  <div
-    class="custom-support-button bg-[#EA6350]"
+  <a
+    :href="props.link"
+    target="_blank"
+    class="custom-support-button bg-[#EA6350] hover:bg-[#ab4738] active:bg-[#943d31]"
     v-if="props.type == 'patreon'"
   >
     <nuxt-icon name="social/patreon" class="text-2xl" filled />
     <span class="whitespace-nowrap">Patreon</span>
-  </div>
-  <div class="custom-support-button bg-[#1E88E5]" v-if="props.type == 'diaka'">
+  </a>
+  <a
+    :href="props.link"
+    target="_blank"
+    class="custom-support-button bg-[#1E88E5] hover:bg-[#1561a3] active:bg-[#11538c]"
+    v-if="props.type == 'diaka'"
+  >
     <img src="~/assets/img/diaka.png" alt="Diaka" />
     <span class="whitespace-nowrap">Diaka</span>
-  </div>
-  <div
-    class="custom-support-button bg-[#1DA0C3]"
+  </a>
+  <a
+    :href="props.link"
+    target="_blank"
+    class="custom-support-button bg-[#1DA0C3] hover:bg-[#15738c] active:bg-[#126278]"
     v-if="props.type == 'bandcamp'"
   >
     <nuxt-icon name="social/bandcamp" class="text-2xl" filled />
     <span class="whitespace-nowrap">Bandcamp</span>
-  </div>
+  </a>
 </template>
 
 <script setup lang="ts">
 const props = defineProps<{
-  icon: string
   type: string
+  link: string
 }>()
 </script>
 
