@@ -21,6 +21,10 @@ module.exports = {
           DEFAULT: '#090909',
           hover: '#181818',
         },
+        highlight: {
+          DEFAULT: '#FFC657',
+          secondary: '#71AAFF',
+        },
       },
     },
   },

@@ -4,12 +4,12 @@
       <img src="~/assets/img/logo.png" alt="Ріхтер" class="h-12" />
     </div>
     <nav class="flex gap-3">
-      <NavButton
+      <ButtonNav
         name="Youtube"
         icon="youtube"
         link="https://www.youtube.com/@rihterb"
       />
-      <NavButton
+      <ButtonNav
         name="Instagram"
         icon="instagram"
         link="https://www.instagram.com/rihterb"
