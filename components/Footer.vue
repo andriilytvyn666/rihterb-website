@@ -1,6 +1,10 @@
 <template>
-  <footer class="custom-footer">
-    <div class="flex flex-col gap">
+  <footer
+    class="custom-footer min-[320px]:max-md:gap-5 xl:w-[73.75rem] lg:w-[62rem] md:w-[46rem] sm:w-[38rem] min-[500px]:w-[29.25rem] min-[320px]:w-[20.5rem]"
+  >
+    <div
+      class="flex flex-col min-[320px]:max-md:items-center min-[320px]:max-md:justify-between"
+    >
       <span>Copyright © 2023 Василь Ріхтер</span>
       <a
         href="https://andriilytvyn.pp.ua"
@@ -54,6 +58,7 @@
 <style class="postcss">
 .custom-footer {
   @apply font-medium text-light-secondary;
-  @apply flex justify-between items-center mx-auto py-6 mt-20 w-[1180px];
+  @apply flex justify-between items-center mx-auto py-6 mt-20;
+  @apply min-[320px]:max-md:flex-col-reverse;
 }
 </style>

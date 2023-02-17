@@ -4,7 +4,7 @@
       v-motion-slide-visible-once-left
       src="/photo.webp"
       alt="Ріхтер"
-      class="ml-[0.375rem] w-[300px] h-[300px] rounded-lg"
+      class="ml-[0.375rem] min-[320px]:max-md:object-cover min-[320px]:max-md:w-[200px] w-[300px] h-[300px] rounded-lg"
       width="300"
       height="300"
     />

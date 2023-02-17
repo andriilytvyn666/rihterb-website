@@ -7,7 +7,9 @@
       </span>
     </div>
     <div>
-      <p class="text-3xl font-bold text-light">
+      <p
+        class="min-[320px]:sm:text-xl md:text-2xl lg:text-3xl font-bold text-light"
+      >
         Лорем ипсум долор сит амет, ут еним фалли сентентиае меи, нам цу
         аппареат волуптатибус. Новум анимал ад сеа.
       </p>

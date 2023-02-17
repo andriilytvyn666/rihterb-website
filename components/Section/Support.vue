@@ -1,8 +1,10 @@
 <template>
   <div class="custom-banner rounded-lg">
     <div class="custom-mask">
-      <div class="flex justify-between h-64 items-center pr-12 pl-16">
-        <div class="grid grid-cols-2 grid-rows-2 gap-6">
+      <div
+        class="flex justify-between h-64 items-center min-[320px]:sm:pl-4 md:pl-4 lg:pl-16 pr-12"
+      >
+        <div class="grid lg:grid-cols-2 grid-rows-2 gap-6">
           <ButtonSupport
             link="https://www.patreon.com/vasilyrichter"
             type="patreon"

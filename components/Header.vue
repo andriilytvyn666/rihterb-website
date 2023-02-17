@@ -1,5 +1,7 @@
 <template>
-  <header class="flex items-center justify-between h-20 w-[1180px]">
+  <header
+    class="flex items-center justify-between h-20 xl:w-[73.75rem] lg:w-[62rem] md:w-[46rem] sm:w-[38rem] min-[500px]:w-[29.25rem] min-[320px]:w-[20.5rem]"
+  >
     <div class="flex items-center gap-3">
       <NuxtImg
         src="/logo.webp"
