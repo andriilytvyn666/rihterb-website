@@ -13,28 +13,42 @@
     </div>
     <div class="flex gap-6">
       <div class="flex gap-5 text-2xl items-center">
-        <ButtonFooter name="spotify" link="https://open.spotify.com" />
-        <ButtonFooter name="youtubemusic" link="https://open.spotify.com" />
-        <ButtonFooter name="applemusic" link="https://open.spotify.com" />
-        <ButtonFooter name="soundcloud" link="https://open.spotify.com" />
+        <ButtonFooterIcon
+          name="spotify"
+          link="https://open.spotify.com/artist/1BVc2E4oUK6Md4Mte88JPL"
+        />
+        <ButtonFooterIcon
+          name="youtubemusic"
+          link="https://music.youtube.com/channel/UCZGPjMchF7bUpZeQ6ScTynA"
+        />
+        <ButtonFooterIcon
+          name="applemusic"
+          link="https://music.apple.com/us/artist/vasily-richter/1534786803"
+        />
       </div>
-      <div class="separator" />
+      <div class="custom-separator" />
       <div class="flex gap-5 text-2xl items-center">
-        <ButtonFooter name="instagram" link="https://open.spotify.com" />
-        <ButtonFooter name="tiktok" link="https://open.spotify.com" />
-        <ButtonFooter name="telegram" link="https://open.spotify.com" />
+        <ButtonFooterIcon
+          name="instagram"
+          link="https://www.instagram.com/rihterb"
+        />
+        <ButtonFooterIcon name="telegram" link="https://t.me/rihterb" />
+        <ButtonFooterIcon
+          name="youtube"
+          link="https://www.youtube.com/@rihterb"
+        />
       </div>
-      <div class="separator" />
+      <div class="custom-separator" />
       <div class="flex gap-5 text-2xl items-center">
-        <ButtonFooter name="patreon" link="https://open.spotify.com" />
-        <ButtonFooter name="bandcamp" link="https://open.spotify.com" />
+        <ButtonFooterIcon
+          name="patreon"
+          link="https://www.patreon.com/join/vasilyrichter"
+        />
+        <ButtonFooterIcon
+          name="bandcamp"
+          link="https://vasilyrichter.bandcamp.com/"
+        />
       </div>
     </div>
   </footer>
 </template>
-
-<style lang="postcss">
-.separator {
-  @apply w-[0.5px] h-8 bg-light-secondary;
-}
-</style>

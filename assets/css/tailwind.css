@@ -25,3 +25,9 @@
     margin-bottom: 0 !important;
   }
 }
+
+@layer components {
+  .custom-separator {
+    @apply w-[0.5px] h-8 bg-light-secondary;
+  }
+}
