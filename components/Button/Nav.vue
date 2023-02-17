@@ -2,7 +2,7 @@
   <a
     :href="link"
     target="_blank"
-    class="text-light flex gap-4 items-center py-3 px-4 hover:bg-dark-hover rounded-lg text-lg"
+    class="text-light flex gap-3 items-center py-3 px-4 hover:bg-dark-hover rounded-lg text-lg"
   >
     <nuxt-icon :name="`social/${icon}`" filled class="text-2xl" />
     <span>{{ props.name }}</span>
