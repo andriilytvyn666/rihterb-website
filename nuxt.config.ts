@@ -6,6 +6,11 @@ export default defineNuxtConfig({
   css: ['~/assets/css/tailwind.css'],
   image: {
     provider: 'vercel',
+    screens: {
+      logo: 82,
+      diaka: 26,
+      photo: 300,
+    },
   },
   vite: {
     plugins: [eslintPlugin()],

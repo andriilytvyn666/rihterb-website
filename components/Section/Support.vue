@@ -26,7 +26,7 @@
 
 <style lang="postcss">
 .custom-banner {
-  background-image: url('~/assets/img/banner.png');
+  background-image: url('/public/banner.webp');
 }
 .custom-mask {
   background-image: linear-gradient(
