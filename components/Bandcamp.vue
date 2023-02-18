@@ -2,7 +2,11 @@
   <div class="w-full h-full overflow-hidden">
     <!--h-[49rem]-->
     <iframe
-      class="w-full h-full hidden md:block"
+      v-motion
+      :initial="{ opacity: 0, y: 100 }"
+      :visibleOnce="{ opacity: 1, y: 0 }"
+      :delay="200"
+      class="hidden w-full h-full md:block"
       src="https://bandcamp.com/EmbeddedPlayer/album=3409926476/size=large/bgcol=333333/linkcol=e99708/transparent=true/"
       seamless
     >

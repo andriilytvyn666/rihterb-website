@@ -1,7 +1,5 @@
 <template>
-  <header
-    class="flex items-center justify-between h-20 xl:w-[73.75rem] lg:w-[62rem] md:w-[46rem] sm:w-[38rem] min-[500px]:w-[29.25rem] min-[320px]:w-[20.5rem]"
-  >
+  <header id="header" class="flex items-center justify-between h-20">
     <div class="flex items-center gap-3">
       <NuxtImg
         src="/logo.webp"
@@ -26,4 +24,38 @@
   </header>
 </template>
 
-<style lang="postcss"></style>
+<style lang="postcss">
+/* 
+min-[320px]:w-[20.5rem]
+*/
+
+@screen xs {
+  #header {
+    @apply w-[29.25rem];
+  }
+}
+
+@screen sm {
+  #header {
+    @apply w-[38rem];
+  }
+}
+
+@screen md {
+  #header {
+    @apply w-[46rem];
+  }
+}
+
+@screen lg {
+  #header {
+    @apply w-[62rem];
+  }
+}
+
+@screen xl {
+  #header {
+    @apply w-[73.75rem];
+  }
+}
+</style>

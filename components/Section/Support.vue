@@ -1,10 +1,8 @@
 <template>
   <div class="rounded-lg custom-banner">
     <div class="custom-mask">
-      <div
-        class="flex justify-between h-64 items-center min-[320px]:sm:pl-4 md:pl-4 lg:pl-16 pr-12"
-      >
-        <div class="grid grid-rows-2 gap-6 lg:grid-cols-2">
+      <div class="support-content">
+        <div class="grid grid-rows-3 gap-6 md:grid-rows-2 lg:grid-cols-2">
           <ButtonSupport
             link="https://www.patreon.com/vasilyrichter"
             type="patreon"
@@ -16,13 +14,10 @@
           <ButtonSupport link="https://rihterb.diaka.ua/donate" type="diaka" />
         </div>
         <div class="flex flex-col gap-4 font-bold w-[32rem] text-right">
-          <span
-            class="text-highlight md:text-4xl sm:text-3xl min-[320px]:max-sm:text-2xl"
+          <span class="text-2xl support-title text-highlight"
             >Підтримайте мене</span
           >
-          <span
-            class="md:text-3xl sm:text-2xl min-[320px]:max-sm:text-xl text-light"
-          >
+          <span class="text-xl support-description text-light">
             Щоб я продовжував робити українську музику
           </span>
         </div>
@@ -32,8 +27,14 @@
 </template>
 
 <style lang="postcss">
+.support-content {
+  @apply flex items-center justify-between;
+  @apply h-64 pl-4 pr-12;
+}
+
 .custom-banner {
   background-image: url('/banner.webp');
+  @apply bg-left;
 }
 .custom-mask {
   background-image: linear-gradient(
@@ -41,5 +42,29 @@
     rgba(8, 8, 8, 0.7) 0%,
     rgba(8, 8, 8, 0.9) 58.94%
   );
+}
+@screen sm {
+  .support-title {
+    @apply text-3xl;
+  }
+
+  .support-description {
+    @apply text-2xl;
+  }
+}
+@screen md {
+  .support-title {
+    @apply text-4xl;
+  }
+
+  .support-description {
+    @apply text-3xl;
+  }
+}
+
+@screen lg {
+  .support-content {
+    @apply pl-16;
+  }
 }
 </style>

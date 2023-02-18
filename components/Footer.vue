@@ -1,10 +1,6 @@
 <template>
-  <footer
-    class="custom-footer min-[320px]:max-md:gap-5 xl:w-[73.75rem] lg:w-[62rem] md:w-[46rem] sm:w-[38rem] min-[500px]:w-[29.25rem] min-[320px]:w-[20.5rem]"
-  >
-    <div
-      class="flex flex-col min-[320px]:max-md:items-center min-[320px]:max-md:justify-between"
-    >
+  <footer id="footer" class="custom-footer">
+    <div class="flex flex-col items-center justify-between copyright-text">
       <span>Copyright © 2023 Василь Ріхтер</span>
       <a
         href="https://andriilytvyn.pp.ua"
@@ -14,7 +10,7 @@
       >
     </div>
     <div class="flex gap-6">
-      <div class="flex gap-5 text-2xl items-center">
+      <div class="flex items-center gap-5 text-2xl">
         <ButtonFooterIcon
           name="spotify"
           link="https://open.spotify.com/artist/1BVc2E4oUK6Md4Mte88JPL"
@@ -29,7 +25,7 @@
         />
       </div>
       <div class="custom-separator" />
-      <div class="flex gap-5 text-2xl items-center">
+      <div class="flex items-center gap-5 text-2xl">
         <ButtonFooterIcon
           name="instagram"
           link="https://www.instagram.com/rihterb"
@@ -41,7 +37,7 @@
         />
       </div>
       <div class="custom-separator" />
-      <div class="flex gap-5 text-2xl items-center">
+      <div class="flex items-center gap-5 text-2xl">
         <ButtonFooterIcon
           name="patreon"
           link="https://www.patreon.com/join/vasilyrichter"
@@ -59,6 +55,41 @@
 .custom-footer {
   @apply font-medium text-light-secondary;
   @apply flex justify-between items-center mx-auto py-6 mt-20;
-  @apply min-[320px]:max-md:flex-col-reverse;
+  @apply flex-col-reverse gap-5;
+}
+/*
+min-[320px]:w-[20.5rem]
+*/
+@screen xs {
+  #footer {
+    @apply w-[29.25rem];
+  }
+}
+
+@screen sm {
+  #footer {
+    @apply w-[38rem];
+  }
+}
+
+@screen md {
+  #footer {
+    @apply w-[46rem] flex-row gap-0;
+  }
+  .copyright-text {
+    @apply items-start justify-start;
+  }
+}
+
+@screen lg {
+  #footer {
+    @apply w-[62rem];
+  }
+}
+
+@screen xl {
+  #footer {
+    @apply w-[73.75rem];
+  }
 }
 </style>

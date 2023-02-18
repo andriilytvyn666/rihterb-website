@@ -1,15 +1,8 @@
 <template>
-  <div class="grid gap-5 md:grid-cols-12 sm:grid-cols-1">
-    <Bandcamp
-      v-motion
-      :initial="{ opacity: 0, y: 100 }"
-      :visibleOnce="{ opacity: 1, y: 0 }"
-      :delay="200"
-      class="sm:col-span-6 md:col-span-5 lg:col-span-4"
-    />
-    <div
-      class="flex flex-col gap-[1.125rem] min-[320px]:sm:col-span-4 md:col-span-7 lg:col-span-8"
-    >
+  <div class="grid grid-cols-1 gap-5 post-container">
+    <!-- TODO: fix bandcamp player height -->
+    <Bandcamp id="bandcamp-player" />
+    <div class="post-content md:col-span-7 lg:col-span-8">
       <div class="flex flex-col gap-1.5">
         <span class="text-4xl font-bold text-highlight-secondary"
           >Концерт у Львові // live in Lviv</span
@@ -32,19 +25,45 @@
           </p>
           <br />
         </div>
-        <iframe
-          v-motion
-          :initial="{ opacity: 0, y: 100 }"
-          :visibleOnce="{ opacity: 1, y: 0 }"
-          :delay="200"
-          class="w-full min-[320px]:max-sm:h-[16rem] sm:h-[20rem] md:h-[14.8rem] lg:h-[26.93rem] rounded-lg"
-          src="https://www.youtube-nocookie.com/embed/sTOCdJFvKYs"
-          title="YouTube video player"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowfullscreen
-        />
+        <Youtube />
       </div>
     </div>
   </div>
 </template>
+
+<style lang="postcss">
+.post-content {
+  @apply flex flex-col gap-[1.125rem];
+}
+
+@screen sm {
+  .post-content {
+    @apply col-span-4;
+  }
+
+  #bandcamp-player {
+    @apply col-span-6;
+  }
+}
+
+@screen md {
+  .post-container {
+    @apply grid-cols-12;
+  }
+  .post-content {
+    @apply col-span-7;
+  }
+  #bandcamp-player {
+    @apply col-span-5;
+  }
+}
+
+@screen lg {
+  .post-content {
+    @apply col-span-8;
+  }
+  #bandcamp-player {
+    @apply col-span-4;
+  }
+}
+</style>
