@@ -11,19 +11,17 @@
           >Грудень 2022</span
         >
       </div>
-      <div class="text-3xl font-bold text-light">
-        <div class="flex flex-col">
+      <div class="flex flex-col gap-8 text-3xl font-bold text-light">
+        <div class="flex flex-col gap-6">
           <p class="w-fit">
             Лорем ипсум долор сит амет, ут еним фалли сентентиае меи. Яуи
             импедит проприае ут. Ид ессе пробо дуо, усу ид цоммодо цонституто.
           </p>
-          <br />
           <p>
             Яуодси трацтатос еам. Дигниссим интерпретарис пер еу. Не вел муциус
             дефинитионем. Ет поссим абхорреант пхилосопхиа меа, те дебитис
             плацерат сед.
           </p>
-          <br />
         </div>
         <Youtube />
       </div>
@@ -33,7 +31,7 @@
 
 <style lang="postcss">
 .post-content {
-  @apply flex flex-col gap-[1.125rem];
+  @apply flex flex-col gap-6;
 }
 
 @screen sm {
