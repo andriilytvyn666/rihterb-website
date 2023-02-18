@@ -23,6 +23,23 @@
   </div>
 </template>
 
+<script setup lang="ts">
+useServerSeoMeta({
+  title: 'Василь Ріхтер',
+  description: 'Музикант, 12 років, пошлий, няшка :3 uwu',
+  author: 'Васиь Ріхтер',
+  robots: 'all noarchive',
+  charset: 'utf-8',
+})
+
+useHead({
+  htmlAttrs: {
+    lang: 'uk-ua',
+  },
+  link: [{ rel: 'icon', type: 'image/x-icon', href: 'favicon.ico' }],
+})
+</script>
+
 <style class="postcss">
 /*
 min-[320px]:w-[20.5rem]

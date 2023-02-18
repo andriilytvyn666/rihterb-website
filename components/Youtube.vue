@@ -7,7 +7,6 @@
     id="youtube-player"
     class="w-full h-[16rem] rounded-lg"
     src="https://www.youtube-nocookie.com/embed/sTOCdJFvKYs"
-    title="YouTube video player"
     frameborder="0"
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
     allowfullscreen
