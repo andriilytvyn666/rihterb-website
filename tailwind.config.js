@@ -12,6 +12,9 @@ module.exports = {
     },
 
     extend: {
+      screens: {
+        xs: '320px',
+      },
       colors: {
         light: {
           DEFAULT: '#ffffff',

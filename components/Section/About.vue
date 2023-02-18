@@ -1,5 +1,7 @@
 <template>
-  <div class="flex gap-8">
+  <div
+    class="min-[320px]:max-sm:flex-col min-[320px]:max-sm:items-center flex gap-8 min-[320px]:max-sm:gap-4"
+  >
     <NuxtImg
       v-motion-slide-visible-once-left
       src="/photo.webp"
@@ -8,14 +10,19 @@
       width="300"
       height="300"
     />
-    <div class="flex flex-col justify-between">
+    <div
+      class="flex flex-col justify-between min-[320px]:max-sm:gap-8 min-[320px]:max-sm:items-center"
+    >
       <AboutText
         v-motion
         :initial="{ opacity: 0 }"
         :visibleOnce="{ opacity: 1 }"
         :delay="100"
       />
-      <ButtonListen v-motion-slide-visible-once-bottom />
+      <ButtonListen
+        class="min-[320px]:max-sm"
+        v-motion-slide-visible-once-bottom
+      />
     </div>
   </div>
 </template>
