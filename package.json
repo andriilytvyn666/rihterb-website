@@ -22,10 +22,11 @@
   "dependencies": {
     "@nuxt/image-edge": "^1.0.0-27913696.5d122a3",
     "@nuxtjs/sanity": "^1.6.0",
+    "@pinia/nuxt": "^0.4.6",
     "@vueuse/motion": "^2.0.0-beta.27",
     "nuxt-icons": "^3.1.0",
     "nuxt-swiper": "^0.1.9",
-    "pinia": "^2.0.29"
+    "pinia": "^2.0.30"
   },
   "overrides": {
     "vue": "latest"

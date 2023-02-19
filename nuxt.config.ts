@@ -7,6 +7,7 @@ export default defineNuxtConfig({
     'nuxt-icons',
     '@nuxt/image-edge',
     '@vueuse/motion/nuxt',
+    '@pinia/nuxt',
   ],
   css: ['~/assets/css/tailwind.css'],
   image: {
