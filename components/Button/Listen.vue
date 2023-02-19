@@ -28,7 +28,8 @@
 }
 
 .custom-listen-button {
-  @apply bg-highlight;
+  @apply bg-highlight hover:bg-[#e4b454];
+  @apply transition ease-in-out duration-300;
   @apply flex flex-col gap-5 px-6 py-3 w-min items-center;
   @apply rounded-lg;
   @apply w-fit justify-between;

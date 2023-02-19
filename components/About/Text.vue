@@ -3,13 +3,14 @@
     <div class="flex flex-col gap-1 text-center about-heading">
       <span class="text-4xl font-bold text-highlight">Василь Ріхтер</span>
       <span class="text-xl font-semibold text-light-secondary"
-        >12 років ꞏ музикант ꞏ тг:
-        <a
+        >12 років ꞏ музикант
+        <!-- <a
           href="https://t.me/nneeeooo"
           target="_blank"
           class="text-white underline bg-red-500 rounded-lg"
-          >@nneeeooo</a
         >
+          ꞏ тг:@nneeeooo
+        </a> -->
       </span>
     </div>
     <div>
