@@ -9,7 +9,7 @@
         >Розробник: Андрій Литвин</a
       >
     </div>
-    <div class="flex flex-wrap items-center justify-center gap-6 text-2xl">
+    <div class="links-container">
       <ButtonFooterIcon
         name="spotify"
         link="https://open.spotify.com/artist/1BVc2E4oUK6Md4Mte88JPL"
@@ -39,6 +39,7 @@
       />
       <ButtonFooterIcon
         name="bandcamp"
+        class="hidden min-[392px]:block"
         link="https://vasilyrichter.bandcamp.com/"
       />
     </div>
@@ -46,6 +47,10 @@
 </template>
 
 <style class="postcss">
+.links-container {
+  @apply flex flex-wrap items-center justify-center gap-6 text-2xl;
+}
+
 #footer {
   @apply font-medium text-light-secondary;
   @apply flex justify-between items-center  py-6 mt-12 sm:mt-20;

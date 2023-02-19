@@ -3,7 +3,7 @@
     <NuxtImg
       v-motion-slide-visible-once-left
       id="photo"
-      src="/photo.webp"
+      src="/rihter_alt.webp"
       alt="Ріхтер"
       class="ml-[0.375rem] object-cover w-[18.75rem] h-[18.75rem] rounded-lg"
       width="300"
@@ -24,7 +24,7 @@
 </template>
 
 <style lang="postcss">
-@screen sm {
+@screen md {
   .about-container {
     @apply flex-row items-stretch gap-8;
   }
@@ -33,17 +33,6 @@
     @apply gap-0 items-start;
   }
 
-  #photo {
-  }
-}
-
-@screen sm {
-  #photo {
-    @apply w-[12.5rem];
-  }
-}
-
-@screen md {
   #photo {
     @apply w-[18.75rem];
   }

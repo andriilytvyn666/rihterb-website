@@ -1,6 +1,6 @@
 <template>
   <div class="rounded-lg bg-dark-hover support-content">
-    <div class="flex flex-col gap-4 font-bold text-left">
+    <div class="flex flex-col w-full gap-4 font-bold text-left">
       <span class="text-2xl text-center support-title text-highlight"
         >Підтримайте мене</span
       >
@@ -28,7 +28,7 @@
 }
 
 .support-content {
-  @apply flex flex-col justify-between;
+  @apply flex flex-col;
   @apply gap-8 w-[18rem] px-8 py-8;
   @apply w-full;
 }
@@ -76,7 +76,8 @@
     @apply flex-row items-center;
   }
   .support-buttons {
-    @apply grid-cols-2 grid-rows-2 content-end;
+    @apply min-w-[23rem];
+    @apply grid-cols-2 grid-rows-2;
   }
 }
 

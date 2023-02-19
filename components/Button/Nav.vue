@@ -17,5 +17,6 @@ const props = defineProps<{
 .nav-button {
   @apply text-light hover:bg-dark-hover text-lg;
   @apply flex gap-3 items-center py-3 px-4 rounded-lg;
+  @apply transition ease-in-out duration-300;
 }
 </style>

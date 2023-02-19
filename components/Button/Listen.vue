@@ -31,11 +31,18 @@
   @apply bg-highlight;
   @apply flex flex-col gap-5 px-6 py-3 w-min items-center;
   @apply rounded-lg;
+  @apply w-fit justify-between;
 }
 
 @screen sm {
   .custom-listen-button {
-    @apply flex-row w-fit;
+    @apply flex-row w-full;
+  }
+}
+
+@screen md {
+  .custom-listen-button {
+    @apply w-fit;
   }
 }
 </style>

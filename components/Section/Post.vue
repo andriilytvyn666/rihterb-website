@@ -12,25 +12,29 @@
           >Грудень 2022</span
         >
       </div>
-      <div class="flex flex-col gap-8 text-3xl font-bold text-light">
+      <div class="post-text">
         <div class="flex flex-col gap-6">
-          <p class="w-fit">
+          <p class="select-text selection:bg-light-secondary">
             Лорем ипсум долор сит амет, ут еним фалли сентентиае меи. Яуи
             импедит проприае ут. Ид ессе пробо дуо, усу ид цоммодо цонституто.
           </p>
-          <p>
+          <p class="select-text selection:bg-light-secondary">
             Яуодси трацтатос еам. Дигниссим интерпретарис пер еу. Не вел муциус
             дефинитионем. Ет поссим абхорреант пхилосопхиа меа, те дебитис
             плацерат сед.
           </p>
         </div>
-        <Youtube />
+        <Youtube id="JtQiHyjAfcE" />
       </div>
     </div>
   </div>
 </template>
 
 <style lang="postcss">
+.post-text {
+  @apply flex flex-col gap-8 font-bold text-light text-2xl;
+}
+
 .post-content {
   @apply flex flex-col gap-6;
 }
@@ -60,9 +64,14 @@
 }
 
 @screen lg {
+  .post-text {
+    @apply text-3xl;
+  }
+
   .post-content {
     @apply col-span-8;
   }
+
   #bandcamp-player,
   #spotify-player {
     @apply col-span-4;
