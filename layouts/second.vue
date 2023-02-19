@@ -9,7 +9,7 @@
     <span class="hidden xl:block 2xl:hidden">xl</span>
     <span class="hidden 2xl:block">2xl</span>
   </div> -->
-  <div class="flex flex-col items-center flex-grow min-h-screen">
+  <div class="flex flex-col items-center flex-grow min-h-screen bg-dark">
     <Header v-motion-fade-visible-once />
     <article
       id="article"
