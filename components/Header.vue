@@ -1,5 +1,5 @@
 <template>
-  <header id="header" class="flex items-center justify-between h-20">
+  <header id="header" class="flex items-center justify-between h-20 mx-4">
     <div class="flex items-center gap-3">
       <NuxtImg
         src="/logo.webp"
@@ -9,7 +9,7 @@
         height="48"
       />
     </div>
-    <nav class="flex gap-3">
+    <nav class="hidden gap-3 sm:flex">
       <ButtonNav
         name="Youtube"
         icon="youtube"
@@ -28,12 +28,6 @@
 /* 
 min-[320px]:w-[20.5rem]
 */
-
-@screen xs {
-  #header {
-    @apply w-[29.25rem];
-  }
-}
 
 @screen sm {
   #header {

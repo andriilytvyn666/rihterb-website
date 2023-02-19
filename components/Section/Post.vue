@@ -1,7 +1,8 @@
 <template>
   <div class="grid grid-cols-1 gap-5 post-container">
     <!-- TODO: fix bandcamp player height -->
-    <Bandcamp id="bandcamp-player" />
+    <!-- <Bandcamp id="bandcamp-player" /> -->
+    <Spotify id="spotify-player" />
     <div class="post-content md:col-span-7 lg:col-span-8">
       <div class="flex flex-col gap-1.5">
         <span class="text-4xl font-bold text-highlight-secondary"
@@ -39,7 +40,8 @@
     @apply col-span-4;
   }
 
-  #bandcamp-player {
+  #bandcamp-player,
+  #spotify-player {
     @apply col-span-6;
   }
 }
@@ -51,7 +53,8 @@
   .post-content {
     @apply col-span-7;
   }
-  #bandcamp-player {
+  #bandcamp-player,
+  #spotify-player {
     @apply col-span-5;
   }
 }
@@ -60,7 +63,8 @@
   .post-content {
     @apply col-span-8;
   }
-  #bandcamp-player {
+  #bandcamp-player,
+  #spotify-player {
     @apply col-span-4;
   }
 }

@@ -13,9 +13,9 @@
     <Header v-motion-fade-visible-once />
     <article
       id="article"
-      class="grid justify-center grid-cols-12 gap-5 mx-auto grow"
+      class="grid items-stretch justify-center w-full grid-cols-12 gap-5 px-4 grow"
     >
-      <div class="flex flex-col col-span-12 gap-20 pt-6">
+      <div class="flex flex-col col-span-12 gap-10 pt-6 sm:gap-20">
         <slot />
       </div>
     </article>
@@ -41,18 +41,9 @@ useHead({
 </script>
 
 <style class="postcss">
-/*
-min-[320px]:w-[20.5rem]
-*/
-@screen xs {
-  #article {
-    @apply w-[29.25rem];
-  }
-}
-
 @screen sm {
   #article {
-    @apply w-[38rem];
+    @apply w-[38rem] mx-auto;
   }
 }
 

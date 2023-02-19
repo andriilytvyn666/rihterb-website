@@ -5,7 +5,7 @@
       id="photo"
       src="/photo.webp"
       alt="Ріхтер"
-      class="ml-[0.375rem] object-cover w-[12.5rem] h-[18.75rem] rounded-lg"
+      class="ml-[0.375rem] object-cover w-[18.75rem] h-[18.75rem] rounded-lg"
       width="300"
       height="300"
     />
@@ -34,6 +34,12 @@
   }
 
   #photo {
+  }
+}
+
+@screen sm {
+  #photo {
+    @apply w-[12.5rem];
   }
 }
 

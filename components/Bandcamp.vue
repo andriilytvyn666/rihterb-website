@@ -6,7 +6,7 @@
       :initial="{ opacity: 0, y: 100 }"
       :visibleOnce="{ opacity: 1, y: 0 }"
       :delay="200"
-      class="hidden w-full h-full md:block"
+      class="hidden w-full h-full md:block aspect-square"
       src="https://bandcamp.com/EmbeddedPlayer/album=3409926476/size=large/bgcol=333333/linkcol=e99708/transparent=true/"
       seamless
     >

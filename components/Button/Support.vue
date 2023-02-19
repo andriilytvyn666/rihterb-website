@@ -36,9 +36,11 @@ const props = defineProps<{
 }>()
 </script>
 
+<!-- w-[11rem] -->
+
 <style lang="postcss">
 .custom-support-button {
-  @apply rounded-lg px-6 flex items-center gap-3 w-[11rem] py-[0.875rem] text-light;
-  @apply text-lg font-medium;
+  @apply rounded-lg px-6 flex items-center gap-3 w-full h-fit  py-[0.875rem] text-light;
+  @apply text-lg font-medium min-w-[11rem];
 }
 </style>
