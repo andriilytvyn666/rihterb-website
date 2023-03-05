@@ -21,10 +21,11 @@
 
 ## Todo
 
-- [ ] add animations to main page
+- [ ] add animations to index page
 - [ ] improve directory structure
 - [x] fix hamburger menu position on mobile devices
 - [ ] add CMS to manage content
 - [~] fill with content
 - [x] add meta information & images for og and twitter
 - [ ] refactor index page
+- [ ] fix swiper carousel scrolling on mobile

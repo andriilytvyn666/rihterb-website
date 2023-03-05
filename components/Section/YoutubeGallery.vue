@@ -2,17 +2,24 @@
   <div class="responsive" v-motion-fade-visible-once>
     <div
       id="swiper-controls"
-      class="absolute items-center justify-between h-[18.844rem] hidden z-10 ml-4 pointer-events-none"
+      class="absolute items-center justify-between h-[18.844rem] w-full flex z-10 sm:mx-4 pointer-events-none"
     >
-      <div id="prev-video" class="pointer-events-auto button-arrow">
+      <div
+        id="prev-video"
+        class="ml-2 pointer-events-auto button-arrow sm:ml-0"
+      >
         <nuxt-icon name="feather/arrow-left" filled />
       </div>
-      <div id="next-video" class="pointer-events-auto button-arrow">
+      <div
+        id="next-video"
+        class="mr-2 pointer-events-auto button-arrow sm:mr-0"
+      >
         <nuxt-icon name="feather/arrow-right" filled />
       </div>
     </div>
     <Swiper
       :modules="[SwiperNavigation]"
+      free-mode
       :slides-per-view="1.1"
       :space-between="20"
       :watch-overflow="true"
@@ -64,11 +71,18 @@
   @apply cursor-pointer;
 }
 
+@screen sm {
+  #swiper-controls {
+    @apply flex w-[34rem];
+  }
+}
+
 @screen md {
   #swiper-controls {
     @apply flex w-[42rem];
   }
 }
+
 .hidden-arrow {
   opacity: 0;
 }
