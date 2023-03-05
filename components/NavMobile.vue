@@ -1,7 +1,7 @@
 <template>
   <nav class="grid grid-cols-1 sm:hidden">
     <ButtonNav
-      class="border bg-dark-hover border-light-secondary hover:border-light"
+      class="border bg-dark-hover border-light-secondary hover:border-light hover:bg-[#282828]"
       name="новий трек - штані"
       emoji="jeans"
       image

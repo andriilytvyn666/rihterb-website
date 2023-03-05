@@ -1,12 +1,11 @@
 <template>
   <div class="flex flex-col gap-8 about-container">
     <div
-      v-motion-slide-visible-once-right
+      v-motion-fade-visible-once
       class="flex flex-col items-center gap-8 about-body"
     >
       <AboutText class="flex md:hidden" />
       <NuxtImg
-        v-motion-slide-visible-once-left
         id="photo"
         src="/rihter_alt.webp"
         alt="Ріхтер"

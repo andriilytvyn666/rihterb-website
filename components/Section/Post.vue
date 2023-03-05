@@ -1,5 +1,5 @@
 <template>
-  <div class="grid grid-cols-1 gap-6 post-container">
+  <div class="grid grid-cols-1 gap-8 post-container">
     <!-- <Bandcamp albumId="148721193" id="bandcamp-player" /> -->
     <Spotify
       albumId="0qiorHnzWjHAdWMqbSKe0s"

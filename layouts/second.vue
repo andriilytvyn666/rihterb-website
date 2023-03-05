@@ -5,7 +5,7 @@
       id="article"
       class="grid items-stretch justify-center w-full grid-cols-12 gap-5 px-4 grow"
     >
-      <div class="flex flex-col col-span-12 gap-10 pt-6 sm:gap-20">
+      <div class="flex flex-col col-span-12 gap-12 pt-6">
         <slot />
       </div>
     </article>
