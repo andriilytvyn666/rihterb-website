@@ -8,6 +8,7 @@ export default defineNuxtConfig({
     '@nuxt/image-edge',
     '@vueuse/motion/nuxt',
     '@pinia/nuxt',
+    'nuxt-swiper',
   ],
   css: ['~/assets/css/tailwind.css'],
   image: {
