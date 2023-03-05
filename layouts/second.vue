@@ -25,18 +25,29 @@
 
 <script setup lang="ts">
 useServerSeoMeta({
-  title: 'Василь Ріхтер',
-  description: 'Музикант, 12 років, пошлий, няшка :3 uwu',
-  author: 'Васиь Ріхтер',
+  title: 'Vasyl Rihter',
+  description: '',
+  author: 'Vasyl Rihter',
   robots: 'all noarchive',
   charset: 'utf-8',
+  ogTitle: 'Vasyl Rihter',
+  ogDescription: '',
+  twitterTitle: 'Vasyl Rihter',
+  twitterDescription: '',
+  twitterCard: 'summary_large_image',
+  twitterImage: 'https://riterb.pp.ua/banner.webp',
+  ogImage: 'https://riterb.pp.ua/banner.webp',
 })
 
 useHead({
   htmlAttrs: {
     lang: 'uk-ua',
   },
-  link: [{ rel: 'icon', type: 'image/x-icon', href: 'favicon.ico' }],
+  link: [
+    { rel: 'icon', type: 'image/png', sizes: '64x64', href: 'favicon.png' },
+    { rel: 'apple-touch-icon', sizes: '180x180', href: 'apple-touch-icon.png' },
+    {},
+  ],
 })
 </script>
 
