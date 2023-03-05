@@ -1,11 +1,11 @@
 <template>
   <div class="rounded-lg bg-dark-hover support-content">
     <div class="flex flex-col w-full gap-4 font-bold text-left">
-      <span class="text-2xl text-center support-title text-highlight"
-        >Підтримайте мене</span
-      >
+      <span class="text-2xl text-center support-title text-highlight">
+        Підтримайте мене
+      </span>
       <span class="text-xl support-description text-light">
-        Щоб я продовжував робити українську музику
+        Щоб я міг продовжувати створювати нову музику. Дякую!
       </span>
     </div>
     <div class="support-buttons">

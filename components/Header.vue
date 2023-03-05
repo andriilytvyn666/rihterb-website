@@ -11,14 +11,10 @@
     </div>
     <nav class="hidden gap-3 sm:flex">
       <ButtonNav
-        name="Youtube"
-        icon="youtube"
-        link="https://www.youtube.com/@rihterb"
-      />
-      <ButtonNav
-        name="Instagram"
-        icon="instagram"
-        link="https://www.instagram.com/rihterb"
+        name="новий трек - штані"
+        emoji="jeans"
+        image
+        link="https://listen.elek3chestvo.com/shtani"
       />
     </nav>
   </header>
