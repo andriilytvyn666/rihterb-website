@@ -19,7 +19,7 @@
         <AboutDescription />
       </div>
     </div>
-    <ButtonListenIcons />
+    <ButtonListenIcons v-motion-fade-visible-once />
   </div>
 </template>
 
