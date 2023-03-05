@@ -1,13 +1,18 @@
 <template>
-  <a :href="link" target="_blank" class="nav-button">
-    <nuxt-icon :name="`social/${icon}`" filled class="text-xl" v-if="!image" />
+  <a :href="link" target="_blank" class="nav-button hover:bg-dark-hover">
+    <nuxt-icon
+      :name="`social/${icon}`"
+      filled
+      class="text-xl pointer-events-none"
+      v-if="!image"
+    />
     <img
-      class="w-5"
+      class="w-5 pointer-events-none"
       :src="`/${props.emoji}Emoji.webp`"
       alt="fireEmoji"
       v-else
     />
-    <span>{{ props.name }}</span>
+    <span class="pointer-events-none">{{ props.name }}</span>
   </a>
 </template>
 
@@ -23,8 +28,8 @@ const props = defineProps<{
 
 <style lang="postcss">
 .nav-button {
-  @apply text-light hover:bg-dark-hover text-lg;
-  @apply flex gap-3 items-center justify-center py-3 px-4 rounded-lg;
+  @apply text-light text-lg;
+  @apply flex gap-3 items-center justify-center py-3 px-8 rounded-lg;
   @apply transition ease-in-out duration-300;
 }
 </style>

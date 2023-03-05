@@ -23,8 +23,8 @@
 
 - [ ] add animations to main page
 - [ ] improve directory structure
-- [ ] fix hamburger menu position on mobile devices
+- [x] fix hamburger menu position on mobile devices
 - [ ] add CMS to manage content
-- [ ] fill with content
-- [ ] add meta information & images for og and twitter
+- [~] fill with content
+- [x] add meta information & images for og and twitter
 - [ ] refactor index page

@@ -1,6 +1,7 @@
 <template>
-  <nav class="grid grid-cols-1 sm:hidden">
+  <nav class="hidden gap-3 sm:flex">
     <ButtonNav
+      v-motion-slide-visible-once-right
       class="border bg-dark-hover border-light-secondary hover:border-light"
       name="новий трек - штані"
       emoji="jeans"
