@@ -3,7 +3,7 @@
     <div class="flex flex-col gap-1 text-center about-heading">
       <span class="text-4xl font-bold text-highlight">Василь Ріхтер</span>
       <span class="text-xl font-semibold text-light-secondary"
-        >12 років ꞏ музикант
+        >22 роки ꞏ інді рокер ꞏ музикант
         <!-- <a
           href="https://t.me/nneeeooo"
           target="_blank"
@@ -17,25 +17,19 @@
       <p
         class="text-2xl font-bold select-text text-light about-description selection:bg-light-secondary"
       >
-        Лорем ипсум долор сит амет, ут еним фалли сентентиае меи, нам цу
-        аппареат волуптатибус. Новум анимал ад сеа.
+        Привіт! Я - український інді-музикант. Пишу психоделічні інді пісні з
+        унікальним звучанням. У моїй музиці я поєдную різні жанри та досліджую
+        емоційні простори, створюючи неповторний настрій.
       </p>
     </div>
   </div>
 </template>
 
 <style lang="postcss">
-@screen sm {
-  .about-description {
-    @apply text-xl;
-  }
-}
-
 @screen md {
   .about-heading {
     @apply text-left;
   }
-
   .about-description {
     @apply text-xl;
   }

@@ -1,36 +1,31 @@
 <template>
-  <div class="flex flex-col items-center gap-4 about-container">
-    <NuxtImg
-      v-motion-slide-visible-once-left
-      id="photo"
-      src="/rihter_alt.webp"
-      alt="Ріхтер"
-      class="ml-[0.375rem] object-cover w-[18.75rem] h-[18.75rem] rounded-lg"
-      width="300"
-      height="300"
-    />
+  <div class="flex flex-col gap-8 about-container">
     <div
-      class="flex flex-col items-center justify-between gap-8 about-side post-side"
+      v-motion-slide-visible-once-right
+      class="flex flex-col items-center gap-8 about-body"
     >
-      <AboutText
-        v-motion
-        :initial="{ opacity: 0 }"
-        :visibleOnce="{ opacity: 1 }"
-        :delay="100"
+      <NuxtImg
+        v-motion-slide-visible-once-left
+        id="photo"
+        src="/rihter_alt.webp"
+        alt="Ріхтер"
+        class="ml-[0.375rem] object-cover w-[18.75rem] h-[18.75rem] rounded-lg"
+        width="300"
+        height="300"
       />
-      <ButtonListen v-motion-slide-visible-once-bottom />
+      <AboutText />
     </div>
+    <ButtonListenIcons />
   </div>
 </template>
 
 <style lang="postcss">
 @screen md {
   .about-container {
-    @apply flex-row items-stretch gap-8;
   }
 
-  .about-side {
-    @apply gap-0 items-start;
+  .about-body {
+    @apply flex-row justify-center;
   }
 
   #photo {
