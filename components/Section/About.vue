@@ -4,6 +4,7 @@
       v-motion-slide-visible-once-right
       class="flex flex-col items-center gap-8 about-body"
     >
+      <AboutText class="flex md:hidden" />
       <NuxtImg
         v-motion-slide-visible-once-left
         id="photo"
@@ -13,7 +14,10 @@
         width="300"
         height="300"
       />
-      <AboutText />
+      <div class="flex flex-col gap-5">
+        <AboutText class="hidden md:flex" />
+        <AboutDescription />
+      </div>
     </div>
     <ButtonListenIcons />
   </div>
