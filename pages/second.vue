@@ -1,6 +1,6 @@
 <template>
   <NuxtLayout name="second">
-    <DebugIndicator />
+    <!-- <DebugIndicator /> -->
     <NavMobile />
     <SectionAbout v-motion-slide-visible-once-bottom />
     <SectionYoutubeGallery />

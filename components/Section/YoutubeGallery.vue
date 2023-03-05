@@ -2,7 +2,7 @@
   <div class="responsive" v-motion-fade-visible-once>
     <div
       id="swiper-controls"
-      class="absolute items-center justify-between h-[18.844rem] hidden z-10 ml-4"
+      class="absolute items-center justify-between h-[18.844rem] hidden z-10 ml-4 pointer-events-none"
     >
       <div id="prev-video" class="button-arrow">
         <nuxt-icon name="feather/arrow-left" filled />

@@ -1,11 +1,11 @@
 <template>
   <div class="grid grid-cols-1 gap-8 post-container">
-    <!-- <Bandcamp albumId="148721193" id="bandcamp-player" /> -->
-    <Spotify
+    <Bandcamp albumId="148721193" id="bandcamp-player" />
+    <!-- <Spotify
       albumId="0qiorHnzWjHAdWMqbSKe0s"
       class="order-last md:order-first"
       id="spotify-player"
-    />
+    /> -->
     <div class="post-content md:col-span-7 lg:col-span-8">
       <div class="flex flex-col gap-1.5">
         <span class="text-4xl font-bold text-highlight-secondary"
