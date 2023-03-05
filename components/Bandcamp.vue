@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full h-full overflow-hidden">
+  <div class="w-full h-full overflow-hidden md:min-h-[24rem]">
     <!--h-[49rem]-->
     <iframe
       v-motion
@@ -7,7 +7,7 @@
       :visibleOnce="{ opacity: 1, y: 0 }"
       :delay="200"
       class="hidden w-full h-full md:block aspect-square"
-      src="https://bandcamp.com/EmbeddedPlayer/album=3409926476/size=large/bgcol=333333/linkcol=e99708/transparent=true/"
+      :src="`https://bandcamp.com/EmbeddedPlayer/album=${props.albumId}/size=large/bgcol=333333/linkcol=e99708/artwork=none/transparent=true/`"
       seamless
     >
       <a href="https://vasilyrichter.bandcamp.com/album/--4">
@@ -16,7 +16,7 @@
     </iframe>
     <iframe
       class="w-full h-[120px] md:hidden"
-      src="https://bandcamp.com/EmbeddedPlayer/album=3409926476/size=large/bgcol=333333/linkcol=e99708/tracklist=false/artwork=small/transparent=true/"
+      :src="`https://bandcamp.com/EmbeddedPlayer/album=${props.albumId}/size=large/bgcol=333333/linkcol=e99708/tracklist=false/artwork=none/transparent=true/`"
       seamless
       ><a href="https://vasilyrichter.bandcamp.com/album/--4"
         >отрывки радости и счастья by рихтер</a
@@ -24,3 +24,9 @@
     >
   </div>
 </template>
+
+<script lang="ts" setup>
+const props = defineProps<{
+  albumId: string
+}>()
+</script>

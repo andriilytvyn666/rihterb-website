@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full h-full overflow-hidden">
+  <div class="w-full h-full overflow-hidden min-h-[24rem]">
     <!-- <iframe
       v-motion
       :initial="{ opacity: 0, y: 100 }"
