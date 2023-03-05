@@ -30,4 +30,22 @@
 import { useFirstStore } from '~~/stores/first'
 
 const store = useFirstStore()
+
+useServerSeoMeta({
+  title: 'Vasyl Rihter',
+  description:
+    'Hi there! I am a Ukrainian indie musician who writes psychedelic indie songs with a unique sound. In my music, I blend different genres and explore emotional spaces, creating a one-of-a-kind atmosphere.',
+  author: 'Vasyl Rihter',
+  robots: 'all noarchive',
+  charset: 'utf-8',
+  ogTitle: 'Vasyl Rihter',
+  ogDescription:
+    'Hi there! I am a Ukrainian indie musician who writes psychedelic indie songs with a unique sound. In my music, I blend different genres and explore emotional spaces, creating a one-of-a-kind atmosphere.',
+  twitterTitle: 'Vasyl Rihter',
+  twitterDescription:
+    'Hi there! I am a Ukrainian indie musician who writes psychedelic indie songs with a unique sound. In my music, I blend different genres and explore emotional spaces, creating a one-of-a-kind atmosphere.',
+  twitterCard: 'summary_large_image',
+  twitterImage: 'https://rihterb.pp.ua/banner.webp',
+  ogImage: 'https://rihterb.pp.ua/banner.webp',
+})
 </script>
