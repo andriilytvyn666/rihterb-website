@@ -5,7 +5,7 @@
     <header
       class="sticky top-0 flex items-center justify-center h-28 bg-[#1a1a1a]"
     >
-      <FirstNav class="hidden sm:flex" />
+      <FirstNav class="hidden lg:flex" />
       <FirstMenuIcon />
       <NuxtImg src="/pp.png" alt="Logo" width="82" class="w-16 h-16" />
     </header>

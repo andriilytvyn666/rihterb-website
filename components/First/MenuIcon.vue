@@ -1,6 +1,6 @@
 <template>
   <button
-    class="absolute top-0 flex items-center text-2xl sm:hidden text-light right-4 h-28"
+    class="absolute top-0 flex items-center text-2xl lg:hidden text-light right-12 h-28"
     @click="toggleMenu"
   >
     <NuxtIcon :name="`social/${icon}`" filled />
