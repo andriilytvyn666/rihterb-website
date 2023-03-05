@@ -9,25 +9,25 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
-    "@nuxtjs/tailwindcss": "^6.3.0",
-    "@typescript-eslint/eslint-plugin": "^5.49.0",
-    "@typescript-eslint/parser": "^5.49.0",
-    "eslint": "^8.32.0",
+    "@nuxtjs/tailwindcss": "^6.4.1",
+    "@typescript-eslint/eslint-plugin": "^5.54.0",
+    "@typescript-eslint/parser": "^5.54.0",
+    "eslint": "^8.35.0",
     "eslint-plugin-nuxt": "^4.0.0",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-vue": "^9.9.0",
-    "nuxt": "^3.1.1",
+    "nuxt": "^3.2.3",
     "prettier": "2.8.3",
     "vite-plugin-eslint": "^1.8.1"
   },
   "dependencies": {
     "@nuxt/image-edge": "^1.0.0-27913696.5d122a3",
     "@nuxtjs/sanity": "^1.6.0",
-    "@pinia/nuxt": "^0.4.6",
+    "@pinia/nuxt": "^0.4.7",
     "@vueuse/motion": "^2.0.0-beta.27",
     "nuxt-icons": "^3.1.0",
     "nuxt-swiper": "^0.1.9",
-    "pinia": "^2.0.30"
+    "pinia": "^2.0.32"
   },
   "overrides": {
     "vue": "latest"
