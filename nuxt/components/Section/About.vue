@@ -26,9 +26,6 @@
         <AboutDescription
           :text="getLocalizedString($i18n.locale, about.description)"
         />
-        <button class="text-light" @click="toggleLocale">
-          перемкнути мову блять
-        </button>
       </div>
     </div>
     <ButtonListenIcons :items="about.links" v-motion-fade-visible-once />
@@ -42,17 +39,6 @@ const query: string = groq`*[_type == "about"][0]
 const { data } = await useSanityQuery<About>(query)
 
 const about = data.value!
-
-const { locale, setLocale } = useI18n()
-
-const toggleLocale = () => {
-  if (locale.value == 'en') {
-    setLocale('uk')
-  } else {
-    setLocale('en')
-  }
-  location.reload()
-}
 
 const renderCondition: boolean = about !== undefined && about !== null
 </script>

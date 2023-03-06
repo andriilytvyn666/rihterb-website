@@ -32,14 +32,20 @@ useServerSeoMeta({
   ogImage: 'https://rihterb.pp.ua/banner.webp',
 })
 
+const i18nHead = useLocaleHead({
+  addSeoAttributes: true,
+})
+
 useHead({
   htmlAttrs: {
-    lang: 'uk-ua',
+    lang: i18nHead.value.htmlAttrs!.lang,
   },
   link: [
+    ...(i18nHead.value.link || []),
     { rel: 'icon', type: 'image/png', sizes: '64x64', href: 'favicon.png' },
     { rel: 'apple-touch-icon', sizes: '180x180', href: 'apple-touch-icon.png' },
   ],
+  meta: [...(i18nHead.value.meta || [])],
 })
 </script>
 
