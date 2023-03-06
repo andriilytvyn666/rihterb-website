@@ -4,7 +4,11 @@
       v-motion-fade-visible-once
       class="flex flex-col items-center gap-8 about-body"
     >
-      <AboutText class="flex md:hidden" />
+      <AboutText
+        :subtitle="getLocalizedString($i18n.locale, about.subtitle)"
+        :name="getLocalizedString($i18n.locale, about.name)"
+        class="flex md:hidden"
+      />
       <NuxtImg
         id="photo"
         src="/rihter_alt.webp"
@@ -14,11 +18,20 @@
         height="300"
       />
       <div class="flex flex-col gap-5">
-        <AboutText class="hidden md:flex" />
-        <AboutDescription :text="about.description.en" />
+        <AboutText
+          :name="getLocalizedString($i18n.locale, about.name)"
+          :subtitle="getLocalizedString($i18n.locale, about.subtitle)"
+          class="hidden md:flex"
+        />
+        <AboutDescription
+          :text="getLocalizedString($i18n.locale, about.description)"
+        />
+        <button class="text-light" @click="toggleLocale">
+          перемкнути мову блять
+        </button>
       </div>
     </div>
-    <ButtonListenIcons v-motion-fade-visible-once />
+    <ButtonListenIcons :items="about.links" v-motion-fade-visible-once />
   </div>
 </template>
 
@@ -30,7 +43,18 @@ const { data } = await useSanityQuery<About>(query)
 
 const about = data.value!
 
-const renderCondition: boolean = about !== undefined
+const { locale, setLocale } = useI18n()
+
+const toggleLocale = () => {
+  if (locale.value == 'en') {
+    setLocale('uk')
+  } else {
+    setLocale('en')
+  }
+  location.reload()
+}
+
+const renderCondition: boolean = about !== undefined && about !== null
 </script>
 
 <style lang="postcss">

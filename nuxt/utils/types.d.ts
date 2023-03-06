@@ -19,5 +19,6 @@ type image = {
 type ListenLink = {
   _id: string
   title: string
+  link: string
   logo: string
 }

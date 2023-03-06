@@ -11,6 +11,11 @@ export default {
       validation: (rule: Rule) => rule.required(),
     },
     {
+      name: 'link',
+      type: 'url',
+      validation: (rule: Rule) => rule.required(),
+    },
+    {
       name: 'logo',
       type: 'string',
       initialValue: 'spotify',

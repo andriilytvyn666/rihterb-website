@@ -1,31 +1,37 @@
 <template>
   <div id="buttons-container" class="grid grid-cols-1 gap-3">
     <ButtonListenIcon
-      name="Spotify"
+      :name="items[0].title"
       class="text-[#1DB954]"
-      icon="spotify"
-      link="https://open.spotify.com/artist/1BVc2E4oUK6Md4Mte88JPL"
+      :icon="items[0].logo"
+      :link="items[0].link"
     />
     <ButtonListenIcon
-      name="Youtube Music"
+      :name="items[1].title"
       class="text-[#FF0000]"
-      icon="youtubemusic"
-      link="https://music.youtube.com/channel/UCZGPjMchF7bUpZeQ6ScTynA"
+      :icon="items[1].logo"
+      :link="items[1].link"
     />
     <ButtonListenIcon
-      name="Apple Music"
+      :name="items[2].title"
       class="text-[#FA243C]"
-      icon="applemusic"
-      link="https://music.apple.com/us/artist/vasily-richter/1534786803"
+      :icon="items[2].logo"
+      :link="items[2].link"
     />
     <ButtonListenIcon
-      name="Bandcamp"
+      :name="items[3].title"
       class="text-[#408294]"
-      icon="bandcamp"
-      link="https://vasilyrichter.bandcamp.com/"
+      :icon="items[3].logo"
+      :link="items[3].link"
     />
   </div>
 </template>
+
+<script lang="ts" setup>
+const props = defineProps<{
+  items: Array<ListenLink>
+}>()
+</script>
 
 <style lang="postcss">
 @screen sm {
