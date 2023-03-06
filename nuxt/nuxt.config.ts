@@ -9,7 +9,14 @@ export default defineNuxtConfig({
     '@vueuse/motion/nuxt',
     '@pinia/nuxt',
     'nuxt-swiper',
+    '@nuxtjs/sanity',
   ],
+  sanity: {
+    projectId: 'lh08fn64',
+    dataset: 'production',
+    apiVersion: '2023-03-26',
+    minimal: true,
+  },
   css: ['~/assets/css/tailwind.css'],
   image: {
     provider: 'vercel',

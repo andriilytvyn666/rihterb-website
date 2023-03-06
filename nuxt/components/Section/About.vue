@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col gap-8 about-container">
+  <div class="flex flex-col gap-8 about-container" v-if="renderCondition">
     <div
       v-motion-fade-visible-once
       class="flex flex-col items-center gap-8 about-body"
@@ -15,12 +15,23 @@
       />
       <div class="flex flex-col gap-5">
         <AboutText class="hidden md:flex" />
-        <AboutDescription />
+        <AboutDescription :text="about.description.en" />
       </div>
     </div>
     <ButtonListenIcons v-motion-fade-visible-once />
   </div>
 </template>
+
+<script setup lang="ts">
+const query: string = groq`*[_type == "about"][0]
+    {_id, name, subtitle, description, links}`
+
+const { data } = await useSanityQuery<About>(query)
+
+const about = data.value!
+
+const renderCondition: boolean = about !== undefined
+</script>
 
 <style lang="postcss">
 @screen md {

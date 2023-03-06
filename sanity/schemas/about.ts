@@ -11,6 +11,12 @@ export default {
       validation: (rule: Rule) => rule.required(),
     },
     {
+      name: 'photo',
+      type: 'image',
+      validation: (rule: Rule) => rule.required(),
+      options: {accept: 'image/webp'},
+    },
+    {
       name: 'subtitle',
       type: 'localeString',
       validation: (rule: Rule) => rule.required(),

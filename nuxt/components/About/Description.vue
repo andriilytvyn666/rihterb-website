@@ -4,13 +4,17 @@
       <p
         class="text-2xl font-bold select-text text-light about-description selection:bg-light-secondary"
       >
-        Привіт! Я - український інді-музикант. Пишу психоделічні інді пісні з
-        унікальним звучанням. У моїй музиці я поєдную різні жанри та досліджую
-        емоційні простори, створюючи неповторний настрій.
+        {{ props.text }}
       </p>
     </div>
   </div>
 </template>
+
+<script setup lang="ts">
+const props = defineProps<{
+  text?: string
+}>()
+</script>
 
 <style lang="postcss">
 @screen md {
