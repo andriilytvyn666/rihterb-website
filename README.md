@@ -18,14 +18,16 @@
 - TailwindCSS
 - Vercel
 - Figma
+- Sanity CMS
 
 ## Todo
 
 - [ ] add animations to index page
+- [ ] refactor index page
+
 - [ ] improve directory structure
 - [x] fix hamburger menu position on mobile devices
 - [ ] add CMS to manage content
 - [~] fill with content
 - [x] add meta information & images for og and twitter
-- [ ] refactor index page
-- [ ] fix swiper carousel scrolling on mobile
+- [x] fix swiper carousel scrolling on mobile
