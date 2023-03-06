@@ -1,5 +1,5 @@
 <template>
-  <div class="responsive" v-motion-fade-visible-once>
+  <div class="responsive" v-motion-fade-visible-once v-if="renderCondition">
     <div
       id="swiper-controls"
       class="absolute items-center justify-between h-[18.844rem] w-full flex z-10 sm:mx-4 pointer-events-none"
@@ -47,21 +47,24 @@
         },
       }"
     >
-      <SwiperSlide>
-        <Youtube class="h-full" id="JtQiHyjAfcE" />
-      </SwiperSlide>
-      <SwiperSlide>
-        <Youtube class="h-full" id="OMFeupcAcjc" />
-      </SwiperSlide>
-      <SwiperSlide class="h-20">
-        <Youtube class="h-full" id="7_owFMnNiDE" />
-      </SwiperSlide>
-      <SwiperSlide class="h-20">
-        <Youtube class="h-full" id="lhaGirVXm84" />
+      <SwiperSlide v-for="video in videos" :key="video._id">
+        <Youtube class="h-full" :id="video.youtubeId" />
       </SwiperSlide>
     </Swiper>
   </div>
 </template>
+
+<script lang="ts" setup>
+const query: string = groq`*[_type == "videos"]
+    {_id, youtubeId}`
+
+const { data } = await useSanityQuery<video[]>(query)
+
+const videos = data.value!
+
+const renderCondition: boolean =
+  videos !== undefined && videos !== null && videos.length > 0
+</script>
 
 <style lang="postcss">
 .button-arrow {

@@ -1,11 +1,25 @@
 <template>
-  <nav class="hidden gap-3 sm:flex">
+  <nav class="hidden gap-3 sm:flex" v-if="renderCondition">
     <ButtonNav
+      v-for="link in navLinks"
+      :key="link._id"
       class="border bg-dark-hover border-light-secondary hover:border-light hover:bg-[#383838]"
-      name="новий трек - штані"
-      emoji="jeans"
+      :name="link.title"
+      :emoji="link.icon"
       image
-      link="https://listen.elek3chestvo.com/shtani"
+      :link="link.link"
     />
   </nav>
 </template>
+
+<script setup lang="ts">
+const query: string = groq`*[_type == "nav"]
+    {_id, title, link, icon}`
+
+const { data } = await useSanityQuery<NavLink[]>(query)
+
+const navLinks = data.value!
+
+const renderCondition: boolean =
+  navLinks !== undefined && navLinks !== null && navLinks.length > 0
+</script>
