@@ -1,7 +1,8 @@
 <template>
   <nav
-    class="flex fixed flex-col items-center gap-10 pt-20 h-full mt-28 w-full text-white bg-[#1a1a1a] sm:hidden"
+    class="z-10 flex fixed flex-col items-center gap-10 pt-20 h-full mt-24 w-full text-white bg-[#1a1a1a] sm:hidden"
   >
+    <!-- TODO: add control to cms -->
     <a
       href="https://www.instagram.com/rihterb"
       class="hover:text-[#db545a]"
@@ -21,7 +22,7 @@
       >bandcamp</a
     >
     <NuxtLink target="_blank" to="/" class="hover:text-[#db545a]">
-      інша сторінка
+      на головну
     </NuxtLink>
   </nav>
 </template>

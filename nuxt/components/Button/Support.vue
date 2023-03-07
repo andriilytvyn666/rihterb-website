@@ -15,7 +15,7 @@
     class="custom-support-button bg-[#1E88E5] hover:bg-[#1561a3] active:bg-[#11538c]"
     v-if="props.type == 'diaka'"
   >
-    <NuxtImg src="/diaka.webp" alt="Diaka" width="26" height="24" />
+    <img src="/diaka.webp" alt="Diaka" width="26" height="24" />
     <span class="whitespace-nowrap">Diaka</span>
   </a>
   <a

@@ -1,6 +1,6 @@
 <template>
   <nav
-    class="text-light fixed right-4 h-28 flex items-center top-0 [&>a]:py-2 [&>a]:px-4"
+    class="text-light fixed right-4 h-24 flex items-center top-0 [&>a]:py-2 [&>a]:px-4"
   >
     <a
       href="https://www.instagram.com/rihterb"
@@ -21,7 +21,7 @@
       >bandcamp</a
     >
     <NuxtLink target="_blank" to="/" class="hover:text-[#db545a]">
-      інша сторінка
+      на головну
     </NuxtLink>
   </nav>
 </template>

@@ -42,8 +42,12 @@ useHead({
   },
   link: [
     ...(i18nHead.value.link || []),
-    { rel: 'icon', type: 'image/png', sizes: '64x64', href: 'favicon.png' },
-    { rel: 'apple-touch-icon', sizes: '180x180', href: 'apple-touch-icon.png' },
+    { rel: 'icon', type: 'image/png', sizes: '64x64', href: '/favicon.png' },
+    {
+      rel: 'apple-touch-icon',
+      sizes: '180x180',
+      href: '/apple-touch-icon.png',
+    },
   ],
   meta: [...(i18nHead.value.meta || [])],
 })
