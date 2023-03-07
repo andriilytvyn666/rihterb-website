@@ -1,5 +1,5 @@
 <template>
-  <nav class="grid grid-cols-1 gap-5 sm:hidden">
+  <nav class="grid grid-cols-1 gap-5 sm:hidden" v-if="renderCondition">
     <ButtonNav
       v-for="link in navLinks"
       :key="link._id"
