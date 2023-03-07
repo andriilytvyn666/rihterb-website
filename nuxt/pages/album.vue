@@ -1,26 +1,47 @@
 <template>
   <!-- <DebugIndicator /> -->
-  <div class="bg-[#1a1a1a] h-max">
-    <FirstMenuOpen v-if="store.isMenuOpen" />
+  <div class="bg-[#1a1a1a] h-max" v-if="renderCondition">
+    <AlbumMenuOpen v-if="store.isMenuOpen" />
     <header
       class="sticky top-0 flex items-center justify-center h-28 bg-[#1a1a1a]"
     >
-      <FirstNav class="hidden lg:flex" />
-      <FirstMenuIcon />
-      <NuxtImg src="/pp.png" alt="Logo" width="82" class="w-16 h-16" />
+      <AlbumNav class="hidden lg:flex" />
+      <AlbumMenuIcon />
+      <NuxtImg
+        :src="album.logo.asset._ref"
+        alt="Logo"
+        width="82"
+        class="w-16 h-16"
+      />
     </header>
     <article
       class="mt-16 sm:mt-32 pb-64 sm:mx-auto w-fit mx-4 sm:w-[35rem] z-1"
     >
       <div class="flex flex-col items-center gap-12 font-serif text-white">
-        <h1 class="text-5xl">альбум_тайтл</h1>
+        <h1 class="text-5xl">
+          {{ getLocalizedString($i18n.locale, album.title) }}
+        </h1>
         <div class="w-[19.5rem] bg-opacity-70 h-0.5 bg-white" />
         <div class="flex flex-col items-center text-center">
-          <p>альбом дає можливість зануритись в життя звичайного</p>
-          <p>українця чи українки після початку повномасштабного второгнення</p>
+          <p class="whitespace-pre-line">
+            {{ getLocalizedString($i18n.locale, album.description) }}
+          </p>
         </div>
-        <NuxtImg src="/cover_reduced.jpg" alt="Cover" class="w-full" />
-        <FirstBandcampPlayer />
+        <NuxtImg
+          :src="album.albumImage.asset._ref"
+          alt="Cover"
+          class="w-full"
+        />
+        <div class="w-full h-[29.5rem]">
+          <AlbumBandcampPlayer
+            :albumId="album.albumId"
+            v-if="album.player === 'bandcamp'"
+          />
+          <AlbumSpotifyPlayer
+            :albumId="album.albumId"
+            v-if="album.player === 'spotify'"
+          />
+        </div>
       </div>
     </article>
   </div>
@@ -28,6 +49,15 @@
 
 <script lang="ts" setup>
 import { useFirstStore } from '~~/stores/first'
+
+const query: string = groq`*[_type == "album"][0]
+    {_id, logo, title, description, albumImage, player, albumId}`
+
+const { data } = await useSanityQuery<AlbumPage>(query)
+
+const album = data.value!
+
+const renderCondition: boolean = album !== undefined && album !== null
 
 const store = useFirstStore()
 

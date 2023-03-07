@@ -15,7 +15,7 @@ export default defineConfig({
     deskTool({
       structure: (S) =>
         S.list()
-          .title('Base')
+          .title('Main')
           .items([
             S.listItem()
               .title('Header')
@@ -37,9 +37,13 @@ export default defineConfig({
               .title('Footer Links')
               .icon(LinkIcon)
               .child(S.document().schemaType('footerLinks').documentId('footerLinks')),
+            S.listItem()
+              .title('Album Page')
+              .icon(BlockContentIcon)
+              .child(S.document().schemaType('album').documentId('album')),
             ...S.documentTypeListItems().filter(
               (listItem) =>
-                !['about', 'support', 'post', 'footerLinks', 'header'].includes(
+                !['about', 'support', 'post', 'footerLinks', 'header', 'album'].includes(
                   `${listItem.getId()}`
                 )
             ),

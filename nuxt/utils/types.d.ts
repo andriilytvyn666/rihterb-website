@@ -12,6 +12,15 @@ type localeString = {
   uk: string
 }
 
+type AlbumPage = {
+  logo: image
+  title: localeString
+  description: localeString
+  albumImage: image
+  player: string
+  albumId: string
+}
+
 type Header = {
   logo: image
 }

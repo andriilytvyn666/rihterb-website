@@ -7,6 +7,7 @@ import video from './video'
 import post from './post'
 import footerLinks from './footerLinks'
 import header from './header'
+import album from './album'
 
 export const schemaTypes = [
   localeString,
@@ -18,4 +19,5 @@ export const schemaTypes = [
   post,
   footerLinks,
   header,
+  album,
 ]
