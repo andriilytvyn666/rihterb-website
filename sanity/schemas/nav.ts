@@ -1,9 +1,11 @@
 import {Rule} from 'sanity'
+import {LinkIcon} from '@sanity/icons'
 
 export default {
   name: 'nav',
   type: 'document',
   title: 'Nav Links',
+  icon: LinkIcon,
   fields: [
     {
       name: 'title',

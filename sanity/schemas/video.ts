@@ -1,8 +1,10 @@
 import {Rule} from 'sanity'
+import {DocumentVideoIcon} from '@sanity/icons'
 
 export default {
   name: 'videos',
   type: 'document',
+  icon: DocumentVideoIcon,
   title: 'Videos',
   fields: [
     {

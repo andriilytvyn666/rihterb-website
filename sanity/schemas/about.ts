@@ -1,8 +1,10 @@
 import {Rule} from 'sanity'
+import {UserIcon} from '@sanity/icons'
 
 export default {
   name: 'about',
   type: 'document',
+  icon: UserIcon,
   title: 'About',
   fields: [
     {
