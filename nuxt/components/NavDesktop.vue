@@ -4,7 +4,7 @@
       v-for="link in navLinks"
       :key="link._id"
       class="border bg-dark-hover border-light-secondary hover:border-light hover:bg-[#383838]"
-      :name="link.title"
+      :name="getLocalizedString($i18n.locale, link.title)"
       :emoji="link.icon"
       image
       :link="link.link"

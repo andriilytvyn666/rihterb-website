@@ -1,9 +1,9 @@
 import {Rule} from 'sanity'
 
 export default {
-  name: 'nav',
+  name: 'support',
   type: 'document',
-  title: 'Nav Links',
+  title: 'Support',
   fields: [
     {
       name: 'title',
@@ -11,17 +11,24 @@ export default {
       validation: (rule: Rule) => rule.required(),
     },
     {
-      name: 'link',
+      name: 'text',
+      type: 'localeString',
+      validation: (rule: Rule) => rule.required(),
+    },
+    {
+      name: 'patreonLink',
       type: 'url',
       validation: (rule: Rule) => rule.required(),
     },
     {
-      name: 'icon',
-      description: 'емоджі для лінка',
-      type: 'string',
+      name: 'bandcampLink',
+      type: 'url',
       validation: (rule: Rule) => rule.required(),
-      options: {list: ['fire', 'jeans']},
-      initialValue: 'fire',
+    },
+    {
+      name: 'diakaLink',
+      type: 'url',
+      validation: (rule: Rule) => rule.required(),
     },
   ],
 }

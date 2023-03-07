@@ -1,50 +1,44 @@
 <template>
-  <footer id="footer" class="px-4">
+  <footer id="footer" class="px-4" v-if="renderCondition">
     <div class="flex flex-col items-center justify-between copyright-text">
-      <span>Copyright © 2023 Василь Ріхтер</span>
+      <span>{{ $t('copyright') }}</span>
       <a
         href="https://andriilytvyn.pp.ua"
         target="_blank"
         class="hover:underline"
-        >Розробник: Андрій Литвин</a
+        >{{ $t('dev') }}</a
       >
     </div>
     <div class="links-container">
-      <ButtonFooterIcon
-        name="spotify"
-        link="https://open.spotify.com/artist/1BVc2E4oUK6Md4Mte88JPL"
-      />
-      <ButtonFooterIcon
-        name="youtubemusic"
-        link="https://music.youtube.com/channel/UCZGPjMchF7bUpZeQ6ScTynA"
-      />
-      <ButtonFooterIcon
-        name="applemusic"
-        link="https://music.apple.com/us/artist/vasily-richter/1534786803"
-      />
+      <ButtonFooterIcon name="spotify" :link="links.spotify" />
+      <ButtonFooterIcon name="youtubemusic" :link="links.youtubemusic" />
+      <ButtonFooterIcon name="applemusic" :link="links.applemusic" />
       <div class="hidden custom-separator sm:block" />
-      <ButtonFooterIcon
-        name="instagram"
-        link="https://www.instagram.com/rihterb"
-      />
-      <ButtonFooterIcon name="telegram" link="https://t.me/rihterb" />
-      <ButtonFooterIcon
-        name="youtube"
-        link="https://www.youtube.com/@rihterb"
-      />
+      <ButtonFooterIcon name="instagram" :link="links.instagram" />
+      <ButtonFooterIcon name="telegram" :link="links.telegram" />
+      <ButtonFooterIcon name="youtube" :link="links.youtube" />
       <div class="hidden custom-separator sm:block" />
-      <ButtonFooterIcon
-        name="patreon"
-        link="https://www.patreon.com/join/vasilyrichter"
-      />
+      <ButtonFooterIcon name="patreon" :link="links.patreon" />
       <ButtonFooterIcon
         name="bandcamp"
         class="hidden min-[392px]:block"
-        link="https://vasilyrichter.bandcamp.com/"
+        :link="links.bandcamp"
       />
     </div>
   </footer>
 </template>
+
+<script setup lang="ts">
+const query: string = groq`*[_type == "footerLinks"][0]
+    {_id, spotify, youtubemusic, applemusic, instgram, 
+     telegram, youtube, patreon, bandcamp}`
+
+const { data } = await useSanityQuery<FooterLinks>(query)
+
+const links = data.value!
+
+const renderCondition: boolean = links !== undefined && links !== null
+</script>
 
 <style class="postcss">
 .links-container {

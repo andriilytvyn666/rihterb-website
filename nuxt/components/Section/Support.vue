@@ -1,26 +1,31 @@
 <template>
-  <div class="rounded-lg bg-dark-hover support-content">
+  <div class="rounded-lg bg-dark-hover support-content" v-if="renderCondition">
     <div class="flex flex-col w-full gap-4 font-bold text-left">
       <span class="text-2xl text-center support-title text-highlight">
-        Підтримайте мене
+        {{ getLocalizedString($i18n.locale, support.title) }}
       </span>
       <span class="text-xl support-description text-light">
-        Щоб я міг продовжувати створювати нову музику. Дякую!
+        {{ getLocalizedString($i18n.locale, support.text) }}
       </span>
     </div>
     <div class="support-buttons">
-      <ButtonSupport
-        link="https://www.patreon.com/vasilyrichter"
-        type="patreon"
-      />
-      <ButtonSupport
-        link="https://vasilyrichter.bandcamp.com/"
-        type="bandcamp"
-      />
-      <ButtonSupport link="https://rihterb.diaka.ua/donate" type="diaka" />
+      <ButtonSupport :link="support.patreonLink" type="patreon" />
+      <ButtonSupport :link="support.bandcampLink" type="bandcamp" />
+      <ButtonSupport :link="support.diakaLink" type="diaka" />
     </div>
   </div>
 </template>
+
+<script setup lang="ts">
+const query: string = groq`*[_type == "support"][0]
+    {_id, title, text, patreonLink, bandcampLink, diakaLink}`
+
+const { data } = await useSanityQuery<Support>(query)
+
+const support = data.value!
+
+const renderCondition: boolean = support !== undefined && support !== null
+</script>
 
 <style lang="postcss">
 .support-buttons {
