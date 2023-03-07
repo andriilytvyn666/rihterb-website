@@ -11,7 +11,7 @@
       />
       <NuxtImg
         id="photo"
-        src="/rihter_alt.webp"
+        :src="about.photo.asset._ref"
         alt="Ріхтер"
         class="ml-[0.375rem] object-cover w-[18.75rem] h-[18.75rem] rounded-lg"
         width="300"
@@ -34,7 +34,7 @@
 
 <script setup lang="ts">
 const query: string = groq`*[_type == "about"][0]
-    {_id, name, subtitle, description, links}`
+    {_id, name, photo, subtitle, description, links}`
 
 const { data } = await useSanityQuery<About>(query)
 

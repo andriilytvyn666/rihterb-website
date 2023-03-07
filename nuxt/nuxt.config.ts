@@ -16,7 +16,7 @@ export default defineNuxtConfig({
     '@vueuse/motion/nuxt',
   ],
   image: {
-    provider: 'vercel',
+    provider: 'sanity',
     sanity: {
       projectId: 'lh08fn64',
     },

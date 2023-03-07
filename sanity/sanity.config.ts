@@ -2,7 +2,7 @@ import {defineConfig} from 'sanity'
 import {deskTool} from 'sanity/desk'
 import {visionTool} from '@sanity/vision'
 import {schemaTypes} from './schemas'
-import {UserIcon, LinkIcon, BlockContentIcon, HeartFilledIcon} from '@sanity/icons'
+import {UserIcon, LinkIcon, BlockContentIcon, HeartFilledIcon, ImageIcon} from '@sanity/icons'
 
 export default defineConfig({
   name: 'default',
@@ -17,6 +17,10 @@ export default defineConfig({
         S.list()
           .title('Base')
           .items([
+            S.listItem()
+              .title('Header')
+              .icon(ImageIcon)
+              .child(S.document().schemaType('header').documentId('header')),
             S.listItem()
               .title('About')
               .icon(UserIcon)
@@ -35,7 +39,9 @@ export default defineConfig({
               .child(S.document().schemaType('footerLinks').documentId('footerLinks')),
             ...S.documentTypeListItems().filter(
               (listItem) =>
-                !['about', 'support', 'post', 'footerLinks'].includes(`${listItem.getId()}`)
+                !['about', 'support', 'post', 'footerLinks', 'header'].includes(
+                  `${listItem.getId()}`
+                )
             ),
           ]),
     }),

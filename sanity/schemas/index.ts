@@ -6,5 +6,16 @@ import support from './support'
 import video from './video'
 import post from './post'
 import footerLinks from './footerLinks'
+import header from './header'
 
-export const schemaTypes = [localeString, about, listenLink, video, nav, support, post, footerLinks]
+export const schemaTypes = [
+  localeString,
+  about,
+  listenLink,
+  video,
+  nav,
+  support,
+  post,
+  footerLinks,
+  header,
+]

@@ -12,6 +12,10 @@ type localeString = {
   uk: string
 }
 
+type Header = {
+  logo: image
+}
+
 type FooterLinks = {
   spotify: string
   youtubemusic: string
