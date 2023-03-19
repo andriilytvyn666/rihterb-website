@@ -1,3 +1,4 @@
+<!-- TODO: find a way to improve UI/UX in navs -->
 <template>
   <nav class="hidden gap-3 sm:flex" v-if="renderCondition">
     <ButtonNav

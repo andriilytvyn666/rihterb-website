@@ -1,17 +1,19 @@
 <template>
   <header
     id="header"
-    class="flex items-center justify-between h-20 mx-4 mt-6"
+    class="flex items-center justify-between h-20 mx-4 mt-6 px-4"
     v-if="renderCondition"
   >
     <div class="flex items-center gap-3">
-      <NuxtImg
-        :src="header.logo.asset._ref"
-        alt="Ріхтер"
-        class="h-12 w-fit"
-        width="82"
-        height="48"
-      />
+      <NuxtLink to="/">
+        <NuxtImg
+          :src="header.logo.asset._ref"
+          alt="Ріхтер"
+          class="h-12 w-fit"
+          width="82"
+          height="48"
+        />
+      </NuxtLink>
     </div>
     <NavDesktop />
   </header>
