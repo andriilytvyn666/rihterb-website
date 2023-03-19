@@ -1,5 +1,6 @@
 import en from './locales/en-US.json'
 import uk from './locales/uk-UA.json'
+import ru from './locales/ru-RU.json'
 
 import eslintPlugin from 'vite-plugin-eslint'
 
@@ -24,7 +25,7 @@ export default defineNuxtConfig({
   sanity: {
     projectId: 'lh08fn64',
     dataset: 'production',
-    apiVersion: '2023-03-06',
+    apiVersion: '2023-03-07',
     minimal: true,
   },
   vite: {
@@ -37,7 +38,7 @@ export default defineNuxtConfig({
     defaultLocale: 'uk',
     detectBrowserLanguage: {
       alwaysRedirect: true, // TODO: find a way to avoid redirection when visiting another locales page manually
-      fallbackLocale: 'uk',
+      fallbackLocale: 'en',
       useCookie: false, // TODO: find out why locale switching doesn't work properly
       cookieKey: 'i18n_redirected',
       redirectOn: 'root',
@@ -47,20 +48,25 @@ export default defineNuxtConfig({
         name: 'English',
         iso: 'en-US',
         code: 'en',
+        isCatchallLocale: true,
       },
       {
         name: 'Українська',
         iso: 'uk-UA',
         code: 'uk',
-        isCatchallLocale: true,
+      },
+      {
+        name: 'Українська також нахуй росію',
+        iso: 'ru-RU',
+        code: 'ru',
       },
     ],
     vueI18n: {
       legacy: false,
       locale: 'uk',
-      fallbackLocale: 'uk',
-      availableLocales: ['en', 'uk'],
-      messages: { en, uk },
+      fallbackLocale: 'en',
+      availableLocales: ['en', 'uk', 'ru'],
+      messages: { en, uk, ru },
     },
   },
 })

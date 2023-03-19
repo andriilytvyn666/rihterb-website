@@ -1,6 +1,6 @@
 <template>
   <nav
-    class="z-10 flex fixed flex-col items-center gap-10 pt-20 h-full mt-24 w-full text-white bg-[#1a1a1a] sm:hidden"
+    class="z-10 flex fixed flex-col items-center gap-10 pt-20 h-full mt-24 w-full text-white bg-[#1a1a1a] md:hidden"
   >
     <!-- TODO: add control to cms -->
     <NuxtLink target="_parent" to="/" class="hover:text-[#db545a]">

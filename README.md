@@ -22,12 +22,12 @@
 
 ## Todo
 
-- [ ] add animations to index page
-- [ ] refactor index page
+- [x] add animations everywhere
+- [x] refactor index page
 
 - [ ] improve directory structure
 - [x] fix hamburger menu position on mobile devices
-- [ ] add CMS to manage content
-- [~] fill with content
+- [x] add CMS to manage content
+- [x] fill with content
 - [x] add meta information & images for og and twitter
 - [x] fix swiper carousel scrolling on mobile

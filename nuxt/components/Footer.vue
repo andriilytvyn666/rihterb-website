@@ -30,7 +30,7 @@
 
 <script setup lang="ts">
 const query: string = groq`*[_type == "footerLinks"][0]
-    {_id, spotify, youtubemusic, applemusic, instgram, 
+    {_id, spotify, youtubemusic, applemusic, instagram, 
      telegram, youtube, patreon, bandcamp}`
 
 const { data } = await useSanityQuery<FooterLinks>(query)

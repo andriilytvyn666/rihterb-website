@@ -1,5 +1,5 @@
 <template>
-  <NuxtLayout name="second">
+  <NuxtLayout name="home">
     <!-- <DebugIndicator /> -->
     <NavMobile v-motion-fade-visible-once />
     <SectionAbout v-motion-slide-visible-once-bottom />

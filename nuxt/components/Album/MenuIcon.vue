@@ -1,6 +1,6 @@
 <template>
   <div class="absolute top-0 flex items-center h-24 right-10">
-    <button class="text-2xl lg:hidden text-light" @click="toggleMenu">
+    <button class="text-2xl md:hidden text-light" @click="toggleMenu">
       <NuxtIcon :name="`social/${icon}`" filled />
     </button>
   </div>
