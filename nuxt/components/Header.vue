@@ -4,8 +4,9 @@
     class="flex items-center justify-between h-20 mx-4 mt-6 px-4"
     v-if="renderCondition"
   >
+    <!-- TODO: fix links; add type property for nav links to sanity -->
     <div class="flex items-center gap-3">
-      <NuxtLink to="/">
+      <NuxtLink to="https://rihterb.pp.ua">
         <NuxtImg
           :src="header.logo.asset._ref"
           alt="Ріхтер"
