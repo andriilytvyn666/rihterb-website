@@ -15,16 +15,16 @@
 
 <script setup lang="ts">
 useServerSeoMeta({
-  title: 'Vasyl Rihter',
+  title: 'Ріхтер',
   description:
-    'Hi there! I am a Ukrainian indie musician who writes psychedelic indie songs with a unique sound. In my music, I blend different genres and explore emotional spaces, creating a one-of-a-kind atmosphere.',
-  author: 'Vasyl Rihter',
+    'український інді-музикант. пишу психоделічні інді пісні з унікальним саундом. поєднуючи різні жанри, досліджую емоційні простори, створюючи неповторний настрій.',
+  author: 'Vasily Richter',
   robots: 'all noarchive',
   charset: 'utf-8',
-  ogTitle: 'Vasyl Rihter',
+  ogTitle: 'Ріхтер',
   ogDescription:
-    'Hi there! I am a Ukrainian indie musician who writes psychedelic indie songs with a unique sound. In my music, I blend different genres and explore emotional spaces, creating a one-of-a-kind atmosphere.',
-  twitterTitle: 'Vasyl Rihter',
+    'український інді-музикант. пишу психоделічні інді пісні з унікальним саундом. поєднуючи різні жанри, досліджую емоційні простори, створюючи неповторний настрій.',
+  twitterTitle: 'Ріхтер',
   twitterDescription:
     'Hi there! I am a Ukrainian indie musician who writes psychedelic indie songs with a unique sound. In my music, I blend different genres and explore emotional spaces, creating a one-of-a-kind atmosphere.',
   twitterCard: 'summary_large_image',
