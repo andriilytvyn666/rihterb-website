@@ -69,7 +69,7 @@ const renderCondition: boolean =
 <style lang="postcss">
 .button-arrow {
   @apply transition ease-in-out duration-300;
-  @apply bg-dark-hover hover:bg-[#282828];
+  @apply bg-dark-hover hover:bg-[#383838];
   @apply flex items-center justify-center w-12 h-12 rounded-full text-light;
   @apply cursor-pointer;
 }
