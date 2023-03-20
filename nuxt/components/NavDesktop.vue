@@ -2,6 +2,8 @@
 <template>
   <nav class="hidden gap-3 sm:flex" v-if="renderCondition">
     <ButtonNav
+      :linkType="link.linkType"
+      :target="link.target"
       v-for="link in navLinks"
       :key="link._id"
       class="border bg-dark-hover border-light-secondary hover:border-light hover:bg-[#383838]"
@@ -15,7 +17,7 @@
 
 <script setup lang="ts">
 const query: string = groq`*[_type == "nav"]
-    {_id, title, link, icon}`
+    {_id, title, linkType, target, link, icon}`
 
 const { data } = await useSanityQuery<NavLink[]>(query)
 

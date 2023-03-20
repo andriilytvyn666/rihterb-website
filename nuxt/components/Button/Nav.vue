@@ -1,5 +1,15 @@
 <template>
-  <a :href="link" target="_blank" class="nav-button hover:bg-dark-hover">
+  <NuxtLink
+    :to="
+      props.linkType === 'web'
+        ? props.link
+        : `https://rihterb.pp.ua/${$i18n.locale === 'en' ? 'en/' : ''}${
+            props.link
+          }`
+    "
+    :target="props.target === 'New page' ? '_blank' : '_self'"
+    class="nav-button hover:bg-dark-hover"
+  >
     <nuxt-icon
       :name="`social/${icon}`"
       filled
@@ -13,13 +23,15 @@
       v-else
     />
     <span class="pointer-events-none">{{ props.name }}</span>
-  </a>
+  </NuxtLink>
 </template>
 
 <script lang="ts" setup>
 const props = defineProps<{
   name: string
   icon?: string
+  linkType: string
+  target: string
   link: string
   image: boolean
   emoji?: string

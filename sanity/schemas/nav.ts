@@ -13,8 +13,24 @@ export default {
       validation: (rule: Rule) => rule.required(),
     },
     {
+      name: 'linkType',
+      type: 'string',
+      validation: (rule: Rule) => rule.required(),
+      options: {list: ['web', 'local']},
+      initialValue: 'web',
+    },
+    {
+      name: 'target',
+      type: 'string',
+      validation: (rule: Rule) => rule.required(),
+      options: {list: ['New page', 'Same page']},
+      initialValue: 'Same page',
+    },
+    {
       name: 'link',
-      type: 'url',
+      description:
+        'якщо тип лінка web, то лінк на будь-який сайт, а якщо local, то відносно сайта (те що після слеша йде). приклад: rihterb.pp.ua/album - album',
+      type: 'string',
       validation: (rule: Rule) => rule.required(),
     },
     {

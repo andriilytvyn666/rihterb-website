@@ -71,6 +71,8 @@ type ListenLink = {
 type NavLink = {
   _id: string
   title: localeString
+  linkType: string
+  target: string
   link: string
   icon: string
 }
