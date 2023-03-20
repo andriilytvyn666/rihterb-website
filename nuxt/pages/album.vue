@@ -3,22 +3,24 @@
     <!-- <DebugIndicator /> -->
     <NavMobile />
     <article
-      class="z-0 mt-0 sm:mt-16 pb-16 sm:mx-auto w-fit mx-4 sm:w-[35rem] z-1"
+      class="z-0 mt-0 sm:mt-16 sm:mx-auto w-fit mx-4 sm:w-[35rem] z-1"
       v-if="renderCondition"
     >
-      <div class="flex flex-col items-center gap-8">
+      <div
+        class="flex flex-col items-center gap-8 selection:bg-light-secondary"
+      >
         <h1
-          class="text-5xl font-bold text-white"
+          class="text-5xl font-bold text-white select-text"
           v-motion-slide-visible-once-top
         >
           {{ getLocalizedString($i18n.locale, album.title) }}
         </h1>
-        <div class="w-[19.5rem] h-0.5 bg-white" v-motion-fade-visible-once />
+        <div class="w-[20rem] h-0.5 bg-white" v-motion-fade-visible-once />
         <div
           class="flex flex-col items-center text-center text-xl text-white"
           v-motion-slide-visible-once-bottom
         >
-          <p class="whitespace-pre-line">
+          <p class="whitespace-pre-line select-text">
             {{ getLocalizedString($i18n.locale, album.description) }}
           </p>
         </div>
@@ -28,7 +30,7 @@
           alt="Cover"
           class="w-full rounded-lg"
         />
-        <div class="w-full h-[29.5rem]" v-motion-slide-visible-once-bottom>
+        <div class="w-full h-[36rem]" v-motion-slide-visible-once-bottom>
           <AlbumBandcampPlayer
             :albumId="album.albumId"
             v-if="album.player === 'bandcamp'"
