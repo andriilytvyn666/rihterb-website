@@ -8,7 +8,7 @@
           }`
     "
     :target="props.target === 'New page' ? '_blank' : '_self'"
-    class="nav-button hover:bg-dark-hover"
+    class="nav-button"
   >
     <nuxt-icon
       :name="`social/${icon}`"
@@ -40,8 +40,10 @@ const props = defineProps<{
 
 <style lang="postcss">
 .nav-button {
-  @apply text-light text-lg;
+  @apply text-light bg-dark-hover text-lg;
   @apply flex gap-3 items-center justify-center py-3 px-8 rounded-lg;
   @apply transition ease-in-out duration-300;
+  @apply border border-dark-hover;
+  @apply hover:border-light hover:bg-[#383838];
 }
 </style>
