@@ -2,7 +2,7 @@
   <div class="flex flex-col gap-[1.125rem]">
     <div>
       <p
-        class="text-2xl font-bold select-text text-light about-description selection:bg-light-secondary"
+        class="leading-snug text-2xl font-semibold select-text text-light about-description selection:bg-light-secondary"
       >
         {{ props.text }}
       </p>
@@ -28,7 +28,7 @@ const props = defineProps<{
 
 @screen lg {
   .about-description {
-    @apply text-3xl;
+    @apply text-2xl;
   }
 }
 </style>

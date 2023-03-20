@@ -1,7 +1,6 @@
 <template>
   <NuxtLayout name="home">
-    <!-- <DebugIndicator /> -->
-    <NavMobile />
+    <NavMobile v-motion-fade-visible-once />
     <article
       class="z-0 mt-0 sm:mt-16 sm:mx-auto w-fit mx-4 sm:w-[35rem] z-1"
       v-if="renderCondition"
@@ -10,17 +9,17 @@
         class="flex flex-col items-center gap-8 selection:bg-light-secondary"
       >
         <h1
-          class="text-5xl font-bold text-white select-text"
+          class="text-4xl font-bold text-white select-text"
           v-motion-slide-visible-once-top
         >
           {{ getLocalizedString($i18n.locale, album.title) }}
         </h1>
-        <div class="w-[20rem] h-0.5 bg-white" v-motion-fade-visible-once />
+        <div class="w-[20rem] border-b bg-white" v-motion-fade-visible-once />
         <div
           class="flex flex-col items-center text-center text-xl text-white"
           v-motion-slide-visible-once-bottom
         >
-          <p class="whitespace-pre-line select-text">
+          <p class="whitespace-pre-line leading-snug font-semibold select-text">
             {{ getLocalizedString($i18n.locale, album.description) }}
           </p>
         </div>

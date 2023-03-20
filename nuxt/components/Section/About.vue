@@ -2,7 +2,7 @@
   <div class="flex flex-col gap-8 about-container" v-if="renderCondition">
     <div
       v-motion-fade-visible-once
-      class="flex flex-col items-center gap-8 about-body"
+      class="flex flex-col items-center gap-12 about-body"
     >
       <AboutText
         :subtitle="getLocalizedString($i18n.locale, about.subtitle)"
@@ -13,7 +13,7 @@
         id="photo"
         :src="about.photo.asset._ref"
         alt="Ріхтер"
-        class="ml-[0.375rem] object-cover w-[18.75rem] h-[18.75rem] rounded-lg"
+        class="ml-[0.375rem] object-cover w-[18rem] h-[18rem] rounded-lg"
         width="300"
         height="300"
       />

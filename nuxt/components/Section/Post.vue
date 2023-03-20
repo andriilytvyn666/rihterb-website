@@ -12,8 +12,8 @@
       v-if="post.player === 'spotify'"
     />
     <div class="post-content md:col-span-7 lg:col-span-8">
-      <div class="flex flex-col gap-1.5">
-        <span class="text-4xl font-bold text-highlight-secondary">
+      <div class="flex flex-col gap-1.5 post-head">
+        <span class="text-3xl font-bold text-highlight-secondary">
           {{ getLocalizedString($i18n.locale, post.title) }}
         </span>
         <span class="text-xl font-semibold text-light-secondary">
@@ -23,9 +23,14 @@
       <div class="post-text">
         <div class="flex flex-col gap-6">
           <p
+            v-for="par in getLocalizedString($i18n.locale, post.text).split(
+              '\\n'
+            )"
+            :key="par"
             class="whitespace-pre-line select-text selection:bg-light-secondary"
+            v-motion-slide-visible-once-bottom
           >
-            {{ getLocalizedString($i18n.locale, post.text) }}
+            {{ par }}
           </p>
         </div>
       </div>
@@ -46,11 +51,16 @@ const renderCondition: boolean = post !== undefined && post !== null
 
 <style lang="postcss">
 .post-text {
-  @apply flex flex-col gap-8 font-bold text-light text-2xl;
+  @apply flex flex-col gap-8 font-semibold text-light text-2xl;
+  @apply leading-snug;
 }
 
 .post-content {
   @apply flex flex-col gap-6;
+}
+
+.post-head {
+  @apply text-center;
 }
 
 @screen sm {
@@ -65,6 +75,10 @@ const renderCondition: boolean = post !== undefined && post !== null
 }
 
 @screen md {
+  .post-head {
+    @apply text-left;
+  }
+
   .post-container {
     @apply grid-cols-12;
   }
@@ -79,7 +93,7 @@ const renderCondition: boolean = post !== undefined && post !== null
 
 @screen lg {
   .post-text {
-    @apply text-3xl;
+    @apply text-2xl;
   }
 
   .post-content {

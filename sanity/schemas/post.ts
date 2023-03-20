@@ -17,6 +17,7 @@ export default {
     },
     {
       name: 'text',
+      description: 'тепер можна розділяти на параграфи, просто у кінці кожного треба ставити \\n',
       type: 'localeString',
       validation: (rule: Rule) => rule.required(),
     },
@@ -30,7 +31,7 @@ export default {
     {
       name: 'albumId',
       description:
-        '0qiorHnzWjHAdWMqbSKe0s для такого спотіфай спотіфай https://open.spotify.com/album/0qiorHnzWjHAdWMqbSKe0s; для бендкемпу наприклад такий 148721193, можна знайти у iframe ембедед плеера бендкемпа https://bandcamp.com/EmbeddedPlayer/album=148721193/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/transparent=true/',
+        'не треба кидати повний лінк на споті чи бендкемп сюди, треба тільки id альбома. виявилося, що можна кидати лінк на окремий трек на бендкемпі.',
       type: 'string',
       validation: (rule: Rule) => rule.required(),
     },
