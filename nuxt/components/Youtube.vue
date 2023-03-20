@@ -2,7 +2,7 @@
   <iframe
     id="youtube-player"
     class="w-full rounded-lg aspect-video"
-    :src="`https://www.youtube.com/embed/${props.id.replace(
+    :src="`https://www.youtube.com/embed/${props.link.replace(
       'https://www.youtube.com/watch?v=',
       ''
     )}`"
