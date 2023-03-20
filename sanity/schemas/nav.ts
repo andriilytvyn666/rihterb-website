@@ -21,6 +21,7 @@ export default {
     },
     {
       name: 'target',
+      description: 'відкривати у новій вкладці чи в тій самій',
       type: 'string',
       validation: (rule: Rule) => rule.required(),
       options: {list: ['New page', 'Same page']},
@@ -42,4 +43,10 @@ export default {
       initialValue: 'fire',
     },
   ],
+  preview: {
+    select: {
+      title: 'title.en',
+      subtitle: 'link',
+    },
+  },
 }

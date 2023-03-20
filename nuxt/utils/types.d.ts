@@ -58,7 +58,8 @@ type image = {
 
 type video = {
   _id: string
-  youtubeId: string
+  orderId: int
+  youtubeLink: string
 }
 
 type ListenLink = {

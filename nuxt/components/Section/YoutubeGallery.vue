@@ -48,15 +48,15 @@
       }"
     >
       <SwiperSlide v-for="video in videos" :key="video._id">
-        <Youtube class="h-full" :id="video.youtubeId" />
+        <Youtube class="h-full" :link="video.youtubeLink" />
       </SwiperSlide>
     </Swiper>
   </div>
 </template>
 
 <script lang="ts" setup>
-const query: string = groq`*[_type == "videos"]
-    {_id, youtubeId}`
+const query: string = groq`*[_type == "videos"] | order(orderId asc)
+     {_id, orderId, youtubeLink}`
 
 const { data } = await useSanityQuery<video[]>(query)
 

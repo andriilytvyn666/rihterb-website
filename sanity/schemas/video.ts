@@ -8,10 +8,28 @@ export default {
   title: 'Videos',
   fields: [
     {
-      name: 'youtubeId',
-      description: 'https://www.youtube.com/watch?v=JtQiHyjAfcE ця частина JtQiHyjAfcE',
+      name: 'orderId',
+      description: 'це поки єдиний спосіб вибрати порядок відео, трохи пізніше зроблю нормально',
+      type: 'number',
+      validation: (rule: Rule) => rule.required(),
+    },
+    {
+      name: 'youtubeLink',
       type: 'string',
       validation: (rule: Rule) => rule.required(),
     },
   ],
+  orderings: [
+    {
+      title: 'Order',
+      name: 'order',
+      by: [{field: 'orderId', direction: 'asc'}],
+    },
+  ],
+  preview: {
+    select: {
+      title: 'orderId',
+      subtitle: 'youtubeLink',
+    },
+  },
 }

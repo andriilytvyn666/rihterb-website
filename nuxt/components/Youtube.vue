@@ -2,7 +2,10 @@
   <iframe
     id="youtube-player"
     class="w-full rounded-lg aspect-video"
-    :src="`https://www.youtube.com/embed/${props.id}`"
+    :src="`https://www.youtube.com/embed/${props.id.replace(
+      'https://www.youtube.com/watch?v=',
+      ''
+    )}`"
     frameborder="0"
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
     allowfullscreen
@@ -13,6 +16,6 @@
 
 <script lang="ts" setup>
 const props = defineProps<{
-  id: string
+  link: string
 }>()
 </script>
