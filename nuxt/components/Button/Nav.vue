@@ -9,7 +9,7 @@
     "
     :target="props.target === 'New page' ? '_blank' : '_self'"
     :class="`nav-button ${
-      props.name === '' ? 'px-4 h-12 w-12 sm:px-4' : 'px-8'
+      props.name === '' ? 'px-4 h-12 w-12 sm:h-auto sm:w-auto sm:px-4' : 'px-8'
     }`"
   >
     <nuxt-icon
