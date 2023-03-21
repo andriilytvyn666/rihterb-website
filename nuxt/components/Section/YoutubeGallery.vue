@@ -20,7 +20,7 @@
     <Swiper
       :modules="[SwiperNavigation]"
       free-mode
-      :slides-per-view="1.1"
+      :slides-per-view="1"
       :space-between="20"
       :watch-overflow="true"
       :navigation="{
@@ -31,19 +31,19 @@
       class="w-full h-[18.844rem] absolute z-0"
       :breakpoints="{
         500: {
-          slidesPerView: 1.1,
+          slidesPerView: 1,
         },
         640: {
-          slidesPerView: 1.1,
+          slidesPerView: 1,
         },
         768: {
-          slidesPerView: 1.1,
+          slidesPerView: 1,
         },
         1024: {
-          slidesPerView: 2.1,
+          slidesPerView: 2,
         },
         1240: {
-          slidesPerView: 2.1,
+          slidesPerView: 2,
         },
       }"
     >
@@ -70,7 +70,8 @@ const renderCondition: boolean =
 .button-arrow {
   @apply transition ease-in-out duration-300;
   @apply bg-dark-hover hover:bg-[#282828];
-  @apply flex items-center justify-center w-12 h-12 rounded-full text-light;
+  @apply border border-dark-hover hover:border-light-secondary;
+  @apply flex items-center justify-center w-12 h-12 rounded-lg text-light;
   @apply cursor-pointer;
 }
 
