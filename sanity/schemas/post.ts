@@ -15,10 +15,10 @@ export default {
       type: 'localeString',
       validation: (rule: Rule) => rule.required(),
     },
+
     {
       name: 'text',
-      description: 'тепер можна розділяти на параграфи, просто у кінці кожного треба ставити \\n',
-      type: 'localeString',
+      type: 'localePortableText',
       validation: (rule: Rule) => rule.required(),
     },
     {

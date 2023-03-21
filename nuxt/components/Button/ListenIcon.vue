@@ -21,6 +21,6 @@ const props = defineProps<{
   @apply transition ease-in-out duration-300;
   @apply items-center gap-4;
   @apply bg-dark-hover border border-dark-hover;
-  @apply hover:border-light-secondary;
+  @apply hover:border-light-secondary hover:bg-[#282828];
 }
 </style>

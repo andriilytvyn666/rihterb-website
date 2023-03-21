@@ -44,6 +44,6 @@ const props = defineProps<{
   @apply flex gap-3 items-center justify-center py-3 px-8 rounded-lg;
   @apply transition ease-in-out duration-300;
   @apply border border-dark-hover;
-  @apply hover:border-light hover:bg-[#383838];
+  @apply hover:border-light-secondary hover:bg-[#282828];
 }
 </style>

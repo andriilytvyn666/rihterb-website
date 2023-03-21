@@ -12,6 +12,11 @@ type localeString = {
   uk: string
 }
 
+type localePortableText = {
+  en: Any
+  uk: Any
+}
+
 type AlbumPage = {
   logo: image
   title: localeString
@@ -39,7 +44,7 @@ type FooterLinks = {
 type Post = {
   title: localeString
   subtitle: localeString
-  text: localeString
+  text: localePortableText
   player: string
   albumId: string
 }

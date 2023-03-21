@@ -22,16 +22,9 @@
       </div>
       <div class="post-text">
         <div class="flex flex-col gap-6">
-          <p
-            v-for="par in getLocalizedString($i18n.locale, post.text).split(
-              '\\n'
-            )"
-            :key="par"
-            class="whitespace-pre-line select-text selection:bg-light-secondary"
-            v-motion-slide-visible-once-bottom
-          >
-            {{ par }}
-          </p>
+          <SanityContent
+            :blocks="getLocalizedPortableText($i18n.locale, post.text)"
+          />
         </div>
       </div>
     </div>
