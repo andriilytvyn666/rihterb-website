@@ -16,7 +16,7 @@
         </h1>
         <div class="w-[20rem] border-b bg-white" v-motion-fade-visible-once />
         <div
-          class="flex flex-col items-center text-xl text-center text-white"
+          class="flex flex-col items-center text-xl text-white"
           v-motion-slide-visible-once-bottom
         >
           <p class="font-semibold leading-snug whitespace-pre-line select-text">

@@ -13,5 +13,15 @@ export default {
       validation: (rule: Rule) => rule.required(),
       options: {accept: 'image/webp'},
     },
+    {
+      name: 'linkTelegram',
+      type: 'url',
+      validation: (rule: Rule) => rule.required(),
+    },
+    {
+      name: 'linkInstagram',
+      type: 'url',
+      validation: (rule: Rule) => rule.required(),
+    },
   ],
 }

@@ -1,7 +1,7 @@
 <template>
   <header
     id="header"
-    class="flex items-center justify-between h-20 mx-4 mt-6 px-4"
+    class="flex items-center justify-between w-full h-20 px-4 mx-4 mt-6"
     v-if="renderCondition"
   >
     <!-- TODO: fix links; add type property for nav links to sanity -->
@@ -16,9 +16,33 @@
         />
       </NuxtLink>
     </div>
+    <div class="flex gap-3 sm:hidden">
+      <ButtonNav
+        name=""
+        class="text-[#26A5E4] telegram-bg"
+        linkType="web"
+        target="New page"
+        :link="header.linkTelegram"
+        icon="telegram2"
+      />
+      <ButtonNav
+        name=""
+        class="text-light instagram-bg instagram-custom"
+        linkType="web"
+        target="New page"
+        :link="header.linkInstagram"
+        icon="instagram"
+      />
+    </div>
     <NavDesktop />
   </header>
 </template>
+
+<style lang="postcss">
+.instagram-custom {
+  @apply hover:border-light !important;
+}
+</style>
 
 <script setup lang="ts">
 const query: string = groq`*[_type == "header"][0]

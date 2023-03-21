@@ -29,6 +29,8 @@ type AlbumPage = {
 
 type Header = {
   logo: image
+  linkTelegram: string
+  linkInstagram: string
 }
 
 type FooterLinks = {
