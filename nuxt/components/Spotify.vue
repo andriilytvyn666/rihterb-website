@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full h-full overflow-hidden md:h-auto">
+  <div class="w-full md:min-h-[36rem] h-full overflow-hidden">
     <iframe
       style="border-radius: 12px"
       :class="`md:h-full  ${
