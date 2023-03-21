@@ -14,7 +14,7 @@
     <div class="hidden gap-3 md:flex">
       <ButtonNav
         name=""
-        class="text-[#26A5E4] telegram-bg"
+        class="text-[#26A5E4]"
         linkType="web"
         target="New page"
         :link="header.linkTelegram"

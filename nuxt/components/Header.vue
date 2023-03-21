@@ -19,7 +19,7 @@
     <div class="flex gap-3 sm:hidden">
       <ButtonNav
         name=""
-        class="text-[#26A5E4] telegram-bg"
+        class="text-[#26A5E4] telegram-custom"
         linkType="web"
         target="New page"
         :link="header.linkTelegram"
@@ -32,6 +32,7 @@
         target="New page"
         :link="header.linkInstagram"
         icon="instagram"
+        \
       />
     </div>
     <NavDesktop />
@@ -40,7 +41,11 @@
 
 <style lang="postcss">
 .instagram-custom {
-  @apply hover:border-light !important;
+  @apply hover:border-light rounded-full !important;
+}
+
+.telegram-custom {
+  @apply rounded-full !important;
 }
 </style>
 
