@@ -1,27 +1,34 @@
 <template>
   <div class="grid grid-cols-1 gap-8 post-container" v-if="renderCondition">
     <Bandcamp
-      :albumId="post.albumId"
+      :link="post.link"
+      :bandcamp-link="post.bandcampLink"
       id="bandcamp-player"
       v-if="post.player === 'bandcamp'"
     />
     <Spotify
-      :albumId="post.albumId"
+      :link="post.link"
       class="order-last md:order-first"
       id="spotify-player"
       v-if="post.player === 'spotify'"
     />
     <div class="post-content md:col-span-7 lg:col-span-8">
       <div class="flex flex-col gap-1.5 post-head">
-        <span class="text-3xl font-bold text-highlight-secondary">
+        <span
+          class="text-3xl font-bold select-text text-highlight-secondary selection:bg-light"
+        >
           {{ getLocalizedString($i18n.locale, post.title) }}
         </span>
-        <span class="text-xl font-semibold text-light-secondary">
+        <span
+          class="text-xl font-semibold select-text text-light-secondary selection:bg-light"
+        >
           {{ getLocalizedString($i18n.locale, post.subtitle) }}
         </span>
       </div>
       <div class="post-text">
-        <div class="flex flex-col gap-6">
+        <div
+          class="flex flex-col gap-6 [&>p]:select-text selection:bg-light-secondary"
+        >
           <SanityContent
             :blocks="getLocalizedPortableText($i18n.locale, post.text)"
           />
@@ -33,7 +40,7 @@
 
 <script setup lang="ts">
 const query: string = groq`*[_type == "post"][0]
-    {_id, title, subtitle, text, player, albumId}`
+    {_id, title, subtitle, text, player, link, bandcampLink}`
 
 const { data } = await useSanityQuery<Post>(query)
 

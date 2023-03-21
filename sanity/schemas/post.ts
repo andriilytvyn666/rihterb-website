@@ -29,11 +29,16 @@ export default {
       options: {list: ['bandcamp', 'spotify']},
     },
     {
-      name: 'albumId',
+      name: 'link',
       description:
-        'не треба кидати повний лінк на споті чи бендкемп сюди, треба тільки id альбома. виявилося, що можна кидати лінк на окремий трек на бендкемпі.',
+        'лінк на ЕМБЕД спотіфая, або бендкемпа (не кидати весь iframe, а тільки лінк з нього)',
       type: 'string',
       validation: (rule: Rule) => rule.required(),
+    },
+    {
+      name: 'bandcampLink',
+      description: 'лінк на бендкемп. не з iframe, а просто коли заходиш з браузера',
+      type: 'url',
     },
   ],
 }

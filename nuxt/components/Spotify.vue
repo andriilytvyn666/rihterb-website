@@ -3,7 +3,7 @@
     <iframe
       style="border-radius: 12px"
       class="h-[36rem] md:h-full"
-      :src="`https://open.spotify.com/embed/album/${props.albumId}?utm_source=generator&theme=0`"
+      :src="props.link"
       width="100%"
       height="352"
       frameBorder="0"
@@ -15,6 +15,6 @@
 
 <script setup lang="ts">
 const props = defineProps<{
-  albumId: string
+  link: string
 }>()
 </script>

@@ -33,11 +33,16 @@ export default {
       options: {list: ['bandcamp', 'spotify']},
     },
     {
-      name: 'albumId',
+      name: 'link',
       description:
-        '0qiorHnzWjHAdWMqbSKe0s для такого спотіфай спотіфай https://open.spotify.com/album/0qiorHnzWjHAdWMqbSKe0s; для бендкемпу наприклад такий 148721193, можна знайти у iframe ембедед плеера бендкемпа https://bandcamp.com/EmbeddedPlayer/album=148721193/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/transparent=true/',
+        'лінк на ЕМБЕД спотіфая, або бендкемпа (не кидати весь iframe, а тільки лінк з нього)',
       type: 'string',
       validation: (rule: Rule) => rule.required(),
+    },
+    {
+      name: 'bandcampLink',
+      description: 'лінк на бендкемп. не з iframe, а просто коли заходиш з браузера',
+      type: 'url',
     },
   ],
 }

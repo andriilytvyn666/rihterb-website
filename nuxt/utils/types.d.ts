@@ -23,7 +23,8 @@ type AlbumPage = {
   description: localeString
   albumImage: image
   player: string
-  albumId: string
+  link: string
+  bandcampLink: string
 }
 
 type Header = {
@@ -46,7 +47,8 @@ type Post = {
   subtitle: localeString
   text: localePortableText
   player: string
-  albumId: string
+  link: string
+  bandcampLink: string
 }
 
 type Support = {

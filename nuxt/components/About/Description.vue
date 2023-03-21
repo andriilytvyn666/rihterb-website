@@ -2,7 +2,7 @@
   <div class="flex flex-col gap-[1.125rem]">
     <div>
       <p
-        class="leading-snug text-2xl font-semibold select-text text-light about-description selection:bg-light-secondary"
+        class="text-2xl font-semibold leading-snug select-text text-light about-description selection:bg-light-secondary"
       >
         {{ props.text }}
       </p>

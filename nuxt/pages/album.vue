@@ -16,10 +16,10 @@
         </h1>
         <div class="w-[20rem] border-b bg-white" v-motion-fade-visible-once />
         <div
-          class="flex flex-col items-center text-center text-xl text-white"
+          class="flex flex-col items-center text-xl text-center text-white"
           v-motion-slide-visible-once-bottom
         >
-          <p class="whitespace-pre-line leading-snug font-semibold select-text">
+          <p class="font-semibold leading-snug whitespace-pre-line select-text">
             {{ getLocalizedString($i18n.locale, album.description) }}
           </p>
         </div>
@@ -30,14 +30,12 @@
           class="w-full rounded-lg"
         />
         <div class="w-full h-[36rem]" v-motion-slide-visible-once-bottom>
-          <AlbumBandcampPlayer
-            :albumId="album.albumId"
+          <Bandcamp
+            :link="album.link"
+            :bandcamp-link="album.bandcampLink"
             v-if="album.player === 'bandcamp'"
           />
-          <AlbumSpotifyPlayer
-            :albumId="album.albumId"
-            v-if="album.player === 'spotify'"
-          />
+          <Spotify :link="album.link" v-if="album.player === 'spotify'" />
         </div>
       </div>
     </article>
@@ -46,7 +44,7 @@
 
 <script lang="ts" setup>
 const query: string = groq`*[_type == "album"][0]
-    {_id, logo, title, description, albumImage, player, albumId}`
+    {_id, logo, title, description, albumImage, player, link, bandcampLink}`
 
 const { data } = await useSanityQuery<AlbumPage>(query)
 
