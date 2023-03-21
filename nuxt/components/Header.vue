@@ -10,9 +10,10 @@
         <NuxtImg
           :src="header.logo.asset._ref"
           alt="Ріхтер"
-          class="w-12 h-12"
-          width="82"
-          height="48"
+          id="header-logo"
+          class="w-12 h-12 transition-transform duration-300 ease-in-out hover:scale-125"
+          width="128"
+          height="128"
         />
       </NuxtLink>
     </div>
