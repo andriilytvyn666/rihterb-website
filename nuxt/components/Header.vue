@@ -10,7 +10,7 @@
         <NuxtImg
           :src="header.logo.asset._ref"
           alt="Ріхтер"
-          class="h-12 w-fit"
+          class="w-12 h-12"
           width="82"
           height="48"
         />
