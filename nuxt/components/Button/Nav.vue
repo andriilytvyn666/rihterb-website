@@ -8,7 +8,9 @@
           }`
     "
     :target="props.target === 'New page' ? '_blank' : '_self'"
-    :class="`nav-button ${props.name === '' ? 'px-3 sm:px-4' : 'px-8'}`"
+    :class="`nav-button ${
+      props.name === '' ? 'px-4 h-12 w-12 sm:px-4' : 'px-8'
+    }`"
   >
     <nuxt-icon
       :name="`social/${icon}`"
