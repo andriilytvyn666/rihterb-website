@@ -45,8 +45,8 @@
 </style>
 
 <script setup lang="ts">
-const query: string = groq`*[_type == "header"][0]
-    {_id, logo}`
+const query = groq`*[_type == "header"][0]
+    {_id, logo, linkTelegram, linkInstagram}`
 
 const { data } = await useSanityQuery<Header>(query)
 
