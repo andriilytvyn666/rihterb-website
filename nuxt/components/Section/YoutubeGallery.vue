@@ -71,7 +71,7 @@ const renderCondition: boolean =
   @apply transition ease-in-out duration-300;
   @apply bg-dark-hover hover:bg-[#282828];
   @apply border border-dark-hover hover:border-light-secondary;
-  @apply flex items-center justify-center w-12 h-12 rounded-lg text-light;
+  @apply flex items-center justify-center w-12 h-12 rounded-full text-light;
   @apply cursor-pointer;
 }
 
