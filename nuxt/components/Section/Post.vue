@@ -103,7 +103,6 @@ const renderCondition: boolean = post !== undefined && post !== null
   #bandcamp-player,
   #spotify-player {
     @apply col-span-4;
-    @apply row-span-1;
   }
 }
 </style>
