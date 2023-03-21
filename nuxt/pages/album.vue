@@ -2,7 +2,7 @@
   <NuxtLayout name="home">
     <NavMobile v-motion-fade-visible-once />
     <article
-      class="z-0 mt-0 sm:mt-16 sm:mx-auto w-fit mx-4 sm:w-[35rem] z-1"
+      class="z-0 mt-0 sm:mt-16 sm:mx-auto w-fit sm:w-[35rem] z-1"
       v-if="renderCondition"
     >
       <div
