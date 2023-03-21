@@ -1,6 +1,6 @@
 <template>
   <div
-    class="fixed z-50 flex items-center justify-center w-10 h-10 bg-red-500 rounded-lg top-4 left-4 text-light"
+    class="fixed z-50 flex items-center justify-center w-10 h-10 bg-red-500 rounded-lg top-28 left-4 text-light"
   >
     <span class="hidden xs:block sm:hidden">xs</span>
     <span class="hidden sm:block md:hidden">sm</span>
@@ -10,7 +10,7 @@
     <span class="hidden 2xl:block">2xl</span>
   </div>
   <div
-    class="fixed z-50 flex items-center justify-center w-10 h-10 bg-red-500 rounded-lg top-16 left-4 text-light"
+    class="fixed z-50 flex items-center justify-center w-10 h-10 bg-red-500 rounded-lg top-40 left-4 text-light"
   >
     <span class="">{{ locale }}</span>
   </div>

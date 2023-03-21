@@ -7,8 +7,8 @@
 [![](https://img.shields.io/badge/-Tailwind-black?logo=TailwindCSS&style=flat-square)](#)
 [![](https://img.shields.io/badge/-Figma-black?logo=Figma&logoColor=white&style=flat-square)](#)
 
-[![](https://cdn.sanity.io/images/oyqb1zv8/production/a1de83f75f5a1f572688962ec2badfc368704d1d-558x314.webp?auto=format)](#)
-[![](https://cdn.sanity.io/images/oyqb1zv8/production/7aca94a3e2a8c7feafd4416478c85d6fa542f3dc-558x314.webp?auto=format)](#)
+[![](readme/main.png)](#)
+[![](readme/album.png)](#)
 
 [Figma Prototype](https://www.figma.com/proto/eVEViQpveW5I6HL1AH74E8/rihter-site?page-id=0%3A1&node-id=1%3A2&viewport=282%2C250%2C0.68&scaling=contain)
 
@@ -20,12 +20,28 @@
 - Figma
 - Sanity CMS
 
-## Todo
+## Fetures
+- i18n (Ukrainian, English)
+- responsive design
+- subtle animations
+- cms to manage content
 
+## Todo
+- [ ] design light theme
+- [ ] refactor data fetching
+- [ ] use pinia to store fetched data
+- [ ] make icon color dynamic in for listen button
+- [ ] make general components & inherit new components from them (refactor)
+- [ ] add stylelint
+- [ ] write vue plugin for youtube iframe
+- [ ] write vue plugin for bandcamp iframe
+- [ ] think of alternative implementation of "news" bar
+- [ ] update figma template
+- [ ] refactor sanity schemas
+- [ ] refactor youtube carousel
 - [x] add animations everywhere
 - [x] refactor index page
-
-- [ ] improve directory structure
+- [x] improve directory structure
 - [x] fix hamburger menu position on mobile devices
 - [x] add CMS to manage content
 - [x] fill with content

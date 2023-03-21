@@ -37,7 +37,7 @@ export default defineNuxtConfig({
     // baseUrl: 'http://localhost:3000',
     defaultLocale: 'uk',
     detectBrowserLanguage: {
-      alwaysRedirect: true, // TODO: find a way to avoid redirection when visiting another locales page manually
+      alwaysRedirect: true,
       fallbackLocale: 'en',
       useCookie: false, // TODO: find out why locale switching doesn't work properly
       cookieKey: 'i18n_redirected',
