@@ -1,5 +1,5 @@
 <template>
-  <!-- <DebugIndicator /> -->
+  <DebugIndicator />
   <div class="flex flex-col items-center flex-grow min-h-screen bg-dark">
     <Header v-motion-fade-visible-once />
     <article
@@ -17,16 +17,16 @@
 <script setup lang="ts">
 const { t } = useI18n()
 
-useServerSeoMeta({
-  title: t('meta.title'),
-  description: t('meta.description'),
-  author: t('meta.author'),
+useSeoMeta({
+  title: () => t('meta.title'),
+  description: () => t('meta.description'),
+  author: () => t('meta.author'),
   robots: 'all noarchive',
   charset: 'utf-8',
-  ogTitle: t('meta.title'),
-  ogDescription: t('meta.description'),
-  twitterTitle: t('meta.title'),
-  twitterDescription: t('meta.description'),
+  ogTitle: () => t('meta.title'),
+  ogDescription: () => t('meta.description'),
+  twitterTitle: () => t('meta.title'),
+  twitterDescription: () => t('meta.description'),
   twitterCard: 'summary_large_image',
   twitterImage: 'https://rihterb.pp.ua/banner.webp',
   ogImage: 'https://rihterb.pp.ua/banner.webp',
