@@ -28,11 +28,10 @@
 
 ## Todo
 - [ ] design light theme
-- [ ] refactor data fetching
-- [ ] use pinia to store fetched data
+- [x] refactor data fetching
+- [x] use pinia to store fetched data
 - [ ] make icon color dynamic in for listen button
 - [ ] make general components & inherit new components from them (refactor)
-- [ ] add stylelint
 - [ ] write vue plugin for youtube iframe
 - [ ] write vue plugin for bandcamp iframe
 - [ ] think of alternative implementation of "news" bar
