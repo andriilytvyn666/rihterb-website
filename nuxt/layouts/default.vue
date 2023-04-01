@@ -1,5 +1,5 @@
 <template>
-  <DebugIndicator />
+  <!-- <DebugIndicator /> -->
   <div class="flex flex-col items-center flex-grow min-h-screen bg-dark">
     <Header v-motion-fade-visible-once />
     <article
