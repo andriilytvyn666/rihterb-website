@@ -1,5 +1,5 @@
 <template>
-  <div class="grid grid-cols-1 gap-8 post-container" v-if="renderCondition">
+  <div class="grid grid-cols-1 gap-8 post-container" v-if="post !== undefined">
     <Bandcamp
       :link="post.link"
       :bandcamp-link="post.bandcampLink"
@@ -39,14 +39,9 @@
 </template>
 
 <script setup lang="ts">
-const query: string = groq`*[_type == "post"][0]
-    {_id, title, subtitle, text, player, link, bandcampLink}`
-
-const { data } = await useSanityQuery<Post>(query)
-
-const post = data.value!
-
-const renderCondition: boolean = post !== undefined && post !== null
+import { useSanityStore } from '../../stores/sanity'
+const store = useSanityStore()
+const post = await store.getPost()
 </script>
 
 <style lang="postcss">

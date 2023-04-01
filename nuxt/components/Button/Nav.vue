@@ -9,8 +9,8 @@
     "
     :target="props.target === 'New page' ? '_blank' : '_self'"
     :class="`nav-button ${
-      props.name === '' ? 'px-4 h-12 w-12 sm:h-auto sm:w-auto sm:px-4' : 'px-8'
-    }`"
+      props.name === '' ? 'px-4 h-12 w-12 sm:px-4' : 'px-8'
+    } ${props.rounded ? 'rounded-full' : 'rounded-lg'}`"
   >
     <nuxt-icon
       :name="`social/${icon}`"
@@ -24,7 +24,10 @@
       alt="fireEmoji"
       v-else
     />
-    <span v-if="props.name !== ''" class="pointer-events-none text-light">
+    <span
+      v-if="props.name !== ''"
+      class="truncate pointer-events-none text-light"
+    >
       {{ props.name }}
     </span>
   </NuxtLink>
@@ -39,13 +42,14 @@ const props = defineProps<{
   link: string
   image?: boolean
   emoji?: string
+  rounded?: boolean
 }>()
 </script>
 
 <style lang="postcss">
 .nav-button {
   @apply bg-dark-hover text-lg;
-  @apply flex gap-3 items-center justify-center py-3 rounded-lg;
+  @apply flex gap-3 items-center justify-center py-3;
   @apply transition ease-in-out duration-300;
   @apply border border-dark-hover;
   @apply hover:border-light-secondary hover:bg-[#282828];

@@ -3,5 +3,10 @@
   "copyright": "Copyright © 2023 Vasyl Rihter",
   "albumPage": {
     "home": "home"
+  },
+  "meta": {
+    "title": "Richter",
+    "description": "I am a Ukrainian indie musician. I write psychedelic indie songs with a unique sound, combining different genres and exploring emotional spaces to create a unique atmosphere.",
+    "author": "Vasily Richter"
   }
 }

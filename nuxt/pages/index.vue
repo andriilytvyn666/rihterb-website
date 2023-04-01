@@ -1,9 +1,6 @@
 <template>
-  <NuxtLayout name="home">
-    <NavMobile v-motion-fade-visible-once />
-    <SectionAbout v-motion-slide-visible-once-bottom />
-    <SectionYoutubeGallery />
-    <SectionSupport v-motion-slide-visible-once-bottom />
-    <SectionPost v-motion-slide-visible-once-bottom />
-  </NuxtLayout>
+  <SectionAbout v-motion-slide-bottom />
+  <SectionYoutubeVideos v-motion-fade />
+  <SectionSupport v-motion-slide-bottom />
+  <SectionPost v-motion-slide-visible-once-bottom />
 </template>

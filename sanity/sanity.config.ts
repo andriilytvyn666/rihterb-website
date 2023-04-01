@@ -38,12 +38,16 @@ export default defineConfig({
               .icon(LinkIcon)
               .child(S.document().schemaType('footerLinks').documentId('footerLinks')),
             S.listItem()
+              .title('Nav link')
+              .icon(LinkIcon)
+              .child(S.document().schemaType('nav').documentId('nav')),
+            S.listItem()
               .title('Album Page')
               .icon(BlockContentIcon)
               .child(S.document().schemaType('album').documentId('album')),
             ...S.documentTypeListItems().filter(
               (listItem) =>
-                !['about', 'support', 'post', 'footerLinks', 'header', 'album'].includes(
+                !['about', 'support', 'nav', 'post', 'footerLinks', 'header', 'album'].includes(
                   `${listItem.getId()}`
                 )
             ),

@@ -1,9 +1,6 @@
 <template>
-  <div class="flex flex-col gap-8 about-container" v-if="renderCondition">
-    <div
-      v-motion-fade-visible-once
-      class="flex flex-col items-center gap-12 about-body"
-    >
+  <div class="flex flex-col gap-8 about-container" v-if="about !== undefined">
+    <div v-motion-fade class="flex flex-col items-center gap-12 about-body">
       <AboutText
         :subtitle="getLocalizedString($i18n.locale, about.subtitle)"
         :name="getLocalizedString($i18n.locale, about.name)"
@@ -28,19 +25,14 @@
         />
       </div>
     </div>
-    <ButtonListenIcons :items="about.links" v-motion-fade-visible-once />
+    <ButtonListenIcons :items="about.links" v-motion-fade />
   </div>
 </template>
 
 <script setup lang="ts">
-const query: string = groq`*[_type == "about"][0]
-    {_id, name, photo, subtitle, description, links}`
-
-const { data } = await useSanityQuery<About>(query)
-
-const about = data.value!
-
-const renderCondition: boolean = about !== undefined && about !== null
+import { useSanityStore } from '../../stores/sanity'
+const store = useSanityStore()
+const about = await store.getAbout()
 </script>
 
 <style lang="postcss">

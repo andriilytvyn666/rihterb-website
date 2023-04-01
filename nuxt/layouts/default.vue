@@ -15,19 +15,18 @@
 </template>
 
 <script setup lang="ts">
-useServerSeoMeta({
-  title: 'Ріхтер',
-  description:
-    'український інді-музикант. пишу психоделічні інді пісні з унікальним саундом. поєднуючи різні жанри, досліджую емоційні простори, створюючи неповторний настрій.',
-  author: 'Vasily Richter',
+const { t } = useI18n()
+
+useSeoMeta({
+  title: () => t('meta.title'),
+  description: () => t('meta.description'),
+  author: () => t('meta.author'),
   robots: 'all noarchive',
   charset: 'utf-8',
-  ogTitle: 'Ріхтер',
-  ogDescription:
-    'український інді-музикант. пишу психоделічні інді пісні з унікальним саундом. поєднуючи різні жанри, досліджую емоційні простори, створюючи неповторний настрій.',
-  twitterTitle: 'Ріхтер',
-  twitterDescription:
-    'Hi there! I am a Ukrainian indie musician who writes psychedelic indie songs with a unique sound. In my music, I blend different genres and explore emotional spaces, creating a one-of-a-kind atmosphere.',
+  ogTitle: () => t('meta.title'),
+  ogDescription: () => t('meta.description'),
+  twitterTitle: () => t('meta.title'),
+  twitterDescription: () => t('meta.description'),
   twitterCard: 'summary_large_image',
   twitterImage: 'https://rihterb.pp.ua/banner.webp',
   ogImage: 'https://rihterb.pp.ua/banner.webp',
@@ -37,17 +36,37 @@ const i18nHead = useLocaleHead({
   addSeoAttributes: true,
 })
 
+let htmlAttrs = i18nHead.value.htmlAttrs
+
+if (htmlAttrs === undefined) {
+  htmlAttrs = { lang: 'en' }
+}
+
 useHead({
   htmlAttrs: {
-    lang: i18nHead.value.htmlAttrs!.lang,
+    lang: htmlAttrs.lang,
   },
   link: [
     ...(i18nHead.value.link || []),
-    { rel: 'icon', type: 'image/png', sizes: '64x64', href: '/favicon.png' },
+    {
+      rel: 'icon',
+      type: 'image/x-icon',
+      href: '/favicon.ico',
+    },
+    {
+      rel: 'icon',
+      type: 'image/png',
+      sizes: '32x32',
+      href: '/favicon-32x32.png',
+    },
     {
       rel: 'apple-touch-icon',
       sizes: '180x180',
       href: '/apple-touch-icon.png',
+    },
+    {
+      ref: 'manifest',
+      href: '/site.webmanifest',
     },
   ],
   meta: [...(i18nHead.value.meta || [])],
