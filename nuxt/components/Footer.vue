@@ -44,7 +44,8 @@ const { setLocale, setLocaleCookie } = useI18n()
 const changeLocale = (locale: string) => {
   setLocale(locale)
   setLocaleCookie(locale)
-  window.scrollTo(0, 0)
+  // window.scrollTo(0, 0)
+  // location.reload()
 }
 
 const links = await store.getFooterLinks()

@@ -1,9 +1,6 @@
 <template>
   <div class="flex flex-col gap-8 about-container" v-if="about !== undefined">
-    <div
-      v-motion-fade-visible-once
-      class="flex flex-col items-center gap-12 about-body"
-    >
+    <div v-motion-fade class="flex flex-col items-center gap-12 about-body">
       <AboutText
         :subtitle="getLocalizedString($i18n.locale, about.subtitle)"
         :name="getLocalizedString($i18n.locale, about.name)"
@@ -28,7 +25,7 @@
         />
       </div>
     </div>
-    <ButtonListenIcons :items="about.links" v-motion-fade-visible-once />
+    <ButtonListenIcons :items="about.links" v-motion-fade />
   </div>
 </template>
 
