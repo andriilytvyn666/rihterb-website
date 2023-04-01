@@ -34,12 +34,11 @@ export default defineNuxtConfig({
   css: ['~/assets/css/tailwind.css'],
   i18n: {
     baseUrl: 'https://rihterb.pp.ua',
-    // baseUrl: 'http://localhost:3000',
     defaultLocale: 'uk',
     detectBrowserLanguage: {
       alwaysRedirect: true,
       fallbackLocale: 'en',
-      useCookie: false, // TODO: find out why locale switching doesn't work properly
+      useCookie: true,
       cookieKey: 'i18n_redirected',
       redirectOn: 'root',
     },

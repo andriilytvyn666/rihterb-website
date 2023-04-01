@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col gap-8 about-container" v-if="renderCondition">
+  <div class="flex flex-col gap-8 about-container">
     <div
       v-motion-fade-visible-once
       class="flex flex-col items-center gap-12 about-body"
@@ -38,9 +38,7 @@ const query: string = groq`*[_type == "about"][0]
 
 const { data } = await useSanityQuery<About>(query)
 
-const about = data.value!
-
-const renderCondition: boolean = about !== undefined && about !== null
+const about: About = data.value!
 </script>
 
 <style lang="postcss">
