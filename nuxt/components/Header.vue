@@ -2,7 +2,8 @@
   <div class="flex flex-col items-center w-full gap-2">
     <header id="header" v-if="header !== undefined">
       <div class="flex items-center gap-3">
-        <NuxtLink :to="localePath('/')">
+        <!-- TODO: find a solition for broken routing -->
+        <NuxtLink to="https://rihterb.pp.ua">
           <NuxtImg
             :src="header.logo.asset._ref"
             alt="Richter"
@@ -67,7 +68,7 @@
 <script setup lang="ts">
 import { useSanityStore } from '../stores/sanity'
 
-const localePath = useLocalePath()
+// const localePath = useLocalePath()
 const store = useSanityStore()
 
 const navLinks = await store.getNavLinks()
