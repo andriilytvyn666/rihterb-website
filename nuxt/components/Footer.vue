@@ -1,10 +1,6 @@
 <template>
   <footer id="footer" class="px-4" v-if="links !== undefined">
-    <!-- TODO: put locale switcher in separate component -->
-    <div class="flex gap-4 rounded-lg text-light">
-      <button class="locale-button" @click="changeLocale('uk')">Укр</button>
-      <button class="locale-button" @click="changeLocale('en')">Eng</button>
-    </div>
+    <LocaleSwitcher />
     <div class="flex flex-col-reverse justify-between w-full gap-5 md:flex-row">
       <div class="flex flex-col items-center justify-between copyright-text">
         <span>{{ $t('copyright') }}</span>
@@ -39,14 +35,6 @@
 import { useSanityStore } from '../stores/sanity'
 
 const store = useSanityStore()
-const { setLocale, setLocaleCookie } = useI18n()
-
-const changeLocale = (locale: string) => {
-  setLocale(locale)
-  setLocaleCookie(locale)
-  // window.scrollTo(0, 0)
-  // location.reload()
-}
 
 const links = await store.getFooterLinks()
 </script>
@@ -59,7 +47,7 @@ const links = await store.getFooterLinks()
 
 #footer {
   @apply font-medium text-light-secondary;
-  @apply flex  flex-col-reverse items-center py-6 mt-12 sm:mt-20;
+  @apply flex  flex-col-reverse items-center py-6 mt-[0.357rem] sm:mt-[2.375rem];
   @apply gap-5 w-screen;
 }
 

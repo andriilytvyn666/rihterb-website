@@ -1,5 +1,4 @@
 <template>
-  <NavMobile v-motion-fade />
   <SectionAbout v-motion-slide-bottom />
   <SectionYoutubeVideos v-motion-fade />
   <SectionSupport v-motion-slide-bottom />
