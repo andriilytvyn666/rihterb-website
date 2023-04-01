@@ -1,6 +1,6 @@
-<!-- TODO: find a way to improve UI/UX in navs -->
+<!-- TODO: find a way to improve UI -->
 <template>
-  <nav class="hidden gap-3 sm:flex" v-if="renderCondition">
+  <nav class="hidden gap-3 sm:flex" v-if="rendererCondition">
     <ButtonNav
       :linkType="link.linkType"
       :target="link.target"
@@ -53,24 +53,11 @@
 </style>
 
 <script setup lang="ts">
-const query: string = groq`*[_type == "nav"]
-    {_id, title, linkType, target, link, icon}`
+import { useSanityStore } from '../stores/sanity'
+const store = useSanityStore()
+const navLinks = await store.getNavLinks()
 
-const { data } = await useSanityQuery<NavLink[]>(query)
-
-const navLinks = data.value!
-
-const fetchHeader = async (): Promise<Header> => {
-  const query = groq`*[_type == "header"][0]
-    {_id, logo, linkTelegram, linkInstagram}`
-
-  const { data } = await useSanityQuery<Header>(query)
-
-  return data.value!
-}
-
-const header = await fetchHeader()
-
-const renderCondition: boolean =
-  navLinks !== undefined && navLinks !== null && navLinks.length > 0
+const header = await store.getHeader()
+const rendererCondition =
+  navLinks !== undefined && navLinks.length !== 0 && header !== undefined
 </script>

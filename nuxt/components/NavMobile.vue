@@ -1,5 +1,5 @@
 <template>
-  <nav class="grid grid-cols-1 gap-5 sm:hidden" v-if="renderCondition">
+  <nav class="grid grid-cols-1 gap-5 sm:hidden" v-if="rendererCondition">
     <ButtonNav
       :linkType="link.linkType"
       :target="link.target"
@@ -14,13 +14,8 @@
 </template>
 
 <script setup lang="ts">
-const query: string = groq`*[_type == "nav"]
-    {_id, title, linkType, target, link, icon}`
-
-const { data } = await useSanityQuery<NavLink[]>(query)
-
-const navLinks = data.value!
-
-const renderCondition: boolean =
-  navLinks !== undefined && navLinks !== null && navLinks.length > 0
+import { useSanityStore } from '../stores/sanity'
+const store = useSanityStore()
+const navLinks = await store.getNavLinks()
+const rendererCondition = navLinks !== undefined && navLinks.length !== 0
 </script>

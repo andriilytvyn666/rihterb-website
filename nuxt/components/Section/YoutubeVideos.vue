@@ -1,8 +1,13 @@
 <template>
-  <div class="responsive" v-motion-fade-visible-once v-if="renderCondition">
+  <div
+    class="responsive"
+    v-motion-fade-visible-once
+    v-if="videos !== undefined"
+  >
     <div
       id="swiper-controls"
       class="absolute items-center justify-between h-[18.844rem] w-full flex z-10 sm:mx-4 pointer-events-none"
+      v-show="videos.length > 1"
     >
       <div
         id="prev-video"
@@ -55,15 +60,9 @@
 </template>
 
 <script lang="ts" setup>
-const query: string = groq`*[_type == "videos"] | order(orderId asc)
-     {_id, orderId, youtubeLink}`
-
-const { data } = await useSanityQuery<video[]>(query)
-
-const videos = data.value!
-
-const renderCondition: boolean =
-  videos !== undefined && videos !== null && videos.length > 0
+import { useSanityStore } from '../../stores/sanity'
+const store = useSanityStore()
+const videos = await store.getYoutubeVideos()
 </script>
 
 <style lang="postcss">

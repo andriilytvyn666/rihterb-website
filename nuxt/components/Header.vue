@@ -2,10 +2,10 @@
   <header
     id="header"
     class="flex items-center justify-between w-full h-20 px-4 mx-4 mt-6"
-    v-if="renderCondition"
+    v-if="header !== undefined"
   >
     <div class="flex items-center gap-3">
-      <NuxtLink to="https://rihterb.pp.ua">
+      <NuxtLink :to="localePath('/')">
         <NuxtImg
           :src="header.logo.asset._ref"
           alt="Ріхтер"
@@ -50,14 +50,12 @@
 </style>
 
 <script setup lang="ts">
-const query = groq`*[_type == "header"][0]
-    {_id, logo, linkTelegram, linkInstagram}`
+import { useSanityStore } from '../stores/sanity'
 
-const { data } = await useSanityQuery<Header>(query)
+const localePath = useLocalePath()
+const store = useSanityStore()
 
-const header = data.value!
-
-const renderCondition: boolean = header !== undefined && header !== null
+const header = await store.getHeader()
 </script>
 
 <style lang="postcss">

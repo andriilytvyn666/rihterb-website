@@ -1,5 +1,5 @@
 <template>
-  <div class="fixed flex flex-col gap-4 bottom-4 right-4 text-dark">
+  <div class="fixed z-50 flex flex-col gap-4 bottom-4 right-4 text-dark">
     <div
       class="flex items-center justify-center w-10 h-10 p-4 rounded-lg bg-light"
     >

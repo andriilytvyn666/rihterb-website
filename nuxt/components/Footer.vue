@@ -1,5 +1,6 @@
 <template>
-  <footer id="footer" class="px-4" v-if="renderCondition">
+  <footer id="footer" class="px-4" v-if="links !== undefined">
+    <!-- TODO: put locale switcher in separate component -->
     <div class="flex gap-4 rounded-lg text-light">
       <button class="locale-button" @click="changeLocale('uk')">Укр</button>
       <button class="locale-button" @click="changeLocale('en')">Eng</button>
@@ -35,6 +36,9 @@
 </template>
 
 <script setup lang="ts">
+import { useSanityStore } from '../stores/sanity'
+
+const store = useSanityStore()
 const { setLocale, setLocaleCookie } = useI18n()
 
 const changeLocale = (locale: string) => {
@@ -43,15 +47,7 @@ const changeLocale = (locale: string) => {
   window.scrollTo(0, 0)
 }
 
-const query: string = groq`*[_type == "footerLinks"][0]
-    {_id, spotify, youtubemusic, applemusic, instagram, 
-     telegram, youtube, patreon, bandcamp}`
-
-const { data } = await useSanityQuery<FooterLinks>(query)
-
-const links = data.value!
-
-const renderCondition: boolean = links !== undefined && links !== null
+const links = await store.getFooterLinks()
 </script>
 
 <!-- TODO: refactor css -->
@@ -62,25 +58,27 @@ const renderCondition: boolean = links !== undefined && links !== null
 
 #footer {
   @apply font-medium text-light-secondary;
-  @apply flex md:flex-col md:items-start flex-col-reverse items-center py-6 mt-12 sm:mt-20;
+  @apply flex  flex-col-reverse items-center py-6 mt-12 sm:mt-20;
   @apply gap-5 w-screen;
 }
 
 .locale-button {
+  /* TODO: make animations and transitions consistent */
   @apply duration-300 ease-in-out  transition-all;
-  @apply flex gap-4 px-4 py-2 rounded-lg bg-dark-hover hover:bg-[#282828] border border-dark-hover hover:border-light-secondary;
+  @apply flex gap-4 px-4 py-2 rounded-lg;
+  @apply bg-dark-hover hover:bg-[#282828];
+  @apply border border-dark-hover hover:border-light-secondary;
 }
 
 @screen sm {
   #footer {
     @apply w-[38rem];
-    /* @apply mx-auto; */
   }
 }
 
 @screen md {
   #footer {
-    @apply w-[46rem];
+    @apply w-[46rem] flex-col items-start;
   }
   .copyright-text {
     @apply items-start justify-start;

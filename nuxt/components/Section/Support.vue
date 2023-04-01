@@ -1,5 +1,8 @@
 <template>
-  <div class="rounded-lg bg-dark-hover support-content" v-if="renderCondition">
+  <div
+    class="rounded-lg bg-dark-hover support-content"
+    v-if="support !== undefined"
+  >
     <div class="flex flex-col w-full gap-4 font-bold text-left">
       <span class="text-2xl text-center support-title text-highlight">
         {{ getLocalizedString($i18n.locale, support.title) }}
@@ -17,14 +20,9 @@
 </template>
 
 <script setup lang="ts">
-const query: string = groq`*[_type == "support"][0]
-    {_id, title, text, patreonLink, bandcampLink, diakaLink}`
-
-const { data } = await useSanityQuery<Support>(query)
-
-const support = data.value!
-
-const renderCondition: boolean = support !== undefined && support !== null
+import { useSanityStore } from '../../stores/sanity'
+const store = useSanityStore()
+const support = await store.getSupport()
 </script>
 
 <style lang="postcss">

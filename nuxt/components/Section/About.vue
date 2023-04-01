@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col gap-8 about-container">
+  <div class="flex flex-col gap-8 about-container" v-if="about !== undefined">
     <div
       v-motion-fade-visible-once
       class="flex flex-col items-center gap-12 about-body"
@@ -33,12 +33,9 @@
 </template>
 
 <script setup lang="ts">
-const query: string = groq`*[_type == "about"][0]
-    {_id, name, photo, subtitle, description, links}`
-
-const { data } = await useSanityQuery<About>(query)
-
-const about: About = data.value!
+import { useSanityStore } from '../../stores/sanity'
+const store = useSanityStore()
+const about = await store.getAbout()
 </script>
 
 <style lang="postcss">
