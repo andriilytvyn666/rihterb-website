@@ -1,6 +1,3 @@
-import en from './locales/en-US.json'
-import uk from './locales/uk-UA.json'
-import ru from './locales/ru-RU.json'
 import eslintPlugin from 'vite-plugin-eslint'
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
@@ -59,12 +56,6 @@ export default defineNuxtConfig({
         code: 'ru',
       },
     ],
-    vueI18n: {
-      legacy: false,
-      locale: 'uk',
-      fallbackLocale: 'en',
-      availableLocales: ['en', 'uk', 'ru'],
-      messages: { en, uk, ru },
-    },
+    vueI18n: './i18n.config.ts',
   },
 })
