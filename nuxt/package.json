@@ -9,26 +9,26 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
-    "@nuxtjs/i18n": "^8.0.0-beta.10",
-    "@nuxtjs/tailwindcss": "^6.6.5",
-    "@typescript-eslint/eslint-plugin": "^5.57.0",
-    "@typescript-eslint/parser": "^5.57.0",
-    "eslint": "^8.37.0",
+    "@nuxtjs/i18n": "^8.0.0-beta.11",
+    "@nuxtjs/tailwindcss": "^6.6.6",
+    "@typescript-eslint/eslint-plugin": "^5.58.0",
+    "@typescript-eslint/parser": "^5.58.0",
+    "eslint": "^8.38.0",
     "eslint-plugin-nuxt": "^4.0.0",
     "eslint-plugin-prettier": "^4.2.1",
-    "eslint-plugin-vue": "^9.10.0",
-    "nuxt": "^3.3.2",
+    "eslint-plugin-vue": "^9.11.0",
+    "nuxt": "^3.4.1",
     "prettier": "2.8.3",
     "vite-plugin-eslint": "^1.8.1"
   },
   "dependencies": {
     "@nuxt/image-edge": "^1.0.0-27913696.5d122a3",
     "@nuxtjs/sanity": "^1.6.0",
-    "@pinia/nuxt": "^0.4.7",
+    "@pinia/nuxt": "^0.4.8",
     "@vueuse/motion": "^2.0.0-beta.27",
     "nuxt-icons": "^3.1.0",
     "nuxt-swiper": "^0.1.9",
-    "pinia": "^2.0.33"
+    "pinia": "^2.0.34"
   },
   "overrides": {
     "vue": "latest"
