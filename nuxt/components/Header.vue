@@ -16,7 +16,10 @@
     </NuxtLink>
     <span id="left-mobile">eng</span>
     <nav class="hidden gap-4" id="right">
-      <NuxtLink to="/album">eng</NuxtLink>
+      <button @click="$i18n.setLocale('uk')" v-if="$i18n.locale === 'en'">
+        укр
+      </button>
+      <button @click="$i18n.setLocale('en')" v-else>eng</button>
       <span>/</span>
       <NuxtLink to="/album">слухати</NuxtLink>
       <span>/</span>
