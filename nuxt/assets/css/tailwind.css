@@ -23,10 +23,12 @@
   .nuxt-icon svg {
     margin-bottom: 0 !important;
   }
+
+  body {
+    @apply bg-dark;
+    @apply text-white;
+  }
 }
 
 @layer components {
-  .custom-separator {
-    @apply w-[0.5px] h-8 bg-light-secondary;
-  }
 }
