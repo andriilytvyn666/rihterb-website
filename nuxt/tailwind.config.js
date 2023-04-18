@@ -43,7 +43,7 @@ module.exports = {
         '1rem',
         {
           lineHeight: '1.5rem',
-          fontWeight: '600',
+          fontWeight: '500',
         },
       ],
     },

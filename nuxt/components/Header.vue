@@ -1,7 +1,51 @@
 <template>
-  <div class="flex justify-between bg-hl-blue">
-    <div class="flex gap-4"></div>
-    <NuxtImg src="/logo.png" width="48" height="48" />
-    <div class="flex gap-4"></div>
-  </div>
+  <header class="flex items-center justify-between" id="header">
+    <nav class="hidden gap-4" id="left">
+      <NuxtLink to="/album">новий альбом</NuxtLink>
+      <span>/</span>
+      <NuxtLink to="/journal">журнал 9</NuxtLink>
+    </nav>
+    <NuxtLink to="/">
+      <NuxtImg
+        src="/logo.png"
+        width="320"
+        height="320"
+        id="logo"
+        class="w-9 h-9"
+      />
+    </NuxtLink>
+    <span id="left-mobile">eng</span>
+    <nav class="hidden gap-4" id="right">
+      <NuxtLink to="/album">eng</NuxtLink>
+      <span>/</span>
+      <NuxtLink to="/album">слухати</NuxtLink>
+      <span>/</span>
+      <NuxtLink to="/journal">соцмережі</NuxtLink>
+    </nav>
+  </header>
 </template>
+
+<style lang="postcss">
+#header {
+  @apply px-2 py-6;
+}
+
+@screen sm {
+  #logo {
+    @apply w-12 h-12;
+  }
+
+  #header {
+    @apply px-0 py-5;
+  }
+
+  #left,
+  #right {
+    @apply flex;
+  }
+
+  #left-mobile {
+    @apply hidden;
+  }
+}
+</style>

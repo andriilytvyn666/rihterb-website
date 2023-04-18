@@ -1,11 +1,16 @@
 <template>
-  <div id="page-wrapper">
-    <div class="flex flex-col min-h-screen">
-      <Header />
-      <div class="flex flex-col gap-12 grow">
-        <slot />
+  <div class="px-4 xl:px-0">
+    <DevOnly>
+      <DebugIndicator />
+    </DevOnly>
+    <div id="page-wrapper">
+      <div class="flex flex-col min-h-screen">
+        <Header class="w-full" />
+        <div class="flex flex-col gap-8 sm:gap-12 grow">
+          <slot />
+        </div>
+        <Footer />
       </div>
-      <Footer />
     </div>
   </div>
 </template>
