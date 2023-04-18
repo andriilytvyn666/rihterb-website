@@ -1,3 +1,6 @@
+import en from './locales/en-US.json'
+import uk from './locales/uk-UA.json'
+import ru from './locales/ru-RU.json'
 import eslintPlugin from 'vite-plugin-eslint'
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
@@ -37,6 +40,13 @@ export default defineNuxtConfig({
       useCookie: true,
       cookieKey: 'i18n_redirected',
       redirectOn: 'root',
+    },
+    vueI18n: {
+      legacy: false,
+      locale: 'uk',
+      fallbackLocale: 'en',
+      availableLocales: ['en', 'uk', 'ru'],
+      messages: { en, uk, ru },
     },
     locales: [
       {
