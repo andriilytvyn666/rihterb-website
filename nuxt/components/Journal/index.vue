@@ -16,10 +16,10 @@
             slidesPerView: 3,
           },
           1024: {
-            slidesPerView: 3,
+            slidesPerView: 4,
           },
           1280: {
-            slidesPerView: 4,
+            slidesPerView: 5,
           },
         }"
       >
@@ -54,7 +54,9 @@ const images = ['1.png', '2.png', '3.png', '4.png', '5.png']
 
 <style lang="postcss">
 #swiper {
-  @apply grid gap-8 grid-cols-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-5 overflow-visible;
+  @apply grid gap-8 overflow-visible;
+  @apply grid-cols-1 sm:grid-cols-3 md:grid-cols-4;
+  @apply lg:grid-cols-5 xl:grid-cols-5;
 }
 
 .page {
