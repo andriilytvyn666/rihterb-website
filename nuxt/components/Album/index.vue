@@ -8,7 +8,7 @@
         alt="album"
         width="320"
         height="320"
-        class="w-[20.875rem] h-[20.875rem] sm:w-20 sm:h-20 rounded"
+        class="w-full h-full rounded-lg sm:w-20 sm:h-20 shadow-default"
       />
       <div class="flex flex-col justify-center gap-2">
         <h2

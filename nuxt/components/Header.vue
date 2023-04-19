@@ -11,7 +11,7 @@
         width="320"
         height="320"
         id="logo"
-        class="w-9 h-9"
+        class="rounded-full w-9 h-9"
       />
     </NuxtLink>
     <button
