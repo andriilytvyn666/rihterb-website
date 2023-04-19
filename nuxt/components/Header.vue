@@ -14,7 +14,14 @@
         class="w-9 h-9"
       />
     </NuxtLink>
-    <span id="left-mobile">eng</span>
+    <button
+      id="right-mobile"
+      @click="$i18n.setLocale('uk')"
+      v-if="$i18n.locale === 'en'"
+    >
+      укр
+    </button>
+    <button id="right-mobile" @click="$i18n.setLocale('en')" v-else>eng</button>
     <nav class="hidden gap-4" id="right">
       <button @click="$i18n.setLocale('uk')" v-if="$i18n.locale === 'en'">
         укр
@@ -31,6 +38,10 @@
 <style lang="postcss">
 .separator {
   @apply text-dark-secondary;
+}
+
+#right-mobile {
+  @apply text-body-md-500;
 }
 
 #header {
@@ -52,7 +63,7 @@
     @apply flex;
   }
 
-  #left-mobile {
+  #right-mobile {
     @apply hidden;
   }
 }
