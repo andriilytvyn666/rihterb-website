@@ -36,7 +36,9 @@ const links = await store.getFooterLinks()
 }
 
 #footer {
-  @apply h-[8.75rem] sm:h-24 flex flex-col-reverse gap-5 items-center justify-center sm:justify-between;
+  @apply h-[8.75rem] sm:h-24 flex flex-col-reverse gap-5;
+  @apply items-center justify-center sm:justify-between;
+  @apply mt-8 sm:mt-12;
 }
 
 @screen sm {

@@ -2,7 +2,7 @@
   <header class="flex items-center justify-between" id="header">
     <nav class="hidden gap-4" id="left">
       <NuxtLink to="/album">новий альбом</NuxtLink>
-      <span>/</span>
+      <span class="separator">/</span>
       <NuxtLink to="/journal">журнал 9</NuxtLink>
     </nav>
     <NuxtLink to="/">
@@ -20,20 +20,25 @@
         укр
       </button>
       <button @click="$i18n.setLocale('en')" v-else>eng</button>
-      <span>/</span>
+      <span class="separator">/</span>
       <NuxtLink to="/album">слухати</NuxtLink>
-      <span>/</span>
+      <span class="separator">/</span>
       <NuxtLink to="/journal">соцмережі</NuxtLink>
     </nav>
   </header>
 </template>
 
 <style lang="postcss">
-#header {
-  @apply px-2 py-6;
+.separator {
+  @apply text-dark-secondary;
 }
 
-@screen sm {
+#header {
+  @apply px-2 py-6;
+  @apply text-body-md-600 mb-8 sm:mb-12;
+}
+
+@screen md {
   #logo {
     @apply w-12 h-12;
   }
