@@ -1,7 +1,14 @@
 <template>
   <div class="flex flex-col w-full gap-8 grow">
-    <div class="flex justify-between">
+    <div class="flex flex-col-reverse justify-between gap-8 sm:flex-row">
       <div class="flex gap-4">
+        <button class="px-5 py-4 rounded-lg bg-dark-alt" @click="refreshStatus">
+          <NuxtIcon
+            name="feather/refresh-ccw"
+            filled
+            class="text-[1.5rem] refresh block"
+          />
+        </button>
         <Button class="bg-dark-alt">
           <span>{{ status.version?.name_clean.split(' ')[1] }}</span>
           <span class="text-dark-secondary">/</span>
@@ -12,19 +19,7 @@
           @click="isMap = !isMap"
           class="bg-dark-alt"
         />
-        <button
-          class="px-5 py-4 rounded-lg bg-dark-alt"
-          v-show="!isMap"
-          @click="refreshStatus"
-        >
-          <NuxtIcon
-            name="feather/refresh-ccw"
-            filled
-            class="text-[1.5rem] refresh block"
-          />
-        </button>
       </div>
-      <h2 class="text-hl-yellow text-h-lg-700">ріхтера сервер</h2>
       <Button
         name="rihterb.my.pebble.host"
         @click="copyToClipboard"
@@ -35,7 +30,7 @@
     </div>
     <iframe
       src="http://rihterb.my.pebble.host:8014/"
-      class="w-full rounded-lg aspect-video"
+      class="w-full rounded-lg aspect-square sm:aspect-video"
       v-show="isMap"
     />
     <table
@@ -54,7 +49,7 @@
     </table>
     <div
       class="flex flex-col items-center justify-center gap-8 mx-auto grow w-fit"
-      v-else
+      v-else-if="!isMap"
     >
       <NuxtImg src="empty.png" />
       <h2 class="text-h-lg-700 text-dark-secondary">поки нікого :(</h2>

@@ -10,7 +10,7 @@
         height="320"
         class="w-full h-full rounded-lg sm:w-20 sm:h-20 shadow-default"
       />
-      <div class="flex flex-col justify-center gap-2">
+      <div class="flex flex-col w-full gap-2 sm:justify-center">
         <h2
           class="line-clamp-2 sm:line-clamp-1 w-fit text-hl-yellow text-h-lg-700"
         >
