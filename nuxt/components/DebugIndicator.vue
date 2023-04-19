@@ -10,10 +10,10 @@
       <span class="hidden xl:block 2xl:hidden">xl</span>
       <span class="hidden 2xl:block">2xl</span>
     </div>
-    <!-- <div
+    <div
       class="flex items-center justify-center w-10 h-10 p-4 rounded-lg bg-light"
     >
       <span class="">{{ $i18n.locale }}</span>
-    </div> -->
+    </div>
   </div>
 </template>
