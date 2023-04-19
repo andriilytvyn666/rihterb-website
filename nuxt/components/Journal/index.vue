@@ -42,23 +42,28 @@
             </p>
           </div>
         </div>
-        <Button name="дивитись" class="bg-light text-dark h-fit" />
+        <NuxtLink :to="localePath('/journal', $i18n.locale)">
+          <Button name="дивитись" class="bg-light text-dark h-fit" />
+        </NuxtLink>
       </div>
     </div>
   </div>
 </template>
 
 <script lang="ts" setup>
+const localePath = useLocalePath()
 const images = ['1.png', '2.png', '3.png', '4.png', '5.png']
 </script>
 
-<style lang="postcss">
+<style lang="postcss" scoped>
 #swiper {
   @apply grid gap-8 overflow-visible;
   @apply grid-cols-1 sm:grid-cols-3 md:grid-cols-4;
-  @apply lg:grid-cols-5 xl:grid-cols-5;
+  @apply lg:grid-cols-5;
 }
+</style>
 
+<style lang="postcss">
 .page {
   @apply h-full w-[20.875rem] sm:w-full overflow-visible;
 }

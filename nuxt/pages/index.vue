@@ -2,4 +2,6 @@
   <About />
   <Album />
   <Journal />
+  <Minecraft />
+  <Support />
 </template>

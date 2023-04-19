@@ -1,3 +1,3 @@
 <template>
-  <div>album page</div>
+  <span>album</span>
 </template>

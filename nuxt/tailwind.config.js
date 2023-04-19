@@ -39,11 +39,11 @@ module.exports = {
           fontWeight: '700',
         },
       ],
-      'footer-md-500': [
+      'footer-md-600': [
         '1rem',
         {
           lineHeight: '1.5rem',
-          fontWeight: '500',
+          fontWeight: '600',
         },
       ],
     },

@@ -21,6 +21,12 @@
         </p>
       </div>
     </div>
-    <Button name="слухати" class="bg-light text-dark h-fit" />
+    <NuxtLink :to="localePath('/album', $i18n.locale)" class="w-full sm:w-fit">
+      <Button name="слухати" class="bg-light text-dark h-fit" />
+    </NuxtLink>
   </div>
 </template>
+
+<script lang="ts" setup>
+const localePath = useLocalePath()
+</script>

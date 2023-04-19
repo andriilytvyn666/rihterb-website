@@ -1,11 +1,11 @@
 <template>
   <header class="flex items-center justify-between" id="header">
     <nav class="hidden gap-4" id="left">
-      <NuxtLink to="/album">новий альбом</NuxtLink>
+      <NuxtLink :to="localePath('/album', $i18n.locale)">новий альбом</NuxtLink>
       <span class="separator">/</span>
-      <NuxtLink to="/journal">журнал 9</NuxtLink>
+      <NuxtLink :to="localePath('/journal', $i18n.locale)">журнал 9</NuxtLink>
     </nav>
-    <NuxtLink to="/">
+    <NuxtLink :to="localePath('/', $i18n.locale)">
       <NuxtImg
         src="/logo.png"
         width="320"
@@ -28,12 +28,16 @@
       </button>
       <button @click="$i18n.setLocale('en')" v-else>eng</button>
       <span class="separator">/</span>
-      <NuxtLink to="/album">слухати</NuxtLink>
+      <NuxtLink to="/">слухати</NuxtLink>
       <span class="separator">/</span>
-      <NuxtLink to="/journal">соцмережі</NuxtLink>
+      <NuxtLink to="/">соцмережі</NuxtLink>
     </nav>
   </header>
 </template>
+
+<script lang="ts" setup>
+const localePath = useLocalePath()
+</script>
 
 <style lang="postcss">
 .separator {

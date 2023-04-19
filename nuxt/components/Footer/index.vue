@@ -32,7 +32,7 @@ const links = await store.getFooterLinks()
 
 <style class="postcss">
 #copyright {
-  @apply text-dark-secondary text-footer-md-500;
+  @apply text-dark-secondary text-footer-md-600;
 }
 
 #footer {
