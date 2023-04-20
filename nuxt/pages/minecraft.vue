@@ -31,6 +31,7 @@
     <iframe
       src="http://rihterb.my.pebble.host:8014/"
       class="w-full rounded-lg aspect-square sm:aspect-video"
+      allow="insecure-iframe"
       v-show="isMap"
     />
     <table
