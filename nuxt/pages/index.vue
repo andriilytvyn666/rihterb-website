@@ -1,7 +1,9 @@
 <template>
-  <About />
-  <Album />
-  <Journal />
-  <Minecraft />
-  <Support />
+  <NuxtLayout name="wrapper">
+    <About />
+    <Album />
+    <Journal />
+    <Minecraft />
+    <Support />
+  </NuxtLayout>
 </template>
