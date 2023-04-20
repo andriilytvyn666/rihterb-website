@@ -59,7 +59,7 @@
   @apply card;
 
   @apply relative;
-  @apply top-1 left-60 -rotate-2;
+  @apply top-1 left-56 -rotate-6;
   @apply sm:top-3 sm:left-32 sm:-rotate-6;
   @apply md:top-4 xl:top-5;
 }
@@ -68,7 +68,7 @@
   @apply card;
 
   @apply relative;
-  @apply top-1 -left-60 rotate-2;
+  @apply top-1 -left-56 rotate-6;
   @apply sm:top-3 sm:-left-32 sm:rotate-6;
   @apply md:top-4 xl:top-5;
 }
