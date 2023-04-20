@@ -83,6 +83,12 @@ useHead({
       href: '/site.webmanifest',
     },
   ],
-  meta: [...(i18nHead.value.meta || [])],
+  meta: [
+    ...(i18nHead.value.meta || []),
+    {
+      'http-equiv': 'Content-Security-Policy',
+      'content': 'upgrade-insecure-requests',
+    },
+  ],
 })
 </script>
