@@ -1,12 +1,58 @@
 <template>
-  <div class="outter">
-    <transition name="fade">
-      <NuxtImg
-        src="cover.webp"
-        class="z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
-        v-if="store.gatherPages"
-      />
-    </transition>
+  <!-- top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2  -->
+  <div class="z-10 w-full grow h-full">
+    <div class="flex flex-col">
+      <transition name="fade">
+        <Swiper
+          :modules="[SwiperNavigation]"
+          :slides-per-view="1"
+          :navigation="{
+            nextEl: '#swiper-next',
+            prevEl: '#swiper-prev',
+            disabledClass: 'opacity-0',
+          }"
+          class="w-full items-center flex justify-center grow"
+        >
+          <SwiperSlide
+            v-for="i in 12"
+            :key="i"
+            class="w-full flex justify-center items-center grow h-full"
+          >
+            <NuxtImg :src="`journal_view/${i}.webp`" v-if="store.gatherPages" />
+          </SwiperSlide>
+        </Swiper>
+      </transition>
+      <div class="flex justify-between">
+        <transition name="fade">
+          <Button
+            name="назад"
+            class="border border-dark-border"
+            @click="store.gatherPages = !store.gatherPages"
+            v-if="store.gatherPages"
+          />
+        </transition>
+        <div class="flex gap-4">
+          <transition name="fade">
+            <Button
+              id="swiper-prev"
+              name="prev"
+              class="border border-dark-border-alt text-light shadow-default"
+              v-if="store.gatherPages"
+            />
+          </transition>
+          <transition name="fade">
+            <Button
+              id="swiper-next"
+              name="next"
+              class="bg-light text-dark shadow-default"
+              v-if="store.gatherPages"
+            />
+          </transition>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="outter w-full">
     <NuxtImg
       src="journal_desktop/1.webp"
       :class="`${store.gatherPages ? 'center' : 'left-1 top-5 -rotate-12'}`"
@@ -76,12 +122,6 @@
       }`"
     />
   </div>
-
-  <Button
-    @click="store.gatherPages = !store.gatherPages"
-    name="anim"
-    class="bg-light text-dark fixed bottom-0 left-0 shadow-default"
-  />
 </template>
 
 <script lang="ts" setup>
@@ -95,14 +135,10 @@ const store = useClientStore()
   @apply top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rotate-0;
 }
 
-.size-close {
-  @apply h-screen;
-}
-
 .outter {
   @apply w-[120rem] h-[67.5rem];
   @apply [&>*]:shadow-default [&>*]:absolute;
-  @apply absolute;
+  @apply fixed;
   @apply top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2;
 }
 .fade-enter-from {
