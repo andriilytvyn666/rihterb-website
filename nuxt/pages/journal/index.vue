@@ -6,7 +6,7 @@
         class="z-10 w-full grow h-full flex items-center justify-center overflow-visible"
         v-if="store.gatherPages"
       >
-        <div class="flex flex-col gap-8 w-[35rem]">
+        <div class="flex flex-col gap-5 w-[35rem]">
           <Swiper
             :modules="[SwiperNavigation]"
             :slides-per-view="1"
@@ -14,6 +14,7 @@
             :navigation="{
               nextEl: '#swiper-next',
               prevEl: '#swiper-prev',
+              disabledClass: 'opacity-0',
             }"
             class="w-full items-center flex justify-center grow h-[45.625rem] overflow-visible bg-dark"
           >
@@ -28,7 +29,6 @@
               />
             </SwiperSlide>
           </Swiper>
-          <!-- <NuxtImg src="journal_view/1.webp" v-if="store.gatherPages" /> -->
           <div class="flex grow gap-4">
             <button
               id="swiper-prev"
@@ -36,20 +36,19 @@
             >
               <NuxtIcon name="feather/arrow-left" filled class="w-6 h-6" />
             </button>
-            <NuxtLink :to="localePath('/', $i18n.locale)" class="grow">
-              <Button
-                name="на головну"
-                class="border border-dark-border sm:w-full"
-              />
-            </NuxtLink>
+            <!-- <NuxtLink :to="localePath('/', $i18n.locale)" class="grow"> -->
+            <Button
+              name="повернутися"
+              class="border border-dark-border sm:w-full"
+              @click="store.toggleGatherPages"
+            />
+            <!-- </NuxtLink> -->
             <button
               id="swiper-next"
               class="flex items-center justify-center border border-dark-border p-4 rounded-lg text-[1.5rem]"
             >
               <NuxtIcon name="feather/arrow-right" filled class="w-6 h-6" />
             </button>
-
-            <!-- <div class="flex gap-4 [&>*]:rounded-lg text-[1.5rem]"></div> -->
           </div>
         </div>
       </div>
