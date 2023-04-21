@@ -3,12 +3,18 @@
     <div class="flex flex-col h-full grow">
       <div class="flex flex-col gap-8 justify-center grow">
         <div class="flex justify-center">
-          <NuxtImg src="support/1.webp" class="z-0 left-card order-1" />
           <NuxtImg
+            rel="preload"
+            src="support/1.webp"
+            class="z-0 left-card order-1"
+          />
+          <NuxtImg
+            rel="preload"
             src="support/3.webp"
             class="z-10 right-card order-3 sm:order-3 sm:middle-card"
           />
           <NuxtImg
+            rel="preload"
             src="support/2.webp"
             class="z-0 order-2 middle-card sm:order-2 sm:right-card"
           />

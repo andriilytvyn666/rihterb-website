@@ -4,6 +4,7 @@
   >
     <div class="flex flex-col items-center gap-8 sm:flex-row">
       <NuxtImg
+        rel="preload"
         src="album/small.webp"
         alt="album"
         width="320"
@@ -11,6 +12,7 @@
         class="hidden sm:flex rounded-lg sm:w-20 sm:h-20 shadow-default"
       />
       <NuxtImg
+        rel="preload"
         src="album/index.webp"
         alt="album"
         width="320"

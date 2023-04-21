@@ -14,7 +14,7 @@
       }"
     >
       <SwiperSlide v-for="i in 3" :key="i" class="page">
-        <NuxtImg :src="`/minecraft/${i}.webp`" class="image" />
+        <NuxtImg rel="preload" :src="`/minecraft/${i}.webp`" class="image" />
       </SwiperSlide>
     </Swiper>
     <div

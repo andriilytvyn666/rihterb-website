@@ -1,6 +1,7 @@
 <template>
   <div class="flex flex-col items-center gap-8 sm:items-stretch sm:flex-row">
     <NuxtImg
+      rel="preload"
       src="/about.webp"
       alt="About"
       width="320"

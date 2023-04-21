@@ -25,7 +25,11 @@
       >
         <!-- TODO: find perfect resolution -->
         <SwiperSlide v-for="i in 12" :key="i" class="page">
-          <NuxtImg :src="`journal_preview/${i}.webp`" class="image" />
+          <NuxtImg
+            rel="preload"
+            :src="`journal_preview/${i}.webp`"
+            class="image"
+          />
         </SwiperSlide>
       </Swiper>
       <div
