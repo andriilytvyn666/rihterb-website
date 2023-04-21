@@ -35,7 +35,7 @@
         </Button>
       </div>
       <iframe
-        src="http://rihterb.my.pebble.host:8014/"
+        src="https://rihterb.my.pebble.host"
         class="w-full rounded-lg aspect-square sm:aspect-video"
         v-show="isMap"
       />
