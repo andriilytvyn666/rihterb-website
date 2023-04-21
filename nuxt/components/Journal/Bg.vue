@@ -1,5 +1,4 @@
 <template>
-  <!-- top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2  -->
   <div class="outter w-full">
     <NuxtImg
       src="journal_desktop/1.webp"
@@ -80,7 +79,7 @@ const store = useClientStore()
 
 <style lang="postcss" scoped>
 .center {
-  @apply top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rotate-0;
+  @apply top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rotate-0 opacity-0;
 }
 
 .outter {
@@ -96,8 +95,7 @@ const store = useClientStore()
   @apply opacity-100;
 }
 .fade-enter-active {
-  @apply transition-all duration-300 ease-in-out;
-  @apply delay-100;
+  @apply transition-all duration-1000 ease-in-out;
 }
 
 .fade-leave-from {

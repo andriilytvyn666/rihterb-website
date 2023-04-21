@@ -36,24 +36,27 @@
               class="border border-dark-border"
               @click="store.gatherPages = !store.gatherPages"
             />
-            <div class="flex gap-4">
-              <Button
+            <div class="flex gap-4 [&>*]:rounded-lg text-[1.5rem]">
+              <button
                 id="swiper-prev"
-                name="prev"
-                class="border border-dark-border-alt text-light shadow-default"
-              />
-              <Button
+                class="flex items-center justify-center border border-dark-border p-4"
+              >
+                <NuxtIcon name="feather/arrow-left" filled class="w-6 h-6" />
+              </button>
+              <button
                 id="swiper-next"
-                name="next"
-                class="bg-light text-dark shadow-default"
-              />
+                class="flex items-center justify-center border border-dark-border p-4"
+              >
+                <NuxtIcon name="feather/arrow-right" filled class="w-6 h-6" />
+              </button>
             </div>
           </div>
         </div>
       </div>
     </transition>
     <transition name="fade">
-      <div class="h-full w-full grow flex items-center justify-center">
+      <!-- <div class="h-full w-full grow flex items-center justify-center"> -->
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
         <div
           :class="`duration-600 bg-light shadow-default p-8 gap-8 flex flex-col items-center w-[40rem] rounded-lg`"
           v-if="!store.gatherPages"
@@ -92,7 +95,7 @@
   @apply opacity-100;
 }
 .fade-enter-active {
-  @apply transition-all duration-300 ease-in-out;
+  @apply transition-all duration-1000 ease-in-out;
 }
 
 .fade-leave-from {
@@ -100,7 +103,6 @@
 }
 .fade-leave-to {
   @apply opacity-0;
-  height: 0 !important;
 }
 </style>
 
