@@ -70,7 +70,7 @@
         class="flex flex-col items-center justify-center gap-8 mx-auto grow w-fit"
         v-else-if="!isMap"
       >
-        <NuxtImg src="empty.png" />
+        <NuxtImg src="minecraft/no_players.webp" />
         <h2 class="text-h-lg-700 text-dark-secondary">поки нікого :(</h2>
       </div>
     </div>

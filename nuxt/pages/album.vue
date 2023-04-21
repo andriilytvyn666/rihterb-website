@@ -7,7 +7,7 @@
 
       <div class="flex flex-col gap-8 items-center md:w-[23.5rem]">
         <NuxtImg
-          src="album.png"
+          src="/album/index.webp"
           class="rounded-lg shadow-default aspect-square w-[20.875rem] md:w-full"
         />
         <div class="flex w-full gap-4 text-dark">

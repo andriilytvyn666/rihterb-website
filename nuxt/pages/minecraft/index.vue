@@ -55,7 +55,7 @@
         </div>
       </div>
       <NuxtImg
-        src="m2.webp"
+        src="/minecraft/index.webp"
         class="aspect-square md:aspect-auto md:h-full object-cover rounded-lg w-full"
       />
     </div>

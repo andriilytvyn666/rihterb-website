@@ -4,11 +4,18 @@
   >
     <div class="flex flex-col items-center gap-8 sm:flex-row">
       <NuxtImg
-        src="album.png"
+        src="album/small.webp"
         alt="album"
         width="320"
         height="320"
-        class="w-full h-full rounded-lg sm:w-20 sm:h-20 shadow-default"
+        class="hidden sm:flex rounded-lg sm:w-20 sm:h-20 shadow-default"
+      />
+      <NuxtImg
+        src="album/index.webp"
+        alt="album"
+        width="320"
+        height="320"
+        class="rounded-lg w-full h-full sm:hidden shadow-default"
       />
       <div class="flex flex-col w-full gap-2 sm:justify-center">
         <h2

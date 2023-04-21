@@ -7,9 +7,9 @@
     </nav>
     <NuxtLink :to="localePath('/', $i18n.locale)">
       <NuxtImg
-        src="/logo.png"
-        width="320"
-        height="320"
+        src="/logo.webp"
+        width="48"
+        height="48"
         id="logo"
         class="rounded-full w-9 h-9"
       />

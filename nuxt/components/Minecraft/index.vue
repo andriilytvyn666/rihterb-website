@@ -13,8 +13,8 @@
         },
       }"
     >
-      <SwiperSlide v-for="image in images" :key="image" class="page">
-        <NuxtImg :src="image" class="image" />
+      <SwiperSlide v-for="i in 3" :key="i" class="page">
+        <NuxtImg :src="`/minecraft/${i}.webp`" class="image" />
       </SwiperSlide>
     </Swiper>
     <div
@@ -41,7 +41,6 @@
 
 <script lang="ts" setup>
 const localePath = useLocalePath()
-const images = ['m1.jpg', 'm2.webp', 'm3.jpg']
 </script>
 
 <style lang="postcss">
