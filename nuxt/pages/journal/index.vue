@@ -1,8 +1,59 @@
 <template>
   <NuxtLayout name="nowrapper">
-    <JournalBg class="" />
-    <div class="h-full w-full grow flex items-center justify-center">
-      <transition name="fade">
+    <JournalBg />
+    <transition name="fade">
+      <div
+        class="z-10 w-full grow h-full flex items-center justify-center overflow-visible"
+        v-if="store.gatherPages"
+      >
+        <div class="flex flex-col gap-8 w-[35rem]">
+          <Swiper
+            :modules="[SwiperNavigation]"
+            :slides-per-view="1"
+            :space-between="32"
+            :navigation="{
+              nextEl: '#swiper-next',
+              prevEl: '#swiper-prev',
+              disabledClass: 'opacity-0',
+            }"
+            class="w-full items-center flex justify-center grow h-[45.625rem] overflow-visible"
+          >
+            <SwiperSlide
+              v-for="i in 12"
+              :key="i"
+              class="w-full h-full flex justify-center items-center grow overflow-visible"
+            >
+              <NuxtImg
+                :src="`journal_view/${i}.webp`"
+                class="h-full object-cover"
+              />
+            </SwiperSlide>
+          </Swiper>
+          <!-- <NuxtImg src="journal_view/1.webp" v-if="store.gatherPages" /> -->
+          <div class="flex justify-between">
+            <Button
+              name="назад"
+              class="border border-dark-border"
+              @click="store.gatherPages = !store.gatherPages"
+            />
+            <div class="flex gap-4">
+              <Button
+                id="swiper-prev"
+                name="prev"
+                class="border border-dark-border-alt text-light shadow-default"
+              />
+              <Button
+                id="swiper-next"
+                name="next"
+                class="bg-light text-dark shadow-default"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </transition>
+    <transition name="fade">
+      <div class="h-full w-full grow flex items-center justify-center">
         <div
           :class="`duration-600 bg-light shadow-default p-8 gap-8 flex flex-col items-center w-[40rem] rounded-lg`"
           v-if="!store.gatherPages"
@@ -28,8 +79,8 @@
             <!-- </NuxtLink> -->
           </div>
         </div>
-      </transition>
-    </div>
+      </div>
+    </transition>
   </NuxtLayout>
 </template>
 
@@ -49,12 +100,12 @@
 }
 .fade-leave-to {
   @apply opacity-0;
+  height: 0 !important;
 }
 </style>
 
 <script lang="ts" setup>
 import { useClientStore } from '../../stores/client'
-
 const localePath = useLocalePath()
 
 const store = useClientStore()
