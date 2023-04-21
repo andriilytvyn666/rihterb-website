@@ -14,9 +14,8 @@
             :navigation="{
               nextEl: '#swiper-next',
               prevEl: '#swiper-prev',
-              disabledClass: 'opacity-0',
             }"
-            class="w-full items-center flex justify-center grow h-[45.625rem] overflow-visible"
+            class="w-full items-center flex justify-center grow h-[45.625rem] overflow-visible bg-dark"
           >
             <SwiperSlide
               v-for="i in 12"
@@ -30,26 +29,27 @@
             </SwiperSlide>
           </Swiper>
           <!-- <NuxtImg src="journal_view/1.webp" v-if="store.gatherPages" /> -->
-          <div class="flex justify-between">
-            <Button
-              name="назад"
-              class="border border-dark-border"
-              @click="store.gatherPages = !store.gatherPages"
-            />
-            <div class="flex gap-4 [&>*]:rounded-lg text-[1.5rem]">
-              <button
-                id="swiper-prev"
-                class="flex items-center justify-center border border-dark-border p-4"
-              >
-                <NuxtIcon name="feather/arrow-left" filled class="w-6 h-6" />
-              </button>
-              <button
-                id="swiper-next"
-                class="flex items-center justify-center border border-dark-border p-4"
-              >
-                <NuxtIcon name="feather/arrow-right" filled class="w-6 h-6" />
-              </button>
-            </div>
+          <div class="flex grow gap-4">
+            <button
+              id="swiper-prev"
+              class="flex items-center justify-center border border-dark-border p-4 rounded-lg text-[1.5rem]"
+            >
+              <NuxtIcon name="feather/arrow-left" filled class="w-6 h-6" />
+            </button>
+            <NuxtLink :to="localePath('/', $i18n.locale)" class="grow">
+              <Button
+                name="на головну"
+                class="border border-dark-border sm:w-full"
+              />
+            </NuxtLink>
+            <button
+              id="swiper-next"
+              class="flex items-center justify-center border border-dark-border p-4 rounded-lg text-[1.5rem]"
+            >
+              <NuxtIcon name="feather/arrow-right" filled class="w-6 h-6" />
+            </button>
+
+            <!-- <div class="flex gap-4 [&>*]:rounded-lg text-[1.5rem]"></div> -->
           </div>
         </div>
       </div>

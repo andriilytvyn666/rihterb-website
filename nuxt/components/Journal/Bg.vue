@@ -79,7 +79,7 @@ const store = useClientStore()
 
 <style lang="postcss" scoped>
 .center {
-  @apply top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rotate-0 opacity-0;
+  @apply top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rotate-0;
 }
 
 .outter {
