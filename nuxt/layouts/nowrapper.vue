@@ -1,5 +1,5 @@
 <template>
-  <div class="px-4 xl:px-0">
+  <div>
     <DevOnly>
       <DebugIndicator />
     </DevOnly>
@@ -15,16 +15,9 @@
   </div>
 </template>
 
-<style lang="postcss">
+<style lang="postcss" scoped>
 #page-wrapper {
   @apply w-full;
-}
-
-@screen xl {
-  #page-wrapper {
-    @apply w-[78.75rem];
-    @apply mx-auto;
-  }
 }
 </style>
 

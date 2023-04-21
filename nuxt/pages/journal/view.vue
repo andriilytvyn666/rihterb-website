@@ -1,5 +1,3 @@
 <template>
-  <NuxtLayout name="wrapper">
-    <div>view</div>
-  </NuxtLayout>
+  <NuxtLayout name="wrapper">9</NuxtLayout>
 </template>

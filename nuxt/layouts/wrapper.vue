@@ -15,7 +15,7 @@
   </div>
 </template>
 
-<style lang="postcss">
+<style lang="postcss" scoped>
 #page-wrapper {
   @apply w-full;
 }
