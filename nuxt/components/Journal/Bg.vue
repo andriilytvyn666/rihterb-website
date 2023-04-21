@@ -1,7 +1,7 @@
 <template>
   <!-- top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2  -->
-  <div class="z-10 w-full grow h-full">
-    <div class="flex flex-col">
+  <div class="z-10 w-full flex justify-center items-center">
+    <div class="flex flex-col w-fit gap-5">
       <transition name="fade">
         <Swiper
           :modules="[SwiperNavigation]"
@@ -11,16 +11,13 @@
             prevEl: '#swiper-prev',
             disabledClass: 'opacity-0',
           }"
-          class="w-full items-center flex justify-center grow"
+          class=""
         >
-          <SwiperSlide
-            v-for="i in 12"
-            :key="i"
-            class="w-full flex justify-center items-center grow h-full"
-          >
+          <SwiperSlide v-for="i in 12" :key="i" class="">
             <NuxtImg :src="`journal_view/${i}.webp`" v-if="store.gatherPages" />
           </SwiperSlide>
         </Swiper>
+        <!-- <NuxtImg src="journal_view/1.webp" v-if="store.gatherPages" /> -->
       </transition>
       <div class="flex justify-between">
         <transition name="fade">

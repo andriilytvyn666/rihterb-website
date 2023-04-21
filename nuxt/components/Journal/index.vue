@@ -23,8 +23,8 @@
           },
         }"
       >
-        <SwiperSlide v-for="image in images" :key="image" class="page">
-          <NuxtImg :src="image" class="image" />
+        <SwiperSlide v-for="i in 12" :key="i" class="page">
+          <NuxtImg :src="`journal_view/${i}.webp`" class="image" />
         </SwiperSlide>
       </Swiper>
       <div
@@ -52,7 +52,6 @@
 
 <script lang="ts" setup>
 const localePath = useLocalePath()
-const images = ['1.png', '2.png', '3.png', '4.png', '5.png']
 </script>
 
 <style lang="postcss" scoped>
