@@ -2,7 +2,7 @@
   <NuxtLayout name="wrapper">
     <div class="flex flex-col w-full gap-8 grow">
       <div class="flex flex-col-reverse justify-between gap-8 sm:flex-row">
-        <div class="flex gap-4">
+        <div class="flex gap-4 grow">
           <button
             class="px-5 py-4 rounded-lg bg-dark-alt"
             @click="refreshStatus"
@@ -13,26 +13,39 @@
               class="text-[1.5rem] refresh block"
             />
           </button>
-          <Button class="bg-dark-alt">
-            <span>{{ status.version?.name_clean.split(' ')[1] }}</span>
-            <span class="text-dark-secondary">/</span>
-            <span>{{
-              `${status.players?.online}/${status.players?.max}`
-            }}</span>
+          <Button class="bg-dark-alt grow sm:grow-0">
+            <span class="truncate">
+              {{ status.version?.name_clean.split(' ')[1] }}
+              <span class="text-dark-secondary">/</span>
+              {{ `${status.players?.online}/${status.players?.max}` }}
+            </span>
           </Button>
           <Button
             :name="isMap ? 'гравці' : 'мапа'"
             @click="isMap = !isMap"
-            class="bg-dark-alt"
+            class="bg-dark-alt max-w-fit"
           />
         </div>
-        <Button
-          name="rihterb.my.pebble.host"
-          @click="copyToClipboard"
-          class="bg-light text-dark"
-        >
-          <NuxtIcon name="feather/copy" filled class="text-[1.5rem]" />
-        </Button>
+        <div class="flex gap-4">
+          <NuxtLink
+            to="https://discord.gg/xDknD7uG"
+            target="_blank"
+            class="flex items-center justify-center px-5 py-4 text-dark rounded-lg bg-light"
+          >
+            <NuxtIcon
+              name="social/discord"
+              filled
+              class="text-[1.5rem] refresh block"
+            />
+          </NuxtLink>
+          <Button
+            name="rihterb.my.pebble.host"
+            @click="copyToClipboard"
+            class="bg-light text-dark"
+          >
+            <NuxtIcon name="feather/copy" filled class="text-[1.5rem]" />
+          </Button>
+        </div>
       </div>
       <iframe
         src="https://rihterb.my.pebble.host"
