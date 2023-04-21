@@ -16,7 +16,7 @@
               prevEl: '#swiper-prev',
               disabledClass: 'opacity-0',
             }"
-            class="w-screen h-[36rem] sm:w-[59rem] items-center flex grow justify-center sm:h-[45.625rem] overflow-visible bg-dark"
+            class="w-screen h-[36rem] md:w-[59rem] items-center flex grow justify-center md:h-[45.625rem] overflow-visible bg-dark"
           >
             <SwiperSlide
               v-for="i in 12"
