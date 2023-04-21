@@ -10,7 +10,7 @@
     />
     <div class="flex flex-col justify-between gap-8 sm:gap-0">
       <div class="flex flex-col text-center sm:text-left">
-        <h1 class="text-h-lg-700 text-hl-yellow">Василій Ріхтер</h1>
+        <h2 class="text-h-lg-700 text-hl-yellow">Василій Ріхтер</h2>
         <h3 class="text-body-md-600 text-dark-secondary">
           10 років ꞏ музикант
         </h3>

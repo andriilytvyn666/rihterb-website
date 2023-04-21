@@ -6,7 +6,7 @@
         class="z-10 w-full grow h-full flex items-center justify-center overflow-visible"
         v-if="store.gatherPages"
       >
-        <div class="flex flex-col gap-5 w-[35rem]">
+        <div class="flex flex-col gap-5 overflow-visible items-center">
           <Swiper
             :modules="[SwiperNavigation]"
             :slides-per-view="1"
@@ -16,20 +16,17 @@
               prevEl: '#swiper-prev',
               disabledClass: 'opacity-0',
             }"
-            class="w-full items-center flex justify-center grow h-[45.625rem] overflow-visible bg-dark"
+            class="w-[59rem] items-center flex justify-center grow h-[45.625rem] overflow-visible bg-dark"
           >
             <SwiperSlide
               v-for="i in 12"
               :key="i"
-              class="w-full h-full flex justify-center items-center grow overflow-visible"
+              class="flex justify-center items-center grow overflow-visible relative"
             >
-              <NuxtImg
-                :src="`journal_view/${i}.webp`"
-                class="h-full object-cover"
-              />
+              <NuxtImg :src="`journal_view/${i}.webp`" class="h-full" />
             </SwiperSlide>
           </Swiper>
-          <div class="flex grow gap-4">
+          <div class="flex grow gap-4 w-[35rem]">
             <button
               id="swiper-prev"
               class="flex items-center justify-center border border-dark-border p-4 rounded-lg text-[1.5rem]"
@@ -87,6 +84,9 @@
 </template>
 
 <style lang="postcss" scoped>
+.swiper-slide-active {
+  @apply z-20;
+}
 .fade-enter-from {
   @apply opacity-0;
 }
