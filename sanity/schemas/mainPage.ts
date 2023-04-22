@@ -67,7 +67,7 @@ export default {
       fields: [
         {
           name: 'image',
-          description: '334 x 334 webp',
+          description: '500 x 500 webp',
           type: 'image',
           validation: (rule: Rule) => rule.required(),
           options: {accept: 'image/webp'},
@@ -134,7 +134,7 @@ export default {
       fields: [
         {
           name: 'images',
-          description: '581 x 327 webp',
+          description: 'any x 400 webp',
           type: 'array',
           of: [
             {

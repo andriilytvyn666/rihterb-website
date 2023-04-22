@@ -13,8 +13,8 @@
       <SanityImage
         rel="preload"
         :asset-id="album.image.asset._ref"
-        w="334"
-        h="334"
+        w="500"
+        h="500"
         class="rounded-lg w-full h-full sm:hidden shadow-default"
       />
       <div class="flex flex-col w-full gap-2 sm:justify-center">

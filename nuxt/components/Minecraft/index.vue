@@ -22,8 +22,8 @@
           rel="preload"
           :asset-id="image.asset._ref"
           class="image"
-          w="581"
-          h="327"
+          fit="crop"
+          h="400"
         />
       </SwiperSlide>
     </Swiper>

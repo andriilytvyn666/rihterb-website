@@ -26,7 +26,7 @@
             >
               <SanityImage
                 :asset-id="page.asset._ref"
-                h="1000"
+                h="730"
                 class="sm:h-full object-cover"
               />
             </SwiperSlide>

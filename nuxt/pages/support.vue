@@ -7,6 +7,8 @@
             rel="preload"
             w="300"
             h="300"
+            fit="crop"
+            crop="top"
             :asset-id="support.images.imageBack.asset._ref"
             class="z-0 left-card"
           />
@@ -15,6 +17,8 @@
             rel="preload"
             w="300"
             h="300"
+            fit="crop"
+            crop="top"
             :asset-id="support.images.imageMiddle.asset._ref"
             class="z-0 middle-card sm:right-card"
           />
@@ -22,6 +26,8 @@
             rel="preload"
             w="300"
             h="300"
+            fit="crop"
+            crop="top"
             :asset-id="support.images.imageFront.asset._ref"
             class="z-10 right-card sm:middle-card"
           />
