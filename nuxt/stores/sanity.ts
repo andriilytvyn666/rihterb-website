@@ -22,7 +22,7 @@ export const useSanityStore = defineStore('sanity-store', () => {
   const getAbout = async (): Promise<About> =>
     sanityFetch<About>(
       about,
-      groq`*[_type == "about"][0] {_id, name, photo, subtitle, description, links}`
+      groq`*[_type == "about"][0] {_id, photo, name, subtitle, description, listenName, listenLink, socialName, socialLink}`
     )
 
   const getSupport = async (): Promise<Support> =>

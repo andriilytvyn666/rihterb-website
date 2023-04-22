@@ -1,37 +1,52 @@
 <template>
   <div class="flex flex-col items-center gap-8 sm:items-stretch sm:flex-row">
-    <NuxtImg
-      rel="preload"
-      src="/about.webp"
+    <!-- TODO: figure out why nuxt-image-edge is broken with sanity backend -->
+    <!-- <NuxtImg
+      :src="about.photo.asset._ref"
       alt="About"
-      width="320"
-      height="320"
+      width="286"
+      height="286"
       class="rounded-lg w-[20.875rem] h-[20.875rem] sm:w-[17.875rem] sm:h-[17.875rem] shadow-default"
-    />
+    /> -->
+    <SanityImage :asset-id="about.photo.asset._ref" w="286" h="286" />
     <div class="flex flex-col justify-between gap-8 sm:gap-0">
       <div class="flex flex-col text-center sm:text-left">
-        <h2 class="text-h-lg-700 text-hl-yellow">Василій Ріхтер</h2>
+        <h2 class="text-h-lg-700 text-hl-yellow">
+          {{ getLocalizedString($i18n.locale, about.name) }}
+        </h2>
         <h3 class="text-body-md-600 text-dark-secondary">
-          10 років ꞏ музикант
+          {{ getLocalizedString($i18n.locale, about.subtitle) }}
         </h3>
       </div>
       <p class="text-center text-body-lg-600 text-light sm:text-left">
         <span class="hidden sm:inline">
           <span class="line-clamp-4">
-            український інді-музикант. пишу психоделічні інді пісні з унікальним
-            саундом. поєднуючи різні жанри, досліджую емоційні простори,
-            створюючи неповторний настрій.
+            {{ getLocalizedString($i18n.locale, about.description) }}
           </span>
         </span>
         <span class="sm:hidden">
-          український інді-музикант. пишу психоделічні інді пісні з унікальним
-          саундом.
+          {{ getLocalizedString($i18n.locale, about.description) }}
         </span>
       </p>
       <div class="flex flex-col gap-4 sm:flex-row">
-        <Button class="bg-hl-yellow text-dark" name="слухати" />
-        <Button class="bg-light text-dark" name="соцмережі" />
+        <Button
+          class="bg-hl-yellow text-dark"
+          :name="getLocalizedString($i18n.locale, about.listenName)"
+        />
+        <Button
+          class="bg-light text-dark"
+          :name="getLocalizedString($i18n.locale, about.socialName)"
+        />
       </div>
     </div>
   </div>
 </template>
+
+<script lang="ts" setup>
+import { useSanityStore } from '../../stores/sanity'
+
+const store = useSanityStore()
+const about = await store.getAbout()
+
+console.log(about)
+</script>

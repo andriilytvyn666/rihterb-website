@@ -16,10 +16,10 @@ export default defineNuxtConfig({
     '@vueuse/motion/nuxt',
   ],
   image: {
-    provider: 'vercel',
-    // sanity: {
-    //   projectId: 'lh08fn64',
-    // },
+    sanity: {
+      projectId: 'lh08fn64',
+      dataset: 'production',
+    },
   },
   sanity: {
     projectId: 'lh08fn64',

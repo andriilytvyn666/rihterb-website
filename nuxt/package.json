@@ -22,7 +22,7 @@
     "vite-plugin-eslint": "^1.8.1"
   },
   "dependencies": {
-    "@nuxt/image-edge": "^1.0.0-27913696.5d122a3",
+    "@nuxt/image-edge": "^1.0.0-28020728.5df24eb",
     "@nuxtjs/sanity": "^1.6.0",
     "@pinia/nuxt": "^0.4.9",
     "@vueuse/motion": "^2.0.0-beta.27",

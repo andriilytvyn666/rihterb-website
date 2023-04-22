@@ -1,10 +1,13 @@
 type About = {
   _id: string
-  name: localeString
   photo: image
+  name: localeString
   subtitle: localeString
   description: localeString
-  links: Array<ListenLink>
+  listenName: localeString
+  listenLink: string
+  socialName: localeString
+  socialLink: string
 }
 
 type localeString = {

@@ -8,18 +8,18 @@ export default {
   title: 'About',
   fields: [
     {
-      name: 'name',
-      type: 'localeString',
-      validation: (rule: Rule) => rule.required(),
-    },
-    {
       name: 'photo',
-      description:
-        'всі картинки заливати в webp, бо тоді менше розмір в +-2 рази і все грузиться швидше. і бажано у максимальному розмірі, який буде видно на сайті, можна глянути через Ctrl+I.',
+      description: '334x334 webp',
       type: 'image',
       validation: (rule: Rule) => rule.required(),
       options: {accept: 'image/webp'},
     },
+    {
+      name: 'name',
+      type: 'localeString',
+      validation: (rule: Rule) => rule.required(),
+    },
+
     {
       name: 'subtitle',
       type: 'localeString',
@@ -27,15 +27,28 @@ export default {
     },
     {
       name: 'description',
+      description: 'обмеження 4 рядки',
       type: 'localeString',
       validation: (rule: Rule) => rule.required(),
     },
     {
-      name: 'links',
-      description:
-        'не міняти порядок, і не додавати нові, бо бібліотека встрата трохи і не можна нормально кольори іконок міняти динамічно, тому поки вони захардкоджені',
-      type: 'array',
-      of: [{type: 'listenLink'}],
+      name: 'listenName',
+      type: 'localeString',
+      validation: (rule: Rule) => rule.required(),
+    },
+    {
+      name: 'listenLink',
+      type: 'url',
+      validation: (rule: Rule) => rule.required(),
+    },
+    {
+      name: 'socialName',
+      type: 'localeString',
+      validation: (rule: Rule) => rule.required(),
+    },
+    {
+      name: 'socialLink',
+      type: 'url',
       validation: (rule: Rule) => rule.required(),
     },
   ],
