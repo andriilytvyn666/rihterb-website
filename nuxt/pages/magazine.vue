@@ -138,5 +138,9 @@
 
 <script lang="ts" setup>
 const store = useClientStore()
+
+const sanityStore = useSanityStore()
+await sanityStore.getMainPage()
+
 const localePath = useLocalePath()
 </script>

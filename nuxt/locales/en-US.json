@@ -8,5 +8,10 @@
     "title": "Richter",
     "description": "I am a Ukrainian indie musician. I write psychedelic indie songs with a unique sound, combining different genres and exploring emotional spaces to create a unique atmosphere.",
     "author": "Vasily Richter"
+  },
+  "monitoring": {
+    "map": "map",
+    "players": "players",
+    "no_players": "nobody's here :("
   }
 }

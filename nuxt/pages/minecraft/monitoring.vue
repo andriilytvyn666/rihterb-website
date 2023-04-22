@@ -21,7 +21,7 @@
             </span>
           </Button>
           <Button
-            :name="isMap ? 'гравці' : 'мапа'"
+            :name="isMap ? t('monitoring.players') : t('monitoring.map')"
             @click="isMap = !isMap"
             class="bg-dark-alt max-w-fit"
           />
@@ -71,7 +71,9 @@
         v-else-if="!isMap"
       >
         <NuxtImg src="minecraft/no_players.webp" rel="preload" />
-        <h2 class="text-h-lg-700 text-dark-secondary">поки нікого :(</h2>
+        <h2 class="text-h-lg-700 text-dark-secondary">
+          {{ $t('monitoring.no_players') }}
+        </h2>
       </div>
     </div>
   </NuxtLayout>
@@ -79,6 +81,12 @@
 
 <script lang="ts" setup>
 import { statusJava } from 'node-mcstatus'
+
+const store = useSanityStore()
+
+await store.getMainPage()
+
+const { t } = useI18n()
 
 const isMap = ref(false)
 const status = ref(await statusJava('rihterb.my.pebble.host', 25565))
