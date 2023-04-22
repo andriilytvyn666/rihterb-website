@@ -28,12 +28,11 @@
         </p>
       </div>
     </div>
-    <NuxtLink :to="localePath('/album', $i18n.locale)" class="w-full sm:w-fit">
-      <Button
-        :name="getLocalizedString($i18n.locale, album.buttonName)"
-        class="bg-light text-dark h-fit"
-      />
-    </NuxtLink>
+    <Button
+      :to="localePath('/album', $i18n.locale)"
+      :name="getLocalizedString($i18n.locale, album.buttonName)"
+      class="bg-light text-dark h-fit w-full sm:w-fit"
+    />
   </div>
 </template>
 

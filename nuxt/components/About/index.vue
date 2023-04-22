@@ -35,18 +35,16 @@
         </span>
       </p>
       <div class="flex flex-col gap-4 sm:flex-row">
-        <NuxtLink :to="about.listenLink">
-          <Button
-            class="bg-hl-yellow text-dark"
-            :name="getLocalizedString($i18n.locale, about.listenName)"
-          />
-        </NuxtLink>
-        <NuxtLink :to="about.socialLink">
-          <Button
-            class="bg-light text-dark"
-            :name="getLocalizedString($i18n.locale, about.socialName)"
-          />
-        </NuxtLink>
+        <Button
+          :to="about.listenLink"
+          class="bg-hl-yellow text-dark"
+          :name="getLocalizedString($i18n.locale, about.listenName)"
+        />
+        <Button
+          :to="about.socialLink"
+          class="bg-light text-dark"
+          :name="getLocalizedString($i18n.locale, about.socialName)"
+        />
       </div>
     </div>
   </div>

@@ -5,7 +5,7 @@
     </DevOnly>
     <transition name="scale">
       <Button
-        :link="localePath('/', $i18n.locale)"
+        :to="localePath('/', $i18n.locale)"
         v-if="!clientStore.gatherPages"
         :name="t('magazine.homepage')"
         class="bg-light absolute z-20 left-4 top-4 sm:left-8 sm:top-8 text-dark border border-dark-border w-min"

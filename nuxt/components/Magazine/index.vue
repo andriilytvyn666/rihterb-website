@@ -55,12 +55,11 @@
             </p>
           </div>
         </div>
-        <NuxtLink :to="localePath('/magazine', $i18n.locale)">
-          <Button
-            :name="getLocalizedString($i18n.locale, magazine.buttonName)"
-            class="bg-light text-dark h-fit"
-          />
-        </NuxtLink>
+        <Button
+          :to="localePath('/magazine', $i18n.locale)"
+          :name="getLocalizedString($i18n.locale, magazine.buttonName)"
+          class="bg-light text-dark h-fit"
+        />
       </div>
     </div>
   </div>
