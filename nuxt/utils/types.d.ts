@@ -1,10 +1,95 @@
 type About = {
-  _id: string
-  name: localeString
   photo: image
+  name: localeString
   subtitle: localeString
   description: localeString
-  links: Array<ListenLink>
+  listenName: localeString
+  listenLink: string
+  socialName: localeString
+  socialLink: string
+}
+
+type Album = {
+  imageLarge: image
+  imageSmall: image
+  title: localeString
+  text: localeString
+  buttonName: localeString
+}
+
+type Magazine = {
+  images: image[]
+  title: localeString
+  text: localeString
+  buttonName: localeString
+}
+
+type Minecraft = {
+  images: image[]
+  title: localeString
+  text: localeString
+  buttonName: localeString
+}
+
+type Support = {
+  title: localeString
+  text: localeString
+  buttonName: localeString
+}
+
+type MainPage = {
+  about: About
+  album: Album
+  magazine: Magazine
+  minecraft: Minecraft
+  support: Support
+}
+
+type SupportPage = {
+  images: {
+    imageBack: image
+    imageMiddle: image
+    imageFront: image
+  }
+  title: localeString
+  text: localeString
+  patreon: {
+    name: localeString
+    link: string
+  }
+  bandcamp: {
+    name: localeString
+    link: string
+  }
+  paypal: {
+    name: localeString
+    link: string
+  }
+  diaka: {
+    name: localeString
+    link: string
+  }
+  mono: {
+    name: localeString
+    link: string
+  }
+}
+
+type MinecraftPage = {
+  title: localeString
+  text: localePortableText
+  features: localeString[]
+  ip: string
+  buttons: {
+    monitoring: localeString
+    map: buttonLink
+    discord: buttonLink
+  }
+}
+
+type buttonLink = {
+  name: localeString
+  link: string
 }
 
 type localeString = {
@@ -18,19 +103,26 @@ type localePortableText = {
 }
 
 type AlbumPage = {
-  logo: image
+  image: image
   title: localeString
-  description: localeString
-  albumImage: image
-  player: string
-  link: string
-  bandcampLink: string
+  text: localePortableText
+  buttons: {
+    magazine: {
+      name: localeString
+    }
+    listen: buttonLink
+  }
+  spotifyLink: string
 }
 
+type MagazinePage = {
+  title: localeString
+  text: localeString
+}
+
+// TODO: refactor
 type Header = {
   logo: image
-  linkTelegram: string
-  linkInstagram: string
 }
 
 type FooterLinks = {
@@ -51,14 +143,6 @@ type Post = {
   player: string
   link: string
   bandcampLink: string
-}
-
-type Support = {
-  title: localeString
-  text: localeString
-  patreonLink: string
-  bandcampLink: string
-  diakaLink: string
 }
 
 type image = {

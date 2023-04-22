@@ -5,20 +5,30 @@ import eslintPlugin from 'vite-plugin-eslint'
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  imports: {
+    dirs: ['stores'],
+  },
   modules: [
     '@nuxtjs/tailwindcss',
     'nuxt-swiper',
     'nuxt-icons',
     '@nuxtjs/i18n',
     '@nuxt/image-edge',
-    '@pinia/nuxt',
+    [
+      '@pinia/nuxt',
+      {
+        autoImports: ['defineStore', 'acceptHMRUpdate'],
+      },
+    ],
+    '@pinia-plugin-persistedstate/nuxt',
     '@nuxtjs/sanity',
+    '@vueuse/nuxt',
     '@vueuse/motion/nuxt',
   ],
   image: {
-    provider: 'sanity',
     sanity: {
       projectId: 'lh08fn64',
+      dataset: 'production',
     },
   },
   sanity: {
@@ -41,6 +51,13 @@ export default defineNuxtConfig({
       cookieKey: 'i18n_redirected',
       redirectOn: 'root',
     },
+    vueI18n: {
+      legacy: false,
+      locale: 'uk',
+      fallbackLocale: 'en',
+      availableLocales: ['en', 'uk', 'ru'],
+      messages: { en, uk, ru },
+    },
     locales: [
       {
         name: 'English',
@@ -59,12 +76,5 @@ export default defineNuxtConfig({
         code: 'ru',
       },
     ],
-    vueI18n: {
-      legacy: false,
-      locale: 'uk',
-      fallbackLocale: 'en',
-      availableLocales: ['en', 'uk', 'ru'],
-      messages: { en, uk, ru },
-    },
   },
 })

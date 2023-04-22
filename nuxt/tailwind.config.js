@@ -9,9 +9,44 @@ module.exports = {
   theme: {
     fontFamily: {
       sans: 'Inter, sans-serif',
-      serif: 'Georgia, serif',
     },
-
+    fontSize: {
+      'body-lg-600': [
+        '1.5rem',
+        {
+          lineHeight: '2rem',
+          fontWeight: '600',
+        },
+      ],
+      'body-md-600': [
+        '1.25rem',
+        {
+          lineHeight: '1.75rem',
+          fontWeight: '600',
+        },
+      ],
+      'body-md-500': [
+        '1.25rem',
+        {
+          lineHeight: '1.75rem',
+          fontWeight: '500',
+        },
+      ],
+      'h-lg-700': [
+        '1.875rem',
+        {
+          lineHeight: '2.25rem',
+          fontWeight: '700',
+        },
+      ],
+      'footer-md-600': [
+        '1rem',
+        {
+          lineHeight: '1.5rem',
+          fontWeight: '600',
+        },
+      ],
+    },
     extend: {
       screens: {
         xs: '320px',
@@ -19,15 +54,17 @@ module.exports = {
       colors: {
         light: {
           DEFAULT: '#ffffff',
-          secondary: '#939393',
         },
         dark: {
-          DEFAULT: '#090909',
-          hover: '#181818',
+          'DEFAULT': '#090909',
+          'secondary': '#939393',
+          'alt': '#181818',
+          'border': '#313131',
+          'border-alt': '#4D4D4D',
         },
-        highlight: {
-          DEFAULT: '#FFC657',
-          secondary: '#71AAFF',
+        hl: {
+          yellow: '#FFC657',
+          blue: '#0039A8',
         },
       },
     },

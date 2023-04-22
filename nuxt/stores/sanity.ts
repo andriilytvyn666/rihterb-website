@@ -1,79 +1,73 @@
 import { defineStore } from 'pinia'
 
-export const useSanityStore = defineStore('sanity-store', () => {
-  const about = ref<About>()
-  const support = ref<Support>()
-  const post = ref<Post>()
-  const youtubeVideos = ref<video[]>()
-  const navLinks = ref<NavLink[]>()
-  const header = ref<Header>()
-  const footerLinks = ref<FooterLinks>()
-  const albumPage = ref<AlbumPage>()
+export const useSanityStore = defineStore(
+  'sanity-store',
+  () => {
+    const header = ref<Header>()
+    const footerLinks = ref<FooterLinks>()
+    const mainPage = ref<MainPage>()
+    const supportPage = ref<SupportPage>()
+    const minecraftPage = ref<MinecraftPage>()
+    const albumPage = ref<AlbumPage>()
+    const magazinePage = ref<MagazinePage>()
 
-  const sanityFetch = async <T>(ref: Ref, query: string): Promise<T> => {
-    if (ref.value !== undefined) return ref.value
+    const sanityFetch = async <T>(ref: Ref, query: string): Promise<T> => {
+      if (ref.value !== undefined) return ref.value
 
-    const { data } = await useSanityQuery<T>(query)
-    ref.value = data.value
+      const { data } = await useSanityQuery<T>(query)
+      ref.value = data.value
 
-    return ref.value
-  }
+      return ref.value
+    }
 
-  const getAbout = async (): Promise<About> =>
-    sanityFetch<About>(
-      about,
-      groq`*[_type == "about"][0] {_id, name, photo, subtitle, description, links}`
-    )
+    const getMagazinePage = async (): Promise<MagazinePage> =>
+      sanityFetch<MagazinePage>(
+        magazinePage,
+        groq`*[_type == "magazinePage"][0] { title, text }`
+      )
 
-  const getSupport = async (): Promise<Support> =>
-    sanityFetch<Support>(
-      support,
-      groq`*[_type == "support"][0] {_id, title, text, patreonLink, bandcampLink, diakaLink}`
-    )
+    const getMainPage = async (): Promise<MainPage> =>
+      sanityFetch<MainPage>(
+        mainPage,
+        groq`*[_type == "mainPage"][0] { about, album, magazine, minecraft, support }`
+      )
 
-  const getPost = async (): Promise<Post> =>
-    sanityFetch<Post>(
-      post,
-      groq`*[_type == "post"][0] {_id, title, subtitle, text, player, link, bandcampLink}`
-    )
+    const getMinecraftPage = async (): Promise<MinecraftPage> =>
+      sanityFetch<MinecraftPage>(
+        minecraftPage,
+        groq`*[_type == "minecraftPage"][0] { title, text, features, ip, buttons }`
+      )
 
-  const getYoutubeVideos = async (): Promise<video[]> =>
-    sanityFetch<video[]>(
-      youtubeVideos,
-      groq`*[_type == "videos"] | order(orderId asc) {_id, orderId, youtubeLink}`
-    )
+    const getSupportPage = async (): Promise<SupportPage> =>
+      sanityFetch<SupportPage>(
+        supportPage,
+        groq`*[_type == "supportPage"][0] { images, title, text, patreon, bandcamp, paypal, diaka, mono }`
+      )
 
-  const getNavLinks = async (): Promise<NavLink[]> =>
-    sanityFetch(
-      navLinks,
-      groq`*[_type == "nav"] {_id, title, linkType, target, link, icon}`
-    )
-  const getHeader = async (): Promise<Header> =>
-    sanityFetch(
-      header,
-      groq`*[_type == "header"][0] {_id, logo, linkTelegram, linkInstagram}`
-    )
+    // TODO: refactor
+    const getHeader = async (): Promise<Header> =>
+      sanityFetch(
+        header,
+        groq`*[_type == "header"][0] {_id, logo, linkTelegram, linkInstagram}`
+      )
 
-  const getAlbumPage = async (): Promise<AlbumPage> =>
-    sanityFetch(
-      albumPage,
-      groq`*[_type == "album"][0]
+    const getAlbumPage = async (): Promise<AlbumPage> =>
+      sanityFetch(
+        albumPage,
+        groq`*[_type == "albumPage"][0]
       {
-        _id,
-        logo,
+        image,
         title,
-        description,
-        albumImage,
-        player,
-        link,
-        bandcampLink
+        text,
+        buttons,
+        spotifyLink
       }`
-    )
+      )
 
-  const getFooterLinks = async (): Promise<FooterLinks> =>
-    sanityFetch(
-      footerLinks,
-      groq`*[_type == "footerLinks"][0]
+    const getFooterLinks = async (): Promise<FooterLinks> =>
+      sanityFetch(
+        footerLinks,
+        groq`*[_type == "footerLinks"][0]
       {
         _id,
         spotify,
@@ -85,16 +79,25 @@ export const useSanityStore = defineStore('sanity-store', () => {
         patreon,
         bandcamp
       }`
-    )
+      )
 
-  return {
-    getAbout,
-    getSupport,
-    getPost,
-    getYoutubeVideos,
-    getNavLinks,
-    getHeader,
-    getFooterLinks,
-    getAlbumPage,
+    return {
+      getMinecraftPage,
+      getMainPage,
+      getSupportPage,
+      getHeader,
+      getFooterLinks,
+      getAlbumPage,
+      getMagazinePage,
+    }
   }
-})
+  // {
+  //   persist: {
+  //     storage: persistedState.localStorage,
+  //   },
+  // }
+)
+
+if (import.meta.hot) {
+  import.meta.hot.accept(acceptHMRUpdate(useSanityStore, import.meta.hot))
+}

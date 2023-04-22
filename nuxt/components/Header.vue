@@ -1,139 +1,75 @@
 <template>
-  <div class="flex flex-col items-center w-full gap-2">
-    <header id="header" v-if="header !== undefined">
-      <div class="flex items-center gap-3">
-        <!-- TODO: find a solition for broken routing -->
-        <NuxtLink to="https://rihterb.pp.ua">
-          <NuxtImg
-            :src="header.logo.asset._ref"
-            alt="Richter"
-            id="header-logo"
-            class="logo"
-            width="128"
-            height="128"
-          />
-        </NuxtLink>
-      </div>
-      <nav class="hidden truncate grow sm:block">
-        <ButtonNav
-          :linkType="link.linkType"
-          :target="link.target"
-          v-for="link in navLinks"
-          :key="link._id"
-          :name="getLocalizedString($i18n.locale, link.title)"
-          :emoji="link.icon"
-          image
-          :link="link.link"
-          rounded
-        />
-      </nav>
-      <div class="flex gap-3">
-        <ButtonNav
-          name=""
-          class="text-[#26A5E4] w-[3.375rem] h-[3.375rem]"
-          linkType="web"
-          target="New page"
-          :link="header.linkTelegram"
-          icon="telegram2"
-          rounded
-        />
-        <ButtonNav
-          name=""
-          class="w-[3.375rem] h-[3.375rem] text-light instagram-bg"
-          linkType="web"
-          target="New page"
-          :link="header.linkInstagram"
-          icon="instagram"
-          rounded
-        />
-      </div>
-    </header>
-    <nav class="grid w-full grid-cols-1 gap-5 px-4 sm:hidden">
-      <ButtonNav
-        :linkType="link.linkType"
-        :target="link.target"
-        v-for="link in navLinks"
-        :key="link._id"
-        :name="getLocalizedString($i18n.locale, link.title)"
-        :emoji="link.icon"
-        image
-        :link="link.link"
-        rounded
-        class="truncate grow"
-      />
+  <header class="flex items-center justify-between" id="header">
+    <nav class="hidden gap-4" id="left">
+      <NuxtLink :to="localePath('/album', $i18n.locale)">новий альбом</NuxtLink>
+      <span class="separator">/</span>
+      <NuxtLink :to="localePath('/magazine', $i18n.locale)">журнал 9</NuxtLink>
     </nav>
-  </div>
+    <NuxtLink :to="localePath('/', $i18n.locale)">
+      <NuxtImg
+        rel="preload"
+        src="/logo.webp"
+        width="48"
+        height="48"
+        id="logo"
+        class="rounded-full w-9 h-9"
+      />
+    </NuxtLink>
+    <button
+      id="right-mobile"
+      @click="$i18n.setLocale('uk')"
+      v-if="$i18n.locale === 'en'"
+    >
+      укр
+    </button>
+    <button id="right-mobile" @click="$i18n.setLocale('en')" v-else>eng</button>
+    <nav class="hidden gap-4" id="right">
+      <button @click="$i18n.setLocale('uk')" v-if="$i18n.locale === 'en'">
+        укр
+      </button>
+      <button @click="$i18n.setLocale('en')" v-else>eng</button>
+      <span class="separator">/</span>
+      <NuxtLink to="/">слухати</NuxtLink>
+      <span class="separator">/</span>
+      <NuxtLink to="/">соцмережі</NuxtLink>
+    </nav>
+  </header>
 </template>
 
-<script setup lang="ts">
-import { useSanityStore } from '../stores/sanity'
-
-// const localePath = useLocalePath()
-const store = useSanityStore()
-
-const navLinks = await store.getNavLinks()
-const header = await store.getHeader()
+<script lang="ts" setup>
+const localePath = useLocalePath()
 </script>
 
 <style lang="postcss">
-.instagram-bg {
-  background: radial-gradient(
-    circle at 30% 107%,
-    #fdf497 0%,
-    #fdf497 5%,
-    #fd5949 45%,
-    #d6249f 60%,
-    #285aeb 90%
-  ) !important;
-
-  @apply opacity-90;
+.separator {
+  @apply text-dark-secondary;
 }
 
-.instagram-bg:hover {
-  @apply transform transition-opacity duration-300 ease-in-out;
-  @apply border-light opacity-100;
-}
-
-.logo {
-  @apply w-[3.375rem] h-[3.375rem];
-  @apply min-w-[3.375rem] min-h-[3.375rem];
-  @apply transition-transform duration-300 ease-in-out;
-}
-
-.instagram-custom {
-  @apply hover:border-light rounded-full !important;
-}
-
-.telegram-custom {
-  @apply rounded-full !important;
+#right-mobile {
+  @apply text-body-md-500;
 }
 
 #header {
-  @apply flex items-center justify-between flex-grow;
-  @apply w-full h-20 gap-6 px-4 mx-4 mt-6;
-}
-
-@screen sm {
-  #header {
-    @apply w-[38rem];
-  }
+  @apply px-2 py-6;
+  @apply text-body-md-600 mb-8 sm:mb-12;
 }
 
 @screen md {
-  #header {
-    @apply w-[46rem];
+  #logo {
+    @apply w-12 h-12;
   }
-}
 
-@screen lg {
   #header {
-    @apply w-[62rem];
+    @apply px-0 py-5;
   }
-}
 
-@screen xl {
-  #header {
-    @apply w-[73.75rem];
+  #left,
+  #right {
+    @apply flex;
+  }
+
+  #right-mobile {
+    @apply hidden;
   }
 }
 </style>

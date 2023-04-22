@@ -3,6 +3,7 @@ import {deskTool} from 'sanity/desk'
 import {visionTool} from '@sanity/vision'
 import {schemaTypes} from './schemas'
 import {UserIcon, LinkIcon, BlockContentIcon, HeartFilledIcon, ImageIcon} from '@sanity/icons'
+import {vercelDeployTool} from 'sanity-plugin-vercel-deploy'
 
 export default defineConfig({
   name: 'default',
@@ -18,41 +19,48 @@ export default defineConfig({
           .title('Main')
           .items([
             S.listItem()
-              .title('Header')
+              .title('Shared - Header')
               .icon(ImageIcon)
               .child(S.document().schemaType('header').documentId('header')),
             S.listItem()
-              .title('About')
-              .icon(UserIcon)
-              .child(S.document().schemaType('about').documentId('about')),
-            S.listItem()
-              .title('Support')
-              .icon(HeartFilledIcon)
-              .child(S.document().schemaType('support').documentId('support')),
-            S.listItem()
-              .title('Post')
-              .icon(BlockContentIcon)
-              .child(S.document().schemaType('post').documentId('post')),
-            S.listItem()
-              .title('Footer Links')
+              .title('Shared - Footer')
               .icon(LinkIcon)
               .child(S.document().schemaType('footerLinks').documentId('footerLinks')),
             S.listItem()
-              .title('Nav link')
-              .icon(LinkIcon)
-              .child(S.document().schemaType('nav').documentId('nav')),
+              .title('Main Page')
+              .icon(UserIcon)
+              .child(S.document().schemaType('mainPage').documentId('mainPage')),
+            S.listItem()
+              .title('Minecraft Page')
+              .icon(UserIcon)
+              .child(S.document().schemaType('minecraftPage').documentId('minecraftPage')),
+            S.listItem()
+              .title('Support Page')
+              .icon(HeartFilledIcon)
+              .child(S.document().schemaType('supportPage').documentId('supportPage')),
             S.listItem()
               .title('Album Page')
               .icon(BlockContentIcon)
-              .child(S.document().schemaType('album').documentId('album')),
+              .child(S.document().schemaType('albumPage').documentId('albumPage')),
+            S.listItem()
+              .title('Magazine Page')
+              .icon(BlockContentIcon)
+              .child(S.document().schemaType('magazinePage').documentId('magazinePage')),
             ...S.documentTypeListItems().filter(
               (listItem) =>
-                !['about', 'support', 'nav', 'post', 'footerLinks', 'header', 'album'].includes(
-                  `${listItem.getId()}`
-                )
+                ![
+                  'mainPage',
+                  'supportPage',
+                  'footerLinks',
+                  'header',
+                  'albumPage',
+                  'minecraftPage',
+                  'magazinePage',
+                ].includes(`${listItem.getId()}`)
             ),
           ]),
     }),
+    vercelDeployTool(),
     visionTool(),
   ],
 

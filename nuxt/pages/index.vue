@@ -1,6 +1,20 @@
 <template>
-  <SectionAbout v-motion-slide-bottom />
-  <SectionYoutubeVideos v-motion-fade />
-  <SectionSupport v-motion-slide-bottom />
-  <SectionPost v-motion-slide-visible-once-bottom />
+  <NuxtLayout name="wrapper">
+    <About />
+    <Album />
+    <Magazine />
+    <Minecraft />
+    <Support />
+  </NuxtLayout>
 </template>
+
+<script lang="ts" setup>
+const store = useSanityStore()
+
+// TODO: try to split global fetch
+await store.getMainPage()
+await store.getSupportPage()
+await store.getMinecraftPage()
+await store.getAlbumPage()
+await store.getMagazinePage()
+</script>
