@@ -74,8 +74,9 @@
           </NuxtLink>
         </div>
       </div>
-      <NuxtImg
-        src="/minecraft/index.webp"
+      <SanityImage
+        :asset-id="minecraftPage.image.asset._ref"
+        h="1000"
         class="aspect-square md:aspect-auto md:h-full object-cover rounded-lg w-full"
       />
     </div>

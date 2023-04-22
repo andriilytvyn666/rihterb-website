@@ -1,17 +1,9 @@
 <template>
   <div class="flex flex-col items-center gap-8 sm:items-stretch sm:flex-row">
-    <!-- TODO: figure out why nuxt-image-edge is broken with sanity backend -->
-    <!-- <NuxtImg
-      :src="about.photo.asset._ref"
-      alt="About"
-      width="286"
-      height="286"
-      class="rounded-lg w-[20.875rem] h-[20.875rem] sm:w-[17.875rem] sm:h-[17.875rem] shadow-default"
-    /> -->
     <SanityImage
       :asset-id="about.photo.asset._ref"
-      w="286"
-      h="286"
+      w="334"
+      h="334"
       rel="preload"
       class="rounded-lg w-[20.875rem] h-[20.875rem] sm:w-[17.875rem] sm:h-[17.875rem] shadow-default"
     />

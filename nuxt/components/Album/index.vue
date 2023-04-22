@@ -5,14 +5,14 @@
     <div class="flex flex-col items-center gap-8 sm:flex-row">
       <SanityImage
         rel="preload"
-        :asset-id="album.imageSmall.asset._ref"
+        :asset-id="album.image.asset._ref"
         w="80"
         h="80"
         class="hidden sm:flex rounded-lg sm:w-20 sm:h-20 shadow-default"
       />
       <SanityImage
         rel="preload"
-        :asset-id="album.imageLarge.asset._ref"
+        :asset-id="album.image.asset._ref"
         w="334"
         h="334"
         class="rounded-lg w-full h-full sm:hidden shadow-default"

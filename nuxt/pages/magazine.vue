@@ -20,12 +20,13 @@
             class="w-screen h-[36rem] md:w-[59rem] items-center flex grow justify-center md:h-[45.625rem] overflow-visible bg-dark"
           >
             <SwiperSlide
-              v-for="i in 12"
-              :key="i"
+              v-for="page in magazine.pages"
+              :key="page.asset._ref"
               class="px-4 sm:px-0 flex justify-center grow items-center overflow-visible"
             >
-              <NuxtImg
-                :src="`journal_view/${i}.webp`"
+              <SanityImage
+                :asset-id="page.asset._ref"
+                h="1000"
                 class="sm:h-full object-cover"
               />
             </SwiperSlide>
@@ -39,13 +40,11 @@
             >
               <NuxtIcon name="feather/arrow-left" filled class="w-6 h-6" />
             </button>
-            <!-- <NuxtLink :to="localePath('/', $i18n.locale)" class="grow"> -->
             <Button
               :name="t('magazine.back')"
               class="border border-dark-border sm:w-full"
               @click="store.toggleGatherPages"
             />
-            <!-- </NuxtLink> -->
             <button
               id="swiper-next"
               class="min-w-[3.75rem] min-h-[3.75rem] flex items-center justify-center border border-dark-border p-4 rounded-lg text-[1.5rem]"

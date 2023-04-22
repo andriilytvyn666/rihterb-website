@@ -2,12 +2,12 @@
   <div class="outter w-full">
     <NuxtImg
       rel="preload"
-      src="journal_mobile/1.webp"
+      src="magazine/mobile/1.webp"
       :class="`${store.gatherPages ? 'center' : 'left-8 -top-12 -rotate-6'}`"
     />
     <NuxtImg
       rel="preload"
-      src="journal_mobile/2.webp"
+      src="magazine/mobile/2.webp"
       :class="`${
         store.gatherPages ? 'center' : '-right-[2rem] top-[0rem] rotate-[20deg]'
       }`"
@@ -15,7 +15,7 @@
 
     <NuxtImg
       rel="preload"
-      src="journal_mobile/3.webp"
+      src="magazine/mobile/3.webp"
       :class="`${
         store.gatherPages ? 'center' : '-left-[1rem] top-28 -rotate-[8deg]'
       }`"
@@ -23,7 +23,7 @@
 
     <NuxtImg
       rel="preload"
-      src="journal_mobile/4.webp"
+      src="magazine/mobile/4.webp"
       :class="`${
         store.gatherPages ? 'center' : 'left-[0rem] -bottom-[2rem] rotate-6'
       }`"
@@ -31,7 +31,7 @@
 
     <NuxtImg
       rel="preload"
-      src="journal_mobile/5.webp"
+      src="magazine/mobile/5.webp"
       :class="`${
         store.gatherPages
           ? 'center'
@@ -40,14 +40,14 @@
     />
     <NuxtImg
       rel="preload"
-      src="journal_mobile/6.webp"
+      src="magazine/mobile/6.webp"
       :class="`${
         store.gatherPages ? 'center' : '-left-8 bottom-[14rem] rotate-3'
       }`"
     />
     <NuxtImg
       rel="preload"
-      src="journal_mobile/8.webp"
+      src="magazine/mobile/8.webp"
       :class="`${
         store.gatherPages
           ? 'center'
@@ -56,7 +56,7 @@
     />
     <NuxtImg
       rel="preload"
-      src="journal_mobile/7.webp"
+      src="magazine/mobile/7.webp"
       :class="`${
         store.gatherPages ? 'center' : 'left-[7rem] -bottom-4 -rotate-[2deg]'
       }`"

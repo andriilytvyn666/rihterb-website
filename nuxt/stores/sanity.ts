@@ -23,7 +23,7 @@ export const useSanityStore = defineStore(
     const getMagazinePage = async (): Promise<MagazinePage> =>
       sanityFetch<MagazinePage>(
         magazinePage,
-        groq`*[_type == "magazinePage"][0] { title, text }`
+        groq`*[_type == "magazinePage"][0] { title, text, pages }`
       )
 
     const getMainPage = async (): Promise<MainPage> =>
@@ -35,7 +35,7 @@ export const useSanityStore = defineStore(
     const getMinecraftPage = async (): Promise<MinecraftPage> =>
       sanityFetch<MinecraftPage>(
         minecraftPage,
-        groq`*[_type == "minecraftPage"][0] { title, text, features, ip, buttons }`
+        groq`*[_type == "minecraftPage"][0] { title, text, features, ip, buttons, image }`
       )
 
     const getSupportPage = async (): Promise<SupportPage> =>
@@ -66,7 +66,6 @@ export const useSanityStore = defineStore(
         footer,
         groq`*[_type == "footerLinks"][0]
       {
-        _id,
         spotify,
         youtubemusic,
         applemusic,

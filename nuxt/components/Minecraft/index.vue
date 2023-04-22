@@ -18,8 +18,13 @@
         :key="image.asset._ref"
         class="page"
       >
-        <!-- <NuxtImg rel="preload" :src="`/minecraft/${i}.webp`" class="image" /> -->
-        <SanityImage rel="preload" :asset-id="image.asset._ref" class="image" />
+        <SanityImage
+          rel="preload"
+          :asset-id="image.asset._ref"
+          class="image"
+          w="581"
+          h="327"
+        />
       </SwiperSlide>
     </Swiper>
     <div

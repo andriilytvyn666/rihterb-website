@@ -8,7 +8,7 @@
         :to="localePath('/', $i18n.locale)"
         v-if="!clientStore.gatherPages"
         :name="t('magazine.homepage')"
-        class="bg-light absolute z-20 left-4 top-4 sm:left-8 sm:top-8 text-dark border border-dark-border w-min"
+        class="bg-dark absolute z-20 left-4 top-4 sm:left-8 sm:top-8 text-light shadows-default border border-dark-border w-min"
       />
     </transition>
     <transition name="scale">
@@ -18,17 +18,15 @@
         @click="
           $i18n.locale === 'en' ? $i18n.setLocale('uk') : $i18n.setLocale('en')
         "
-        class="bg-light absolute z-20 right-4 top-4 sm:right-8 sm:top-8 text-dark border border-dark-border w-min"
+        class="bg-light absolute z-20 right-4 top-4 sm:right-8 sm:top-8 text-dark border border-dark-border w-min shadows-default"
       />
     </transition>
 
     <div id="page-wrapper">
       <div class="flex flex-col min-h-screen">
-        <!-- <Header class="w-full" /> -->
         <div class="flex flex-col gap-8 sm:gap-12 grow">
           <slot />
         </div>
-        <!-- <Footer /> -->
       </div>
     </div>
   </div>

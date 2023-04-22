@@ -15,5 +15,11 @@ export default {
       type: 'localeString',
       validation: (rule: Rule) => rule.required(),
     },
+    {
+      name: 'pages',
+      type: 'array',
+      of: [{type: 'image'}],
+      validation: (rule: Rule) => rule.required(),
+    },
   ],
 }

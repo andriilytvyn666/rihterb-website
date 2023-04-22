@@ -10,8 +10,7 @@ type About = {
 }
 
 type Album = {
-  imageLarge: image
-  imageSmall: image
+  image: image
   title: localeString
   text: localeString
   buttonName: localeString
@@ -85,6 +84,7 @@ type MinecraftPage = {
     map: buttonLink
     discord: buttonLink
   }
+  image: image
 }
 
 type AlbumPage = {
@@ -103,6 +103,7 @@ type AlbumPage = {
 type MagazinePage = {
   title: localeString
   text: localeString
+  pages: image[]
 }
 
 type Footer = {
