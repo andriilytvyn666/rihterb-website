@@ -3,21 +3,43 @@
     <div class="flex flex-col h-full grow">
       <div class="flex flex-col gap-8 justify-center grow">
         <div class="flex justify-center">
-          <NuxtImg
+          <SanityImage
+            rel="preload"
+            w="300"
+            h="300"
+            :asset-id="support.images.imageBack.asset._ref"
+            class="z-0 left-card"
+          />
+
+          <SanityImage
+            rel="preload"
+            w="300"
+            h="300"
+            :asset-id="support.images.imageMiddle.asset._ref"
+            class="z-0 middle-card sm:right-card"
+          />
+          <SanityImage
+            rel="preload"
+            w="300"
+            h="300"
+            :asset-id="support.images.imageFront.asset._ref"
+            class="z-10 right-card sm:middle-card"
+          />
+          <!-- <NuxtImg
             rel="preload"
             src="support/1.webp"
             class="z-0 left-card order-1"
-          />
-          <NuxtImg
-            rel="preload"
-            src="support/3.webp"
-            class="z-10 right-card order-3 sm:order-3 sm:middle-card"
-          />
-          <NuxtImg
+          /> -->
+          <!-- <NuxtImg
             rel="preload"
             src="support/2.webp"
             class="z-0 order-2 middle-card sm:order-2 sm:right-card"
-          />
+          /> -->
+          <!-- <NuxtImg
+            rel="preload"
+            src="support/3.webp"
+            class="z-10 right-card order-3 sm:order-3 sm:middle-card"
+          /> -->
         </div>
         <div class="flex flex-col gap-8 items-center w-full" id="control">
           <div class="flex items-center flex-col gap-5 text-center">
@@ -86,7 +108,7 @@
 import { useSanityStore } from '../stores/sanity'
 
 const store = useSanityStore()
-const support = await store.getSupport()
+const support = await store.getSupportPage()
 </script>
 
 <style lang="postcss" scoped>

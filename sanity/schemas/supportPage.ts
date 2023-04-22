@@ -6,6 +6,33 @@ export default {
   title: 'Support Page',
   fields: [
     {
+      name: 'images',
+      type: 'object',
+      fields: [
+        {
+          name: 'imageBack',
+          type: 'image',
+          description: '300 x 300 webp',
+          options: {accept: 'image/webp'},
+          validation: (rule: Rule) => rule.required(),
+        },
+        {
+          name: 'imageMiddle',
+          type: 'image',
+          description: '300 x 300 webp',
+          options: {accept: 'image/webp'},
+          validation: (rule: Rule) => rule.required(),
+        },
+        {
+          name: 'imageFront',
+          type: 'image',
+          description: '300 x 300 webp',
+          options: {accept: 'image/webp'},
+          validation: (rule: Rule) => rule.required(),
+        },
+      ],
+    },
+    {
       name: 'title',
       type: 'localeString',
       validation: (rule: Rule) => rule.required(),

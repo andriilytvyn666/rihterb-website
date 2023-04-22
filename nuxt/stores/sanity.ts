@@ -2,7 +2,6 @@ import { defineStore } from 'pinia'
 
 export const useSanityStore = defineStore('sanity-store', () => {
   const about = ref<About>()
-  const support = ref<Support>()
   const post = ref<Post>()
   const youtubeVideos = ref<video[]>()
   const navLinks = ref<NavLink[]>()
@@ -11,6 +10,7 @@ export const useSanityStore = defineStore('sanity-store', () => {
   const albumPage = ref<AlbumPage>()
   const albumSection = ref<AlbumSection>()
   const mainPage = ref<MainPage>()
+  const supportPage = ref<SupportPage>()
 
   const sanityFetch = async <T>(ref: Ref, query: string): Promise<T> => {
     if (ref.value !== undefined) return ref.value
@@ -39,10 +39,10 @@ export const useSanityStore = defineStore('sanity-store', () => {
       groq`*[_type == "about"][0] {_id, photo, name, subtitle, description, listenName, listenLink, socialName, socialLink}`
     )
 
-  const getSupport = async (): Promise<Support> =>
-    sanityFetch<Support>(
-      support,
-      groq`*[_type == "support"][0] {_id, title, text, buttonName, patreon, bandcamp, paypal, diaka, mono}`
+  const getSupportPage = async (): Promise<SupportPage> =>
+    sanityFetch<SupportPage>(
+      supportPage,
+      groq`*[_type == "supportPage"][0] { images, title, text, patreon, bandcamp, paypal, diaka, mono }`
     )
 
   const getPost = async (): Promise<Post> =>
@@ -104,7 +104,7 @@ export const useSanityStore = defineStore('sanity-store', () => {
   return {
     getMainPage,
     getAbout,
-    getSupport,
+    getSupportPage,
     getPost,
     getYoutubeVideos,
     getNavLinks,

@@ -45,69 +45,14 @@ type MainPage = {
   support: Support
 }
 
-type localeString = {
-  en: string
-  uk: string
-}
-
-type localePortableText = {
-  en: Any
-  uk: Any
-}
-
-// TODO: refactor
-type AlbumSection = {
-  _id: string
-  imageLarge: image
-  imageSmall: image
-  title: localeString
-  text: localeString
-  buttonName: localeString
-}
-
-type AlbumPage = {
-  logo: image
-  title: localeString
-  description: localeString
-  albumImage: image
-  player: string
-  link: string
-  bandcampLink: string
-}
-
-type Header = {
-  logo: image
-  linkTelegram: string
-  linkInstagram: string
-}
-
-type FooterLinks = {
-  spotify: string
-  youtubemusic: string
-  applemusic: string
-  instagram: string
-  telegram: string
-  youtube: string
-  patreon: string
-  bandcamp: string
-}
-
-type Post = {
-  title: localeString
-  subtitle: localeString
-  text: localePortableText
-  player: string
-  link: string
-  bandcampLink: string
-}
-
 type SupportPage = {
+  images: {
+    imageBack: image
+    imageMiddle: image
+    imageFront: image
+  }
   title: localeString
   text: localeString
-  buttonName: localeString
-  patreonLink: string
-  bandcampLink: string
-  diakaLink: string
   patreon: {
     name: localeString
     link: string
@@ -128,6 +73,52 @@ type SupportPage = {
     name: localeString
     link: string
   }
+}
+
+type localeString = {
+  en: string
+  uk: string
+}
+
+type localePortableText = {
+  en: Any
+  uk: Any
+}
+
+// TODO: refactor
+
+type AlbumPage = {
+  logo: image
+  title: localeString
+  description: localeString
+  albumImage: image
+  player: string
+  link: string
+  bandcampLink: string
+}
+
+type Header = {
+  logo: image
+}
+
+type FooterLinks = {
+  spotify: string
+  youtubemusic: string
+  applemusic: string
+  instagram: string
+  telegram: string
+  youtube: string
+  patreon: string
+  bandcamp: string
+}
+
+type Post = {
+  title: localeString
+  subtitle: localeString
+  text: localePortableText
+  player: string
+  link: string
+  bandcampLink: string
 }
 
 type image = {
