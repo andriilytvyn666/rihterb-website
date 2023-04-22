@@ -8,6 +8,7 @@ import supportPage from './supportPage'
 import minecraftPage from './minecraftPage'
 import buttonLink from './buttonLink'
 import magazinePage from './magazinePage'
+import navLink from './navLink'
 
 export const schemaTypes = [
   localeString,
@@ -20,4 +21,5 @@ export const schemaTypes = [
   header,
   albumPage,
   magazinePage,
+  navLink,
 ]

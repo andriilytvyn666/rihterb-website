@@ -1,16 +1,28 @@
 <template>
   <header class="flex items-center justify-between" id="header">
     <nav class="hidden gap-4" id="left">
-      <NuxtLink :to="localePath('/album', $i18n.locale)">новий альбом</NuxtLink>
+      <NuxtLink :to="getLink(header.navLinks[0].link)">
+        {{ getLocalizedString($i18n.locale, header.navLinks[0].name) }}
+      </NuxtLink>
       <span class="separator">/</span>
-      <NuxtLink :to="localePath('/magazine', $i18n.locale)">журнал 9</NuxtLink>
+      <NuxtLink :to="getLink(header.navLinks[1].link)">
+        {{ getLocalizedString($i18n.locale, header.navLinks[1].name) }}
+      </NuxtLink>
     </nav>
     <NuxtLink :to="localePath('/', $i18n.locale)">
-      <NuxtImg
+      <!-- <NuxtImg
         rel="preload"
         src="/logo.webp"
         width="48"
         height="48"
+        id="logo"
+        class="rounded-full w-9 h-9"
+      /> -->
+      <SanityImage
+        rel="preload"
+        :asset-id="header.logo.asset._ref"
+        width="96"
+        height="96"
         id="logo"
         class="rounded-full w-9 h-9"
       />
@@ -29,15 +41,24 @@
       </button>
       <button @click="$i18n.setLocale('en')" v-else>eng</button>
       <span class="separator">/</span>
-      <NuxtLink to="/">слухати</NuxtLink>
+      <NuxtLink to="/">{{ $t('header.listen') }}</NuxtLink>
       <span class="separator">/</span>
-      <NuxtLink to="/">соцмережі</NuxtLink>
+      <NuxtLink to="/">{{ $t('header.socials') }}</NuxtLink>
     </nav>
   </header>
 </template>
 
 <script lang="ts" setup>
+const { locale } = useI18n()
+const store = useSanityStore()
+const header = await store.getHeader()
 const localePath = useLocalePath()
+
+const getLink = (link: string) => {
+  if (link.startsWith('https://')) {
+    return link
+  } else return localePath(link, locale.value)
+}
 </script>
 
 <style lang="postcss">

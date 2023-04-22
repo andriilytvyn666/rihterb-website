@@ -7,21 +7,17 @@ export default {
   fields: [
     {
       name: 'logo',
-      description:
-        'лого. розмір 187x110 підходить ідеально. webp формат, щоб все грузилось моментально',
+      description: '48 x 48 webp',
       type: 'image',
       validation: (rule: Rule) => rule.required(),
       options: {accept: 'image/webp'},
     },
     {
-      name: 'linkTelegram',
-      type: 'url',
-      validation: (rule: Rule) => rule.required(),
-    },
-    {
-      name: 'linkInstagram',
-      type: 'url',
-      validation: (rule: Rule) => rule.required(),
+      name: 'navLinks',
+      description: 'обмеження - 2 лінки',
+      type: 'array',
+      of: [{type: 'navLink'}],
+      validation: (rule: Rule) => rule.required().max(2),
     },
   ],
 }

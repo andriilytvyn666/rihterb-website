@@ -116,9 +116,14 @@ type Footer = {
   bandcamp: string
 }
 
-// TODO: refactor
 type Header = {
   logo: image
+  navLinks: navLink[]
+}
+
+type navLink = {
+  name: localeString
+  link: striing
 }
 
 type buttonLink = {

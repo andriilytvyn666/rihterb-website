@@ -18,5 +18,9 @@
     "view": "view",
     "homepage": "homepage",
     "back": "back"
+  },
+  "header": {
+    "listen": "listen",
+    "socials": "socials"
   }
 }
