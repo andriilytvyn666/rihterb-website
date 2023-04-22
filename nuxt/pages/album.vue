@@ -6,11 +6,6 @@
       </h2>
 
       <div class="flex flex-col gap-8 items-center md:w-[23.5rem]">
-        <!-- <NuxtImg
-          rel="preload"
-          src="/album/index.webp"
-          class="rounded-lg shadow-default aspect-square w-[20.875rem] md:w-full"
-        /> -->
         <SanityImage
           rel="preload"
           :asset-id="album.image.asset._ref"

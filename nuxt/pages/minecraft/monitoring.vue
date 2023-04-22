@@ -71,7 +71,7 @@
         v-else-if="!isMap"
       >
         <NuxtImg src="minecraft/no_players.webp" rel="preload" />
-        <h2 class="text-h-lg-700 text-dark-secondary">
+        <h2 class="text-h-lg-700 text-dark-secondary select-none">
           {{ $t('monitoring.no_players') }}
         </h2>
       </div>

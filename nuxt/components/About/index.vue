@@ -17,12 +17,12 @@
         </h3>
       </div>
       <p class="text-center text-body-lg-600 text-light sm:text-left">
-        <span class="hidden sm:inline">
-          <span class="line-clamp-4">
+        <span class="hidden sm:inline select-text">
+          <p class="line-clamp-4">
             {{ getLocalizedString($i18n.locale, about.description) }}
-          </span>
+          </p>
         </span>
-        <span class="sm:hidden">
+        <span class="sm:hidden select-text">
           {{ getLocalizedString($i18n.locale, about.description) }}
         </span>
       </p>
