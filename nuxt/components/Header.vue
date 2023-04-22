@@ -41,9 +41,9 @@
       </button>
       <button @click="$i18n.setLocale('en')" v-else>eng</button>
       <span class="separator">/</span>
-      <NuxtLink to="/">{{ $t('header.listen') }}</NuxtLink>
+      <NuxtLink :to="header.listenLink">{{ $t('header.listen') }}</NuxtLink>
       <span class="separator">/</span>
-      <NuxtLink to="/">{{ $t('header.socials') }}</NuxtLink>
+      <NuxtLink :to="header.socialsLink">{{ $t('header.socials') }}</NuxtLink>
     </nav>
   </header>
 </template>

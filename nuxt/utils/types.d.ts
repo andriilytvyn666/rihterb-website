@@ -120,6 +120,8 @@ type Footer = {
 type Header = {
   logo: image
   navLinks: navLink[]
+  listenLink: string
+  socialsLink: string
 }
 
 type navLink = {

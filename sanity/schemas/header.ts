@@ -19,5 +19,15 @@ export default {
       of: [{type: 'navLink'}],
       validation: (rule: Rule) => rule.required().max(2),
     },
+    {
+      name: 'listenLink',
+      type: 'string',
+      validation: (rule: Rule) => rule.required(),
+    },
+    {
+      name: 'socialsLink',
+      type: 'string',
+      validation: (rule: Rule) => rule.required(),
+    },
   ],
 }

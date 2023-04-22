@@ -46,7 +46,10 @@ export const useSanityStore = defineStore(
 
     // TODO: refactor
     const getHeader = async (): Promise<Header> =>
-      sanityFetch(header, groq`*[_type == "header"][0] {logo, navLinks}`)
+      sanityFetch(
+        header,
+        groq`*[_type == "header"][0] {logo, navLinks, listenLink, socialsLink }`
+      )
 
     const getAlbumPage = async (): Promise<AlbumPage> =>
       sanityFetch(
