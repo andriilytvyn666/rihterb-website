@@ -1,7 +1,7 @@
 <template>
   <NuxtLayout name="nowrapper">
     <JournalBg class="hidden sm:block" />
-    <transition name="fade">
+    <transition name="scale">
       <div
         class="z-10 w-full flex grow items-center justify-center overflow-visible"
         v-if="store.gatherPages"
@@ -57,7 +57,7 @@
     </transition>
     <transition name="fade">
       <div
-        class="h-full w-full grow flex items-center justify-center"
+        class="h-full w-full grow flex items-center justify-center fixed"
         v-if="!store.gatherPages"
       >
         <div
@@ -116,6 +116,23 @@
 }
 .fade-leave-to {
   @apply opacity-0;
+}
+
+.scale-enter-from {
+  @apply scale-0;
+}
+.scale-enter-to {
+  @apply scale-100;
+}
+.scale-enter-active {
+  @apply transition-all delay-75 duration-700 ease-in-out;
+}
+
+.scale-leave-from {
+  @apply scale-100;
+}
+.scale-leave-to {
+  @apply scale-0;
 }
 </style>
 
