@@ -1,21 +1,19 @@
-import about from './about'
+import mainPage from './mainPage'
 import listenLink from './listenLink'
 import localeString from './localeString'
 import localePortableText from './localePortableText'
-import support from './support'
 import footerLinks from './footerLinks'
 import header from './header'
 import album from './album'
-import albumSection from './albumSection'
+import supportPage from './supportPage'
 
 export const schemaTypes = [
   localeString,
   localePortableText,
-  about,
+  mainPage,
   listenLink,
-  support,
+  supportPage,
   footerLinks,
   header,
   album,
-  albumSection,
 ]

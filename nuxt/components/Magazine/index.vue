@@ -23,10 +23,19 @@
           },
         }"
       >
-        <SwiperSlide v-for="i in 12" :key="i" class="page">
-          <NuxtImg
+        <SwiperSlide
+          v-for="image in magazine.images"
+          :key="image.asset._ref"
+          class="page"
+        >
+          <!-- <NuxtImg
             rel="preload"
             :src="`journal_view/${i}.webp`"
+            class="image"
+          /> -->
+          <SanityImage
+            rel="preload"
+            :asset-id="image.asset._ref"
             class="image"
           />
         </SwiperSlide>
@@ -39,15 +48,18 @@
             <h2
               class="line-clamp-2 sm:line-clamp-1 w-fit text-hl-yellow text-h-lg-700"
             >
-              журнал “дев’ять”
+              {{ getLocalizedString($i18n.locale, magazine.title) }}
             </h2>
             <p class="line-clamp-2 sm:line-clamp-1 text-light text-body-md-600">
-              журнал, створений разом з командою талановитих митців та мисткинь
+              {{ getLocalizedString($i18n.locale, magazine.text) }}
             </p>
           </div>
         </div>
-        <NuxtLink :to="localePath('/journal', $i18n.locale)">
-          <Button name="дивитись" class="bg-light text-dark h-fit" />
+        <NuxtLink :to="localePath('/magazine', $i18n.locale)">
+          <Button
+            :name="getLocalizedString($i18n.locale, magazine.buttonName)"
+            class="bg-light text-dark h-fit"
+          />
         </NuxtLink>
       </div>
     </div>
@@ -55,6 +67,10 @@
 </template>
 
 <script lang="ts" setup>
+import { useSanityStore } from '../../stores/sanity'
+
+const store = useSanityStore()
+const magazine = (await store.getMainPage()).magazine
 const localePath = useLocalePath()
 </script>
 

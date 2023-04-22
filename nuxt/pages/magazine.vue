@@ -1,7 +1,7 @@
 <template>
   <NuxtLayout name="nowrapper">
-    <JournalBg class="opacity-0 sm:opacity-100" />
-    <JournalBgMobile class="sm:opacity-0" />
+    <MagazineBg class="opacity-0 sm:opacity-100" />
+    <MagazineBgMobile class="sm:opacity-0" />
     <transition name="scale">
       <div
         class="z-10 w-full flex grow items-center justify-center overflow-visible"
@@ -137,7 +137,7 @@
 </style>
 
 <script lang="ts" setup>
-import { useClientStore } from '../../stores/client'
+import { useClientStore } from '../stores/client'
 const localePath = useLocalePath()
 
 const store = useClientStore()

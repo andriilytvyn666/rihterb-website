@@ -35,14 +35,18 @@
         </span>
       </p>
       <div class="flex flex-col gap-4 sm:flex-row">
-        <Button
-          class="bg-hl-yellow text-dark"
-          :name="getLocalizedString($i18n.locale, about.listenName)"
-        />
-        <Button
-          class="bg-light text-dark"
-          :name="getLocalizedString($i18n.locale, about.socialName)"
-        />
+        <NuxtLink :to="about.listenLink">
+          <Button
+            class="bg-hl-yellow text-dark"
+            :name="getLocalizedString($i18n.locale, about.listenName)"
+          />
+        </NuxtLink>
+        <NuxtLink :to="about.socialLink">
+          <Button
+            class="bg-light text-dark"
+            :name="getLocalizedString($i18n.locale, about.socialName)"
+          />
+        </NuxtLink>
       </div>
     </div>
   </div>
@@ -52,7 +56,5 @@
 import { useSanityStore } from '../../stores/sanity'
 
 const store = useSanityStore()
-const about = await store.getAbout()
-
-console.log(about)
+const about = (await store.getMainPage()).about
 </script>

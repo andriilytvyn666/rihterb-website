@@ -10,6 +10,7 @@ export const useSanityStore = defineStore('sanity-store', () => {
   const footerLinks = ref<FooterLinks>()
   const albumPage = ref<AlbumPage>()
   const albumSection = ref<AlbumSection>()
+  const mainPage = ref<MainPage>()
 
   const sanityFetch = async <T>(ref: Ref, query: string): Promise<T> => {
     if (ref.value !== undefined) return ref.value
@@ -19,6 +20,12 @@ export const useSanityStore = defineStore('sanity-store', () => {
 
     return ref.value
   }
+
+  const getMainPage = async (): Promise<MainPage> =>
+    sanityFetch<MainPage>(
+      mainPage,
+      groq`*[_type == "mainPage"][0] { about, album, magazine, minecraft, support }`
+    )
 
   const getAlbumSection = async (): Promise<AlbumSection> =>
     sanityFetch<AlbumSection>(
@@ -95,6 +102,7 @@ export const useSanityStore = defineStore('sanity-store', () => {
     )
 
   return {
+    getMainPage,
     getAbout,
     getSupport,
     getPost,

@@ -1,9 +1,9 @@
 import {Rule} from 'sanity'
 
 export default {
-  name: 'support',
+  name: 'supportPage',
   type: 'document',
-  title: 'Support',
+  title: 'Support Page',
   fields: [
     {
       name: 'title',
@@ -12,11 +12,6 @@ export default {
     },
     {
       name: 'text',
-      type: 'localeString',
-      validation: (rule: Rule) => rule.required(),
-    },
-    {
-      name: 'buttonName',
       type: 'localeString',
       validation: (rule: Rule) => rule.required(),
     },

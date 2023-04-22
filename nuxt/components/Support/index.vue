@@ -29,7 +29,7 @@
 import { useSanityStore } from '../../stores/sanity'
 
 const store = useSanityStore()
-const support = await store.getSupport()
+const support = (await store.getMainPage()).support
 
 const localePath = useLocalePath()
 </script>

@@ -13,8 +13,13 @@
         },
       }"
     >
-      <SwiperSlide v-for="i in 3" :key="i" class="page">
-        <NuxtImg rel="preload" :src="`/minecraft/${i}.webp`" class="image" />
+      <SwiperSlide
+        v-for="image in minecraft.images"
+        :key="image.asset._ref"
+        class="page"
+      >
+        <!-- <NuxtImg rel="preload" :src="`/minecraft/${i}.webp`" class="image" /> -->
+        <SanityImage rel="preload" :asset-id="image.asset._ref" class="image" />
       </SwiperSlide>
     </Swiper>
     <div
@@ -25,21 +30,28 @@
           <h2
             class="line-clamp-2 sm:line-clamp-1 w-fit text-hl-yellow text-h-lg-700"
           >
-            майнкрафт сервер
+            {{ getLocalizedString($i18n.locale, minecraft.title) }}
           </h2>
           <p class="line-clamp-2 sm:line-clamp-1 text-light text-body-md-600">
-            найкращий український сервер
+            {{ getLocalizedString($i18n.locale, minecraft.text) }}
           </p>
         </div>
       </div>
       <NuxtLink :to="localePath('/minecraft', $i18n.locale)">
-        <Button name="грати" class="bg-light text-dark h-fit" />
+        <Button
+          :name="getLocalizedString($i18n.locale, minecraft.buttonName)"
+          class="bg-light text-dark h-fit"
+        />
       </NuxtLink>
     </div>
   </div>
 </template>
 
 <script lang="ts" setup>
+import { useSanityStore } from '../../stores/sanity'
+
+const store = useSanityStore()
+const minecraft = (await store.getMainPage()).minecraft
 const localePath = useLocalePath()
 </script>
 

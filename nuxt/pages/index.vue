@@ -2,7 +2,7 @@
   <NuxtLayout name="wrapper">
     <About />
     <Album />
-    <Journal />
+    <Magazine />
     <Minecraft />
     <Support />
   </NuxtLayout>

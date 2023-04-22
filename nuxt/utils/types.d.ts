@@ -1,5 +1,4 @@
 type About = {
-  _id: string
   photo: image
   name: localeString
   subtitle: localeString
@@ -8,6 +7,42 @@ type About = {
   listenLink: string
   socialName: localeString
   socialLink: string
+}
+
+type Album = {
+  imageLarge: image
+  imageSmall: image
+  title: localeString
+  text: localeString
+  buttonName: localeString
+}
+
+type Magazine = {
+  images: image[]
+  title: localeString
+  text: localeString
+  buttonName: localeString
+}
+
+type Minecraft = {
+  images: image[]
+  title: localeString
+  text: localeString
+  buttonName: localeString
+}
+
+type Support = {
+  title: localeString
+  text: localeString
+  buttonName: localeString
+}
+
+type MainPage = {
+  about: About
+  album: Album
+  magazine: Magazine
+  minecraft: Minecraft
+  support: Support
 }
 
 type localeString = {
@@ -20,6 +55,7 @@ type localePortableText = {
   uk: Any
 }
 
+// TODO: refactor
 type AlbumSection = {
   _id: string
   imageLarge: image
@@ -65,7 +101,7 @@ type Post = {
   bandcampLink: string
 }
 
-type Support = {
+type SupportPage = {
   title: localeString
   text: localeString
   buttonName: localeString

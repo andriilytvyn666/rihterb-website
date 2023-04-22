@@ -26,24 +26,20 @@ export default defineConfig({
               .icon(LinkIcon)
               .child(S.document().schemaType('footerLinks').documentId('footerLinks')),
             S.listItem()
-              .title('Main - About')
+              .title('Main Page')
               .icon(UserIcon)
-              .child(S.document().schemaType('about').documentId('about')),
+              .child(S.document().schemaType('mainPage').documentId('mainPage')),
             S.listItem()
-              .title('Main - Support')
+              .title('Support Page')
               .icon(HeartFilledIcon)
-              .child(S.document().schemaType('support').documentId('support')),
-            S.listItem()
-              .title('Main - Album')
-              .icon(BlockContentIcon)
-              .child(S.document().schemaType('albumSection').documentId('albumSection')),
+              .child(S.document().schemaType('supportPage').documentId('supportPage')),
             S.listItem()
               .title('Album')
               .icon(BlockContentIcon)
               .child(S.document().schemaType('album').documentId('album')),
             ...S.documentTypeListItems().filter(
               (listItem) =>
-                !['about', 'support', 'footerLinks', 'header', 'albumSection', 'album'].includes(
+                !['mainPage', 'supportPage', 'footerLinks', 'header', 'album'].includes(
                   `${listItem.getId()}`
                 )
             ),

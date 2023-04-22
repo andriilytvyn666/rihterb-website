@@ -3,7 +3,7 @@
     <nav class="hidden gap-4" id="left">
       <NuxtLink :to="localePath('/album', $i18n.locale)">новий альбом</NuxtLink>
       <span class="separator">/</span>
-      <NuxtLink :to="localePath('/journal', $i18n.locale)">журнал 9</NuxtLink>
+      <NuxtLink :to="localePath('/magazine', $i18n.locale)">журнал 9</NuxtLink>
     </nav>
     <NuxtLink :to="localePath('/', $i18n.locale)">
       <NuxtImg

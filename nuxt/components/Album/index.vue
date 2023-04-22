@@ -5,14 +5,14 @@
     <div class="flex flex-col items-center gap-8 sm:flex-row">
       <SanityImage
         rel="preload"
-        :asset-id="albumSection.imageSmall.asset._ref"
+        :asset-id="album.imageSmall.asset._ref"
         w="80"
         h="80"
         class="hidden sm:flex rounded-lg sm:w-20 sm:h-20 shadow-default"
       />
       <SanityImage
         rel="preload"
-        :asset-id="albumSection.imageLarge.asset._ref"
+        :asset-id="album.imageLarge.asset._ref"
         w="334"
         h="334"
         class="rounded-lg w-full h-full sm:hidden shadow-default"
@@ -21,16 +21,16 @@
         <h2
           class="line-clamp-2 sm:line-clamp-1 w-fit text-hl-yellow text-h-lg-700"
         >
-          {{ getLocalizedString($i18n.locale, albumSection.title) }}
+          {{ getLocalizedString($i18n.locale, album.title) }}
         </h2>
         <p class="line-clamp-2 sm:line-clamp-1 text-light text-body-md-600">
-          {{ getLocalizedString($i18n.locale, albumSection.text) }}
+          {{ getLocalizedString($i18n.locale, album.text) }}
         </p>
       </div>
     </div>
     <NuxtLink :to="localePath('/album', $i18n.locale)" class="w-full sm:w-fit">
       <Button
-        :name="getLocalizedString($i18n.locale, albumSection.buttonName)"
+        :name="getLocalizedString($i18n.locale, album.buttonName)"
         class="bg-light text-dark h-fit"
       />
     </NuxtLink>
@@ -41,6 +41,6 @@
 import { useSanityStore } from '../../stores/sanity'
 
 const store = useSanityStore()
-const albumSection = await store.getAlbumSection()
+const album = (await store.getMainPage()).album
 const localePath = useLocalePath()
 </script>
