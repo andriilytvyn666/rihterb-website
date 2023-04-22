@@ -1,6 +1,7 @@
 <template>
   <NuxtLayout name="nowrapper">
-    <JournalBg class="hidden sm:block" />
+    <JournalBg class="opacity-0 sm:opacity-100" />
+    <JournalBgMobile class="sm:opacity-0" />
     <transition name="scale">
       <div
         class="z-10 w-full flex grow items-center justify-center overflow-visible"
@@ -67,27 +68,26 @@
             :class="`duration-600 bg-light shadow-default p-8 gap-8 flex w-full flex-col items-center sm:w-[38rem] rounded-lg`"
           >
             <div class="gap-5 flex flex-col items-center">
-              <h2 class="text-h-lg-700 text-hl-blue">журнал “дев’ять”</h2>
-              <p class="text-body-md-500 text-dark text-center">
-                У журналі "дев'ять" ви знайдете цікаві статті про новітні
-                тенденції у світі мистецтва та літератури та роздуми про
-                глибинні філософські питання.
+              <h2 class="text-h-lg-700 text-hl-blue line-clamp-1">
+                журнал “дев’ять”
+              </h2>
+              <p class="text-body-md-500 text-dark text-center line-clamp-4">
+                побачте унікальні роботи створені за участю талановитих
+                українських митців та мисткинь.
               </p>
             </div>
-            <div class="flex gap-4">
+            <div class="flex gap-4 flex-col sm:flex-row w-full sm:w-fit">
               <NuxtLink :to="localePath('/', $i18n.locale)">
                 <Button
                   name="на головну"
                   class="border text-dark border-dark"
                 />
               </NuxtLink>
-              <!-- <NuxtLink :to="localePath('/journal/view', $i18n.locale)"> -->
               <Button
                 name="дивитись"
                 class="bg-dark text-light"
                 @click="store.toggleGatherPages"
               />
-              <!-- </NuxtLink> -->
             </div>
           </div>
         </div>

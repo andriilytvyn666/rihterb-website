@@ -2,82 +2,63 @@
   <div class="outter w-full">
     <NuxtImg
       rel="preload"
-      src="journal_desktop/1.webp"
-      :class="`${store.gatherPages ? 'center' : 'left-1 top-5 -rotate-12'}`"
+      src="journal_mobile/1.webp"
+      :class="`${store.gatherPages ? 'center' : 'left-8 -top-12 -rotate-6'}`"
     />
     <NuxtImg
       rel="preload"
-      src="journal_desktop/2.webp"
+      src="journal_mobile/2.webp"
       :class="`${
-        store.gatherPages ? 'center' : 'left-[14rem] top-[6.5rem] rotate-6'
+        store.gatherPages ? 'center' : '-right-[2rem] top-[0rem] rotate-[20deg]'
+      }`"
+    />
+
+    <NuxtImg
+      rel="preload"
+      src="journal_mobile/3.webp"
+      :class="`${
+        store.gatherPages ? 'center' : '-left-[1rem] top-28 -rotate-[8deg]'
+      }`"
+    />
+
+    <NuxtImg
+      rel="preload"
+      src="journal_mobile/4.webp"
+      :class="`${
+        store.gatherPages ? 'center' : 'left-[0rem] -bottom-[2rem] rotate-6'
+      }`"
+    />
+
+    <NuxtImg
+      rel="preload"
+      src="journal_mobile/5.webp"
+      :class="`${
+        store.gatherPages
+          ? 'center'
+          : '-right-[12rem] bottom-[16rem] -rotate-12'
       }`"
     />
     <NuxtImg
       rel="preload"
-      src="journal_desktop/3.webp"
+      src="journal_mobile/6.webp"
       :class="`${
-        store.gatherPages ? 'center' : 'left-[32rem] -top-4 -rotate-6'
+        store.gatherPages ? 'center' : '-left-8 bottom-[14rem] rotate-3'
       }`"
     />
     <NuxtImg
       rel="preload"
-      src="journal_desktop/4.webp"
+      src="journal_mobile/8.webp"
       :class="`${
-        store.gatherPages ? 'center' : 'left-0 bottom-[12rem] rotate-3'
+        store.gatherPages
+          ? 'center'
+          : '-right-[3.5rem] -bottom-[2rem] rotate-12'
       }`"
     />
     <NuxtImg
       rel="preload"
-      src="journal_desktop/5.webp"
+      src="journal_mobile/7.webp"
       :class="`${
-        store.gatherPages ? 'center' : 'left-[10rem] bottom-[-5rem] -rotate-12'
-      }`"
-    />
-    <NuxtImg
-      rel="preload"
-      src="journal_desktop/6.webp"
-      :class="`${
-        store.gatherPages ? 'center' : 'left-[32rem] top-[46rem] rotate-6'
-      }`"
-    />
-    <NuxtImg
-      rel="preload"
-      src="journal_desktop/7.webp"
-      :class="`${store.gatherPages ? 'center' : 'left-[64rem] top-0 rotate-6'}`"
-    />
-    <NuxtImg
-      rel="preload"
-      src="journal_desktop/8.webp"
-      :class="`${
-        store.gatherPages ? 'center' : 'left-[54rem] top-[45rem] -rotate-6'
-      }`"
-    />
-    <NuxtImg
-      rel="preload"
-      src="journal_desktop/10.webp"
-      :class="`${
-        store.gatherPages ? 'center' : 'left-[77rem] top-[34rem] rotate-6'
-      }`"
-    />
-    <NuxtImg
-      rel="preload"
-      src="journal_desktop/9.webp"
-      :class="`${
-        store.gatherPages ? 'center' : 'left-[85rem] top-[5rem] -rotate-1'
-      }`"
-    />
-    <NuxtImg
-      rel="preload"
-      src="journal_desktop/11.webp"
-      :class="`${
-        store.gatherPages ? 'center' : 'left-[100rem] top-[9rem] rotate-12'
-      }`"
-    />
-    <NuxtImg
-      rel="preload"
-      src="journal_desktop/12.webp"
-      :class="`${
-        store.gatherPages ? 'center' : 'left-[100rem] top-[38rem] -rotate-12'
+        store.gatherPages ? 'center' : 'left-[7rem] -bottom-4 -rotate-[2deg]'
       }`"
     />
   </div>
@@ -95,7 +76,7 @@ const store = useClientStore()
 }
 
 .outter {
-  @apply w-[120rem] h-[67.5rem];
+  @apply w-[26.875rem] h-[58.25rem];
   @apply [&>*]:shadow-default [&>*]:absolute;
   @apply fixed;
   @apply top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2;
