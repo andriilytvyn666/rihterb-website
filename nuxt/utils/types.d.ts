@@ -75,6 +75,23 @@ type SupportPage = {
   }
 }
 
+type MinecraftPage = {
+  title: localeString
+  text: localePortableText
+  features: localeString[]
+  ip: string
+  buttons: {
+    monitoring: localeString
+    map: buttonLink
+    discord: buttonLink
+  }
+}
+
+type buttonLink = {
+  name: localeString
+  link: string
+}
+
 type localeString = {
   en: string
   uk: string

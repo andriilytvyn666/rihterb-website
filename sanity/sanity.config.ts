@@ -31,6 +31,10 @@ export default defineConfig({
               .icon(UserIcon)
               .child(S.document().schemaType('mainPage').documentId('mainPage')),
             S.listItem()
+              .title('Minecraft Page')
+              .icon(UserIcon)
+              .child(S.document().schemaType('minecraftPage').documentId('minecraftPage')),
+            S.listItem()
               .title('Support Page')
               .icon(HeartFilledIcon)
               .child(S.document().schemaType('supportPage').documentId('supportPage')),
@@ -40,9 +44,14 @@ export default defineConfig({
               .child(S.document().schemaType('album').documentId('album')),
             ...S.documentTypeListItems().filter(
               (listItem) =>
-                !['mainPage', 'supportPage', 'footerLinks', 'header', 'album'].includes(
-                  `${listItem.getId()}`
-                )
+                ![
+                  'mainPage',
+                  'supportPage',
+                  'footerLinks',
+                  'header',
+                  'album',
+                  'minecraftPage',
+                ].includes(`${listItem.getId()}`)
             ),
           ]),
     }),

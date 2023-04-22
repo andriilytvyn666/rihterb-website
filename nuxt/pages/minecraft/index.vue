@@ -5,21 +5,23 @@
         <div class="flex flex-col gap-8">
           <div class="flex flex-col gap-5">
             <h2 class="text-h-lg-700 text-hl-yellow text-center">
-              ріхтера сервер
+              {{ getLocalizedString($i18n.locale, minecraftPage.title) }}
             </h2>
-            <p>
-              запрошуємо приєднатися до сервера, де гравці можуть досліджувати
-              світ та будувати що завгодно, не маючи жодних обмежень чи правил.
-            </p>
+            <SanityContent
+              :blocks="
+                getLocalizedPortableText($i18n.locale, minecraftPage.text)
+              "
+            />
           </div>
-          <ul class="list-disc ml-5">
-            <li>версія 1.19.4</li>
-            <li>мапа сервера</li>
-            <li>анархія</li>
-            <li>без приватів</li>
-            <li>без донату</li>
-            <li>дружня спільнота</li>
-          </ul>
+          <div>
+            <ul
+              class="list-disc ml-5"
+              v-for="li in minecraftPage.features"
+              :key="li.en"
+            >
+              <li>{{ getLocalizedString($i18n.locale, li) }}</li>
+            </ul>
+          </div>
         </div>
         <!-- TODO: fix width on md breakpoint -->
         <div class="grid gap-4 w-full [&>*]:w-full">
@@ -32,7 +34,12 @@
           </Button>
           <NuxtLink :to="localePath('/minecraft/monitoring', $i18n.locale)">
             <Button
-              name="моніторинг"
+              :name="
+                getLocalizedString(
+                  $i18n.locale,
+                  minecraftPage.buttons.monitoring
+                )
+              "
               class="border border-dark-border sm:w-full"
             >
               <NuxtIcon
@@ -42,13 +49,26 @@
               />
             </Button>
           </NuxtLink>
-          <NuxtLink to="https://rihterb.my.pebble.host/" target="_blank">
-            <Button name="мапа" class="border border-dark-border sm:w-full">
+          <NuxtLink :to="minecraftPage.buttons.map.link" target="_blank">
+            <Button
+              :name="
+                getLocalizedString($i18n.locale, minecraftPage.buttons.map.name)
+              "
+              class="border border-dark-border sm:w-full"
+            >
               <NuxtIcon name="feather/map" class="text-[1.5rem]" filled />
             </Button>
           </NuxtLink>
-          <NuxtLink to="https://discord.gg/xDknD7uG" target="_blank">
-            <Button name="дискорд" class="border border-dark-border sm:w-full">
+          <NuxtLink :to="minecraftPage.buttons.discord.link" target="_blank">
+            <Button
+              :name="
+                getLocalizedString(
+                  $i18n.locale,
+                  minecraftPage.buttons.discord.name
+                )
+              "
+              class="border border-dark-border sm:w-full"
+            >
               <NuxtIcon name="social/discord" class="text-[1.5rem]" filled />
             </Button>
           </NuxtLink>
@@ -63,6 +83,9 @@
 </template>
 
 <script lang="ts" setup>
+const store = useSanityStore()
+const minecraftPage = await store.getMinecraftPage()
+
 const localePath = useLocalePath()
 
 const copyToClipboard = () => {

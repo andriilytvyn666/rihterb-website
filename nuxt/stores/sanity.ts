@@ -10,6 +10,7 @@ export const useSanityStore = defineStore(
     const albumPage = ref<AlbumPage>()
     const mainPage = ref<MainPage>()
     const supportPage = ref<SupportPage>()
+    const minecraftPage = ref<MinecraftPage>()
 
     const sanityFetch = async <T>(ref: Ref, query: string): Promise<T> => {
       if (ref.value !== undefined) return ref.value
@@ -24,6 +25,12 @@ export const useSanityStore = defineStore(
       sanityFetch<MainPage>(
         mainPage,
         groq`*[_type == "mainPage"][0] { about, album, magazine, minecraft, support }`
+      )
+
+    const getMinecraftPage = async (): Promise<MinecraftPage> =>
+      sanityFetch<MinecraftPage>(
+        minecraftPage,
+        groq`*[_type == "minecraftPage"][0] { title, text, features, ip, buttons }`
       )
 
     const getSupportPage = async (): Promise<SupportPage> =>
@@ -84,9 +91,7 @@ export const useSanityStore = defineStore(
       )
 
     return {
-      mainPage,
-      supportPage,
-
+      getMinecraftPage,
       getMainPage,
       getSupportPage,
       getPost,
@@ -95,12 +100,12 @@ export const useSanityStore = defineStore(
       getFooterLinks,
       getAlbumPage,
     }
-  },
-  {
-    persist: {
-      storage: persistedState.localStorage,
-    },
   }
+  // {
+  //   persist: {
+  //     storage: persistedState.localStorage,
+  //   },
+  // }
 )
 
 if (import.meta.hot) {

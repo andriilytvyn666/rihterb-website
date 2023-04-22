@@ -7,3 +7,12 @@
     <Support />
   </NuxtLayout>
 </template>
+
+<script lang="ts" setup>
+const store = useSanityStore()
+
+// TODO: try to split global fetch for pages
+await store.getMainPage()
+await store.getSupportPage()
+await store.getMinecraftPage()
+</script>
