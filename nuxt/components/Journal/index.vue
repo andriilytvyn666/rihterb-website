@@ -23,11 +23,10 @@
           },
         }"
       >
-        <!-- TODO: find perfect resolution -->
         <SwiperSlide v-for="i in 12" :key="i" class="page">
           <NuxtImg
             rel="preload"
-            :src="`journal_preview/${i}.webp`"
+            :src="`journal_view/${i}.webp`"
             class="image"
           />
         </SwiperSlide>
@@ -61,7 +60,8 @@ const localePath = useLocalePath()
 
 <style lang="postcss" scoped>
 #swiper {
-  @apply grid gap-8 overflow-visible;
+  /* @apply hidden; */
+  @apply sm:grid gap-8 overflow-visible;
   @apply grid-cols-1 sm:grid-cols-3 md:grid-cols-4;
   @apply lg:grid-cols-5;
 }
