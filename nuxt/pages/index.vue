@@ -11,8 +11,9 @@
 <script lang="ts" setup>
 const store = useSanityStore()
 
-// TODO: try to split global fetch for pages
+// TODO: try to split global fetch
 await store.getMainPage()
 await store.getSupportPage()
 await store.getMinecraftPage()
+await store.getAlbumPage()
 </script>

@@ -4,12 +4,14 @@ import localeString from './localeString'
 import localePortableText from './localePortableText'
 import footerLinks from './footerLinks'
 import header from './header'
-import album from './album'
+import albumPage from './albumPage'
 import supportPage from './supportPage'
 import minecraftPage from './minecraftPage'
 import buttonLink from './buttonLink'
+import album from './album'
 
 export const schemaTypes = [
+  album,
   localeString,
   localePortableText,
   buttonLink,
@@ -19,5 +21,5 @@ export const schemaTypes = [
   minecraftPage,
   footerLinks,
   header,
-  album,
+  albumPage,
 ]

@@ -102,17 +102,20 @@ type localePortableText = {
   uk: Any
 }
 
-// TODO: refactor
 type AlbumPage = {
-  logo: image
+  image: image
   title: localeString
-  description: localeString
-  albumImage: image
-  player: string
-  link: string
-  bandcampLink: string
+  text: localePortableText
+  buttons: {
+    magazine: {
+      name: localeString
+    }
+    listen: buttonLink
+  }
+  spotifyLink: string
 }
 
+// TODO: refactor
 type Header = {
   logo: image
 }

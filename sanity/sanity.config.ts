@@ -39,9 +39,9 @@ export default defineConfig({
               .icon(HeartFilledIcon)
               .child(S.document().schemaType('supportPage').documentId('supportPage')),
             S.listItem()
-              .title('Album')
+              .title('Album Page')
               .icon(BlockContentIcon)
-              .child(S.document().schemaType('album').documentId('album')),
+              .child(S.document().schemaType('albumPage').documentId('albumPage')),
             ...S.documentTypeListItems().filter(
               (listItem) =>
                 ![
@@ -49,7 +49,7 @@ export default defineConfig({
                   'supportPage',
                   'footerLinks',
                   'header',
-                  'album',
+                  'albumPage',
                   'minecraftPage',
                 ].includes(`${listItem.getId()}`)
             ),

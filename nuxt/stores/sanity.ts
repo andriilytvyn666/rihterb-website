@@ -7,10 +7,10 @@ export const useSanityStore = defineStore(
     const youtubeVideos = ref<video[]>()
     const header = ref<Header>()
     const footerLinks = ref<FooterLinks>()
-    const albumPage = ref<AlbumPage>()
     const mainPage = ref<MainPage>()
     const supportPage = ref<SupportPage>()
     const minecraftPage = ref<MinecraftPage>()
+    const albumPage = ref<AlbumPage>()
 
     const sanityFetch = async <T>(ref: Ref, query: string): Promise<T> => {
       if (ref.value !== undefined) return ref.value
@@ -60,16 +60,13 @@ export const useSanityStore = defineStore(
     const getAlbumPage = async (): Promise<AlbumPage> =>
       sanityFetch(
         albumPage,
-        groq`*[_type == "album"][0]
+        groq`*[_type == "albumPage"][0]
       {
-        _id,
-        logo,
+        image,
         title,
-        description,
-        albumImage,
-        player,
-        link,
-        bandcampLink
+        text,
+        buttons,
+        spotifyLink
       }`
       )
 
