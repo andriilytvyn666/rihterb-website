@@ -1,6 +1,6 @@
 <template>
   <NuxtLayout name="wrapper">
-    <div class="flex flex-col md:flex-row gap-8 justify-center">
+    <div class="flex flex-col md:flex-row gap-8 justify-center" v-motion-fade>
       <h2 class="text-hl-yellow text-h-lg-700 text-center md:hidden">
         {{ getLocalizedString($i18n.locale, album.title) }}
       </h2>

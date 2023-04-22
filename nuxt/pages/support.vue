@@ -1,6 +1,6 @@
 <template>
   <NuxtLayout name="wrapper">
-    <div class="flex flex-col h-full grow">
+    <div class="flex flex-col h-full grow" v-motion-fade>
       <div class="flex flex-col gap-8 justify-center grow">
         <div class="flex justify-center">
           <SanityImage
