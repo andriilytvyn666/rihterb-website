@@ -9,6 +9,7 @@ import supportPage from './supportPage'
 import minecraftPage from './minecraftPage'
 import buttonLink from './buttonLink'
 import album from './album'
+import magazinePage from './magazinePage'
 
 export const schemaTypes = [
   album,
@@ -22,4 +23,5 @@ export const schemaTypes = [
   footerLinks,
   header,
   albumPage,
+  magazinePage,
 ]

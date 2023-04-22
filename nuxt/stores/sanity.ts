@@ -3,14 +3,13 @@ import { defineStore } from 'pinia'
 export const useSanityStore = defineStore(
   'sanity-store',
   () => {
-    const post = ref<Post>()
-    const youtubeVideos = ref<video[]>()
     const header = ref<Header>()
     const footerLinks = ref<FooterLinks>()
     const mainPage = ref<MainPage>()
     const supportPage = ref<SupportPage>()
     const minecraftPage = ref<MinecraftPage>()
     const albumPage = ref<AlbumPage>()
+    const magazinePage = ref<MagazinePage>()
 
     const sanityFetch = async <T>(ref: Ref, query: string): Promise<T> => {
       if (ref.value !== undefined) return ref.value
@@ -20,6 +19,12 @@ export const useSanityStore = defineStore(
 
       return ref.value
     }
+
+    const getMagazinePage = async (): Promise<MagazinePage> =>
+      sanityFetch<MagazinePage>(
+        magazinePage,
+        groq`*[_type == "magazinePage"][0] { title, text }`
+      )
 
     const getMainPage = async (): Promise<MainPage> =>
       sanityFetch<MainPage>(
@@ -39,18 +44,7 @@ export const useSanityStore = defineStore(
         groq`*[_type == "supportPage"][0] { images, title, text, patreon, bandcamp, paypal, diaka, mono }`
       )
 
-    const getPost = async (): Promise<Post> =>
-      sanityFetch<Post>(
-        post,
-        groq`*[_type == "post"][0] {_id, title, subtitle, text, player, link, bandcampLink}`
-      )
-
-    const getYoutubeVideos = async (): Promise<video[]> =>
-      sanityFetch<video[]>(
-        youtubeVideos,
-        groq`*[_type == "videos"] | order(orderId asc) {_id, orderId, youtubeLink}`
-      )
-
+    // TODO: refactor
     const getHeader = async (): Promise<Header> =>
       sanityFetch(
         header,
@@ -91,11 +85,10 @@ export const useSanityStore = defineStore(
       getMinecraftPage,
       getMainPage,
       getSupportPage,
-      getPost,
-      getYoutubeVideos,
       getHeader,
       getFooterLinks,
       getAlbumPage,
+      getMagazinePage,
     }
   }
   // {

@@ -16,4 +16,5 @@ await store.getMainPage()
 await store.getSupportPage()
 await store.getMinecraftPage()
 await store.getAlbumPage()
+await store.getMagazinePage()
 </script>

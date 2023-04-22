@@ -42,6 +42,10 @@ export default defineConfig({
               .title('Album Page')
               .icon(BlockContentIcon)
               .child(S.document().schemaType('albumPage').documentId('albumPage')),
+            S.listItem()
+              .title('Magazine Page')
+              .icon(BlockContentIcon)
+              .child(S.document().schemaType('magazinePage').documentId('magazinePage')),
             ...S.documentTypeListItems().filter(
               (listItem) =>
                 ![
@@ -51,6 +55,7 @@ export default defineConfig({
                   'header',
                   'albumPage',
                   'minecraftPage',
+                  'magazinePage',
                 ].includes(`${listItem.getId()}`)
             ),
           ]),

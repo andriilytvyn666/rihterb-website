@@ -41,7 +41,7 @@
             </button>
             <!-- <NuxtLink :to="localePath('/', $i18n.locale)" class="grow"> -->
             <Button
-              name="повернутися"
+              :name="t('magazine.back')"
               class="border border-dark-border sm:w-full"
               @click="store.toggleGatherPages"
             />
@@ -69,23 +69,16 @@
           >
             <div class="gap-5 flex flex-col items-center">
               <h2 class="text-h-lg-700 text-hl-blue line-clamp-1">
-                журнал “дев’ять”
+                {{ getLocalizedString($i18n.locale, magazine.title) }}
               </h2>
               <p class="text-body-md-500 text-dark text-center line-clamp-4">
-                побачте унікальні роботи створені за участю талановитих
-                українських митців та мисткинь.
+                {{ getLocalizedString($i18n.locale, magazine.text) }}
               </p>
             </div>
-            <div class="flex gap-4 flex-col sm:flex-row w-full sm:w-fit">
-              <NuxtLink :to="localePath('/', $i18n.locale)">
-                <Button
-                  name="на головну"
-                  class="border text-dark border-dark"
-                />
-              </NuxtLink>
+            <div class="flex gap-4 flex-col sm:flex-row w-full">
               <Button
-                name="дивитись"
-                class="bg-dark text-light"
+                :name="t('magazine.view')"
+                class="bg-dark text-light sm:w-full"
                 @click="store.toggleGatherPages"
               />
             </div>
@@ -96,7 +89,7 @@
   </NuxtLayout>
 </template>
 
-<style lang="postcss" scoped>
+<style lang="postcss">
 .swiper-slide-active {
   @apply z-20;
 }
@@ -137,9 +130,12 @@
 </style>
 
 <script lang="ts" setup>
+const { t } = useI18n()
+
 const store = useClientStore()
 
 const sanityStore = useSanityStore()
+const magazine = await sanityStore.getMagazinePage()
 await sanityStore.getMainPage()
 
 const localePath = useLocalePath()

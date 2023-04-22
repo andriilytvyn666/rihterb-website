@@ -115,6 +115,11 @@ type AlbumPage = {
   spotifyLink: string
 }
 
+type MagazinePage = {
+  title: localeString
+  text: localeString
+}
+
 // TODO: refactor
 type Header = {
   logo: image

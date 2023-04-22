@@ -13,5 +13,10 @@
     "map": "map",
     "players": "players",
     "no_players": "nobody's here :("
+  },
+  "magazine": {
+    "view": "view",
+    "homepage": "homepage",
+    "back": "back"
   }
 }

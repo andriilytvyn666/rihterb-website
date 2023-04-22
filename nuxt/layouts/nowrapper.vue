@@ -3,6 +3,25 @@
     <DevOnly>
       <DebugIndicator />
     </DevOnly>
+    <transition name="scale">
+      <Button
+        :link="localePath('/', $i18n.locale)"
+        v-if="!clientStore.gatherPages"
+        :name="t('magazine.homepage')"
+        class="bg-light absolute z-20 left-4 top-4 sm:left-8 sm:top-8 text-dark border border-dark-border w-min"
+      />
+    </transition>
+    <transition name="scale">
+      <Button
+        v-if="!clientStore.gatherPages"
+        :name="$i18n.locale === 'en' ? 'укр' : 'eng'"
+        @click="
+          $i18n.locale === 'en' ? $i18n.setLocale('uk') : $i18n.setLocale('en')
+        "
+        class="bg-light absolute z-20 right-4 top-4 sm:right-8 sm:top-8 text-dark border border-dark-border w-min"
+      />
+    </transition>
+
     <div id="page-wrapper">
       <div class="flex flex-col min-h-screen">
         <!-- <Header class="w-full" /> -->
@@ -22,6 +41,9 @@
 </style>
 
 <script lang="ts" setup>
+const clientStore = useClientStore()
+const localePath = useLocalePath()
+
 const { t } = useI18n()
 
 useSeoMeta({
