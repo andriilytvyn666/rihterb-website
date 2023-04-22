@@ -20,6 +20,15 @@ type localePortableText = {
   uk: Any
 }
 
+type AlbumSection = {
+  _id: string
+  imageLarge: image
+  imageSmall: image
+  title: localeString
+  text: localeString
+  buttonName: localeString
+}
+
 type AlbumPage = {
   logo: image
   title: localeString
@@ -59,9 +68,30 @@ type Post = {
 type Support = {
   title: localeString
   text: localeString
+  buttonName: localeString
   patreonLink: string
   bandcampLink: string
   diakaLink: string
+  patreon: {
+    name: localeString
+    link: string
+  }
+  bandcamp: {
+    name: localeString
+    link: string
+  }
+  paypal: {
+    name: localeString
+    link: string
+  }
+  diaka: {
+    name: localeString
+    link: string
+  }
+  mono: {
+    name: localeString
+    link: string
+  }
 }
 
 type image = {

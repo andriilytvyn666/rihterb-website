@@ -16,18 +16,53 @@ export default {
       validation: (rule: Rule) => rule.required(),
     },
     {
-      name: 'patreonLink',
-      type: 'url',
+      name: 'buttonName',
+      type: 'localeString',
       validation: (rule: Rule) => rule.required(),
     },
     {
-      name: 'bandcampLink',
-      type: 'url',
+      name: 'patreon',
+      type: 'object',
+      fields: [
+        {name: 'name', type: 'localeString'},
+        {name: 'link', type: 'url'},
+      ],
       validation: (rule: Rule) => rule.required(),
     },
     {
-      name: 'diakaLink',
-      type: 'url',
+      name: 'bandcamp',
+      type: 'object',
+      fields: [
+        {name: 'name', type: 'localeString'},
+        {name: 'link', type: 'url'},
+      ],
+      validation: (rule: Rule) => rule.required(),
+    },
+    {
+      name: 'paypal',
+      type: 'object',
+      fields: [
+        {name: 'name', type: 'localeString'},
+        {name: 'link', type: 'url'},
+      ],
+      validation: (rule: Rule) => rule.required(),
+    },
+    {
+      name: 'diaka',
+      type: 'object',
+      fields: [
+        {name: 'name', type: 'localeString'},
+        {name: 'link', type: 'url'},
+      ],
+      validation: (rule: Rule) => rule.required(),
+    },
+    {
+      name: 'mono',
+      type: 'object',
+      fields: [
+        {name: 'name', type: 'localeString'},
+        {name: 'link', type: 'url'},
+      ],
       validation: (rule: Rule) => rule.required(),
     },
   ],

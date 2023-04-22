@@ -9,6 +9,7 @@ export const useSanityStore = defineStore('sanity-store', () => {
   const header = ref<Header>()
   const footerLinks = ref<FooterLinks>()
   const albumPage = ref<AlbumPage>()
+  const albumSection = ref<AlbumSection>()
 
   const sanityFetch = async <T>(ref: Ref, query: string): Promise<T> => {
     if (ref.value !== undefined) return ref.value
@@ -19,6 +20,12 @@ export const useSanityStore = defineStore('sanity-store', () => {
     return ref.value
   }
 
+  const getAlbumSection = async (): Promise<AlbumSection> =>
+    sanityFetch<AlbumSection>(
+      albumSection,
+      groq`*[_type == "albumSection"][0] {_id, imageLarge, imageSmall, title, text, buttonName}`
+    )
+
   const getAbout = async (): Promise<About> =>
     sanityFetch<About>(
       about,
@@ -28,7 +35,7 @@ export const useSanityStore = defineStore('sanity-store', () => {
   const getSupport = async (): Promise<Support> =>
     sanityFetch<Support>(
       support,
-      groq`*[_type == "support"][0] {_id, title, text, patreonLink, bandcampLink, diakaLink}`
+      groq`*[_type == "support"][0] {_id, title, text, buttonName, patreon, bandcamp, paypal, diaka, mono}`
     )
 
   const getPost = async (): Promise<Post> =>
@@ -96,5 +103,6 @@ export const useSanityStore = defineStore('sanity-store', () => {
     getHeader,
     getFooterLinks,
     getAlbumPage,
+    getAlbumSection,
   }
 })

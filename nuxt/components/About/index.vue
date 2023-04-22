@@ -8,7 +8,13 @@
       height="286"
       class="rounded-lg w-[20.875rem] h-[20.875rem] sm:w-[17.875rem] sm:h-[17.875rem] shadow-default"
     /> -->
-    <SanityImage :asset-id="about.photo.asset._ref" w="286" h="286" />
+    <SanityImage
+      :asset-id="about.photo.asset._ref"
+      w="286"
+      h="286"
+      rel="preload"
+      class="rounded-lg w-[20.875rem] h-[20.875rem] sm:w-[17.875rem] sm:h-[17.875rem] shadow-default"
+    />
     <div class="flex flex-col justify-between gap-8 sm:gap-0">
       <div class="flex flex-col text-center sm:text-left">
         <h2 class="text-h-lg-700 text-hl-yellow">

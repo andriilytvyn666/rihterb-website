@@ -18,36 +18,32 @@ export default defineConfig({
           .title('Main')
           .items([
             S.listItem()
-              .title('Header')
+              .title('Shared - Header')
               .icon(ImageIcon)
               .child(S.document().schemaType('header').documentId('header')),
             S.listItem()
-              .title('About')
-              .icon(UserIcon)
-              .child(S.document().schemaType('about').documentId('about')),
-            S.listItem()
-              .title('Support')
-              .icon(HeartFilledIcon)
-              .child(S.document().schemaType('support').documentId('support')),
-            S.listItem()
-              .title('Post')
-              .icon(BlockContentIcon)
-              .child(S.document().schemaType('post').documentId('post')),
-            S.listItem()
-              .title('Footer Links')
+              .title('Shared - Footer')
               .icon(LinkIcon)
               .child(S.document().schemaType('footerLinks').documentId('footerLinks')),
             S.listItem()
-              .title('Nav link')
-              .icon(LinkIcon)
-              .child(S.document().schemaType('nav').documentId('nav')),
+              .title('Main - About')
+              .icon(UserIcon)
+              .child(S.document().schemaType('about').documentId('about')),
             S.listItem()
-              .title('Album Page')
+              .title('Main - Support')
+              .icon(HeartFilledIcon)
+              .child(S.document().schemaType('support').documentId('support')),
+            S.listItem()
+              .title('Main - Album')
+              .icon(BlockContentIcon)
+              .child(S.document().schemaType('albumSection').documentId('albumSection')),
+            S.listItem()
+              .title('Album')
               .icon(BlockContentIcon)
               .child(S.document().schemaType('album').documentId('album')),
             ...S.documentTypeListItems().filter(
               (listItem) =>
-                !['about', 'support', 'nav', 'post', 'footerLinks', 'header', 'album'].includes(
+                !['about', 'support', 'footerLinks', 'header', 'albumSection', 'album'].includes(
                   `${listItem.getId()}`
                 )
             ),

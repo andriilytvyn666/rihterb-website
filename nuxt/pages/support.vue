@@ -21,39 +21,73 @@
         </div>
         <div class="flex flex-col gap-8 items-center w-full" id="control">
           <div class="flex items-center flex-col gap-5 text-center">
-            <h2 class="text-hl-yellow text-h-lg-700">підтримка</h2>
+            <h2 class="text-hl-yellow text-h-lg-700">
+              {{ getLocalizedString($i18n.locale, support.title) }}
+            </h2>
             <p class="text-body-lg-600">
-              дайте грошей, щоб писати псіходелік рок
+              {{ getLocalizedString($i18n.locale, support.text) }}
             </p>
           </div>
           <div
             class="flex-col sm:flex-row flex gap-4 w-full justify-center flex-wrap"
           >
-            <Button name="патреон" class="border border-dark-border">
-              <NuxtIcon name="social/patreon" class="text-[1.5rem]" filled />
-            </Button>
-            <Button name="бендкемп" class="border border-dark-border">
-              <NuxtIcon name="social/bandcamp" class="text-[1.5rem]" filled />
-            </Button>
-            <Button name="пейпел" class="border border-dark-border">
-              <NuxtIcon name="social/paypal" class="text-[1.5rem]" filled />
-            </Button>
-            <Button name="дяка" class="border border-dark-border">
-              <NuxtIcon name="feather/heart" class="text-[1.5rem]" filled />
-            </Button>
-            <Button name="моно" class="border border-dark-border">
-              <NuxtIcon
-                name="feather/dollar-sign"
-                class="text-[1.5rem]"
-                filled
-              />
-            </Button>
+            <NuxtLink :to="support.patreon.link">
+              <Button
+                :name="getLocalizedString($i18n.locale, support.patreon.name)"
+                class="border border-dark-border"
+              >
+                <NuxtIcon name="social/patreon" class="text-[1.5rem]" filled />
+              </Button>
+            </NuxtLink>
+            <NuxtLink :to="support.bandcamp.link">
+              <Button
+                :name="getLocalizedString($i18n.locale, support.bandcamp.name)"
+                class="border border-dark-border"
+              >
+                <NuxtIcon name="social/bandcamp" class="text-[1.5rem]" filled />
+              </Button>
+            </NuxtLink>
+            <NuxtLink :to="support.paypal.link">
+              <Button
+                :name="getLocalizedString($i18n.locale, support.paypal.name)"
+                class="border border-dark-border"
+              >
+                <NuxtIcon name="social/paypal" class="text-[1.5rem]" filled />
+              </Button>
+            </NuxtLink>
+            <NuxtLink :to="support.diaka.link">
+              <Button
+                :name="getLocalizedString($i18n.locale, support.diaka.name)"
+                class="border border-dark-border"
+              >
+                <NuxtIcon name="feather/heart" class="text-[1.5rem]" filled />
+              </Button>
+            </NuxtLink>
+            <NuxtLink :to="support.mono.link">
+              <Button
+                :name="getLocalizedString($i18n.locale, support.mono.name)"
+                class="border border-dark-border"
+              >
+                <NuxtIcon
+                  name="feather/dollar-sign"
+                  class="text-[1.5rem]"
+                  filled
+                />
+              </Button>
+            </NuxtLink>
           </div>
         </div>
       </div>
     </div>
   </NuxtLayout>
 </template>
+
+<script lang="ts" setup>
+import { useSanityStore } from '../stores/sanity'
+
+const store = useSanityStore()
+const support = await store.getSupport()
+</script>
 
 <style lang="postcss" scoped>
 .card {

@@ -8,20 +8,28 @@
           <h2
             class="line-clamp-2 sm:line-clamp-1 w-fit text-hl-yellow text-h-lg-700"
           >
-            підтримайте мене
+            {{ getLocalizedString($i18n.locale, support.title) }}
           </h2>
           <p class="line-clamp-2 sm:line-clamp-1 text-light text-body-md-600">
-            дайте грошей, щоб писати псіходелік рок
+            {{ getLocalizedString($i18n.locale, support.text) }}
           </p>
         </div>
       </div>
       <NuxtLink :to="localePath('/support', $i18n.locale)">
-        <Button name="підтримати" class="bg-light text-dark h-fit" />
+        <Button
+          :name="getLocalizedString($i18n.locale, support.buttonName)"
+          class="bg-light text-dark h-fit"
+        />
       </NuxtLink>
     </div>
   </div>
 </template>
 
 <script lang="ts" setup>
+import { useSanityStore } from '../../stores/sanity'
+
+const store = useSanityStore()
+const support = await store.getSupport()
+
 const localePath = useLocalePath()
 </script>
