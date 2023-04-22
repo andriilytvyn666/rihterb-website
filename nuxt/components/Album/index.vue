@@ -38,8 +38,6 @@
 </template>
 
 <script lang="ts" setup>
-import { useSanityStore } from '../../stores/sanity'
-
 const store = useSanityStore()
 const album = (await store.getMainPage()).album
 const localePath = useLocalePath()

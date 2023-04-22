@@ -9,3 +9,7 @@ export const useClientStore = defineStore('client-store', () => {
 
   return { gatherPages, toggleGatherPages }
 })
+
+if (import.meta.hot) {
+  import.meta.hot.accept(acceptHMRUpdate(useClientStore, import.meta.hot))
+}

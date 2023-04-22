@@ -67,8 +67,6 @@
 </template>
 
 <script lang="ts" setup>
-import { useSanityStore } from '../../stores/sanity'
-
 const store = useSanityStore()
 const magazine = (await store.getMainPage()).magazine
 const localePath = useLocalePath()

@@ -86,7 +86,6 @@ type localePortableText = {
 }
 
 // TODO: refactor
-
 type AlbumPage = {
   logo: image
   title: localeString

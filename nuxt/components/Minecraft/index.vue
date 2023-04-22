@@ -48,8 +48,6 @@
 </template>
 
 <script lang="ts" setup>
-import { useSanityStore } from '../../stores/sanity'
-
 const store = useSanityStore()
 const minecraft = (await store.getMainPage()).minecraft
 const localePath = useLocalePath()

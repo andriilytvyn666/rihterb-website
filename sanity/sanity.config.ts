@@ -3,6 +3,7 @@ import {deskTool} from 'sanity/desk'
 import {visionTool} from '@sanity/vision'
 import {schemaTypes} from './schemas'
 import {UserIcon, LinkIcon, BlockContentIcon, HeartFilledIcon, ImageIcon} from '@sanity/icons'
+import {vercelDeployTool} from 'sanity-plugin-vercel-deploy'
 
 export default defineConfig({
   name: 'default',
@@ -45,6 +46,7 @@ export default defineConfig({
             ),
           ]),
     }),
+    vercelDeployTool(),
     visionTool(),
   ],
 

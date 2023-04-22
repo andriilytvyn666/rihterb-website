@@ -137,8 +137,6 @@
 </style>
 
 <script lang="ts" setup>
-import { useClientStore } from '../stores/client'
-const localePath = useLocalePath()
-
 const store = useClientStore()
+const localePath = useLocalePath()
 </script>

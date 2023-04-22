@@ -53,8 +53,6 @@
 </template>
 
 <script lang="ts" setup>
-import { useSanityStore } from '../../stores/sanity'
-
 const store = useSanityStore()
 const about = (await store.getMainPage()).about
 </script>

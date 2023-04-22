@@ -26,9 +26,12 @@
 </template>
 
 <script lang="ts" setup>
-import { useSanityStore } from '../../stores/sanity'
-
 const store = useSanityStore()
+
+// TODO: try to split global fetch for pages
+await store.getMainPage()
+await store.getSupportPage()
+
 const support = (await store.getMainPage()).support
 
 const localePath = useLocalePath()
