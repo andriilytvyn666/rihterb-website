@@ -82,10 +82,6 @@
 <script lang="ts" setup>
 import { statusJava } from 'node-mcstatus'
 
-const store = useSanityStore()
-
-await store.getMainPage()
-
 const { t } = useI18n()
 
 const isMap = ref(false)

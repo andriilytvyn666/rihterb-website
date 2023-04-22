@@ -136,7 +136,4 @@ const store = useClientStore()
 
 const sanityStore = useSanityStore()
 const magazine = await sanityStore.getMagazinePage()
-await sanityStore.getMainPage()
-
-const localePath = useLocalePath()
 </script>

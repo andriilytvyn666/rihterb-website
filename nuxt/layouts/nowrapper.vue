@@ -41,6 +41,11 @@
 </style>
 
 <script lang="ts" setup>
+const store = useSanityStore()
+
+await store.getMainPage()
+await store.getMagazinePage()
+
 const clientStore = useClientStore()
 const localePath = useLocalePath()
 

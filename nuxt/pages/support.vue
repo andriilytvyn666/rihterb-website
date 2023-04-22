@@ -109,7 +109,6 @@ import { useSanityStore } from '../stores/sanity'
 
 const store = useSanityStore()
 const support = await store.getSupportPage()
-await store.getMainPage()
 </script>
 
 <style lang="postcss" scoped>

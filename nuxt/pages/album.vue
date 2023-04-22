@@ -64,7 +64,5 @@
 <script lang="ts" setup>
 const store = useSanityStore()
 const album = await store.getAlbumPage()
-await store.getMainPage()
-
 const localePath = useLocalePath()
 </script>

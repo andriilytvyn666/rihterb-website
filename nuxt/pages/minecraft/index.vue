@@ -85,7 +85,6 @@
 <script lang="ts" setup>
 const store = useSanityStore()
 const minecraftPage = await store.getMinecraftPage()
-await store.getMainPage()
 
 const localePath = useLocalePath()
 
