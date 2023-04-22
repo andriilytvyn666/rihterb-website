@@ -25,7 +25,7 @@ export default defineConfig({
             S.listItem()
               .title('Shared - Footer')
               .icon(LinkIcon)
-              .child(S.document().schemaType('footerLinks').documentId('footerLinks')),
+              .child(S.document().schemaType('footer').documentId('footer')),
             S.listItem()
               .title('Main Page')
               .icon(UserIcon)
@@ -51,7 +51,7 @@ export default defineConfig({
                 ![
                   'mainPage',
                   'supportPage',
-                  'footerLinks',
+                  'footer',
                   'header',
                   'albumPage',
                   'minecraftPage',

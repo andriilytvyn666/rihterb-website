@@ -87,21 +87,6 @@ type MinecraftPage = {
   }
 }
 
-type buttonLink = {
-  name: localeString
-  link: string
-}
-
-type localeString = {
-  en: string
-  uk: string
-}
-
-type localePortableText = {
-  en: Any
-  uk: Any
-}
-
 type AlbumPage = {
   image: image
   title: localeString
@@ -120,12 +105,7 @@ type MagazinePage = {
   text: localeString
 }
 
-// TODO: refactor
-type Header = {
-  logo: image
-}
-
-type FooterLinks = {
+type Footer = {
   spotify: string
   youtubemusic: string
   applemusic: string
@@ -136,37 +116,26 @@ type FooterLinks = {
   bandcamp: string
 }
 
-type Post = {
-  title: localeString
-  subtitle: localeString
-  text: localePortableText
-  player: string
+// TODO: refactor
+type Header = {
+  logo: image
+}
+
+type buttonLink = {
+  name: localeString
   link: string
-  bandcampLink: string
+}
+
+type localeString = {
+  en: string
+  uk: string
+}
+
+type localePortableText = {
+  en: Any
+  uk: Any
 }
 
 type image = {
   asset: { _ref: string }
-}
-
-type video = {
-  _id: string
-  orderId: int
-  youtubeLink: string
-}
-
-type ListenLink = {
-  _id: string
-  title: string
-  link: string
-  logo: string
-}
-
-type NavLink = {
-  _id: string
-  title: localeString
-  linkType: string
-  target: string
-  link: string
-  icon: string
 }

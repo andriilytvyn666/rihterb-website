@@ -27,7 +27,7 @@ import { useSanityStore } from '../../stores/sanity'
 
 const store = useSanityStore()
 
-const links = await store.getFooterLinks()
+const links = await store.getFooter()
 </script>
 
 <style class="postcss">

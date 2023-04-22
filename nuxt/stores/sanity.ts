@@ -4,7 +4,7 @@ export const useSanityStore = defineStore(
   'sanity-store',
   () => {
     const header = ref<Header>()
-    const footerLinks = ref<FooterLinks>()
+    const footer = ref<Footer>()
     const mainPage = ref<MainPage>()
     const supportPage = ref<SupportPage>()
     const minecraftPage = ref<MinecraftPage>()
@@ -64,9 +64,9 @@ export const useSanityStore = defineStore(
       }`
       )
 
-    const getFooterLinks = async (): Promise<FooterLinks> =>
+    const getFooter = async (): Promise<Footer> =>
       sanityFetch(
-        footerLinks,
+        footer,
         groq`*[_type == "footerLinks"][0]
       {
         _id,
@@ -86,7 +86,7 @@ export const useSanityStore = defineStore(
       getMainPage,
       getSupportPage,
       getHeader,
-      getFooterLinks,
+      getFooter,
       getAlbumPage,
       getMagazinePage,
     }
