@@ -1,5 +1,5 @@
 <template>
-  <NuxtLayout name="nowrapper">
+  <NuxtLayout name="magazine">
     <MagazineBg class="opacity-0 sm:opacity-100" />
     <MagazineBgMobile class="sm:opacity-0" />
     <transition name="scale">
