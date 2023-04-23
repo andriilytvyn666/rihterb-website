@@ -1,5 +1,5 @@
 <template>
-  <div v-motion>
+  <div>
     <DevOnly>
       <DebugIndicator />
     </DevOnly>
