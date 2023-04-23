@@ -43,13 +43,9 @@
           <Button
             name="rihterb.my.pebble.host"
             @click="copyToClipboard"
-            :class="`${copyColor} ${copyText} transition-none`"
+            class="bg-light hover:bg-light-secondary text-dark"
           >
-            <NuxtIcon
-              :name="copyIcon"
-              filled
-              class="text-[1.5rem] group-active:hidden transition-none"
-            />
+            <NuxtIcon name="feather/copy" filled class="text-[1.5rem]" />
           </Button>
         </div>
       </div>
@@ -91,23 +87,10 @@ import { statusJava } from 'node-mcstatus'
 const { t } = useI18n()
 
 const isMap = ref(false)
-const copyIcon = ref('feather/copy')
-const copyColor = ref('bg-light')
-const copyText = ref('text-dark')
 const status = ref(await statusJava('rihterb.my.pebble.host', 25565))
 
 const copyToClipboard = () => {
   navigator.clipboard.writeText('rihterb.my.pebble.host')
-  copyIcon.value = 'feather/check'
-  copyColor.value = 'bg-green-600'
-  copyText.value = 'text-light'
-
-  if (copyIcon.value === 'feather/check')
-    setInterval(() => {
-      copyIcon.value = 'feather/copy'
-      copyColor.value = 'bg-light'
-      copyText.value = 'text-dark'
-    }, 2000)
 }
 
 const refreshStatus = async () => {
