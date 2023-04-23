@@ -5,10 +5,13 @@
     </DevOnly>
     <div id="page-wrapper">
       <div class="flex flex-col min-h-screen">
+        <!-- v-motion-fade -->
         <Header class="w-full" />
+        <!-- v-motion-fade -->
         <div class="flex flex-col gap-8 sm:gap-12 grow">
           <slot />
         </div>
+        <!-- v-motion-fade -->
         <Footer />
       </div>
     </div>
@@ -29,6 +32,14 @@
 </style>
 
 <script lang="ts" setup>
+const store = useSanityStore()
+
+await store.getMainPage()
+await store.getSupportPage()
+await store.getMinecraftPage()
+await store.getAlbumPage()
+await store.getMagazinePage()
+
 const { t } = useI18n()
 
 useSeoMeta({

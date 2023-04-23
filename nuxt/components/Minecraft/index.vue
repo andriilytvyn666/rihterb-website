@@ -18,8 +18,13 @@
         :key="image.asset._ref"
         class="page"
       >
-        <!-- <NuxtImg rel="preload" :src="`/minecraft/${i}.webp`" class="image" /> -->
-        <SanityImage rel="preload" :asset-id="image.asset._ref" class="image" />
+        <SanityImage
+          rel="preload"
+          :asset-id="image.asset._ref"
+          class="image"
+          fit="crop"
+          h="400"
+        />
       </SwiperSlide>
     </Swiper>
     <div
@@ -37,12 +42,11 @@
           </p>
         </div>
       </div>
-      <NuxtLink :to="localePath('/minecraft', $i18n.locale)">
-        <Button
-          :name="getLocalizedString($i18n.locale, minecraft.buttonName)"
-          class="bg-light text-dark h-fit"
-        />
-      </NuxtLink>
+      <Button
+        :to="localePath('/minecraft', $i18n.locale)"
+        :name="getLocalizedString($i18n.locale, minecraft.buttonName)"
+        class="bg-light text-dark h-fit"
+      />
     </div>
   </div>
 </template>

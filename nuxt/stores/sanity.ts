@@ -4,7 +4,7 @@ export const useSanityStore = defineStore(
   'sanity-store',
   () => {
     const header = ref<Header>()
-    const footerLinks = ref<FooterLinks>()
+    const footer = ref<Footer>()
     const mainPage = ref<MainPage>()
     const supportPage = ref<SupportPage>()
     const minecraftPage = ref<MinecraftPage>()
@@ -23,7 +23,7 @@ export const useSanityStore = defineStore(
     const getMagazinePage = async (): Promise<MagazinePage> =>
       sanityFetch<MagazinePage>(
         magazinePage,
-        groq`*[_type == "magazinePage"][0] { title, text }`
+        groq`*[_type == "magazinePage"][0] { title, text, pages }`
       )
 
     const getMainPage = async (): Promise<MainPage> =>
@@ -35,7 +35,7 @@ export const useSanityStore = defineStore(
     const getMinecraftPage = async (): Promise<MinecraftPage> =>
       sanityFetch<MinecraftPage>(
         minecraftPage,
-        groq`*[_type == "minecraftPage"][0] { title, text, features, ip, buttons }`
+        groq`*[_type == "minecraftPage"][0] { title, text, features, ip, buttons, image }`
       )
 
     const getSupportPage = async (): Promise<SupportPage> =>
@@ -48,7 +48,7 @@ export const useSanityStore = defineStore(
     const getHeader = async (): Promise<Header> =>
       sanityFetch(
         header,
-        groq`*[_type == "header"][0] {_id, logo, linkTelegram, linkInstagram}`
+        groq`*[_type == "header"][0] {logo, navLinks, listenLink, socialsLink }`
       )
 
     const getAlbumPage = async (): Promise<AlbumPage> =>
@@ -64,12 +64,11 @@ export const useSanityStore = defineStore(
       }`
       )
 
-    const getFooterLinks = async (): Promise<FooterLinks> =>
+    const getFooter = async (): Promise<Footer> =>
       sanityFetch(
-        footerLinks,
+        footer,
         groq`*[_type == "footerLinks"][0]
       {
-        _id,
         spotify,
         youtubemusic,
         applemusic,
@@ -86,7 +85,7 @@ export const useSanityStore = defineStore(
       getMainPage,
       getSupportPage,
       getHeader,
-      getFooterLinks,
+      getFooter,
       getAlbumPage,
       getMagazinePage,
     }

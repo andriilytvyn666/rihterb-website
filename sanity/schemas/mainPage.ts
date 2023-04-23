@@ -10,7 +10,7 @@ export default {
     {
       name: 'about',
       type: 'object',
-      options: {collapsible: true},
+      options: {collapsible: true, collapsed: true},
 
       fields: [
         {
@@ -62,19 +62,12 @@ export default {
     {
       name: 'album',
       type: 'object',
-      options: {collapsible: true},
+      options: {collapsible: true, collapsed: true},
 
       fields: [
         {
-          name: 'imageLarge',
-          description: '334 x 334 webp',
-          type: 'image',
-          validation: (rule: Rule) => rule.required(),
-          options: {accept: 'image/webp'},
-        },
-        {
-          name: 'imageSmall',
-          description: '80 x 80 webp',
+          name: 'image',
+          description: '500 x 500 webp',
           type: 'image',
           validation: (rule: Rule) => rule.required(),
           options: {accept: 'image/webp'},
@@ -100,7 +93,7 @@ export default {
     {
       name: 'magazine',
       type: 'object',
-      options: {collapsible: true},
+      options: {collapsible: true, collapsed: true},
 
       fields: [
         {
@@ -136,12 +129,12 @@ export default {
     {
       name: 'minecraft',
       type: 'object',
-      options: {collapsible: true},
+      options: {collapsible: true, collapsed: true},
 
       fields: [
         {
           name: 'images',
-          description: '581 x 327 webp',
+          description: 'any x 400 webp',
           type: 'array',
           of: [
             {
@@ -172,7 +165,7 @@ export default {
     {
       name: 'support',
       type: 'object',
-      options: {collapsible: true},
+      options: {collapsible: true, collapsed: true},
 
       fields: [
         {

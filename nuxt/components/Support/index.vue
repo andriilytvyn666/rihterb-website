@@ -15,12 +15,11 @@
           </p>
         </div>
       </div>
-      <NuxtLink :to="localePath('/support', $i18n.locale)">
-        <Button
-          :name="getLocalizedString($i18n.locale, support.buttonName)"
-          class="bg-light text-dark h-fit"
-        />
-      </NuxtLink>
+      <Button
+        :to="localePath('/support', $i18n.locale)"
+        :name="getLocalizedString($i18n.locale, support.buttonName)"
+        class="bg-light text-dark h-fit"
+      />
     </div>
   </div>
 </template>

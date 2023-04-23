@@ -1,73 +1,99 @@
 <template>
   <div class="outter w-full">
-    <NuxtImg
+    <SanityImage
       rel="preload"
-      src="journal_mobile/1.webp"
-      :class="`${store.gatherPages ? 'center' : 'left-8 -top-12 -rotate-6'}`"
-    />
-    <NuxtImg
-      rel="preload"
-      src="journal_mobile/2.webp"
+      :asset-id="magazine.pages[9].asset._ref"
+      w="226"
+      h="292"
       :class="`${
-        store.gatherPages ? 'center' : '-right-[2rem] top-[0rem] rotate-[20deg]'
+        clientStore.gatherPages ? 'center' : 'left-8 -top-12 -rotate-6'
+      }`"
+    />
+    <SanityImage
+      rel="preload"
+      :asset-id="magazine.pages[3].asset._ref"
+      w="206"
+      h="291"
+      :class="`${
+        clientStore.gatherPages
+          ? 'center'
+          : '-right-[2rem] top-[0rem] rotate-[20deg]'
       }`"
     />
 
-    <NuxtImg
+    <SanityImage
       rel="preload"
-      src="journal_mobile/3.webp"
+      w="282"
+      h="218"
+      :asset-id="magazine.pages[7].asset._ref"
       :class="`${
-        store.gatherPages ? 'center' : '-left-[1rem] top-28 -rotate-[8deg]'
+        clientStore.gatherPages
+          ? 'center'
+          : '-left-[1rem] top-28 -rotate-[8deg]'
       }`"
     />
 
-    <NuxtImg
+    <SanityImage
       rel="preload"
-      src="journal_mobile/4.webp"
+      w="251"
+      h="325"
+      :asset-id="magazine.pages[10].asset._ref"
       :class="`${
-        store.gatherPages ? 'center' : 'left-[0rem] -bottom-[2rem] rotate-6'
+        clientStore.gatherPages
+          ? 'center'
+          : 'left-[0rem] -bottom-[2rem] rotate-6'
       }`"
     />
 
-    <NuxtImg
+    <SanityImage
       rel="preload"
-      src="journal_mobile/5.webp"
+      w="322"
+      h="418"
+      :asset-id="magazine.pages[4].asset._ref"
       :class="`${
-        store.gatherPages
+        clientStore.gatherPages
           ? 'center'
           : '-right-[12rem] bottom-[16rem] -rotate-12'
       }`"
     />
-    <NuxtImg
+    <SanityImage
+      w="226"
+      h="320"
       rel="preload"
-      src="journal_mobile/6.webp"
+      :asset-id="magazine.pages[1].asset._ref"
       :class="`${
-        store.gatherPages ? 'center' : '-left-8 bottom-[14rem] rotate-3'
+        clientStore.gatherPages ? 'center' : '-left-8 bottom-[14rem] rotate-3'
       }`"
     />
-    <NuxtImg
+    <SanityImage
+      w="230"
+      h="298"
       rel="preload"
-      src="journal_mobile/8.webp"
+      :asset-id="magazine.pages[2].asset._ref"
       :class="`${
-        store.gatherPages
+        clientStore.gatherPages
           ? 'center'
           : '-right-[3.5rem] -bottom-[2rem] rotate-12'
       }`"
     />
-    <NuxtImg
+    <SanityImage
+      w="201"
+      h="260"
       rel="preload"
-      src="journal_mobile/7.webp"
+      :asset-id="magazine.pages[0].asset._ref"
       :class="`${
-        store.gatherPages ? 'center' : 'left-[7rem] -bottom-4 -rotate-[2deg]'
+        clientStore.gatherPages
+          ? 'center'
+          : 'left-[7rem] -bottom-4 -rotate-[2deg]'
       }`"
     />
   </div>
 </template>
 
 <script lang="ts" setup>
-import { useClientStore } from '../../stores/client'
-
-const store = useClientStore()
+const store = useSanityStore()
+const clientStore = useClientStore()
+const magazine = await store.getMagazinePage()
 </script>
 
 <style lang="postcss" scoped>

@@ -1,16 +1,11 @@
 <template>
   <NuxtLayout name="wrapper">
-    <div class="flex flex-col md:flex-row gap-8 justify-center">
+    <div class="flex flex-col md:flex-row gap-8 justify-center" v-motion-fade>
       <h2 class="text-hl-yellow text-h-lg-700 text-center md:hidden">
         {{ getLocalizedString($i18n.locale, album.title) }}
       </h2>
 
       <div class="flex flex-col gap-8 items-center md:w-[23.5rem]">
-        <!-- <NuxtImg
-          rel="preload"
-          src="/album/index.webp"
-          class="rounded-lg shadow-default aspect-square w-[20.875rem] md:w-full"
-        /> -->
         <SanityImage
           rel="preload"
           :asset-id="album.image.asset._ref"
@@ -64,7 +59,5 @@
 <script lang="ts" setup>
 const store = useSanityStore()
 const album = await store.getAlbumPage()
-await store.getMainPage()
-
 const localePath = useLocalePath()
 </script>

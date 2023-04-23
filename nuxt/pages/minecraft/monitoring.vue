@@ -1,6 +1,6 @@
 <template>
   <NuxtLayout name="wrapper">
-    <div class="flex flex-col w-full gap-8 grow">
+    <div class="flex flex-col w-full gap-8 grow" v-motion-fade>
       <div class="flex flex-col-reverse justify-between gap-8 sm:flex-row">
         <div class="flex gap-4 grow">
           <button
@@ -71,7 +71,7 @@
         v-else-if="!isMap"
       >
         <NuxtImg src="minecraft/no_players.webp" rel="preload" />
-        <h2 class="text-h-lg-700 text-dark-secondary">
+        <h2 class="text-h-lg-700 text-dark-secondary select-none">
           {{ $t('monitoring.no_players') }}
         </h2>
       </div>
@@ -81,10 +81,6 @@
 
 <script lang="ts" setup>
 import { statusJava } from 'node-mcstatus'
-
-const store = useSanityStore()
-
-await store.getMainPage()
 
 const { t } = useI18n()
 

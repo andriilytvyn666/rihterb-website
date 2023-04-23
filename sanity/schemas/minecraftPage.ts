@@ -47,5 +47,11 @@ export default {
         },
       ],
     },
+    {
+      name: 'image',
+      type: 'image',
+      description: '614-any x 1000 webp',
+      validation: (rule: Rule) => rule.required(),
+    },
   ],
 }

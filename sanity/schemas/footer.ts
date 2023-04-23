@@ -2,10 +2,10 @@ import {Rule} from 'sanity'
 import {LinkIcon} from '@sanity/icons'
 
 export default {
-  name: 'footerLinks',
+  name: 'footer',
   type: 'document',
   icon: LinkIcon,
-  title: 'Footer Links',
+  title: 'Footer',
   fields: [
     {
       name: 'spotify',

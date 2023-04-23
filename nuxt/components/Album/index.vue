@@ -5,16 +5,16 @@
     <div class="flex flex-col items-center gap-8 sm:flex-row">
       <SanityImage
         rel="preload"
-        :asset-id="album.imageSmall.asset._ref"
+        :asset-id="album.image.asset._ref"
         w="80"
         h="80"
         class="hidden sm:flex rounded-lg sm:w-20 sm:h-20 shadow-default"
       />
       <SanityImage
         rel="preload"
-        :asset-id="album.imageLarge.asset._ref"
-        w="334"
-        h="334"
+        :asset-id="album.image.asset._ref"
+        w="500"
+        h="500"
         class="rounded-lg w-full h-full sm:hidden shadow-default"
       />
       <div class="flex flex-col w-full gap-2 sm:justify-center">
@@ -28,12 +28,11 @@
         </p>
       </div>
     </div>
-    <NuxtLink :to="localePath('/album', $i18n.locale)" class="w-full sm:w-fit">
-      <Button
-        :name="getLocalizedString($i18n.locale, album.buttonName)"
-        class="bg-light text-dark h-fit"
-      />
-    </NuxtLink>
+    <Button
+      :to="localePath('/album', $i18n.locale)"
+      :name="getLocalizedString($i18n.locale, album.buttonName)"
+      class="bg-light text-dark h-fit w-full sm:w-fit"
+    />
   </div>
 </template>
 
