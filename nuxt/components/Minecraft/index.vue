@@ -20,10 +20,9 @@
       >
         <SanityImage
           rel="preload"
+          height="327"
           :asset-id="image.asset._ref"
-          fit="crop"
-          h="372"
-          class="image h-[23.25rem]"
+          class="image"
         />
       </SwiperSlide>
     </Swiper>
