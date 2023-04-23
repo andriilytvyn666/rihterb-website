@@ -1,6 +1,6 @@
 <template>
   <NuxtLayout name="wrapper">
-    <div class="flex flex-col w-full gap-8 grow" v-motion-fade>
+    <div class="flex flex-col w-full gap-8 grow">
       <div class="flex flex-col-reverse justify-between gap-8 sm:flex-row">
         <div class="flex gap-4 grow">
           <button
