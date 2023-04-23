@@ -7,7 +7,11 @@
         class="z-10 w-full flex grow items-center justify-center overflow-visible"
         v-if="store.gatherPages"
       >
-        <div class="flex flex-col grow gap-5 overflow-visible items-center">
+        <div
+          :class="`flex flex-col grow gap-5 overflow-visible items-center ${
+            store.gatherPages ? 'bg-dark' : ''
+          }`"
+        >
           <Swiper
             :modules="[SwiperNavigation]"
             :slides-per-view="1"
@@ -17,7 +21,7 @@
               prevEl: '#swiper-prev',
               disabledClass: 'opacity-0',
             }"
-            class="w-screen h-[36rem] md:w-[59rem] items-center flex grow justify-center md:h-[45.625rem] overflow-visible bg-dark"
+            class="w-screen h-full md:w-[59rem] items-center flex grow justify-center md:h-[45.625rem] overflow-visible"
           >
             <SwiperSlide
               v-for="page in magazine.pages"
