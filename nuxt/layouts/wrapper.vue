@@ -5,11 +5,11 @@
     </DevOnly>
     <div id="page-wrapper">
       <div class="flex flex-col min-h-screen">
-        <Header class="w-full" />
-        <div class="flex flex-col gap-8 sm:gap-12 grow">
+        <Header class="w-full" v-motion-fade />
+        <div class="flex flex-col gap-8 sm:gap-12 grow" v-motion-fade>
           <slot />
         </div>
-        <Footer />
+        <Footer v-motion-fade-visible-once />
       </div>
     </div>
   </div>
