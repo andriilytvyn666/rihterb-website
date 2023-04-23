@@ -14,7 +14,7 @@
         <div class="flex w-full gap-4 text-dark">
           <NuxtLink :to="localePath('/magazine', $i18n.locale)" class="w-full">
             <Button
-              class="bg-light sm:w-full hover:bg-light-secondary"
+              class="btn-light sm:w-full"
               :name="
                 getLocalizedString($i18n.locale, album.buttons.magazine.name)
               "
@@ -22,7 +22,7 @@
           </NuxtLink>
           <NuxtLink :to="album.buttons.listen.link" class="w-full">
             <Button
-              class="bg-hl-yellow sm:w-full hover:bg-hl-yellow-secondary"
+              class="btn-highlight sm:w-full"
               :name="
                 getLocalizedString($i18n.locale, album.buttons.listen.name)
               "
@@ -31,9 +31,7 @@
         </div>
         <div class="flex flex-col text-center md:text-left">
           <div class="flex flex-col gap-5 text-body-lg-600">
-            <h2
-              class="text-hl-yellow text-h-lg-700 hidden md:text-center md:inline"
-            >
+            <h2 class="section-title hidden md:text-center md:inline">
               {{ getLocalizedString($i18n.locale, album.title) }}
             </h2>
             <SanityContent

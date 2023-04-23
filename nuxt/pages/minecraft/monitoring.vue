@@ -32,7 +32,7 @@
           <NuxtLink
             to="https://discord.gg/xDknD7uG"
             target="_blank"
-            class="flex items-center justify-center px-5 py-4 text-dark rounded-lg bg-light hover:bg-light-secondary"
+            class="flex items-center justify-center px-5 py-4 rounded-lg btn-light"
           >
             <NuxtIcon
               name="social/discord"
@@ -43,7 +43,7 @@
           <Button
             name="rihterb.my.pebble.host"
             @click="copyToClipboard"
-            class="bg-light hover:bg-light-secondary text-dark"
+            class="btn-light"
           >
             <NuxtIcon name="feather/copy" filled class="text-[1.5rem]" />
           </Button>

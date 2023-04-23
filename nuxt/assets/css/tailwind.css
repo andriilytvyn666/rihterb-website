@@ -52,4 +52,23 @@
 }
 
 @layer components {
+  .section-title {
+    @apply text-h-lg-700 text-hl-yellow;
+  }
+
+  .section-text {
+    @apply text-body-md-600 text-light;
+  }
+
+  .btn-dark-outline {
+    @apply border border-dark-border hover:bg-dark-alt;
+  }
+
+  .btn-light {
+    @apply bg-light text-dark hover:bg-light-secondary;
+  }
+
+  .btn-highlight {
+    @apply bg-hl-yellow text-dark hover:bg-hl-yellow-secondary;
+  }
 }

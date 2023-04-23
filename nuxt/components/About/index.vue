@@ -9,10 +9,10 @@
     />
     <div class="flex flex-col justify-between gap-8 sm:gap-0">
       <div class="flex flex-col text-center sm:text-left">
-        <h2 class="text-h-lg-700 text-hl-yellow">
+        <h2 class="section-title">
           {{ getLocalizedString($i18n.locale, about.name) }}
         </h2>
-        <h3 class="text-body-md-600 text-dark-secondary">
+        <h3 class="section-text text-dark-secondary">
           {{ getLocalizedString($i18n.locale, about.subtitle) }}
         </h3>
       </div>
@@ -30,12 +30,12 @@
       <div class="flex flex-col gap-4 sm:flex-row">
         <Button
           :to="about.listenLink"
-          class="bg-hl-yellow text-dark hover:bg-hl-yellow-secondary"
+          class="btn-highlight"
           :name="getLocalizedString($i18n.locale, about.listenName)"
         />
         <Button
           :to="about.socialLink"
-          class="bg-light text-dark hover:bg-light-secondary"
+          class="btn-light"
           :name="getLocalizedString($i18n.locale, about.socialName)"
         />
       </div>

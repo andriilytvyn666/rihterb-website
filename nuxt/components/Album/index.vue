@@ -18,12 +18,10 @@
         class="rounded-lg w-full h-full sm:hidden shadow-default"
       />
       <div class="flex flex-col w-full gap-2 sm:justify-center">
-        <h2
-          class="line-clamp-2 sm:line-clamp-1 w-fit text-hl-yellow text-h-lg-700"
-        >
+        <h2 class="line-clamp-2 sm:line-clamp-1 w-fit section-title">
           {{ getLocalizedString($i18n.locale, album.title) }}
         </h2>
-        <p class="line-clamp-2 sm:line-clamp-1 text-light text-body-md-600">
+        <p class="line-clamp-2 sm:line-clamp-1 section-text">
           {{ getLocalizedString($i18n.locale, album.text) }}
         </p>
       </div>
@@ -31,7 +29,7 @@
     <Button
       :to="localePath('/album', $i18n.locale)"
       :name="getLocalizedString($i18n.locale, album.buttonName)"
-      class="bg-light text-dark h-fit w-full sm:w-fit hover:bg-light-secondary"
+      class="btn-light h-fit w-full sm:w-fit"
     />
   </div>
 </template>

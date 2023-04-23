@@ -41,12 +41,10 @@
       >
         <div class="flex flex-col items-center gap-8 sm:flex-row">
           <div class="flex flex-col justify-center gap-2">
-            <h2
-              class="line-clamp-2 sm:line-clamp-1 w-fit text-hl-yellow text-h-lg-700"
-            >
+            <h2 class="line-clamp-2 sm:line-clamp-1 w-fit section-title">
               {{ getLocalizedString($i18n.locale, magazine.title) }}
             </h2>
-            <p class="line-clamp-2 sm:line-clamp-1 text-light text-body-md-600">
+            <p class="line-clamp-2 sm:line-clamp-1 section-text">
               {{ getLocalizedString($i18n.locale, magazine.text) }}
             </p>
           </div>
@@ -54,7 +52,7 @@
         <Button
           :to="localePath('/magazine', $i18n.locale)"
           :name="getLocalizedString($i18n.locale, magazine.buttonName)"
-          class="bg-light text-dark h-fit hover:bg-light-secondary"
+          class="btn-light h-fit"
         />
       </div>
     </div>

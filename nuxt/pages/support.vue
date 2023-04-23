@@ -42,13 +42,12 @@
             </p>
           </div>
           <div
-            class="flex-col sm:flex-row flex gap-4 w-full justify-center flex-wrap"
+            class="flex-col sm:flex-row flex gap-4 w-full justify-center flex-wrap [&>*]:btn-dark-outline"
           >
             <Button
               :to="support.patreon.link"
               target="_blank"
               :name="getLocalizedString($i18n.locale, support.patreon.name)"
-              class="border border-dark-border hover:bg-dark-alt"
             >
               <NuxtIcon name="social/patreon" class="text-[1.5rem]" filled />
             </Button>
@@ -56,7 +55,6 @@
               :to="support.bandcamp.link"
               target="_blank"
               :name="getLocalizedString($i18n.locale, support.bandcamp.name)"
-              class="border border-dark-border hover:bg-dark-alt"
             >
               <NuxtIcon name="social/bandcamp" class="text-[1.5rem]" filled />
             </Button>
@@ -64,7 +62,6 @@
               :to="support.paypal.link"
               target="_blank"
               :name="getLocalizedString($i18n.locale, support.paypal.name)"
-              class="border border-dark-border hover:bg-dark-alt"
             >
               <NuxtIcon name="social/paypal" class="text-[1.5rem]" filled />
             </Button>
@@ -72,7 +69,6 @@
               :to="support.diaka.link"
               target="_blank"
               :name="getLocalizedString($i18n.locale, support.diaka.name)"
-              class="border border-dark-border hover:bg-dark-alt"
             >
               <NuxtIcon name="feather/heart" class="text-[1.5rem]" filled />
             </Button>
@@ -80,7 +76,6 @@
               :to="support.mono.link"
               target="_blank"
               :name="getLocalizedString($i18n.locale, support.mono.name)"
-              class="border border-dark-border hover:bg-dark-alt"
             >
               <NuxtIcon
                 name="feather/dollar-sign"

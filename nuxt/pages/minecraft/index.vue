@@ -4,7 +4,7 @@
       <div class="flex flex-col gap-8 w-full text-body-lg-600">
         <div class="flex flex-col gap-8">
           <div class="flex flex-col gap-5">
-            <h2 class="text-h-lg-700 text-hl-yellow text-center">
+            <h2 class="section-title text-center">
               {{ getLocalizedString($i18n.locale, minecraftPage.title) }}
             </h2>
             <SanityContent
@@ -27,7 +27,7 @@
           <Button
             name="rihterb.my.pebble.host"
             @click="copyToClipboard"
-            class="bg-light text-dark sm:w-full hover:bg-light-secondary"
+            class="sm:w-full btn-light"
           >
             <NuxtIcon name="feather/copy" filled class="text-[1.5rem]" />
           </Button>
@@ -36,7 +36,7 @@
             :name="
               getLocalizedString($i18n.locale, minecraftPage.buttons.monitoring)
             "
-            class="border border-dark-border sm:w-full hover:bg-dark-alt"
+            class="btn-dark-outline sm:w-full"
           >
             <NuxtIcon name="feather/bar-chart-2" class="text-[1.5rem]" filled />
           </Button>
@@ -46,7 +46,7 @@
             :name="
               getLocalizedString($i18n.locale, minecraftPage.buttons.map.name)
             "
-            class="border border-dark-border sm:w-full hover:bg-dark-alt"
+            class="sm:w-full btn-dark-outline"
           >
             <NuxtIcon name="feather/map" class="text-[1.5rem]" filled />
           </Button>
@@ -59,7 +59,7 @@
                 minecraftPage.buttons.discord.name
               )
             "
-            class="border border-dark-border sm:w-full hover:bg-dark-alt"
+            class="sm:w-full btn-dark-outline"
           >
             <NuxtIcon name="social/discord" class="text-[1.5rem]" filled />
           </Button>

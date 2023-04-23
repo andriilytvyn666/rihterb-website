@@ -5,12 +5,10 @@
     >
       <div class="flex flex-col gap-8 sm:items-center sm:flex-row">
         <div class="flex flex-col justify-center gap-2">
-          <h2
-            class="line-clamp-2 sm:line-clamp-1 w-fit text-hl-yellow text-h-lg-700"
-          >
+          <h2 class="line-clamp-2 sm:line-clamp-1 w-fit section-title">
             {{ getLocalizedString($i18n.locale, support.title) }}
           </h2>
-          <p class="line-clamp-2 sm:line-clamp-1 text-light text-body-md-600">
+          <p class="line-clamp-2 sm:line-clamp-1 text-light section-text">
             {{ getLocalizedString($i18n.locale, support.text) }}
           </p>
         </div>
@@ -18,7 +16,7 @@
       <Button
         :to="localePath('/support', $i18n.locale)"
         :name="getLocalizedString($i18n.locale, support.buttonName)"
-        class="bg-light text-dark h-fit hover:bg-light-secondary"
+        class="h-fit btn-light"
       />
     </div>
   </div>
