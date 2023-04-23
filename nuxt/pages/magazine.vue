@@ -26,7 +26,7 @@
             <SwiperSlide
               v-for="page in magazine.pages"
               :key="page.asset._ref"
-              class="px-4 sm:px-0 flex justify-center grow items-center overflow-visible"
+              class="px-4 sm:px-0 flex justify-center grow items-center overflow-visible min-h-[32rem]"
             >
               <SanityImage
                 :asset-id="page.asset._ref"
