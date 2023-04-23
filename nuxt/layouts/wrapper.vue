@@ -5,11 +5,14 @@
     </DevOnly>
     <div id="page-wrapper">
       <div class="flex flex-col min-h-screen">
-        <Header class="w-full" v-motion-fade />
-        <div class="flex flex-col gap-8 sm:gap-12 grow" v-motion-fade>
+        <!-- v-motion-fade -->
+        <Header class="w-full" />
+        <!-- v-motion-fade -->
+        <div class="flex flex-col gap-8 sm:gap-12 grow">
           <slot />
         </div>
-        <Footer v-motion-fade />
+        <!-- v-motion-fade -->
+        <Footer />
       </div>
     </div>
   </div>
@@ -31,7 +34,6 @@
 <script lang="ts" setup>
 const store = useSanityStore()
 
-// TODO: try to split global fetch
 await store.getMainPage()
 await store.getSupportPage()
 await store.getMinecraftPage()
