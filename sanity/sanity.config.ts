@@ -2,7 +2,7 @@ import {defineConfig} from 'sanity'
 import {deskTool} from 'sanity/desk'
 import {visionTool} from '@sanity/vision'
 import {schemaTypes} from './schemas'
-import {UserIcon, LinkIcon, BlockContentIcon, HeartFilledIcon, ImageIcon} from '@sanity/icons'
+import {UserIcon, LinkIcon, BlockContentIcon, HeartFilledIcon, ImageIcon, InfoOutlineIcon, HomeIcon, SchemaIcon} from '@sanity/icons'
 import {vercelDeployTool} from 'sanity-plugin-vercel-deploy'
 
 export default defineConfig({
@@ -19,20 +19,12 @@ export default defineConfig({
           .title('Main')
           .items([
             S.listItem()
-              .title('Shared - Header')
-              .icon(ImageIcon)
-              .child(S.document().schemaType('header').documentId('header')),
-            S.listItem()
-              .title('Shared - Footer')
-              .icon(LinkIcon)
-              .child(S.document().schemaType('footer').documentId('footer')),
-            S.listItem()
               .title('Main Page')
-              .icon(UserIcon)
+              .icon(HomeIcon)
               .child(S.document().schemaType('mainPage').documentId('mainPage')),
             S.listItem()
               .title('Minecraft Page')
-              .icon(UserIcon)
+              .icon(SchemaIcon)
               .child(S.document().schemaType('minecraftPage').documentId('minecraftPage')),
             S.listItem()
               .title('Support Page')
@@ -44,8 +36,16 @@ export default defineConfig({
               .child(S.document().schemaType('albumPage').documentId('albumPage')),
             S.listItem()
               .title('Magazine Page')
-              .icon(BlockContentIcon)
+              .icon(ImageIcon)
               .child(S.document().schemaType('magazinePage').documentId('magazinePage')),
+            S.listItem()
+              .title('Shared - Header')
+              .icon(InfoOutlineIcon)
+              .child(S.document().schemaType('header').documentId('header')),
+            S.listItem()
+              .title('Shared - Footer')
+              .icon(LinkIcon)
+              .child(S.document().schemaType('footer').documentId('footer')),
             ...S.documentTypeListItems().filter(
               (listItem) =>
                 ![
@@ -56,6 +56,7 @@ export default defineConfig({
                   'albumPage',
                   'minecraftPage',
                   'magazinePage',
+                  'navLink',
                 ].includes(`${listItem.getId()}`)
             ),
           ]),
