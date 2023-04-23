@@ -5,11 +5,11 @@
     <transition name="scale">
       <div
         class="z-10 w-full flex grow items-center justify-center overflow-visible"
-        v-if="store.gatherPages"
+        v-if="clientStore.gatherPages"
       >
         <div
           :class="`flex flex-col grow gap-5 overflow-visible items-center ${
-            store.gatherPages ? 'bg-dark' : ''
+            clientStore.gatherPages ? 'bg-dark' : ''
           }`"
         >
           <Swiper
@@ -35,59 +35,12 @@
               />
             </SwiperSlide>
           </Swiper>
-          <div
-            class="flex grow gap-4 px-4 sm:px-0 w-screen sm:w-[35rem] max-h-[3.75rem]"
-          >
-            <button
-              id="swiper-prev"
-              class="min-w-[3.75rem] hover:bg-dark-alt min-h-[3.75rem] flex items-center justify-center border border-dark-border p-4 rounded-lg text-[1.5rem]"
-            >
-              <NuxtIcon name="feather/arrow-left" filled class="w-6 h-6" />
-            </button>
-            <Button
-              :name="t('magazine.back')"
-              class="hover:bg-dark-alt border border-dark-border sm:w-full"
-              @click="store.toggleGatherPages"
-            />
-            <button
-              id="swiper-next"
-              class="min-w-[3.75rem] hover:bg-dark-alt min-h-[3.75rem] flex items-center justify-center border border-dark-border p-4 rounded-lg text-[1.5rem]"
-            >
-              <NuxtIcon name="feather/arrow-right" filled class="w-6 h-6" />
-            </button>
-          </div>
+          <MagazineControl />
         </div>
       </div>
     </transition>
     <transition name="fade">
-      <div
-        class="h-full w-full grow flex items-center justify-center fixed"
-        v-if="!store.gatherPages"
-      >
-        <div
-          class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full sm:w-auto px-4"
-        >
-          <div
-            :class="`duration-600 bg-light shadow-default p-8 gap-8 flex w-full flex-col items-center sm:w-[38rem] rounded-lg`"
-          >
-            <div class="gap-5 flex flex-col items-center">
-              <h2 class="text-h-lg-700 text-hl-blue line-clamp-1">
-                {{ getLocalizedString($i18n.locale, magazine.title) }}
-              </h2>
-              <p class="text-body-md-500 text-dark text-center line-clamp-4">
-                {{ getLocalizedString($i18n.locale, magazine.text) }}
-              </p>
-            </div>
-            <div class="flex gap-4 flex-col sm:flex-row w-full">
-              <Button
-                :name="t('magazine.view')"
-                class="bg-dark text-light sm:w-full hover:bg-dark-alt hover:scale-100"
-                @click="store.toggleGatherPages"
-              />
-            </div>
-          </div>
-        </div>
-      </div>
+      <MagazineGreeter v-if="!clientStore.gatherPages" />
     </transition>
   </NuxtLayout>
 </template>
@@ -133,10 +86,8 @@
 </style>
 
 <script lang="ts" setup>
-const { t } = useI18n()
+const clientStore = useClientStore()
 
-const store = useClientStore()
-
-const sanityStore = useSanityStore()
-const magazine = await sanityStore.getMagazinePage()
+const store = useSanityStore()
+const magazine = await store.getMagazinePage()
 </script>

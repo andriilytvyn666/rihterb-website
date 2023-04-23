@@ -61,7 +61,7 @@
   }
 
   .btn-dark-outline {
-    @apply border border-dark-border hover:bg-dark-alt;
+    @apply bg-dark border border-dark-border hover:bg-dark-alt;
   }
 
   .btn-light {
