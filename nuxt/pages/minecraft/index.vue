@@ -1,9 +1,6 @@
 <template>
   <NuxtLayout name="wrapper">
-    <div
-      class="grid lg:grid-cols-2 md:flex-row gap-8 w-full justify-center"
-      v-motion-fade
-    >
+    <div class="grid lg:grid-cols-2 md:flex-row gap-8 w-full justify-center">
       <div class="flex flex-col gap-8 w-full text-body-lg-600">
         <div class="flex flex-col gap-8">
           <div class="flex flex-col gap-5">
