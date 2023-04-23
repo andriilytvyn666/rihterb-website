@@ -12,6 +12,7 @@
           slidesPerView: 2,
         },
       }"
+      class="h-[20.5rem]"
     >
       <SwiperSlide
         v-for="image in minecraft.images"
