@@ -9,7 +9,7 @@
         <div class="flex flex-col gap-8 sm:gap-12 grow" v-motion-fade>
           <slot />
         </div>
-        <Footer v-motion-fade-visible-once />
+        <Footer v-motion-fade />
       </div>
     </div>
   </div>
