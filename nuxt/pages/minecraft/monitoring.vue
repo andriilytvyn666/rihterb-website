@@ -4,7 +4,7 @@
       <div class="flex flex-col-reverse justify-between gap-8 sm:flex-row">
         <div class="flex gap-4 grow">
           <button
-            class="px-5 py-4 rounded-lg bg-dark-alt"
+            class="px-5 py-4 rounded-lg bg-dark-alt border border-dark-alt hover:border-dark-border-alt"
             @click="refreshStatus"
           >
             <NuxtIcon
@@ -13,7 +13,9 @@
               class="text-[1.5rem] refresh block"
             />
           </button>
-          <Button class="bg-dark-alt grow sm:grow-0">
+          <Button
+            class="bg-dark-alt grow sm:grow-0 border border-dark-alt hover:border-dark-border-alt cursor-default"
+          >
             <span class="truncate">
               {{ status.version?.name_clean.split(' ')[1] }}
               <span class="text-dark-secondary">/</span>
@@ -23,14 +25,14 @@
           <Button
             :name="isMap ? t('monitoring.players') : t('monitoring.map')"
             @click="isMap = !isMap"
-            class="bg-dark-alt max-w-fit"
+            class="bg-dark-alt max-w-fit border border-dark-alt hover:border-dark-border-alt"
           />
         </div>
         <div class="flex gap-4">
           <NuxtLink
             to="https://discord.gg/xDknD7uG"
             target="_blank"
-            class="flex items-center justify-center px-5 py-4 text-dark rounded-lg bg-light"
+            class="flex items-center justify-center px-5 py-4 text-dark rounded-lg bg-light hover:bg-light-secondary"
           >
             <NuxtIcon
               name="social/discord"
@@ -41,7 +43,7 @@
           <Button
             name="rihterb.my.pebble.host"
             @click="copyToClipboard"
-            class="bg-light text-dark"
+            class="bg-light hover:bg-light-secondary text-dark"
           >
             <NuxtIcon name="feather/copy" filled class="text-[1.5rem]" />
           </Button>

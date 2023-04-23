@@ -23,55 +23,46 @@
             </ul>
           </div>
         </div>
-        <!-- TODO: fix width on md breakpoint -->
         <div class="grid gap-4 w-full [&>*]:w-full">
           <Button
             name="rihterb.my.pebble.host"
             @click="copyToClipboard"
-            class="bg-light text-dark sm:w-full"
+            class="bg-light text-dark sm:w-full hover:bg-light-secondary"
           >
             <NuxtIcon name="feather/copy" filled class="text-[1.5rem]" />
           </Button>
-          <NuxtLink :to="localePath('/minecraft/monitoring', $i18n.locale)">
-            <Button
-              :name="
-                getLocalizedString(
-                  $i18n.locale,
-                  minecraftPage.buttons.monitoring
-                )
-              "
-              class="border border-dark-border sm:w-full"
-            >
-              <NuxtIcon
-                name="feather/bar-chart-2"
-                class="text-[1.5rem]"
-                filled
-              />
-            </Button>
-          </NuxtLink>
-          <NuxtLink :to="minecraftPage.buttons.map.link" target="_blank">
-            <Button
-              :name="
-                getLocalizedString($i18n.locale, minecraftPage.buttons.map.name)
-              "
-              class="border border-dark-border sm:w-full"
-            >
-              <NuxtIcon name="feather/map" class="text-[1.5rem]" filled />
-            </Button>
-          </NuxtLink>
-          <NuxtLink :to="minecraftPage.buttons.discord.link" target="_blank">
-            <Button
-              :name="
-                getLocalizedString(
-                  $i18n.locale,
-                  minecraftPage.buttons.discord.name
-                )
-              "
-              class="border border-dark-border sm:w-full"
-            >
-              <NuxtIcon name="social/discord" class="text-[1.5rem]" filled />
-            </Button>
-          </NuxtLink>
+          <Button
+            :to="localePath('/minecraft/monitoring', $i18n.locale)"
+            :name="
+              getLocalizedString($i18n.locale, minecraftPage.buttons.monitoring)
+            "
+            class="border border-dark-border sm:w-full hover:bg-dark-alt"
+          >
+            <NuxtIcon name="feather/bar-chart-2" class="text-[1.5rem]" filled />
+          </Button>
+          <Button
+            :to="minecraftPage.buttons.map.link"
+            target="_blank"
+            :name="
+              getLocalizedString($i18n.locale, minecraftPage.buttons.map.name)
+            "
+            class="border border-dark-border sm:w-full hover:bg-dark-alt"
+          >
+            <NuxtIcon name="feather/map" class="text-[1.5rem]" filled />
+          </Button>
+          <Button
+            :to="minecraftPage.buttons.discord.link"
+            target="_blank"
+            :name="
+              getLocalizedString(
+                $i18n.locale,
+                minecraftPage.buttons.discord.name
+              )
+            "
+            class="border border-dark-border sm:w-full hover:bg-dark-alt"
+          >
+            <NuxtIcon name="social/discord" class="text-[1.5rem]" filled />
+          </Button>
         </div>
       </div>
       <SanityImage

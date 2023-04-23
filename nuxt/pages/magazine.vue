@@ -40,18 +40,18 @@
           >
             <button
               id="swiper-prev"
-              class="min-w-[3.75rem] min-h-[3.75rem] flex items-center justify-center border border-dark-border p-4 rounded-lg text-[1.5rem]"
+              class="min-w-[3.75rem] hover:bg-dark-alt min-h-[3.75rem] flex items-center justify-center border border-dark-border p-4 rounded-lg text-[1.5rem]"
             >
               <NuxtIcon name="feather/arrow-left" filled class="w-6 h-6" />
             </button>
             <Button
               :name="t('magazine.back')"
-              class="border border-dark-border sm:w-full"
+              class="hover:bg-dark-alt border border-dark-border sm:w-full"
               @click="store.toggleGatherPages"
             />
             <button
               id="swiper-next"
-              class="min-w-[3.75rem] min-h-[3.75rem] flex items-center justify-center border border-dark-border p-4 rounded-lg text-[1.5rem]"
+              class="min-w-[3.75rem] hover:bg-dark-alt min-h-[3.75rem] flex items-center justify-center border border-dark-border p-4 rounded-lg text-[1.5rem]"
             >
               <NuxtIcon name="feather/arrow-right" filled class="w-6 h-6" />
             </button>
@@ -81,7 +81,7 @@
             <div class="flex gap-4 flex-col sm:flex-row w-full">
               <Button
                 :name="t('magazine.view')"
-                class="bg-dark text-light sm:w-full"
+                class="bg-dark text-light sm:w-full hover:bg-dark-alt hover:scale-100"
                 @click="store.toggleGatherPages"
               />
             </div>

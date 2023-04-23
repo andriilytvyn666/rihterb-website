@@ -54,6 +54,7 @@ module.exports = {
       colors: {
         light: {
           DEFAULT: '#ffffff',
+          secondary: '#d8d8d8'
         },
         dark: {
           'DEFAULT': '#090909',
@@ -63,8 +64,9 @@ module.exports = {
           'border-alt': '#4D4D4D',
         },
         hl: {
-          yellow: '#FFC657',
-          blue: '#0039A8',
+          'yellow': '#FFC657',
+          'yellow-secondary': '#d8a849',
+          'blue': '#0039A8',
         },
       },
     },

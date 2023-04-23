@@ -14,7 +14,7 @@
         <div class="flex w-full gap-4 text-dark">
           <NuxtLink :to="localePath('/magazine', $i18n.locale)" class="w-full">
             <Button
-              class="bg-light sm:w-full"
+              class="bg-light sm:w-full hover:bg-light-secondary"
               :name="
                 getLocalizedString($i18n.locale, album.buttons.magazine.name)
               "
@@ -22,7 +22,7 @@
           </NuxtLink>
           <NuxtLink :to="album.buttons.listen.link" class="w-full">
             <Button
-              class="bg-hl-yellow sm:w-full"
+              class="bg-hl-yellow sm:w-full hover:bg-hl-yellow-secondary"
               :name="
                 getLocalizedString($i18n.locale, album.buttons.listen.name)
               "

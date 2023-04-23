@@ -31,7 +31,7 @@
     <Button
       :to="localePath('/album', $i18n.locale)"
       :name="getLocalizedString($i18n.locale, album.buttonName)"
-      class="bg-light text-dark h-fit w-full sm:w-fit"
+      class="bg-light text-dark h-fit w-full sm:w-fit hover:bg-light-secondary"
     />
   </div>
 </template>

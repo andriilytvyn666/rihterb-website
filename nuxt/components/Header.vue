@@ -1,23 +1,21 @@
 <template>
   <header class="flex items-center justify-between" id="header">
     <nav class="hidden gap-4" id="left">
-      <NuxtLink :to="getLink(header.navLinks[0].link)">
+      <NuxtLink
+        :to="getLink(header.navLinks[0].link)"
+        class="hover:-translate-y-1"
+      >
         {{ getLocalizedString($i18n.locale, header.navLinks[0].name) }}
       </NuxtLink>
       <span class="separator">/</span>
-      <NuxtLink :to="getLink(header.navLinks[1].link)">
+      <NuxtLink
+        :to="getLink(header.navLinks[1].link)"
+        class="hover:-translate-y-1"
+      >
         {{ getLocalizedString($i18n.locale, header.navLinks[1].name) }}
       </NuxtLink>
     </nav>
     <NuxtLink :to="localePath('/', $i18n.locale)">
-      <!-- <NuxtImg
-        rel="preload"
-        src="/logo.webp"
-        width="48"
-        height="48"
-        id="logo"
-        class="rounded-full w-9 h-9"
-      /> -->
       <SanityImage
         rel="preload"
         :asset-id="header.logo.asset._ref"
@@ -36,14 +34,34 @@
     </button>
     <button id="right-mobile" @click="$i18n.setLocale('en')" v-else>eng</button>
     <nav class="hidden gap-4" id="right">
-      <button @click="$i18n.setLocale('uk')" v-if="$i18n.locale === 'en'">
+      <button
+        @click="$i18n.setLocale('uk')"
+        v-if="$i18n.locale === 'en'"
+        class="hover:-translate-y-1"
+      >
         укр
       </button>
-      <button @click="$i18n.setLocale('en')" v-else>eng</button>
+      <button
+        @click="$i18n.setLocale('en')"
+        v-else
+        class="hover:-translate-y-1"
+      >
+        eng
+      </button>
       <span class="separator">/</span>
-      <NuxtLink :to="header.listenLink">{{ $t('header.listen') }}</NuxtLink>
+      <NuxtLink
+        target="_blank"
+        :to="header.listenLink"
+        class="hover:-translate-y-1"
+        >{{ $t('header.listen') }}</NuxtLink
+      >
       <span class="separator">/</span>
-      <NuxtLink :to="header.socialsLink">{{ $t('header.socials') }}</NuxtLink>
+      <NuxtLink
+        target="_blank"
+        :to="header.socialsLink"
+        class="hover:-translate-y-1"
+        >{{ $t('header.socials') }}</NuxtLink
+      >
     </nav>
   </header>
 </template>

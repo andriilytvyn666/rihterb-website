@@ -54,7 +54,7 @@
         <Button
           :to="localePath('/magazine', $i18n.locale)"
           :name="getLocalizedString($i18n.locale, magazine.buttonName)"
-          class="bg-light text-dark h-fit"
+          class="bg-light text-dark h-fit hover:bg-light-secondary"
         />
       </div>
     </div>

@@ -26,15 +26,16 @@
           {{ getLocalizedString($i18n.locale, about.description) }}
         </span>
       </p>
+      <!-- TODO: create component css classes to group common styles -->
       <div class="flex flex-col gap-4 sm:flex-row">
         <Button
           :to="about.listenLink"
-          class="bg-hl-yellow text-dark"
+          class="bg-hl-yellow text-dark hover:bg-hl-yellow-secondary"
           :name="getLocalizedString($i18n.locale, about.listenName)"
         />
         <Button
           :to="about.socialLink"
-          class="bg-light text-dark"
+          class="bg-light text-dark hover:bg-light-secondary"
           :name="getLocalizedString($i18n.locale, about.socialName)"
         />
       </div>
