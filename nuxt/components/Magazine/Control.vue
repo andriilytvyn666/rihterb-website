@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex grow gap-4 px-4 sm:px-0 w-screen sm:w-[35rem] max-h-[3.75rem] [&>*]:rounded-lg"
+    class="flex grow gap-4 px-4 sm:px-0 w-[22rem] sm:w-[31rem] max-h-[3.75rem] [&>*]:rounded-lg"
   >
     <button
       id="swiper-prev"

@@ -17,12 +17,12 @@
               prevEl: '#swiper-prev',
               disabledClass: 'opacity-0',
             }"
-            class="w-screen h-full md:w-[59rem] md:h-[45.625rem]"
+            class="w-[22rem] h-full md:w-[59rem] md:h-[40rem]"
           >
             <SwiperSlide
               v-for="page in magazine.pages"
               :key="page.asset._ref"
-              class="px-4 sm:px-0 flex justify-center grow items-center min-h-[32rem]"
+              class="px-4 sm:px-0 flex justify-center grow items-center sm:min-h-fit min-h-[28rem]"
             >
               <SanityImage
                 :asset-id="page.asset._ref"
