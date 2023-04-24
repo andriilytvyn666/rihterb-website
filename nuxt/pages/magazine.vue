@@ -4,10 +4,10 @@
     <MagazineBgMobile class="sm:opacity-0" />
     <transition name="scale">
       <div
-        class="z-10 w-full flex grow items-center justify-center overflow-visible"
+        class="z-10 w-full flex grow items-center justify-center"
         v-if="clientStore.gatherPages"
       >
-        <div class="flex flex-col grow gap-5 overflow-visible items-center">
+        <div class="flex flex-col grow gap-5 items-center">
           <Swiper
             :modules="[SwiperNavigation]"
             :slides-per-view="1"
@@ -17,12 +17,12 @@
               prevEl: '#swiper-prev',
               disabledClass: 'opacity-0',
             }"
-            class="w-screen h-full md:w-[59rem] items-center flex grow justify-center md:h-[45.625rem] overflow-visible"
+            class="w-screen h-full md:w-[59rem] md:h-[45.625rem]"
           >
             <SwiperSlide
               v-for="page in magazine.pages"
               :key="page.asset._ref"
-              class="px-4 sm:px-0 flex justify-center grow items-center overflow-visible min-h-[32rem]"
+              class="px-4 sm:px-0 flex justify-center grow items-center min-h-[32rem]"
             >
               <SanityImage
                 :asset-id="page.asset._ref"
