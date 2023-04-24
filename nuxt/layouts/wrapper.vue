@@ -16,6 +16,7 @@
       </div>
     </div>
   </div>
+  <RobotMeta />
 </template>
 
 <style lang="postcss" scoped>
@@ -32,6 +33,8 @@
 </style>
 
 <script lang="ts" setup>
+defineRobotMeta()
+
 const store = useSanityStore()
 
 await store.getMainPage()
@@ -42,19 +45,25 @@ await store.getMagazinePage()
 
 const { t } = useI18n()
 
+// useSchemaOrg([
+//   defineWebSite({
+//     name: 'Ріхтер',
+
+//   }),
+//   definePerson({
+//     name: 'Василій Ріхтер',
+//     description;
+//   }),
+//   defineWebPage()
+// ])
+
 useSeoMeta({
-  title: () => t('meta.title'),
   description: () => t('meta.description'),
   author: () => t('meta.author'),
-  robots: 'all noarchive',
-  charset: 'utf-8',
-  ogTitle: () => t('meta.title'),
-  ogDescription: () => t('meta.description'),
-  twitterTitle: () => t('meta.title'),
-  twitterDescription: () => t('meta.description'),
   twitterCard: 'summary_large_image',
   twitterImage: 'https://rihterb.pp.ua/banner.webp',
   ogImage: 'https://rihterb.pp.ua/banner.webp',
+  charset: 'utf-8',
 })
 
 const i18nHead = useLocaleHead({
@@ -68,6 +77,7 @@ if (htmlAttrs === undefined) {
 }
 
 useHead({
+  title: t('meta.title'),
   htmlAttrs: {
     lang: htmlAttrs.lang,
   },
@@ -96,10 +106,10 @@ useHead({
   ],
   meta: [
     ...(i18nHead.value.meta || []),
-    {
-      'http-equiv': 'Content-Security-Policy',
-      'content': 'upgrade-insecure-requests',
-    },
+    { property: 'og:title', content: t('meta.title') },
+    { property: 'og:description', content: t('meta.description') },
+    { property: 'twitter:title', content: t('meta.title') },
+    { property: 'twitter:description', content: t('meta.description') },
   ],
 })
 </script>

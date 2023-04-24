@@ -34,6 +34,7 @@
       </div>
     </div>
   </div>
+  <RobotMeta />
 </template>
 
 <style lang="postcss" scoped>
@@ -43,6 +44,7 @@
 </style>
 
 <script lang="ts" setup>
+defineRobotMeta()
 const store = useSanityStore()
 
 await store.getMainPage()

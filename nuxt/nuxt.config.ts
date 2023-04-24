@@ -5,10 +5,11 @@ import eslintPlugin from 'vite-plugin-eslint'
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  imports: {
-    dirs: ['stores'],
-  },
+  extends: ['nuxt-seo-kit'],
   modules: [
+    'nuxt-simple-sitemap',
+    'nuxt-simple-robots',
+    'nuxt-schema-org',
     '@nuxtjs/tailwindcss',
     'nuxt-swiper',
     'nuxt-icons',
@@ -25,6 +26,20 @@ export default defineNuxtConfig({
     '@vueuse/nuxt',
     '@vueuse/motion/nuxt',
   ],
+  runtimeConfig: {
+    public: {
+      siteUrl: process.env.NUX_PUBLIC_SITE_URL || 'https://rihterb.pp.ua',
+    },
+  },
+  imports: {
+    dirs: ['stores'],
+  },
+  robots: {
+    sitemap: ['/sitemap.xml'],
+  },
+  schemaOrg: {
+    host: 'https://rihterb.pp.ua',
+  },
   image: {
     sanity: {
       projectId: 'lh08fn64',
