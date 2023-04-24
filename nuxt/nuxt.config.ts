@@ -7,6 +7,7 @@ import eslintPlugin from 'vite-plugin-eslint'
 export default defineNuxtConfig({
   extends: ['nuxt-seo-kit'],
   modules: [
+    'nuxt-gtag',
     'nuxt-simple-sitemap',
     'nuxt-simple-robots',
     'nuxt-schema-org',
@@ -30,6 +31,9 @@ export default defineNuxtConfig({
     public: {
       siteUrl: process.env.NUX_PUBLIC_SITE_URL || 'https://rihterb.pp.ua',
     },
+  },
+  gtag: {
+    id: 'G-LMTHM8SJTC',
   },
   imports: {
     dirs: ['stores'],
