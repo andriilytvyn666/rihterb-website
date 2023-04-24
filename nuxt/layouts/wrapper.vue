@@ -5,13 +5,10 @@
     </DevOnly>
     <div id="page-wrapper">
       <div class="flex flex-col min-h-screen">
-        <!-- v-motion-fade -->
         <Header class="w-full" />
-        <!-- v-motion-fade -->
         <div class="flex flex-col gap-8 sm:gap-12 grow">
           <slot />
         </div>
-        <!-- v-motion-fade -->
         <Footer />
       </div>
     </div>
@@ -43,23 +40,32 @@ await store.getMinecraftPage()
 await store.getAlbumPage()
 await store.getMagazinePage()
 
-const { t } = useI18n()
-
-// useSchemaOrg([
-//   defineWebSite({
-//     name: 'Ріхтер',
-
-//   }),
-//   definePerson({
-//     name: 'Василій Ріхтер',
-//     description;
-//   }),
-//   defineWebPage()
-// ])
+useSchemaOrg([
+  defineWebSite({
+    name: 'Ріхтер',
+    description:
+      'український інді-музикант. пишу психоделічні інді пісні з унікальним саундом. поєднуючи різні жанри, досліджую емоційні простори, створюючи неповторний настрій.',
+    inLanguage: ['en', 'uk'],
+    url: 'https://rihterb.pp.ua',
+  }),
+  definePerson({
+    name: 'Василій Ріхтер',
+    description:
+      'український інді-музикант. пишу психоделічні інді пісні з унікальним саундом. поєднуючи різні жанри, досліджую емоційні простори, створюючи неповторний настрій.',
+    image: '/schemaorg/person.webp',
+    url: 'https://rihterb.pp.ua',
+  }),
+])
 
 useSeoMeta({
-  description: () => t('meta.description'),
-  author: () => t('meta.author'),
+  title: 'Ріхтер',
+  description:
+    'український інді-музикант. пишу психоделічні інді пісні з унікальним саундом. поєднуючи різні жанри, досліджую емоційні простори, створюючи неповторний настрій.',
+  ogDescription:
+    'український інді-музикант. пишу психоделічні інді пісні з унікальним саундом. поєднуючи різні жанри, досліджую емоційні простори, створюючи неповторний настрій.',
+  twitterDescription:
+    'український інді-музикант. пишу психоделічні інді пісні з унікальним саундом. поєднуючи різні жанри, досліджую емоційні простори, створюючи неповторний настрій.',
+  author: 'Василій Ріхтер',
   twitterCard: 'summary_large_image',
   twitterImage: 'https://rihterb.pp.ua/banner.webp',
   ogImage: 'https://rihterb.pp.ua/banner.webp',
@@ -77,7 +83,6 @@ if (htmlAttrs === undefined) {
 }
 
 useHead({
-  title: t('meta.title'),
   htmlAttrs: {
     lang: htmlAttrs.lang,
   },
@@ -104,12 +109,6 @@ useHead({
       href: '/site.webmanifest',
     },
   ],
-  meta: [
-    ...(i18nHead.value.meta || []),
-    { property: 'og:title', content: t('meta.title') },
-    { property: 'og:description', content: t('meta.description') },
-    { property: 'twitter:title', content: t('meta.title') },
-    { property: 'twitter:description', content: t('meta.description') },
-  ],
+  meta: [...(i18nHead.value.meta || [])],
 })
 </script>
