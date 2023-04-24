@@ -1,11 +1,11 @@
 <template>
   <div>
-    <DevOnly>
+    <!-- <DevOnly>
       <DebugIndicator />
-    </DevOnly>
+    </DevOnly> -->
 
     <div id="page-wrapper">
-      <div class="flex flex-col min-h-screen">
+      <div class="flex flex-col min-h-screen max-h-screen">
         <div class="flex justify-between px-4 pt-4 sm:px-8 sm:pt-8">
           <transition name="scale">
             <Button
