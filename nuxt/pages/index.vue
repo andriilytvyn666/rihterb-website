@@ -1,8 +1,8 @@
 <template>
   <NuxtLayout name="wrapper">
     <About />
-    <Album />
-    <Magazine />
+    <!-- <Album />
+    <Magazine /> -->
     <Minecraft />
     <Support />
   </NuxtLayout>
