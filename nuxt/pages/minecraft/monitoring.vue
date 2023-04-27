@@ -56,7 +56,7 @@
       />
       <div
         v-if="status!.players?.list.length! > 0"
-        class="flex w-full overflow-hidden border rounded-lg border-dark-border"
+        class="flex w-full overflow-hidden border rounded-lg border-dark-border-alt"
       >
         <table v-show="!isMap" class="w-full bg-dark-alt">
           <tr
