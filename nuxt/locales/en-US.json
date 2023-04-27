@@ -12,7 +12,8 @@
   "monitoring": {
     "map": "map",
     "players": "players",
-    "no_players": "nobody's here :("
+    "no_players": "nobody's here :(",
+    "back": "back"
   },
   "magazine": {
     "view": "view",

@@ -12,7 +12,8 @@
   "monitoring": {
     "map": "мапа",
     "players": "гравці",
-    "no_players": "поки нікого :("
+    "no_players": "поки нікого :(",
+    "back": "назад"
   },
   "magazine": {
     "view": "дивитися",

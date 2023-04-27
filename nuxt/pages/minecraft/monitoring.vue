@@ -4,7 +4,7 @@
       <div class="flex flex-col-reverse justify-between gap-8 sm:flex-row">
         <div class="flex gap-4 grow">
           <button
-            class="px-5 py-4 rounded-lg bg-dark-alt border border-dark-alt hover:border-dark-border-alt"
+            class="px-5 py-4 border rounded-lg bg-dark-alt border-dark-alt hover:border-dark-border-alt"
             @click="refreshStatus"
           >
             <NuxtIcon
@@ -14,7 +14,7 @@
             />
           </button>
           <Button
-            class="bg-dark-alt grow sm:grow-0 border border-dark-alt hover:border-dark-border-alt cursor-default"
+            class="border cursor-default bg-dark-alt grow sm:grow-0 border-dark-alt hover:border-dark-border-alt"
           >
             <span class="truncate">
               {{ status.version?.name_clean.split(' ')[1] }}
@@ -25,7 +25,7 @@
           <Button
             :name="isMap ? t('monitoring.players') : t('monitoring.map')"
             @click="isMap = !isMap"
-            class="bg-dark-alt max-w-fit border border-dark-alt hover:border-dark-border-alt"
+            class="border bg-dark-alt max-w-fit border-dark-alt hover:border-dark-border-alt"
           />
         </div>
         <div class="flex gap-4">
@@ -54,36 +54,42 @@
         class="w-full rounded-lg aspect-square sm:aspect-video"
         v-show="isMap"
       />
-      <table
-        v-show="!isMap"
-        class="rounded-lg outline outline-1 outline-dark-border-alt bg-dark-alt"
+      <div
         v-if="status!.players?.list.length! > 0"
+        class="flex w-full overflow-hidden border rounded-lg border-dark-border"
       >
-        <tr
-          v-for="n in status.players?.list.length"
-          :key="n"
-          class="flex gap-4 px-6 py-4 border-b border-dark-border-alt last-of-type:border-none"
-        >
-          <td class="text-dark-secondary">{{ n }}</td>
-          <td>{{ status.players?.list[n - 1].name_clean }}</td>
-        </tr>
-      </table>
+        <table v-show="!isMap" class="w-full bg-dark-alt">
+          <tr
+            v-for="n in status.players?.list.length"
+            :key="n"
+            class="flex gap-4 px-6 py-4 border-b border-dark-border-alt last-of-type:border-none"
+          >
+            <td class="text-dark-secondary">{{ n }}</td>
+            <td>{{ status.players?.list[n - 1].name_clean }}</td>
+          </tr>
+        </table>
+      </div>
       <div
         class="flex flex-col items-center justify-center gap-8 mx-auto grow w-fit"
         v-else-if="!isMap"
       >
         <NuxtImg src="minecraft/no_players.webp" rel="preload" />
-        <h2 class="text-h-lg-700 text-dark-secondary select-none">
+        <h2 class="select-none text-h-lg-700 text-dark-secondary">
           {{ $t('monitoring.no_players') }}
         </h2>
       </div>
+      <Button
+        :to="localePath('/minecraft', $i18n.locale)"
+        :name="$t('monitoring.back')"
+        class="btn-dark-outline"
+      />
     </div>
   </NuxtLayout>
 </template>
 
 <script lang="ts" setup>
 import { statusJava } from 'node-mcstatus'
-
+const localePath = useLocalePath()
 const { t } = useI18n()
 
 const isMap = ref(false)
