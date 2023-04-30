@@ -39,7 +39,6 @@ type Movie = {
 
 type MoviePage = {
   title: localeString
-  text: localePortableText
   youtubeLink: string
 }
 

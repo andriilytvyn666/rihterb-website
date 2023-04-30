@@ -24,7 +24,7 @@ export const useSanityStore = defineStore(
     const getMagazinePage = async (): Promise<MagazinePage> =>
       sanityFetch<MagazinePage>(
         magazinePage,
-        groq`*[_type == "magazinePage"][0] { title, text, pages }`
+        groq`*[_type == "magazinePage"][0] { title, pages }`
       )
 
     const getMoviePage = async (): Promise<MoviePage> =>

@@ -11,11 +11,6 @@ export default {
       validation: (rule: Rule) => rule.required(),
     },
     {
-      name: 'text',
-      type: 'localePortableText',
-      validation: (rule: Rule) => rule.required(),
-    },
-    {
       name: 'youtubeLink',
       type: 'url',
       validation: (rule: Rule) => rule.required(),
