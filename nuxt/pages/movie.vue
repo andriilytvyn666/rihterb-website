@@ -7,10 +7,10 @@
         <h2 class="section-title">
           {{ getLocalizedString($i18n.locale, movie.title) }}
         </h2>
-        <SanityContent
+        <!-- <SanityContent
           :blocks="getLocalizedPortableText($i18n.locale, movie.text)"
           class=""
-        />
+        /> -->
       </div>
       <iframe
         class="w-full rounded-lg aspect-video shadow-default sm:w-[43.75rem]"
