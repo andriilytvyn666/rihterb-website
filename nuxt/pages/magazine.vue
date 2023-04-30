@@ -4,10 +4,10 @@
     <MagazineBgMobile class="sm:opacity-0" />
     <transition name="scale">
       <div
-        class="z-10 w-full flex grow items-center justify-center"
+        class="z-10 flex items-center justify-center w-full grow"
         v-if="clientStore.gatherPages"
       >
-        <div class="flex flex-col grow gap-5 items-center">
+        <div class="flex flex-col items-center gap-5 grow">
           <Swiper
             :modules="[SwiperNavigation]"
             :slides-per-view="1"
@@ -27,7 +27,7 @@
               <SanityImage
                 :asset-id="page.asset._ref"
                 h="730"
-                class="sm:h-full object-cover"
+                class="object-cover sm:h-full"
               />
             </SwiperSlide>
           </Swiper>
@@ -86,4 +86,5 @@ const clientStore = useClientStore()
 
 const store = useSanityStore()
 const magazine = await store.getMagazinePage()
+await store.getMainPage()
 </script>

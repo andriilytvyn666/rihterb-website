@@ -30,6 +30,13 @@ type Minecraft = {
   buttonName: localeString
 }
 
+type Movie = {
+  images: image[]
+  title: localeString
+  text: localeString
+  buttonName: localeString
+}
+
 type Support = {
   title: localeString
   text: localeString
@@ -40,6 +47,7 @@ type MainPage = {
   about: About
   album: Album
   magazine: Magazine
+  movie: Movie
   minecraft: Minecraft
   support: Support
 }

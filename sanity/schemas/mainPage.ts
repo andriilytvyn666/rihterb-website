@@ -127,6 +127,42 @@ export default {
       ],
     },
     {
+      name: 'movie',
+      type: 'object',
+      options: {collapsible: true, collapsed: true},
+
+      fields: [
+        {
+          name: 'images',
+          description: 'any x 400 webp',
+          type: 'array',
+          of: [
+            {
+              type: 'image',
+              options: {accept: 'image/webp'},
+              validation: (rule: Rule) => rule.required(),
+            },
+          ],
+        },
+        {
+          name: 'title',
+          type: 'localeString',
+          validation: (rule: Rule) => rule.required(),
+        },
+
+        {
+          name: 'text',
+          type: 'localeString',
+          validation: (rule: Rule) => rule.required(),
+        },
+        {
+          name: 'buttonName',
+          type: 'localeString',
+          validation: (rule: Rule) => rule.required(),
+        },
+      ],
+    },
+    {
       name: 'minecraft',
       type: 'object',
       options: {collapsible: true, collapsed: true},

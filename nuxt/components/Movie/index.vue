@@ -16,7 +16,7 @@
         class="h-full"
       >
         <SwiperSlide
-          v-for="image in minecraft.images"
+          v-for="image in movie.images"
           :key="image.asset._ref"
           class="page"
         >
@@ -30,7 +30,8 @@
       </Swiper>
     </div>
     <SanityImage
-      :asset-id="minecraftPage.image.asset._ref"
+      :asset-id="movie.images[0].asset._ref"
+      height="327"
       class="object-cover rounded-lg aspect-square shadow-default sm:hidden"
     />
     <div
@@ -39,16 +40,16 @@
       <div class="flex flex-col gap-8 sm:flex-row">
         <div class="flex flex-col justify-center gap-2">
           <h2 class="line-clamp-2 sm:line-clamp-1 w-fit section-title">
-            {{ getLocalizedString($i18n.locale, minecraft.title) }}
+            {{ getLocalizedString($i18n.locale, movie.title) }}
           </h2>
           <p class="line-clamp-2 sm:line-clamp-1 section-text">
-            {{ getLocalizedString($i18n.locale, minecraft.text) }}
+            {{ getLocalizedString($i18n.locale, movie.text) }}
           </p>
         </div>
       </div>
       <Button
-        :to="localePath('/minecraft', $i18n.locale)"
-        :name="getLocalizedString($i18n.locale, minecraft.buttonName)"
+        :to="localePath('/movie', $i18n.locale)"
+        :name="getLocalizedString($i18n.locale, movie.buttonName)"
         class="btn-light h-fit"
       />
     </div>
@@ -57,7 +58,7 @@
 
 <script lang="ts" setup>
 const store = useSanityStore()
-const minecraft = (await store.getMainPage()).minecraft
+const movie = (await store.getMainPage()).movie
 const minecraftPage = await store.getMinecraftPage()
 const localePath = useLocalePath()
 </script>
