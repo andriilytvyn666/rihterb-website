@@ -51,11 +51,12 @@
       </div>
       <iframe
         src="https://rihterb.my.pebble.host"
-        class="w-full rounded-lg aspect-square sm:aspect-video"
+        class="w-full rounded-lg aspect-square sm:aspect-auto sm:h-[42rem]"
         v-show="isMap"
       />
       <div
         v-if="status!.players?.list.length! > 0"
+        v-show="!isMap"
         class="flex w-full overflow-hidden border rounded-lg border-dark-border-alt"
       >
         <table v-show="!isMap" class="w-full bg-dark-alt">

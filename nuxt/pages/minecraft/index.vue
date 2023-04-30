@@ -66,13 +66,13 @@
       </div>
       <SanityImage
         :asset-id="minecraftPage.image.asset._ref"
-        h="1000"
-        class="object-cover w-full rounded-lg aspect-square md:aspect-auto md:h-full"
+        h="900"
+        class="object-cover w-full h-full sm:h-[43.875rem] rounded-lg aspect-square md:aspect-auto"
         v-show="!isMap"
       />
       <iframe
         src="https://rihterb.my.pebble.host"
-        class="w-full h-full rounded-lg aspect-square sm:aspect-video"
+        class="w-full h-full sm:h-[43.875rem] rounded-lg aspect-square sm:aspect-video"
         v-show="isMap"
       />
     </div>
