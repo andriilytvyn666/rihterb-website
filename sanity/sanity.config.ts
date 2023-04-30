@@ -2,7 +2,16 @@ import {defineConfig} from 'sanity'
 import {deskTool} from 'sanity/desk'
 import {visionTool} from '@sanity/vision'
 import {schemaTypes} from './schemas'
-import {UserIcon, LinkIcon, BlockContentIcon, HeartFilledIcon, ImageIcon, InfoOutlineIcon, HomeIcon, SchemaIcon} from '@sanity/icons'
+import {
+  UserIcon,
+  LinkIcon,
+  BlockContentIcon,
+  HeartFilledIcon,
+  ImageIcon,
+  InfoOutlineIcon,
+  HomeIcon,
+  SchemaIcon,
+} from '@sanity/icons'
 import {vercelDeployTool} from 'sanity-plugin-vercel-deploy'
 
 export default defineConfig({
@@ -39,6 +48,10 @@ export default defineConfig({
               .icon(ImageIcon)
               .child(S.document().schemaType('magazinePage').documentId('magazinePage')),
             S.listItem()
+              .title('Movie Page')
+              .icon(ImageIcon)
+              .child(S.document().schemaType('moviePage').documentId('moviePage')),
+            S.listItem()
               .title('Shared - Header')
               .icon(InfoOutlineIcon)
               .child(S.document().schemaType('header').documentId('header')),
@@ -57,6 +70,7 @@ export default defineConfig({
                   'minecraftPage',
                   'magazinePage',
                   'navLink',
+                  'moviePage',
                 ].includes(`${listItem.getId()}`)
             ),
           ]),

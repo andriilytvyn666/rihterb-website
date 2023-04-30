@@ -37,6 +37,12 @@ type Movie = {
   buttonName: localeString
 }
 
+type MoviePage = {
+  title: localeString
+  text: localePortableText
+  youtubeLink: string
+}
+
 type Support = {
   title: localeString
   text: localeString

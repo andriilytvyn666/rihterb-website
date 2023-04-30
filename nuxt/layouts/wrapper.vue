@@ -39,6 +39,7 @@ await store.getSupportPage()
 await store.getMinecraftPage()
 await store.getAlbumPage()
 await store.getMagazinePage()
+await store.getMoviePage()
 
 useSchemaOrg([
   defineWebSite({

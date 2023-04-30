@@ -9,9 +9,11 @@ import minecraftPage from './minecraftPage'
 import buttonLink from './buttonLink'
 import magazinePage from './magazinePage'
 import navLink from './navLink'
+import moviePage from './moviePage'
 
 export const schemaTypes = [
   localeString,
+  moviePage,
   localePortableText,
   buttonLink,
   mainPage,
