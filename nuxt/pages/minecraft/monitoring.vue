@@ -66,7 +66,7 @@
             class="flex gap-4 px-6 py-4 border-b border-dark-border-alt last-of-type:border-none"
           >
             <td class="text-dark-secondary">{{ n }}</td>
-            <td>{{ status.players?.list[n - 1].name_clean }}</td>
+            <td>{{ status.players?.list.sort()[n - 1].name_clean }}</td>
           </tr>
         </table>
       </div>
