@@ -23,6 +23,16 @@
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         allowfullscreen
       ></iframe>
+      <div
+        class="flex flex-col sm:flex-row gap-4 [&>*]:w-full w-full sm:w-[43.75rem]"
+      >
+        <Button name="слухати альбом" class="btn-dark-outline">
+          <NuxtIcon name="feather/music" filled />
+        </Button>
+        <Button name="дивитися журнал" class="btn-dark-outline">
+          <NuxtIcon name="feather/image" filled />
+        </Button>
+      </div>
     </div>
   </NuxtLayout>
 </template>

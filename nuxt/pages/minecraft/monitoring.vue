@@ -1,7 +1,7 @@
 <template>
   <NuxtLayout name="wrapper">
     <div class="flex flex-col w-full gap-8 grow">
-      <div class="flex flex-col-reverse justify-between gap-8 sm:flex-row">
+      <div class="flex flex-col-reverse justify-between gap-8 md:flex-row">
         <div class="flex gap-4 grow">
           <button
             class="px-5 py-4 border rounded-lg bg-dark-alt border-dark-alt hover:border-dark-border-alt"
@@ -14,19 +14,19 @@
             />
           </button>
           <Button
-            class="border cursor-default bg-dark-alt grow sm:grow-0 border-dark-alt hover:border-dark-border-alt"
+            class="border cursor-default bg-dark-alt grow sm:grow-0 border-dark-alt hover:border-dark-border-alt sm:w-full md:w-fit"
           >
             <span class="truncate">
-              {{ status.version?.name_clean.split(' ')[1] }}
-              <span class="text-dark-secondary">/</span>
               {{ `${status.players?.online}/${status.players?.max}` }}
             </span>
           </Button>
           <Button
             :name="isMap ? t('monitoring.players') : t('monitoring.map')"
             @click="isMap = !isMap"
-            class="border bg-dark-alt max-w-fit border-dark-alt hover:border-dark-border-alt"
-          />
+            class="border bg-dark-alt max-w-fit border-dark-alt hover:border-dark-border-alt sm:w-full md:w-fit"
+          >
+            <NuxtIcon name="feather/map" filled />
+          </Button>
         </div>
         <div class="flex gap-4">
           <NuxtLink
@@ -43,7 +43,7 @@
           <Button
             name="rihterb.my.pebble.host"
             @click="copyToClipboard"
-            class="btn-light"
+            class="sm:w-full md:w-fit btn-light"
           >
             <NuxtIcon name="feather/copy" filled class="text-[1.5rem]" />
           </Button>

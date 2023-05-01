@@ -17,27 +17,30 @@
         </h3>
       </div>
       <p class="text-center text-body-lg-600 text-light sm:text-left">
-        <span class="hidden sm:inline select-text">
+        <span class="hidden select-text sm:inline">
           <p class="line-clamp-4">
             {{ getLocalizedString($i18n.locale, about.description) }}
           </p>
         </span>
-        <span class="sm:hidden select-text">
+        <span class="select-text sm:hidden">
           {{ getLocalizedString($i18n.locale, about.description) }}
         </span>
       </p>
-      <!-- TODO: create component css classes to group common styles -->
       <div class="flex flex-col gap-4 sm:flex-row">
         <Button
           :to="about.listenLink"
           class="btn-highlight"
           :name="getLocalizedString($i18n.locale, about.listenName)"
-        />
+        >
+          <NuxtIcon name="feather/music" filled />
+        </Button>
         <Button
           :to="about.socialLink"
           class="btn-light"
           :name="getLocalizedString($i18n.locale, about.socialName)"
-        />
+        >
+          <NuxtIcon name="feather/share" filled />
+        </Button>
       </div>
     </div>
   </div>

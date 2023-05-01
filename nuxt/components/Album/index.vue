@@ -8,14 +8,14 @@
         :asset-id="album.image.asset._ref"
         w="80"
         h="80"
-        class="hidden sm:flex rounded-lg sm:w-20 sm:h-20 shadow-default"
+        class="hidden rounded-lg sm:flex sm:w-20 sm:h-20 shadow-default"
       />
       <SanityImage
         rel="preload"
         :asset-id="album.image.asset._ref"
         w="500"
         h="500"
-        class="rounded-lg w-full h-full sm:hidden shadow-default"
+        class="w-full h-full rounded-lg sm:hidden shadow-default"
       />
       <div class="flex flex-col w-full gap-2 sm:justify-center">
         <h2 class="line-clamp-2 sm:line-clamp-1 w-fit section-title">
@@ -29,8 +29,10 @@
     <Button
       :to="localePath('/album', $i18n.locale)"
       :name="getLocalizedString($i18n.locale, album.buttonName)"
-      class="btn-light h-fit w-full sm:w-fit"
-    />
+      class="w-full btn-light h-fit sm:w-fit"
+    >
+      <NuxtIcon name="feather/music" filled />
+    </Button>
   </div>
 </template>
 

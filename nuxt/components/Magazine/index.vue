@@ -61,7 +61,9 @@
           :to="localePath('/magazine', $i18n.locale)"
           :name="getLocalizedString($i18n.locale, magazine.buttonName)"
           class="btn-light h-fit"
-        />
+        >
+          <NuxtIcon name="feather/image" filled />
+        </Button>
       </div>
     </div>
   </div>

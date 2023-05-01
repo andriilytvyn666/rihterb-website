@@ -51,7 +51,9 @@
         :to="localePath('/movie', $i18n.locale)"
         :name="getLocalizedString($i18n.locale, movie.buttonName)"
         class="btn-light h-fit"
-      />
+      >
+        <NuxtIcon name="feather/youtube" filled />
+      </Button>
     </div>
   </div>
 </template>

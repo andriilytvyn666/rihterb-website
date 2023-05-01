@@ -50,7 +50,9 @@
         :to="localePath('/minecraft', $i18n.locale)"
         :name="getLocalizedString($i18n.locale, minecraft.buttonName)"
         class="btn-light h-fit"
-      />
+      >
+        <NuxtIcon name="feather/play" filled />
+      </Button>
     </div>
   </div>
 </template>

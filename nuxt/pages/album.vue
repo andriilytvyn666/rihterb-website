@@ -1,7 +1,7 @@
 <template>
   <NuxtLayout name="wrapper">
-    <div class="flex flex-col md:flex-row gap-8 justify-center">
-      <h2 class="text-hl-yellow text-h-lg-700 text-center md:hidden">
+    <div class="flex flex-col justify-center gap-8 md:flex-row">
+      <h2 class="text-center text-hl-yellow text-h-lg-700 md:hidden">
         {{ getLocalizedString($i18n.locale, album.title) }}
       </h2>
 
@@ -18,7 +18,9 @@
               :name="
                 getLocalizedString($i18n.locale, album.buttons.magazine.name)
               "
-            />
+            >
+              <NuxtIcon name="feather/image" filled />
+            </Button>
           </NuxtLink>
           <NuxtLink :to="album.buttons.listen.link" class="w-full">
             <Button
@@ -26,12 +28,14 @@
               :name="
                 getLocalizedString($i18n.locale, album.buttons.listen.name)
               "
-            />
+            >
+              <NuxtIcon name="feather/music" filled />
+            </Button>
           </NuxtLink>
         </div>
         <div class="flex flex-col text-center md:text-left">
           <div class="flex flex-col gap-5 text-body-lg-600">
-            <h2 class="section-title hidden md:text-center md:inline">
+            <h2 class="hidden section-title md:text-center md:inline">
               {{ getLocalizedString($i18n.locale, album.title) }}
             </h2>
             <SanityContent
