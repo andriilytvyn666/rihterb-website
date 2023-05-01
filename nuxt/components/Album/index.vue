@@ -29,7 +29,7 @@
     <Button
       :to="localePath('/album', $i18n.locale)"
       :name="getLocalizedString($i18n.locale, album.buttonName)"
-      class="w-full btn-light h-fit sm:w-fit"
+      class="w-full btn-light h-fit sm:w-fit hover:-translate-y-1"
     >
       <NuxtIcon name="feather/music" filled />
     </Button>

@@ -16,7 +16,7 @@
       <Button
         :to="localePath('/support', $i18n.locale)"
         :name="getLocalizedString($i18n.locale, support.buttonName)"
-        class="h-fit btn-light"
+        class="h-fit btn-light hover:-translate-y-1"
       >
         <NuxtIcon name="feather/heart" filled />
       </Button>

@@ -1,3 +1,4 @@
+h-[24rem]
 <template>
   <div
     class="flex flex-col items-center justify-between gap-8 p-8 overflow-hidden rounded-lg bg-dark-alt"
@@ -50,7 +51,7 @@
       <Button
         :to="localePath('/movie', $i18n.locale)"
         :name="getLocalizedString($i18n.locale, movie.buttonName)"
-        class="btn-light h-fit"
+        class="btn-light h-fit hover:-translate-y-1"
       >
         <NuxtIcon name="feather/youtube" filled />
       </Button>
@@ -61,7 +62,6 @@
 <script lang="ts" setup>
 const store = useSanityStore()
 const movie = (await store.getMainPage()).movie
-const minecraftPage = await store.getMinecraftPage()
 const localePath = useLocalePath()
 </script>
 

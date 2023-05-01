@@ -4,7 +4,7 @@
       <div class="flex flex-col-reverse justify-between gap-8 md:flex-row">
         <div class="flex gap-4 grow">
           <button
-            class="px-5 py-4 border rounded-lg bg-dark-alt border-dark-alt hover:border-dark-border-alt"
+            class="px-5 py-4 border rounded-lg bg-dark-alt border-dark-alt hover:border-dark-border-alt hover:-translate-y-0.5"
             @click="refreshStatus"
           >
             <NuxtIcon
@@ -14,7 +14,7 @@
             />
           </button>
           <Button
-            class="border cursor-default bg-dark-alt grow sm:grow-0 border-dark-alt hover:border-dark-border-alt sm:w-full md:w-fit"
+            class="border cursor-default bg-dark-alt grow sm:grow-0 border-dark-alt hover:border-dark-border-alt sm:w-full md:w-fit hover:-translate-y-0.5"
           >
             <span class="truncate">
               {{ `${status.players?.online}/${status.players?.max}` }}
@@ -23,16 +23,16 @@
           <Button
             :name="isMap ? t('monitoring.players') : t('monitoring.map')"
             @click="isMap = !isMap"
-            class="border bg-dark-alt max-w-fit border-dark-alt hover:border-dark-border-alt sm:w-full md:w-fit"
+            class="border bg-dark-alt max-w-fit border-dark-alt hover:border-dark-border-alt sm:w-full md:w-fit hover:-translate-y-0.5"
           >
-            <NuxtIcon name="feather/map" filled />
+            <NuxtIcon :name="`feather/${isMap ? 'user' : 'map'}`" filled />
           </Button>
         </div>
         <div class="flex gap-4">
           <NuxtLink
-            to="https://discord.gg/xDknD7uG"
+            :to="minecraft.buttons.discord.link"
             target="_blank"
-            class="flex items-center justify-center px-5 py-4 rounded-lg btn-light"
+            class="flex items-center justify-center px-5 py-5 rounded-lg border bg-dark-alt max-w-fit border-dark-alt hover:border-dark-border-alt hover:-translate-y-0.5"
           >
             <NuxtIcon
               name="social/discord"
@@ -43,7 +43,7 @@
           <Button
             name="rihterb.my.pebble.host"
             @click="copyToClipboard"
-            class="sm:w-full md:w-fit btn-light"
+            class="sm:w-full md:w-fit btn-light hover:-translate-y-0.5"
           >
             <NuxtIcon name="feather/copy" filled class="text-[1.5rem]" />
           </Button>
@@ -82,13 +82,16 @@
       <Button
         :to="localePath('/minecraft', $i18n.locale)"
         :name="$t('monitoring.back')"
-        class="btn-dark-outline"
+        class="btn-dark-outline hover:-translate-y-0.5"
       />
     </div>
   </NuxtLayout>
 </template>
 
 <script lang="ts" setup>
+const store = useSanityStore()
+const minecraft = await store.getMinecraftPage()
+
 import { statusJava } from 'node-mcstatus'
 const localePath = useLocalePath()
 const { t } = useI18n()

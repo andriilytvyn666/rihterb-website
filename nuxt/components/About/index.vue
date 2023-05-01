@@ -26,17 +26,19 @@
           {{ getLocalizedString($i18n.locale, about.description) }}
         </span>
       </p>
-      <div class="flex gap-4">
+      <div class="flex flex-col gap-4 sm:flex-row">
         <Button
           :to="about.listenLink"
-          class="btn-highlight"
+          target="_blank"
+          class="btn-highlight hover:-translate-y-1"
           :name="getLocalizedString($i18n.locale, about.listenName)"
         >
           <NuxtIcon name="feather/music" filled />
         </Button>
         <Button
           :to="about.socialLink"
-          class="btn-light"
+          target="_blank"
+          class="btn-light hover:-translate-y-1"
           :name="getLocalizedString($i18n.locale, about.socialName)"
         >
           <NuxtIcon name="feather/share" filled />

@@ -60,7 +60,7 @@
         <Button
           :to="localePath('/magazine', $i18n.locale)"
           :name="getLocalizedString($i18n.locale, magazine.buttonName)"
-          class="btn-light h-fit"
+          class="btn-light h-fit hover:-translate-y-1"
         >
           <NuxtIcon name="feather/image" filled />
         </Button>
