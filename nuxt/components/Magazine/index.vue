@@ -3,39 +3,47 @@
     <div
       class="flex flex-col items-center justify-between gap-8 p-8 overflow-hidden rounded-lg bg-dark-alt"
     >
-      <Swiper
-        id="swiper"
-        free-mode
-        :slides-per-view="1"
-        :space-between="32"
-        :breakpoints="{
-          640: {
-            slidesPerView: 2,
-          },
-          768: {
-            slidesPerView: 3,
-          },
-          1024: {
-            slidesPerView: 4,
-          },
-          1280: {
-            slidesPerView: 5,
-          },
-        }"
-      >
-        <SwiperSlide
-          v-for="image in magazine.images"
-          :key="image.asset._ref"
-          class="page"
+      <SanityImage
+        :asset-id="magazine.images[0].asset._ref"
+        alt="magazine"
+        class="rounded-lg sm:hidden shadow-default"
+      />
+      <div class="hidden sm:block">
+        <Swiper
+          id="swiper"
+          free-mode
+          :slides-per-view="1"
+          :space-between="32"
+          :breakpoints="{
+            640: {
+              slidesPerView: 2,
+            },
+            768: {
+              slidesPerView: 3,
+            },
+            1024: {
+              slidesPerView: 4,
+            },
+            1280: {
+              slidesPerView: 5,
+            },
+          }"
         >
-          <SanityImage
-            rel="preload"
-            height="725"
-            :asset-id="image.asset._ref"
-            class="image"
-          />
-        </SwiperSlide>
-      </Swiper>
+          <SwiperSlide
+            v-for="image in magazine.images"
+            :key="image.asset._ref"
+            class="page"
+          >
+            <SanityImage
+              rel="preload"
+              height="725"
+              :asset-id="image.asset._ref"
+              class="image"
+            />
+          </SwiperSlide>
+        </Swiper>
+      </div>
+
       <div
         class="flex flex-col justify-between w-full gap-8 sm:gap-0 sm:flex-row"
       >
