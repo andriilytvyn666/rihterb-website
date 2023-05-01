@@ -26,7 +26,7 @@
           {{ getLocalizedString($i18n.locale, about.description) }}
         </span>
       </p>
-      <div class="flex flex-col gap-4 sm:flex-row">
+      <div class="flex gap-4">
         <Button
           :to="about.listenLink"
           class="btn-highlight"
