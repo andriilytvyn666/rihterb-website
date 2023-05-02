@@ -1,19 +1,20 @@
 <template>
   <div>
-    <!-- <DevOnly>
+    <DevOnly>
       <DebugIndicator />
-    </DevOnly> -->
-
+    </DevOnly>
     <div id="page-wrapper">
-      <div class="flex flex-col min-h-screen max-h-screen">
+      <div class="flex flex-col max-h-screen min-h-screen">
         <div class="flex justify-between px-4 pt-4 sm:px-8 sm:pt-8">
           <transition name="scale">
             <Button
               :to="localePath('/', $i18n.locale)"
               v-if="!clientStore.gatherPages"
               :name="t('magazine.homepage')"
-              class="btn-dark-outline z-20 shadows-default hover:border-light w-min"
-            />
+              class="z-20 btn-dark-outline shadows-default hover:border-light w-min"
+            >
+              <NuxtIcon name="feather/home" filled />
+            </Button>
           </transition>
           <transition name="scale">
             <Button
@@ -24,8 +25,10 @@
                   ? $i18n.setLocale('uk')
                   : $i18n.setLocale('en')
               "
-              class="btn-light-outline z-20 w-min shadows-default"
-            />
+              class="z-20 btn-light-outline w-min shadows-default"
+            >
+              <NuxtIcon name="feather/globe" filled />
+            </Button>
           </transition>
         </div>
         <div class="flex flex-col gap-8 sm:gap-12 grow">
@@ -47,8 +50,8 @@
 defineRobotMeta()
 const store = useSanityStore()
 
-await store.getMainPage()
 await store.getMagazinePage()
+await store.getMainPage()
 
 const clientStore = useClientStore()
 const localePath = useLocalePath()

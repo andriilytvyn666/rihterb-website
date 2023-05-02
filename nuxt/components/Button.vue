@@ -15,7 +15,7 @@
     <NuxtLink
       :to="$props.to"
       :target="$props.target === undefined ? '_self' : $props.target"
-      class="flex gap-4 px-6 py-4 w-full items-center justify-center"
+      class="flex items-center justify-center w-full gap-4 px-6 py-4"
     >
       <slot />
       <span :class="`${name !== undefined ? 'truncate' : 'hidden'}`">{{

@@ -35,11 +35,11 @@ defineRobotMeta()
 const store = useSanityStore()
 
 await store.getMainPage()
-await store.getSupportPage()
-await store.getMinecraftPage()
+await store.getMoviePage()
 await store.getAlbumPage()
 await store.getMagazinePage()
-await store.getMoviePage()
+await store.getMinecraftPage()
+await store.getSupportPage()
 
 useSchemaOrg([
   defineWebSite({

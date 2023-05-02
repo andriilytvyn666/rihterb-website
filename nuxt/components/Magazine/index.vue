@@ -3,39 +3,53 @@
     <div
       class="flex flex-col items-center justify-between gap-8 p-8 overflow-hidden rounded-lg bg-dark-alt"
     >
-      <Swiper
-        id="swiper"
-        free-mode
-        :slides-per-view="1"
-        :space-between="32"
-        :breakpoints="{
-          640: {
-            slidesPerView: 2,
-          },
-          768: {
-            slidesPerView: 3,
-          },
-          1024: {
-            slidesPerView: 4,
-          },
-          1280: {
-            slidesPerView: 5,
-          },
-        }"
-      >
-        <SwiperSlide
-          v-for="image in magazine.images"
-          :key="image.asset._ref"
-          class="page"
+      <!-- <SanityImage
+        :asset-id="magazine.images[0].asset._ref"
+        alt="magazine"
+        class="rounded-lg sm:hidden shadow-default"
+      /> -->
+      <div class="">
+        <Swiper
+          :modules="[SwiperPagination, SwiperMousewheel]"
+          :mousewheel="{
+            forceToAxis: true,
+          }"
+          :pagination="{
+            el: '#magazine-pagination',
+          }"
+          id="swiper"
+          :slides-per-view="1"
+          :space-between="32"
+          :breakpoints="{
+            640: {
+              slidesPerView: 2,
+            },
+            768: {
+              slidesPerView: 3,
+            },
+            1024: {
+              slidesPerView: 4,
+            },
+            1280: {
+              slidesPerView: 5,
+            },
+          }"
         >
-          <SanityImage
-            rel="preload"
-            height="725"
-            :asset-id="image.asset._ref"
-            class="image"
-          />
-        </SwiperSlide>
-      </Swiper>
+          <SwiperSlide
+            v-for="image in magazine.images"
+            :key="image.asset._ref"
+            class="page"
+          >
+            <SanityImage
+              rel="preload"
+              height="725"
+              :asset-id="image.asset._ref"
+              class="image"
+            />
+          </SwiperSlide>
+        </Swiper>
+      </div>
+      <div id="magazine-pagination" class="flex justify-center w-full"></div>
       <div
         class="flex flex-col justify-between w-full gap-8 sm:gap-0 sm:flex-row"
       >
@@ -52,8 +66,10 @@
         <Button
           :to="localePath('/magazine', $i18n.locale)"
           :name="getLocalizedString($i18n.locale, magazine.buttonName)"
-          class="btn-light h-fit"
-        />
+          class="btn-light h-fit hover:-translate-y-1"
+        >
+          <NuxtIcon name="feather/image" filled />
+        </Button>
       </div>
     </div>
   </div>
@@ -75,6 +91,10 @@ const localePath = useLocalePath()
 </style>
 
 <style lang="postcss">
+.swiper-pagination-bullets > .swiper-pagination-bullet {
+  @apply bg-light;
+}
+
 .page {
   @apply h-full w-[20.875rem] sm:w-full overflow-visible;
 }
