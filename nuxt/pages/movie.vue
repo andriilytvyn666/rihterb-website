@@ -28,7 +28,7 @@
         <Button
           :name="getLocalizedString($i18n.locale, movie.listenText)"
           class="btn-light"
-          :to="localePath('/movie', $i18n.locale)"
+          :to="localePath('/album', $i18n.locale)"
         >
           <NuxtIcon name="feather/music" filled />
         </Button>
