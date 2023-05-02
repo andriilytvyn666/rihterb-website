@@ -100,11 +100,12 @@ export default {
           name: 'images',
           description: 'any x 725 webp',
           type: 'array',
+          validation: (rule: Rule) => rule.required().min(2).max(10),
           of: [
             {
               type: 'image',
               options: {accept: 'image/webp'},
-              validation: (rule: Rule) => rule.required().min(5).max(20),
+              validation: (rule: Rule) => rule.required(),
             },
           ],
         },
@@ -136,11 +137,12 @@ export default {
           name: 'images',
           description: 'any x 400 webp',
           type: 'array',
+          validation: (rule: Rule) => rule.required().min(2).max(10),
           of: [
             {
               type: 'image',
               options: {accept: 'image/webp'},
-              validation: (rule: Rule) => rule.required().min(2).max(10),
+              validation: (rule: Rule) => rule.required(),
             },
           ],
         },
@@ -172,11 +174,12 @@ export default {
           name: 'images',
           description: 'any x 400 webp',
           type: 'array',
+          validation: (rule: Rule) => rule.required().min(2).max(10),
           of: [
             {
               type: 'image',
               options: {accept: 'image/webp'},
-              validation: (rule: Rule) => rule.required().min(2).max(10),
+              validation: (rule: Rule) => rule.required(),
             },
           ],
         },
