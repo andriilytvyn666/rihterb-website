@@ -52,6 +52,8 @@ const store = useSanityStore()
 
 await store.getMagazinePage()
 await store.getMainPage()
+await store.getHeader()
+await store.getFooter()
 
 const clientStore = useClientStore()
 const localePath = useLocalePath()
