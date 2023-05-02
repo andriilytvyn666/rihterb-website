@@ -2,7 +2,7 @@
   <a
     :href="link"
     target="_blank"
-    class="text-dark-secondary hover:text-light-secondary"
+    class="text-dark-secondary hover:text-light-secondary hover:-translate-y-1"
   >
     <nuxt-icon :name="`social/${name}`" filled />
   </a>

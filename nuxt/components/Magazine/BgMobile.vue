@@ -1,5 +1,5 @@
 <template>
-  <div class="outter w-full">
+  <div class="w-full outter">
     <SanityImage
       rel="preload"
       :asset-id="magazine.pages[9].asset._ref"

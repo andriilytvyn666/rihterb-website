@@ -27,7 +27,7 @@
           <Button
             name="rihterb.my.pebble.host"
             @click="copyToClipboard"
-            class="sm:w-full btn-light"
+            class="sm:w-full btn-light hover:-translate-y-0.5"
           >
             <NuxtIcon name="feather/copy" filled class="text-[1.5rem]" />
           </Button>
@@ -36,7 +36,7 @@
             :name="
               getLocalizedString($i18n.locale, minecraftPage.buttons.monitoring)
             "
-            class="btn-dark-outline sm:w-full"
+            class="btn-dark-outline sm:w-full hover:-translate-y-0.5"
           >
             <NuxtIcon name="feather/bar-chart-2" class="text-[1.5rem]" filled />
           </Button>
@@ -45,7 +45,7 @@
             :name="
               getLocalizedString($i18n.locale, minecraftPage.buttons.map.name)
             "
-            class="sm:w-full btn-dark-outline"
+            class="sm:w-full btn-dark-outline hover:-translate-y-0.5"
           >
             <NuxtIcon name="feather/map" class="text-[1.5rem]" filled />
           </Button>
@@ -58,7 +58,7 @@
                 minecraftPage.buttons.discord.name
               )
             "
-            class="sm:w-full btn-dark-outline"
+            class="sm:w-full btn-dark-outline hover:-translate-y-0.5"
           >
             <NuxtIcon name="social/discord" class="text-[1.5rem]" filled />
           </Button>

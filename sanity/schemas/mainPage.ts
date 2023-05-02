@@ -104,7 +104,7 @@ export default {
             {
               type: 'image',
               options: {accept: 'image/webp'},
-              validation: (rule: Rule) => rule.required(),
+              validation: (rule: Rule) => rule.required().min(5).max(20),
             },
           ],
         },
@@ -140,7 +140,7 @@ export default {
             {
               type: 'image',
               options: {accept: 'image/webp'},
-              validation: (rule: Rule) => rule.required(),
+              validation: (rule: Rule) => rule.required().min(2).max(10),
             },
           ],
         },
@@ -176,7 +176,7 @@ export default {
             {
               type: 'image',
               options: {accept: 'image/webp'},
-              validation: (rule: Rule) => rule.required(),
+              validation: (rule: Rule) => rule.required().min(2).max(10),
             },
           ],
         },

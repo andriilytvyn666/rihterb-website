@@ -12,7 +12,9 @@
       :name="t('magazine.back')"
       class="btn-dark-outline sm:w-full"
       @click="clientStore.toggleGatherPages"
-    />
+    >
+      <NuxtIcon name="feather/minimize-2" filled />
+    </Button>
     <button
       id="swiper-next"
       class="flex items-center justify-center btn-dark-outline p-4 text-[1.5rem]"
