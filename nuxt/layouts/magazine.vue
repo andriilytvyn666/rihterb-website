@@ -58,19 +58,36 @@ const localePath = useLocalePath()
 
 const { t } = useI18n()
 
+useSchemaOrg([
+  defineWebSite({
+    name: 'Ріхтер',
+    description:
+      'український інді-музикант. пишу психоделічні інді пісні з унікальним саундом. поєдную різні жанри, такі як: гараж рок, сьорф чи навіть електропоп.',
+    inLanguage: ['en', 'uk'],
+    url: 'https://rihterb.pp.ua',
+  }),
+  definePerson({
+    name: 'Василій Ріхтер',
+    description:
+      'український інді-музикант. пишу психоделічні інді пісні з унікальним саундом. поєдную різні жанри, такі як: гараж рок, сьорф чи навіть електропоп.',
+    image: '/schemaorg/person.webp',
+    url: 'https://rihterb.pp.ua',
+  }),
+])
+
 useSeoMeta({
-  title: () => t('meta.title'),
-  description: () => t('meta.description'),
-  author: () => t('meta.author'),
-  robots: 'all noarchive',
-  charset: 'utf-8',
-  ogTitle: () => t('meta.title'),
-  ogDescription: () => t('meta.description'),
-  twitterTitle: () => t('meta.title'),
-  twitterDescription: () => t('meta.description'),
+  title: 'Ріхтер',
+  description:
+    'український інді-музикант. пишу психоделічні інді пісні з унікальним саундом. поєдную різні жанри, такі як: гараж рок, сьорф чи навіть електропоп.',
+  ogDescription:
+    'український інді-музикант. пишу психоделічні інді пісні з унікальним саундом. поєдную різні жанри, такі як: гараж рок, сьорф чи навіть електропоп.',
+  twitterDescription:
+    'український інді-музикант. пишу психоделічні інді пісні з унікальним саундом. поєдную різні жанри, такі як: гараж рок, сьорф чи навіть електропоп.',
+  author: 'Василій Ріхтер',
   twitterCard: 'summary_large_image',
   twitterImage: 'https://rihterb.pp.ua/banner.webp',
   ogImage: 'https://rihterb.pp.ua/banner.webp',
+  charset: 'utf-8',
 })
 
 const i18nHead = useLocaleHead({
@@ -110,12 +127,6 @@ useHead({
       href: '/site.webmanifest',
     },
   ],
-  meta: [
-    ...(i18nHead.value.meta || []),
-    {
-      'http-equiv': 'Content-Security-Policy',
-      'content': 'upgrade-insecure-requests',
-    },
-  ],
+  meta: [...(i18nHead.value.meta || [])],
 })
 </script>
