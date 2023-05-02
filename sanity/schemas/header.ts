@@ -17,7 +17,7 @@ export default {
       description: 'обмеження - 2 лінки',
       type: 'array',
       of: [{type: 'navLink'}],
-      validation: (rule: Rule) => rule.required().max(2),
+      validation: (rule: Rule) => rule.required().max(2).min(2),
     },
     {
       name: 'listenLink',

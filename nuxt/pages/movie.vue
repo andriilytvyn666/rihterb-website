@@ -16,7 +16,6 @@
       </div>
       <iframe
         class="w-full rounded-lg aspect-video shadow-default"
-        width="700"
         :src="`https://www.youtube-nocookie.com/embed/${
           movie.youtubeLink.split('/')[3].split('=')[1].split('?')[0]
         }`"

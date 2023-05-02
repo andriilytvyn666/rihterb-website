@@ -3,15 +3,21 @@
     <div
       class="flex flex-col items-center justify-between gap-8 p-8 overflow-hidden rounded-lg bg-dark-alt"
     >
-      <SanityImage
+      <!-- <SanityImage
         :asset-id="magazine.images[0].asset._ref"
         alt="magazine"
         class="rounded-lg sm:hidden shadow-default"
-      />
-      <div class="hidden sm:block">
+      /> -->
+      <div class="">
         <Swiper
+          :modules="[SwiperPagination, SwiperMousewheel]"
+          :mousewheel="{
+            forceToAxis: true,
+          }"
+          :pagination="{
+            el: '#magazine-pagination',
+          }"
           id="swiper"
-          free-mode
           :slides-per-view="1"
           :space-between="32"
           :breakpoints="{
@@ -43,7 +49,7 @@
           </SwiperSlide>
         </Swiper>
       </div>
-
+      <div id="magazine-pagination" class="flex justify-center w-full"></div>
       <div
         class="flex flex-col justify-between w-full gap-8 sm:gap-0 sm:flex-row"
       >
@@ -85,6 +91,10 @@ const localePath = useLocalePath()
 </style>
 
 <style lang="postcss">
+.swiper-pagination-bullets > .swiper-pagination-bullet {
+  @apply bg-light;
+}
+
 .page {
   @apply h-full w-[20.875rem] sm:w-full overflow-visible;
 }

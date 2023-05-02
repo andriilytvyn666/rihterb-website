@@ -3,10 +3,16 @@ h-[24rem]
   <div
     class="flex flex-col items-center justify-between gap-8 p-8 overflow-hidden rounded-lg bg-dark-alt"
   >
-    <div class="hidden sm:block">
+    <div class="">
       <Swiper
+        :modules="[SwiperPagination, SwiperMousewheel]"
+        :mousewheel="{
+          forceToAxis: true,
+        }"
+        :pagination="{
+          el: '#movie-pagination',
+        }"
         id="swiper"
-        free-mode
         :slides-per-view="1"
         :space-between="32"
         :breakpoints="{
@@ -30,11 +36,13 @@ h-[24rem]
         </SwiperSlide>
       </Swiper>
     </div>
-    <SanityImage
+    <div id="movie-pagination" class="flex justify-center w-full"></div>
+
+    <!-- <SanityImage
       :asset-id="movie.images[0].asset._ref"
       height="327"
       class="object-cover rounded-lg aspect-square shadow-default sm:hidden"
-    />
+    /> -->
     <div
       class="flex flex-col justify-between w-full gap-8 sm:gap-0 sm:flex-row"
     >

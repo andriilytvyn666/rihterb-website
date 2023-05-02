@@ -2,10 +2,16 @@
   <div
     class="flex flex-col items-center justify-between gap-8 p-8 overflow-hidden rounded-lg bg-dark-alt"
   >
-    <div class="hidden sm:block">
+    <div class="">
       <Swiper
+        :modules="[SwiperPagination, SwiperMousewheel]"
+        :mousewheel="{
+          forceToAxis: true,
+        }"
+        :pagination="{
+          el: '#minecraft-pagination',
+        }"
         id="swiper"
-        free-mode
         :slides-per-view="1"
         :space-between="32"
         :breakpoints="{
@@ -29,10 +35,11 @@
         </SwiperSlide>
       </Swiper>
     </div>
-    <SanityImage
+    <!-- <SanityImage
       :asset-id="minecraftPage.image.asset._ref"
       class="object-cover rounded-lg aspect-square shadow-default sm:hidden"
-    />
+    /> -->
+    <div id="minecraft-pagination" class="flex justify-center w-full"></div>
     <div
       class="flex flex-col justify-between w-full gap-8 sm:gap-0 sm:flex-row"
     >
