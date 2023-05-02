@@ -25,10 +25,18 @@
         allowfullscreen
       ></iframe>
       <div class="flex flex-col sm:flex-row gap-4 [&>*]:w-full w-full">
-        <Button name="слухати альбом" class="btn-light">
+        <Button
+          :name="getLocalizedString($i18n.locale, movie.listenText)"
+          class="btn-light"
+          :to="localePath('/movie', $i18n.locale)"
+        >
           <NuxtIcon name="feather/music" filled />
         </Button>
-        <Button name="дивитися журнал" class="btn-dark-outline">
+        <Button
+          :to="localePath('/magazine', $i18n.locale)"
+          :name="getLocalizedString($i18n.locale, movie.magazineText)"
+          class="btn-dark-outline"
+        >
           <NuxtIcon name="feather/image" filled />
         </Button>
       </div>
@@ -36,6 +44,7 @@
   </NuxtLayout>
 </template>
 <script lang="ts" setup>
+const localePath = useLocalePath()
 const store = useSanityStore()
 const movie = await store.getMoviePage()
 </script>

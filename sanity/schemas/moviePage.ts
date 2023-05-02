@@ -15,5 +15,15 @@ export default {
       type: 'url',
       validation: (rule: Rule) => rule.required(),
     },
+    {
+      name: 'listenText',
+      type: 'localeString',
+      validation: (rule: Rule) => rule.required(),
+    },
+    {
+      name: 'magazineText',
+      type: 'localeString',
+      validation: (rule: Rule) => rule.required(),
+    },
   ],
 }

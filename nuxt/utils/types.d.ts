@@ -40,6 +40,8 @@ type Movie = {
 type MoviePage = {
   title: localeString
   youtubeLink: string
+  listenText: localeString
+  magazineText: localeString
 }
 
 type Support = {
