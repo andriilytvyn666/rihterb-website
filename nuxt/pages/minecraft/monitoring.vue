@@ -23,7 +23,7 @@
           <Button
             :name="isMap ? t('monitoring.players') : t('monitoring.map')"
             @click="isMap = !isMap"
-            class="border bg-dark-alt max-w-fit border-dark-alt hover:border-dark-border-alt sm:w-full md:w-fit hover:-translate-y-0.5"
+            class="border bg-dark-alt max-w-fit border-dark-alt hover:border-dark-border-alt sm:w-full md:w-fit hover:-translate-y-0.5 overflow-visible"
           >
             <NuxtIcon :name="`feather/${isMap ? 'user' : 'map'}`" filled />
           </Button>
