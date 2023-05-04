@@ -50,8 +50,12 @@
 defineRobotMeta()
 const store = useSanityStore()
 
-await store.getMagazinePage()
 await store.getMainPage()
+await store.getMoviePage()
+await store.getAlbumPage()
+await store.getMagazinePage()
+await store.getMinecraftPage()
+await store.getSupportPage()
 await store.getHeader()
 await store.getFooter()
 
