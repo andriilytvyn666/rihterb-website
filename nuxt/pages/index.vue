@@ -1,7 +1,7 @@
 <template>
   <NuxtLayout name="wrapper">
     <About />
-    <!-- <Movie /> -->
+    <Movie />
     <Album />
     <Magazine />
     <Minecraft />
