@@ -17,16 +17,16 @@
             class="border cursor-default bg-dark-alt grow sm:grow-0 border-dark-alt hover:border-dark-border-alt sm:w-full md:w-fit hover:-translate-y-0.5"
           >
             <span class="truncate">
-              {{ `${status.players?.online}/${status.players?.max}` }}
+              {{ `${status.players?.online || 0}/${status.players?.max || 0}` }}
             </span>
           </Button>
-          <Button
+          <!-- <Button
             :name="isMap ? t('monitoring.players') : t('monitoring.map')"
             @click="isMap = !isMap"
             class="border bg-dark-alt max-w-fit border-dark-alt hover:border-dark-border-alt sm:w-full md:w-fit hover:-translate-y-0.5 overflow-visible"
           >
             <NuxtIcon :name="`feather/${isMap ? 'user' : 'map'}`" filled />
-          </Button>
+          </Button> -->
         </div>
         <div class="flex gap-4">
           <NuxtLink
@@ -41,7 +41,7 @@
             />
           </NuxtLink>
           <Button
-            name="rihterb.my.pebble.host"
+            :name="$t('monitoring.copyIp')"
             @click="copyToClipboard"
             class="sm:w-full md:w-fit btn-light hover:-translate-y-0.5"
           >
@@ -97,13 +97,13 @@ const localePath = useLocalePath()
 const { t } = useI18n()
 
 const isMap = ref(false)
-const status = ref(await statusJava('rihterb.my.pebble.host', 25565))
+const status = ref(await statusJava('141.94.242.101', 2500))
 
 const copyToClipboard = () => {
-  navigator.clipboard.writeText('rihterb.my.pebble.host')
+  navigator.clipboard.writeText(minecraftPage.ip)
 }
 
 const refreshStatus = async () => {
-  status.value = await statusJava('rihterb.my.pebble.host', 25565)
+  status.value = await statusJava('141.94.242.101', 2500)
 }
 </script>

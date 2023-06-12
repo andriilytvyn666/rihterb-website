@@ -25,7 +25,7 @@
         </div>
         <div class="grid gap-4 w-full [&>*]:w-full">
           <Button
-            name="rihterb.my.pebble.host"
+            :name="$t('monitoring.copyIp')"
             @click="copyToClipboard"
             class="sm:w-full btn-light hover:-translate-y-0.5"
           >
@@ -40,7 +40,8 @@
           >
             <NuxtIcon name="feather/bar-chart-2" class="text-[1.5rem]" filled />
           </Button>
-          <Button
+          <!-- Disable map -->
+          <!-- <Button
             @click="isMap = !isMap"
             :name="
               getLocalizedString($i18n.locale, minecraftPage.buttons.map.name)
@@ -48,7 +49,7 @@
             class="sm:w-full btn-dark-outline hover:-translate-y-0.5"
           >
             <NuxtIcon name="feather/map" class="text-[1.5rem]" filled />
-          </Button>
+          </Button> -->
           <Button
             :to="minecraftPage.buttons.discord.link"
             target="_blank"
@@ -87,6 +88,6 @@ const minecraftPage = await store.getMinecraftPage()
 const localePath = useLocalePath()
 
 const copyToClipboard = () => {
-  navigator.clipboard.writeText('rihterb.my.pebble.host')
+  navigator.clipboard.writeText(minecraftPage.ip)
 }
 </script>

@@ -13,7 +13,8 @@
     "map": "map",
     "players": "players",
     "no_players": "nobody's here :(",
-    "back": "back"
+    "back": "back",
+    "copyIp": "copy ip"
   },
   "magazine": {
     "view": "view",
