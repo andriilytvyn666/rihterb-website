@@ -34,13 +34,13 @@
           >
             <NuxtIcon name="feather/log-in" class="text-[1.5rem]" filled />
           </Button>
-          <Button
+          <!-- <Button
             :name="$t('monitoring.copyIp')"
             @click="copyToClipboard"
             class="sm:w-full btn-dark-outline hover:-translate-y-0.5"
           >
             <NuxtIcon name="feather/copy" filled class="text-[1.5rem]" />
-          </Button>
+          </Button> -->
           <Button
             :to="localePath('/minecraft/monitoring', $i18n.locale)"
             :name="
