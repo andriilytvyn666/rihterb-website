@@ -45,6 +45,11 @@ export default {
           type: 'buttonLink',
           validation: (rule: Rule) => rule.required(),
         },
+        {
+          name: 'patreon',
+          type: 'localeString',
+          validation: (rule: Rule) => rule.required(),
+        },
       ],
     },
     {

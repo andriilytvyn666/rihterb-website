@@ -24,10 +24,20 @@
           </div>
         </div>
         <div class="grid gap-4 w-full [&>*]:w-full">
+            <Button
+            :to="supportPage.patreon.link"
+            target="_blank"
+            :name="
+              getLocalizedString($i18n.locale, minecraftPage.buttons.patreon)
+            "
+            class="sm:w-full btn-light hover:-translate-y-0.5"
+          >
+            <NuxtIcon name="feather/log-in" class="text-[1.5rem]" filled />
+          </Button>
           <Button
             :name="$t('monitoring.copyIp')"
             @click="copyToClipboard"
-            class="sm:w-full btn-light hover:-translate-y-0.5"
+            class="sm:w-full btn-dark-outline hover:-translate-y-0.5"
           >
             <NuxtIcon name="feather/copy" filled class="text-[1.5rem]" />
           </Button>
@@ -84,6 +94,7 @@
 const isMap = ref(false)
 const store = useSanityStore()
 const minecraftPage = await store.getMinecraftPage()
+const supportPage = await store.getSupportPage()
 
 const localePath = useLocalePath()
 

@@ -98,6 +98,7 @@ type MinecraftPage = {
     monitoring: localeString
     map: buttonLink
     discord: buttonLink
+    patreon: localeString
   }
   image: image
 }
