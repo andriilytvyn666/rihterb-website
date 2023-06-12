@@ -42,7 +42,7 @@ export const useSanityStore = defineStore(
     const getMinecraftPage = async (): Promise<MinecraftPage> =>
       sanityFetch<MinecraftPage>(
         minecraftPage,
-        groq`*[_type == "minecraftPage"][0] { title, text, features, ip, buttons, image }`
+        groq`*[_type == "minecraftPage"][0] { title, text, features, ip, buttons, timer, image }`
       )
 
     const getSupportPage = async (): Promise<SupportPage> =>

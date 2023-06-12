@@ -31,6 +31,11 @@ export default {
       type: 'object',
       fields: [
         {
+          name: 'patreon',
+          type: 'localeString',
+          validation: (rule: Rule) => rule.required(),
+        },
+        {
           name: 'monitoring',
           type: 'localeString',
           validation: (rule: Rule) => rule.required(),
@@ -45,12 +50,23 @@ export default {
           type: 'buttonLink',
           validation: (rule: Rule) => rule.required(),
         },
+      ],
+    },
+    {
+      name: 'timer',
+      type: 'object',
+      fields: [
         {
-          name: 'patreon',
+          name: 'title',
           type: 'localeString',
           validation: (rule: Rule) => rule.required(),
         },
-      ],
+        {
+          name: 'timerDeadline',
+          type: 'datetime',
+          validation: (rule: Rule) => rule.required().min(new Date().toISOString()),
+        }
+      ]
     },
     {
       name: 'image',

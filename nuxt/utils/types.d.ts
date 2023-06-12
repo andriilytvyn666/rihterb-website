@@ -99,7 +99,11 @@ type MinecraftPage = {
     map: buttonLink
     discord: buttonLink
     patreon: localeString
-  }
+  },
+  timer: {
+    title: localeString
+    timerDeadline: string
+  },
   image: image
 }
 
