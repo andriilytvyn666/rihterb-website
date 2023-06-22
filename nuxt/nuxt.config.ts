@@ -2,7 +2,7 @@ import eslintPlugin from 'vite-plugin-eslint'
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  extends: ['nuxt-seo-kit'],
+  // extends: ['nuxt-seo-kit'],
   modules: [
     'nuxt-gtag',
     'nuxt-simple-sitemap',
@@ -82,7 +82,7 @@ export default defineNuxtConfig({
         code: 'uk',
       },
       {
-        name: 'Українська також нахуй росію',
+        name: 'Українська також',
         iso: 'ru-RU',
         code: 'ru',
       },
