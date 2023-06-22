@@ -1,24 +1,6 @@
 <template>
   <NuxtLayout name="wrapper">
-    <div
-      v-if="!isTimerFinished"
-      class="flex flex-col items-center justify-center gap-2 grow"
-    >
-      <h2 class="text-body-md-600">
-        {{ getLocalizedString($i18n.locale, minecraftPage.timer.title) }}
-      </h2>
-      <h2 class="text-h-lg-700 text-light">
-        {{
-          `${String(timer.hours).padStart(2, '0')}:${String(
-            timer.minutes
-          ).padStart(2, '0')}:${String(timer.seconds).padStart(2, '0')}`
-        }}
-      </h2>
-    </div>
-    <div
-      v-else
-      class="grid justify-center w-full gap-8 lg:grid-cols-2 md:flex-row"
-    >
+    <div class="grid justify-center w-full gap-8 lg:grid-cols-2 md:flex-row">
       <div class="flex flex-col w-full gap-8 text-body-lg-600">
         <div class="flex flex-col gap-8">
           <div class="flex flex-col gap-5">
