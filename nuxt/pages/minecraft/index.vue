@@ -1,24 +1,6 @@
 <template>
   <NuxtLayout name="wrapper">
-    <div
-      v-if="!isTimerFinished"
-      class="flex flex-col items-center justify-center gap-2 grow"
-    >
-      <h2 class="text-body-md-600">
-        {{ getLocalizedString($i18n.locale, minecraftPage.timer.title) }}
-      </h2>
-      <h2 class="text-h-lg-700 text-light">
-        {{
-          `${String(timer.hours).padStart(2, '0')}:${String(
-            timer.minutes
-          ).padStart(2, '0')}:${String(timer.seconds).padStart(2, '0')}`
-        }}
-      </h2>
-    </div>
-    <div
-      v-else
-      class="grid justify-center w-full gap-8 lg:grid-cols-2 md:flex-row"
-    >
+    <div class="grid justify-center w-full gap-8 lg:grid-cols-2 md:flex-row">
       <div class="flex flex-col w-full gap-8 text-body-lg-600">
         <div class="flex flex-col gap-8">
           <div class="flex flex-col gap-5">
@@ -43,10 +25,10 @@
         </div>
         <div class="grid gap-4 w-full [&>*]:w-full">
           <Button
-            :to="supportPage.patreon.link"
+            :to="minecraftPage.buttons.join.link"
             target="_blank"
             :name="
-              getLocalizedString($i18n.locale, minecraftPage.buttons.patreon)
+              getLocalizedString($i18n.locale, minecraftPage.buttons.join.name)
             "
             class="sm:w-full btn-light hover:-translate-y-0.5"
           >
@@ -109,50 +91,11 @@
 </template>
 
 <script lang="ts" setup>
-const isTimerFinished = ref(false)
 const isMap = ref(false)
 const store = useSanityStore()
 const minecraftPage = await store.getMinecraftPage()
-const supportPage = await store.getSupportPage()
 
 const localePath = useLocalePath()
-
-const timer = ref({ hours: 0, minutes: 0, seconds: 0 })
-
-const startTimer = () => {
-  const currentDate = new Date()
-  const timerDealine = new Date(minecraftPage.timer.timerDeadline)
-
-  let timeLeft = timerDealine.getTime() - currentDate.getTime()
-
-  updateTimer(timeLeft)
-
-  const intervalId = setInterval(() => {
-    timeLeft -= 1000
-    updateTimer(timeLeft)
-
-    if (timeLeft <= 0) {
-      clearInterval(intervalId)
-      isTimerFinished.value = true
-    }
-  }, 1000)
-}
-
-const updateTimer = (timeLeft: number) => {
-  if (timeLeft < 0) {
-    timeLeft = Math.abs(timeLeft)
-  }
-
-  timer.value = {
-    hours: Math.floor(timeLeft / (1000 * 60 * 60)),
-    minutes: Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60)),
-    seconds: Math.floor((timeLeft % (1000 * 60)) / 1000),
-  }
-}
-
-onMounted(() => {
-  startTimer()
-})
 
 const copyToClipboard = () => {
   navigator.clipboard.writeText(minecraftPage.ip)

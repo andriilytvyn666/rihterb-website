@@ -94,13 +94,13 @@ const minecraft = await store.getMinecraftPage()
 
 import { statusJava } from 'node-mcstatus'
 const localePath = useLocalePath()
-const { t } = useI18n()
+// const { t } = useI18n()
 
 const isMap = ref(false)
 const status = ref(await statusJava('141.94.242.101', 2500))
 
 const copyToClipboard = () => {
-  navigator.clipboard.writeText(minecraftPage.ip)
+  navigator.clipboard.writeText(minecraft.ip)
 }
 
 const refreshStatus = async () => {

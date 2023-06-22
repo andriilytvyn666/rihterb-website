@@ -98,12 +98,8 @@ type MinecraftPage = {
     monitoring: localeString
     map: buttonLink
     discord: buttonLink
-    patreon: localeString
-  },
-  timer: {
-    title: localeString
-    timerDeadline: string
-  },
+    join: buttonLink
+  }
   image: image
 }
 

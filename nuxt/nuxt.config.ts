@@ -1,11 +1,8 @@
-import en from './locales/en-US.json'
-import uk from './locales/uk-UA.json'
-import ru from './locales/ru-RU.json'
 import eslintPlugin from 'vite-plugin-eslint'
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  extends: ['nuxt-seo-kit'],
+  // extends: ['nuxt-seo-kit'],
   modules: [
     'nuxt-gtag',
     'nuxt-simple-sitemap',
@@ -71,13 +68,7 @@ export default defineNuxtConfig({
       cookieKey: 'i18n_redirected',
       redirectOn: 'root',
     },
-    vueI18n: {
-      legacy: false,
-      locale: 'uk',
-      fallbackLocale: 'en',
-      availableLocales: ['en', 'uk', 'ru'],
-      messages: { en, uk, ru },
-    },
+    vueI18n: './i18n.config.ts',
     locales: [
       {
         name: 'English',
@@ -91,7 +82,7 @@ export default defineNuxtConfig({
         code: 'uk',
       },
       {
-        name: 'Українська також нахуй росію',
+        name: 'Українська також',
         iso: 'ru-RU',
         code: 'ru',
       },
