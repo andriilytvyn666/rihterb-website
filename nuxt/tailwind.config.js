@@ -54,7 +54,7 @@ module.exports = {
       colors: {
         light: {
           DEFAULT: '#ffffff',
-          secondary: '#d8d8d8'
+          secondary: '#d8d8d8',
         },
         dark: {
           'DEFAULT': '#090909',
@@ -66,7 +66,7 @@ module.exports = {
         hl: {
           'yellow': '#FFC657',
           'yellow-secondary': '#d8a849',
-          'blue': '#0039A8',
+          'blue': '#3b82f6',
         },
       },
     },

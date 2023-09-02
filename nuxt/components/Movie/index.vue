@@ -1,7 +1,7 @@
 h-[24rem]
 <template>
   <div
-    class="flex flex-col items-center justify-between gap-8 p-8 overflow-hidden rounded-lg bg-dark-alt"
+    class="flex flex-col items-center justify-between gap-8 p-5 overflow-hidden rounded-lg sm:p-8 bg-dark-alt"
   >
     <div class="">
       <Swiper
@@ -44,7 +44,7 @@ h-[24rem]
       class="object-cover rounded-lg aspect-square shadow-default sm:hidden"
     /> -->
     <div
-      class="flex flex-col justify-between w-full gap-8 sm:gap-0 sm:flex-row"
+      class="flex flex-col items-center justify-between w-full gap-8 sm:gap-0 sm:flex-row"
     >
       <div class="flex flex-col gap-8 sm:flex-row">
         <div class="flex flex-col justify-center gap-2">

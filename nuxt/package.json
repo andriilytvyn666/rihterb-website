@@ -29,6 +29,7 @@
     "@nuxt/image-edge": "^1.0.0-28020728.5df24eb",
     "@nuxtjs/sanity": "^1.7.2",
     "@pinia/nuxt": "^0.4.11",
+    "@portabletext/vue": "^1.0.4",
     "@vercel/analytics": "^1.0.1",
     "@vueuse/motion": "^2.0.0-beta.27",
     "@vueuse/nuxt": "^9.13.0",

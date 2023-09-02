@@ -6,7 +6,7 @@
     <div id="page-wrapper">
       <div class="flex flex-col min-h-screen">
         <Header class="w-full" />
-        <div class="flex flex-col gap-8 sm:gap-12 grow">
+        <div class="flex flex-col grow">
           <slot />
         </div>
         <Footer />
@@ -35,10 +35,10 @@ defineRobotMeta()
 const store = useSanityStore()
 
 await store.getMainPage()
+await store.getConcertPage()
 await store.getMoviePage()
 await store.getAlbumPage()
 await store.getMagazinePage()
-await store.getMinecraftPage()
 await store.getSupportPage()
 await store.getHeader()
 await store.getFooter()

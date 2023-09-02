@@ -60,6 +60,30 @@ export default {
       ],
     },
     {
+      name: 'concert',
+      type: 'object',
+      options: {collapsible: true, collapsed: true},
+
+      fields: [
+        {
+          name: 'title',
+          type: 'localeString',
+          validation: (rule: Rule) => rule.required(),
+        },
+
+        {
+          name: 'text',
+          type: 'localeString',
+          validation: (rule: Rule) => rule.required(),
+        },
+        {
+          name: 'buttonName',
+          type: 'localeString',
+          validation: (rule: Rule) => rule.required(),
+        },
+      ],
+    },
+    {
       name: 'album',
       type: 'object',
       options: {collapsible: true, collapsed: true},
@@ -129,43 +153,6 @@ export default {
     },
     {
       name: 'movie',
-      type: 'object',
-      options: {collapsible: true, collapsed: true},
-
-      fields: [
-        {
-          name: 'images',
-          description: 'any x 400 webp',
-          type: 'array',
-          validation: (rule: Rule) => rule.required().min(2).max(10),
-          of: [
-            {
-              type: 'image',
-              options: {accept: 'image/webp'},
-              validation: (rule: Rule) => rule.required(),
-            },
-          ],
-        },
-        {
-          name: 'title',
-          type: 'localeString',
-          validation: (rule: Rule) => rule.required(),
-        },
-
-        {
-          name: 'text',
-          type: 'localeString',
-          validation: (rule: Rule) => rule.required(),
-        },
-        {
-          name: 'buttonName',
-          type: 'localeString',
-          validation: (rule: Rule) => rule.required(),
-        },
-      ],
-    },
-    {
-      name: 'minecraft',
       type: 'object',
       options: {collapsible: true, collapsed: true},
 

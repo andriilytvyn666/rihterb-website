@@ -23,13 +23,6 @@ type Magazine = {
   buttonName: localeString
 }
 
-type Minecraft = {
-  images: image[]
-  title: localeString
-  text: localeString
-  buttonName: localeString
-}
-
 type Movie = {
   images: image[]
   title: localeString
@@ -50,8 +43,33 @@ type Support = {
   buttonName: localeString
 }
 
+type Concert = {
+  title: localeString
+  text: localeString
+  buttonName: localeString
+}
+
+type ConcertPage = {
+  title: localeString
+  poster: image
+  description: localePortableText
+  tickets: {
+    enabled: boolean
+    look: string
+    text: localeString
+    link: string
+  }
+  instagram: {
+    enabled: boolean
+    look: default
+    text: localeString
+    link: string
+  }
+}
+
 type MainPage = {
   about: About
+  concert: Concert
   album: Album
   magazine: Magazine
   movie: Movie
@@ -87,20 +105,6 @@ type SupportPage = {
     name: localeString
     link: string
   }
-}
-
-type MinecraftPage = {
-  title: localeString
-  text: localePortableText
-  features: localeString[]
-  ip: string
-  buttons: {
-    monitoring: localeString
-    map: buttonLink
-    discord: buttonLink
-    join: buttonLink
-  }
-  image: image
 }
 
 type AlbumPage = {
@@ -162,4 +166,13 @@ type localePortableText = {
 
 type image = {
   asset: { _ref: string }
+}
+
+type pageBlock = {
+  name: string
+  visible: boolean
+}
+
+type WebsiteBlocks = {
+  order: pageBlock[]
 }

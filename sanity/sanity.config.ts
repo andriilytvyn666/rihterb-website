@@ -3,7 +3,7 @@ import {deskTool} from 'sanity/desk'
 import {visionTool} from '@sanity/vision'
 import {schemaTypes} from './schemas'
 import {
-  UserIcon,
+  PlayIcon,
   LinkIcon,
   BlockContentIcon,
   HeartFilledIcon,
@@ -11,6 +11,7 @@ import {
   InfoOutlineIcon,
   HomeIcon,
   SchemaIcon,
+  BlockElementIcon,
 } from '@sanity/icons'
 import {vercelDeployTool} from 'sanity-plugin-vercel-deploy'
 
@@ -28,13 +29,17 @@ export default defineConfig({
           .title('Main')
           .items([
             S.listItem()
+              .title('Website Blocks')
+              .icon(BlockElementIcon)
+              .child(S.document().schemaType('websiteBlocks').documentId('websiteBlocks')),
+            S.listItem()
               .title('Main Page')
               .icon(HomeIcon)
               .child(S.document().schemaType('mainPage').documentId('mainPage')),
             S.listItem()
-              .title('Minecraft Page')
-              .icon(SchemaIcon)
-              .child(S.document().schemaType('minecraftPage').documentId('minecraftPage')),
+              .title('Concert Page')
+              .icon(PlayIcon)
+              .child(S.document().schemaType('concertPage').documentId('concertPage')),
             S.listItem()
               .title('Support Page')
               .icon(HeartFilledIcon)
@@ -67,10 +72,11 @@ export default defineConfig({
                   'footer',
                   'header',
                   'albumPage',
-                  'minecraftPage',
                   'magazinePage',
                   'navLink',
                   'moviePage',
+                  'websiteBlocks',
+                  'concertPage',
                 ].includes(`${listItem.getId()}`)
             ),
           ]),
