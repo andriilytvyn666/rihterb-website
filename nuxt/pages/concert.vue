@@ -66,7 +66,7 @@ const customComponents = {
           rel,
           target: '_blank',
           class:
-            'border-b border-light border-hl-yellow hover:border-hl-yellow-secondary text-hl-yellow hover:text-hl-yellow-secondary',
+            'border-b border-hl-yellow hover:border-hl-yellow-secondary text-hl-yellow hover:text-hl-yellow-secondary',
         },
         slots.default?.()
       )
