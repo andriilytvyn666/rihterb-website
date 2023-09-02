@@ -5,6 +5,10 @@
         v-if="block.name == 'About' && block.visible"
         class="mb-4 sm:mb-6"
       />
+      <Concert
+        v-if="block.name == 'Concert' && block.visible"
+        class="my-4 sm:my-6"
+      />
       <Movie
         v-if="block.name == 'Movie' && block.visible"
         class="my-4 sm:my-6"

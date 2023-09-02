@@ -3,7 +3,7 @@ import {deskTool} from 'sanity/desk'
 import {visionTool} from '@sanity/vision'
 import {schemaTypes} from './schemas'
 import {
-  UserIcon,
+  PlayIcon,
   LinkIcon,
   BlockContentIcon,
   HeartFilledIcon,
@@ -36,6 +36,10 @@ export default defineConfig({
               .title('Main Page')
               .icon(HomeIcon)
               .child(S.document().schemaType('mainPage').documentId('mainPage')),
+            S.listItem()
+              .title('Concert Page')
+              .icon(PlayIcon)
+              .child(S.document().schemaType('concertPage').documentId('concertPage')),
             S.listItem()
               .title('Minecraft Page')
               .icon(SchemaIcon)
@@ -77,6 +81,7 @@ export default defineConfig({
                   'navLink',
                   'moviePage',
                   'websiteBlocks',
+                  'concertPage',
                 ].includes(`${listItem.getId()}`)
             ),
           ]),

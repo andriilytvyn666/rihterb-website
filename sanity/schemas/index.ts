@@ -12,8 +12,10 @@ import navLink from './navLink'
 import moviePage from './moviePage'
 import websiteBlocks from './websiteBlocks'
 import pageBlock from './pageBlock'
+import concertPage from './concertPage'
 
 export const schemaTypes = [
+  concertPage,
   pageBlock,
   localeString,
   moviePage,

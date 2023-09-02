@@ -12,7 +12,7 @@ export default {
       type: 'string',
       initialValue: 'About',
       options: {
-        list: ['About', 'Movie', 'Album', 'Magazine', 'Support'],
+        list: ['About', 'Concert', 'Movie', 'Album', 'Magazine', 'Support'],
       },
       validation: (rule: Rule) => rule.required(),
     },

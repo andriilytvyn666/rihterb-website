@@ -50,8 +50,23 @@ type Support = {
   buttonName: localeString
 }
 
+type Concert = {
+  title: localeString
+  text: localeString
+  buttonName: localeString
+}
+
+type ConcertPage = {
+  title: localeString
+  poster: image
+  description: localePortableText
+  ticketsText: localeString
+  ticketsLink: string
+}
+
 type MainPage = {
   about: About
+  concert: Concert
   album: Album
   magazine: Magazine
   movie: Movie

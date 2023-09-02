@@ -18,9 +18,9 @@
       class="flex items-center justify-center w-full gap-4 px-6 py-4"
     >
       <slot />
-      <span :class="`${name !== undefined ? 'truncate' : 'hidden'}`">{{
-        name
-      }}</span>
+      <span :class="`${name !== undefined ? 'truncate' : 'hidden'}`">
+        {{ name }}
+      </span>
     </NuxtLink>
   </button>
 </template>

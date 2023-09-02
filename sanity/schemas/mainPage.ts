@@ -60,6 +60,30 @@ export default {
       ],
     },
     {
+      name: 'concert',
+      type: 'object',
+      options: {collapsible: true, collapsed: true},
+
+      fields: [
+        {
+          name: 'title',
+          type: 'localeString',
+          validation: (rule: Rule) => rule.required(),
+        },
+
+        {
+          name: 'text',
+          type: 'localeString',
+          validation: (rule: Rule) => rule.required(),
+        },
+        {
+          name: 'buttonName',
+          type: 'localeString',
+          validation: (rule: Rule) => rule.required(),
+        },
+      ],
+    },
+    {
       name: 'album',
       type: 'object',
       options: {collapsible: true, collapsed: true},
