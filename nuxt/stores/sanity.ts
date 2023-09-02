@@ -32,7 +32,7 @@ export const useSanityStore = defineStore(
     const getConcertPage = async (): Promise<ConcertPage> =>
       sanityFetch<ConcertPage>(
         concertPage,
-        groq`*[_type == "concertPage"][0] { title, poster, description, ticketsText, ticketsLink }`
+        groq`*[_type == "concertPage"][0] { title, poster, description, tickets, instagram }`
       )
 
     const getMagazinePage = async (): Promise<MagazinePage> =>

@@ -1,56 +1,18 @@
 <template>
   <div
-    class="flex flex-col items-center justify-between gap-8 p-8 overflow-hidden rounded-lg bg-dark-alt"
+    class="flex flex-col items-center justify-between gap-8 p-8 overflow-hidden rounded-lg bg-light"
   >
-    <!-- <div class="">
-      <Swiper
-        :modules="[SwiperPagination, SwiperMousewheel]"
-        :mousewheel="{
-          forceToAxis: true,
-        }"
-        :pagination="{
-          el: '#movie-pagination',
-        }"
-        id="swiper"
-        :slides-per-view="1"
-        :space-between="32"
-        :breakpoints="{
-          768: {
-            slidesPerView: 2,
-          },
-        }"
-        class="h-full"
-      >
-        <SwiperSlide
-          v-for="image in movie.images"
-          :key="image.asset._ref"
-          class="page"
-        >
-          <SanityImage
-            rel="preload"
-            height="327"
-            :asset-id="image.asset._ref"
-            class="image"
-          />
-        </SwiperSlide>
-      </Swiper>
-    </div>
-    <div id="movie-pagination" class="flex justify-center w-full"></div> -->
-
-    <!-- <SanityImage
-      :asset-id="movie.images[0].asset._ref"
-      height="327"
-      class="object-cover rounded-lg aspect-square shadow-default sm:hidden"
-    /> -->
     <div
       class="flex flex-col justify-between w-full gap-8 sm:gap-0 sm:flex-row"
     >
       <div class="flex flex-col gap-8 sm:flex-row">
         <div class="flex flex-col justify-center gap-2">
-          <h2 class="line-clamp-2 sm:line-clamp-1 w-fit section-title">
+          <h2
+            class="text-hl-blue line-clamp-2 sm:line-clamp-1 w-fit section-title"
+          >
             {{ getLocalizedString($i18n.locale, concert.title) }}
           </h2>
-          <p class="line-clamp-2 sm:line-clamp-1 section-text">
+          <p class="line-clamp-2 sm:line-clamp-1 section-text text-dark">
             {{ getLocalizedString($i18n.locale, concert.text) }}
           </p>
         </div>
@@ -58,7 +20,7 @@
       <Button
         :to="localePath('/concert', $i18n.locale)"
         :name="getLocalizedString($i18n.locale, concert.buttonName)"
-        class="btn-light h-fit hover:-translate-y-1"
+        class="btn-dark-outline h-fit hover:-translate-y-1"
       >
         <NuxtIcon name="feather/arrow-right-circle" filled />
       </Button>

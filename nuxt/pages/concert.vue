@@ -10,6 +10,35 @@
         rel="preload"
         class="mx-auto rounded-lg shadow-default aspect-square"
       />
+      <div
+        class="flex flex-col sm:flex-row gap-4 [&>*]:w-full w-full"
+        v-if="concert.tickets.enabled || concert.instagram.enabled"
+      >
+        <Button
+          :name="getLocalizedString($i18n.locale, concert.tickets.text)"
+          :class="
+            concert.tickets.look === 'important' ? 'btn-highlight' : 'btn-light'
+          "
+          :to="concert.tickets.link"
+          target="_blank"
+          v-if="concert.tickets.enabled"
+        >
+          <NuxtIcon name="feather/dollar-sign" filled />
+        </Button>
+        <Button
+          :name="getLocalizedString($i18n.locale, concert.instagram.text)"
+          :class="
+            concert.instagram.look === 'important'
+              ? 'btn-highlight'
+              : 'btn-light'
+          "
+          :to="concert.instagram.link"
+          target="_blank"
+          v-if="concert.instagram.enabled"
+        >
+          <NuxtIcon name="social/instagram" filled />
+        </Button>
+      </div>
       <div class="">
         <PortableText
           :value="getLocalizedPortableText($i18n.locale, concert.description)"
@@ -26,17 +55,6 @@
         <h2 class="section-title">
           {{ getLocalizedString($i18n.locale, concert.title) }}
         </h2>
-      </div> -->
-
-<!-- <div class="flex flex-col sm:flex-row gap-4 [&>*]:w-full w-full">
-        <Button
-          :name="getLocalizedString($i18n.locale, concert.ticketsText)"
-          class="btn-light"
-          :to="concert.ticketsLink"
-          target="_blank"
-        >
-          <NuxtIcon name="feather/dollar-sign" filled />
-        </Button>
       </div> -->
 
 <script lang="ts" setup>

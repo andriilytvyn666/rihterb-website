@@ -60,8 +60,18 @@ type ConcertPage = {
   title: localeString
   poster: image
   description: localePortableText
-  ticketsText: localeString
-  ticketsLink: string
+  tickets: {
+    enabled: boolean
+    look: string
+    text: localeString
+    link: string
+  }
+  instagram: {
+    enabled: boolean
+    look: default
+    text: localeString
+    link: string
+  }
 }
 
 type MainPage = {
