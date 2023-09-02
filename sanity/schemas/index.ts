@@ -10,8 +10,11 @@ import buttonLink from './buttonLink'
 import magazinePage from './magazinePage'
 import navLink from './navLink'
 import moviePage from './moviePage'
+import websiteBlocks from './websiteBlocks'
+import pageBlock from './pageBlock'
 
 export const schemaTypes = [
+  pageBlock,
   localeString,
   moviePage,
   localePortableText,
@@ -24,4 +27,5 @@ export const schemaTypes = [
   albumPage,
   magazinePage,
   navLink,
+  websiteBlocks,
 ]

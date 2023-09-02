@@ -11,6 +11,7 @@ import {
   InfoOutlineIcon,
   HomeIcon,
   SchemaIcon,
+  BlockElementIcon,
 } from '@sanity/icons'
 import {vercelDeployTool} from 'sanity-plugin-vercel-deploy'
 
@@ -27,6 +28,10 @@ export default defineConfig({
         S.list()
           .title('Main')
           .items([
+            S.listItem()
+              .title('Website Blocks')
+              .icon(BlockElementIcon)
+              .child(S.document().schemaType('websiteBlocks').documentId('websiteBlocks')),
             S.listItem()
               .title('Main Page')
               .icon(HomeIcon)
@@ -71,6 +76,7 @@ export default defineConfig({
                   'magazinePage',
                   'navLink',
                   'moviePage',
+                  'websiteBlocks',
                 ].includes(`${listItem.getId()}`)
             ),
           ]),

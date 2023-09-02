@@ -163,3 +163,12 @@ type localePortableText = {
 type image = {
   asset: { _ref: string }
 }
+
+type pageBlock = {
+  name: string
+  visible: boolean
+}
+
+type WebsiteBlocks = {
+  order: pageBlock[]
+}
