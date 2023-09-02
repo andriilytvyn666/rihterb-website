@@ -44,7 +44,7 @@ h-[24rem]
       class="object-cover rounded-lg aspect-square shadow-default sm:hidden"
     /> -->
     <div
-      class="flex flex-col justify-between w-full gap-8 sm:gap-0 sm:flex-row"
+      class="flex flex-col items-center justify-between w-full gap-8 sm:gap-0 sm:flex-row"
     >
       <div class="flex flex-col gap-8 sm:flex-row">
         <div class="flex flex-col justify-center gap-2">

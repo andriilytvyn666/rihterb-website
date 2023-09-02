@@ -51,7 +51,7 @@
       </div>
       <div id="magazine-pagination" class="flex justify-center w-full"></div>
       <div
-        class="flex flex-col justify-between w-full gap-8 sm:gap-0 sm:flex-row"
+        class="flex flex-col items-center justify-between w-full gap-8 sm:gap-0 sm:flex-row"
       >
         <div class="flex flex-col items-center gap-8 sm:flex-row">
           <div class="flex flex-col justify-center gap-2">

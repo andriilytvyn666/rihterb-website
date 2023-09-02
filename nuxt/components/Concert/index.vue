@@ -1,9 +1,9 @@
 <template>
   <div
-    class="flex flex-col items-center justify-between gap-8 p-5 overflow-hidden rounded-lg sm:p-8 bg-light"
+    class="flex flex-col justify-between gap-8 p-5 overflow-hidden rounded-lg sm:p-8 bg-light"
   >
     <div
-      class="flex flex-col justify-between w-full gap-8 sm:gap-0 sm:flex-row"
+      class="flex flex-col items-start justify-between w-full gap-8 sm:items-center sm:gap-0 sm:flex-row"
     >
       <div class="flex flex-col gap-8 sm:flex-row">
         <div class="flex flex-col justify-center gap-2">
