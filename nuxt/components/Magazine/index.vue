@@ -1,7 +1,7 @@
 <template>
   <div class="flex">
     <div
-      class="flex flex-col items-center justify-between gap-8 p-8 overflow-hidden rounded-lg bg-dark-alt"
+      class="flex flex-col items-center justify-between gap-8 p-5 overflow-hidden rounded-lg sm:p-8 bg-dark-alt"
     >
       <!-- <SanityImage
         :asset-id="magazine.images[0].asset._ref"

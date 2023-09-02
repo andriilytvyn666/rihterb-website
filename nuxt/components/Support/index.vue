@@ -1,5 +1,5 @@
 <template>
-  <div class="p-8 rounded-lg bg-dark-alt">
+  <div class="p-5 rounded-lg sm:p-8 bg-dark-alt">
     <div
       class="flex flex-col justify-between w-full gap-8 sm:gap-0 sm:flex-row"
     >

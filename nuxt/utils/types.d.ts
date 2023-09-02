@@ -23,13 +23,6 @@ type Magazine = {
   buttonName: localeString
 }
 
-type Minecraft = {
-  images: image[]
-  title: localeString
-  text: localeString
-  buttonName: localeString
-}
-
 type Movie = {
   images: image[]
   title: localeString
@@ -112,20 +105,6 @@ type SupportPage = {
     name: localeString
     link: string
   }
-}
-
-type MinecraftPage = {
-  title: localeString
-  text: localePortableText
-  features: localeString[]
-  ip: string
-  buttons: {
-    monitoring: localeString
-    map: buttonLink
-    discord: buttonLink
-    join: buttonLink
-  }
-  image: image
 }
 
 type AlbumPage = {

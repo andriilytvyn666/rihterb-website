@@ -41,10 +41,6 @@ export default defineConfig({
               .icon(PlayIcon)
               .child(S.document().schemaType('concertPage').documentId('concertPage')),
             S.listItem()
-              .title('Minecraft Page')
-              .icon(SchemaIcon)
-              .child(S.document().schemaType('minecraftPage').documentId('minecraftPage')),
-            S.listItem()
               .title('Support Page')
               .icon(HeartFilledIcon)
               .child(S.document().schemaType('supportPage').documentId('supportPage')),
@@ -76,7 +72,6 @@ export default defineConfig({
                   'footer',
                   'header',
                   'albumPage',
-                  'minecraftPage',
                   'magazinePage',
                   'navLink',
                   'moviePage',

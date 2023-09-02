@@ -7,7 +7,6 @@ export const useSanityStore = defineStore(
     const footer = ref<Footer>()
     const mainPage = ref<MainPage>()
     const supportPage = ref<SupportPage>()
-    const minecraftPage = ref<MinecraftPage>()
     const albumPage = ref<AlbumPage>()
     const magazinePage = ref<MagazinePage>()
     const moviePage = ref<MoviePage>()
@@ -50,13 +49,7 @@ export const useSanityStore = defineStore(
     const getMainPage = async (): Promise<MainPage> =>
       sanityFetch<MainPage>(
         mainPage,
-        groq`*[_type == "mainPage"][0] { about, concert, album, magazine, movie, minecraft, support }`
-      )
-
-    const getMinecraftPage = async (): Promise<MinecraftPage> =>
-      sanityFetch<MinecraftPage>(
-        minecraftPage,
-        groq`*[_type == "minecraftPage"][0] { title, text, features, ip, buttons, image }`
+        groq`*[_type == "mainPage"][0] { about, concert, album, magazine, movie, support }`
       )
 
     const getSupportPage = async (): Promise<SupportPage> =>
@@ -103,7 +96,6 @@ export const useSanityStore = defineStore(
 
     return {
       getConcertPage,
-      getMinecraftPage,
       getMainPage,
       getSupportPage,
       getHeader,
