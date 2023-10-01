@@ -17,6 +17,7 @@
         w="500"
         h="500"
         class="w-full h-full rounded-lg sm:hidden shadow-default"
+        alt="Nine lives album cover"
       />
       <div class="flex flex-col w-full gap-2 sm:justify-center">
         <h2 class="line-clamp-2 sm:line-clamp-1 w-fit section-title">
