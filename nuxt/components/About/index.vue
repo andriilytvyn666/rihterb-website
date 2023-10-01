@@ -5,7 +5,7 @@
       w="1000"
       h="1000"
       rel="preload"
-      class="rounded-lg w-[20.875rem] max-h-[20.875rem] sm:w-[17.875rem] sm:max-h-[17.875rem] shadow-default aspect-square"
+      class="rounded-lg max-h-[20rem] sm:max-h-[16rem] md:max-h-[17.875rem] shadow-default aspect-square"
       alt="Vasily Richter"
     />
     <div class="flex flex-col justify-between gap-8 sm:gap-0">
@@ -19,7 +19,7 @@
       </div>
       <p class="text-left text-body-md-600 lg:text-body-lg-600 text-light">
         <span class="hidden select-text sm:inline">
-          <p class="line-clamp-4">
+          <p class="line-clamp-3">
             {{ getLocalizedString($i18n.locale, about.description) }}
           </p>
         </span>
