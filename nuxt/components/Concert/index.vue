@@ -21,6 +21,7 @@
         :to="localePath('/concert', $i18n.locale)"
         :name="getLocalizedString($i18n.locale, concert.buttonName)"
         class="btn-dark-outline h-fit hover:-translate-y-1"
+        aria-label="more"
       >
         <NuxtIcon name="feather/arrow-right-circle" filled />
       </Button>
@@ -29,9 +30,10 @@
 </template>
 
 <script lang="ts" setup>
-const store = useSanityStore()
-const concert = (await store.getMainPage()).concert
 const localePath = useLocalePath()
+
+const sanityStore = useSanityStore()
+const concert = (await sanityStore.getMainPage()).concert
 </script>
 
 <style lang="postcss">

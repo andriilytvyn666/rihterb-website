@@ -25,9 +25,8 @@
 </template>
 
 <script lang="ts" setup>
-const store = useSanityStore()
-
-const support = (await store.getMainPage()).support
-
 const localePath = useLocalePath()
+
+const sanityStore = useSanityStore()
+const support = (await sanityStore.getMainPage()).support
 </script>

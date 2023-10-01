@@ -2,10 +2,11 @@
   <div class="flex flex-col items-center gap-8 sm:items-stretch sm:flex-row">
     <SanityImage
       :asset-id="about.photo.asset._ref"
-      w="334"
-      h="334"
+      w="1000"
+      h="1000"
       rel="preload"
-      class="rounded-lg w-[20.875rem] h-[20.875rem] sm:w-[17.875rem] sm:h-[17.875rem] shadow-default"
+      class="rounded-lg max-h-[20rem] sm:max-h-[16rem] md:max-h-[17.875rem] shadow-default aspect-square"
+      alt="Vasily Richter"
     />
     <div class="flex flex-col justify-between gap-8 sm:gap-0">
       <div class="flex flex-col text-center sm:text-left">
@@ -16,9 +17,9 @@
           {{ getLocalizedString($i18n.locale, about.subtitle) }}
         </h3>
       </div>
-      <p class="text-center text-body-lg-600 text-light sm:text-left">
+      <p class="text-left text-body-md-600 lg:text-body-lg-600 text-light">
         <span class="hidden select-text sm:inline">
-          <p class="line-clamp-4">
+          <p class="line-clamp-3">
             {{ getLocalizedString($i18n.locale, about.description) }}
           </p>
         </span>
@@ -49,6 +50,6 @@
 </template>
 
 <script lang="ts" setup>
-const store = useSanityStore()
-const about = (await store.getMainPage()).about
+const sanityStore = useSanityStore()
+const about = (await sanityStore.getMainPage()).about
 </script>

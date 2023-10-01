@@ -4,13 +4,24 @@
       <h2 class="text-center text-hl-yellow text-h-lg-700 md:hidden">
         {{ getLocalizedString($i18n.locale, album.title) }}
       </h2>
-
-      <div class="flex flex-col gap-8 items-center md:w-[23.5rem]">
-        <SanityImage
+      <div
+        class="flex flex-col gap-8 items-center justify-center md:w-[23.5rem]"
+      >
+        <!-- <SanityImage
           rel="preload"
           :asset-id="album.image.asset._ref"
           class="rounded-lg shadow-default aspect-square w-[20.875rem] md:w-full"
-        />
+        /> -->
+        <div class="flex flex-col text-left">
+          <div class="flex flex-col gap-5 text-body-md-600 lg:text-body-md-600">
+            <h2 class="hidden section-title md:text-center md:inline">
+              {{ getLocalizedString($i18n.locale, album.title) }}
+            </h2>
+            <SanityContent
+              :blocks="getLocalizedPortableText($i18n.locale, album.text)"
+            />
+          </div>
+        </div>
         <div class="flex flex-col w-full gap-4 sm:flex-row text-dark">
           <Button
             class="btn-light sm:w-full hover:-translate-y-1"
@@ -29,16 +40,6 @@
             <NuxtIcon name="feather/music" filled />
           </Button>
         </div>
-        <div class="flex flex-col text-center md:text-left">
-          <div class="flex flex-col gap-5 text-body-lg-600">
-            <h2 class="hidden section-title md:text-center md:inline">
-              {{ getLocalizedString($i18n.locale, album.title) }}
-            </h2>
-            <SanityContent
-              :blocks="getLocalizedPortableText($i18n.locale, album.text)"
-            />
-          </div>
-        </div>
       </div>
       <iframe
         class="w-full md:w-[28.75rem] min-h-[30rem]"
@@ -55,7 +56,8 @@
 </template>
 
 <script lang="ts" setup>
-const store = useSanityStore()
-const album = await store.getAlbumPage()
 const localePath = useLocalePath()
+
+const sanityStore = useSanityStore()
+const album = await sanityStore.getAlbumPage()
 </script>

@@ -45,6 +45,7 @@
 </template>
 <script lang="ts" setup>
 const localePath = useLocalePath()
-const store = useSanityStore()
-const movie = await store.getMoviePage()
+
+const sanityStore = useSanityStore()
+const movie = await sanityStore.getMoviePage()
 </script>

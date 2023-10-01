@@ -32,12 +32,12 @@ h-[24rem]
             height="327"
             :asset-id="image.asset._ref"
             class="image"
+            alt="Movie Image"
           />
         </SwiperSlide>
       </Swiper>
     </div>
     <div id="movie-pagination" class="flex justify-center w-full"></div>
-
     <!-- <SanityImage
       :asset-id="movie.images[0].asset._ref"
       height="327"
@@ -68,9 +68,10 @@ h-[24rem]
 </template>
 
 <script lang="ts" setup>
-const store = useSanityStore()
-const movie = (await store.getMainPage()).movie
 const localePath = useLocalePath()
+
+const sanityStore = useSanityStore()
+const movie = (await sanityStore.getMainPage()).movie
 </script>
 
 <style lang="postcss">

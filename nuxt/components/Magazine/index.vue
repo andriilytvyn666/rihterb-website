@@ -45,6 +45,7 @@
               height="725"
               :asset-id="image.asset._ref"
               class="image"
+              alt="Magazine page"
             />
           </SwiperSlide>
         </Swiper>
@@ -76,9 +77,10 @@
 </template>
 
 <script lang="ts" setup>
-const store = useSanityStore()
-const magazine = (await store.getMainPage()).magazine
 const localePath = useLocalePath()
+
+const sanityStore = useSanityStore()
+const magazine = (await sanityStore.getMainPage()).magazine
 </script>
 
 <style lang="postcss" scoped>

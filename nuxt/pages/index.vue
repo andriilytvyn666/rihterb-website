@@ -30,7 +30,6 @@
 </template>
 
 <script setup lang="ts">
-const store = useSanityStore()
-
-const blocks = await store.getWebsiteBlocks()
+const sanityStore = useSanityStore()
+const blocks = await sanityStore.getWebsiteBlocks()
 </script>

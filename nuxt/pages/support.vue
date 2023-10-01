@@ -1,7 +1,7 @@
 <template>
   <NuxtLayout name="wrapper">
     <div class="flex flex-col h-full grow">
-      <div class="flex flex-col gap-8 justify-center grow">
+      <div class="flex flex-col justify-center gap-8 grow">
         <div class="flex justify-center">
           <SanityImage
             rel="preload"
@@ -32,8 +32,8 @@
             class="z-10 right-card sm:middle-card"
           />
         </div>
-        <div class="flex flex-col gap-8 items-center w-full" id="control">
-          <div class="flex items-center flex-col gap-5 text-center">
+        <div class="flex flex-col items-center w-full gap-8" id="control">
+          <div class="flex flex-col items-center gap-5 text-center">
             <h2 class="text-hl-yellow text-h-lg-700">
               {{ getLocalizedString($i18n.locale, support.title) }}
             </h2>
@@ -91,10 +91,8 @@
 </template>
 
 <script lang="ts" setup>
-import { useSanityStore } from '../stores/sanity'
-
-const store = useSanityStore()
-const support = await store.getSupportPage()
+const sanityStore = useSanityStore()
+const support = await sanityStore.getSupportPage()
 </script>
 
 <style lang="postcss" scoped>

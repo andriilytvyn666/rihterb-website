@@ -23,11 +23,8 @@
 </template>
 
 <script setup lang="ts">
-import { useSanityStore } from '../../stores/sanity'
-
-const store = useSanityStore()
-
-const links = await store.getFooter()
+const sanityStore = useSanityStore()
+const links = await sanityStore.getFooter()
 </script>
 
 <style class="postcss">
