@@ -2,10 +2,11 @@
   <div class="flex flex-col items-center gap-8 sm:items-stretch sm:flex-row">
     <SanityImage
       :asset-id="about.photo.asset._ref"
-      w="334"
-      h="334"
+      w="512"
+      h="512"
       rel="preload"
       class="rounded-lg w-[20.875rem] h-[20.875rem] sm:w-[17.875rem] sm:h-[17.875rem] shadow-default"
+      alt="Vasily Richter"
     />
     <div class="flex flex-col justify-between gap-8 sm:gap-0">
       <div class="flex flex-col text-center sm:text-left">
@@ -49,6 +50,6 @@
 </template>
 
 <script lang="ts" setup>
-const store = useSanityStore()
-const about = (await store.getMainPage()).about
+const sanityStore = useSanityStore()
+const about = (await sanityStore.getMainPage()).about
 </script>

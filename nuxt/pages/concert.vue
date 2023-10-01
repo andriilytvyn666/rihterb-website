@@ -49,29 +49,14 @@
   </NuxtLayout>
 </template>
 
-<!-- <div
-        class="flex flex-col items-center w-full gap-5 text-center text-body-lg-600"
-      >
-        <h2 class="section-title">
-          {{ getLocalizedString($i18n.locale, concert.title) }}
-        </h2>
-      </div> -->
-
 <script lang="ts" setup>
 import { PortableText } from '@portabletext/vue'
 
-// const localePath = useLocalePath()
-const store = useSanityStore()
-const concert = await store.getConcertPage()
+const sanityStore = useSanityStore()
+const concert = await sanityStore.getConcertPage()
 
+// TODO: Figure out types
 const customComponents = {
-  // types: {
-  //   callToAction: ({ value, isInline }, { slots }) =>
-  //     isInline
-  //       ? h('a', { href: value.url }, value.text)
-  //       : h('div', { class: 'callToAction' }, value.text),
-  // },
-
   marks: {
     link: ({ value }, { slots }) => {
       const rel = !value.href.startsWith('/')

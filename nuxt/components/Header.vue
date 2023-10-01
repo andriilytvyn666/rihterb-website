@@ -15,7 +15,7 @@
         {{ getLocalizedString($i18n.locale, header.navLinks[1].name) }}
       </NuxtLink>
     </nav>
-    <NuxtLink :to="localePath('/', $i18n.locale)">
+    <NuxtLink :to="localePath('/', $i18n.locale)" aria-label="Homepage">
       <SanityImage
         rel="preload"
         :asset-id="header.logo.asset._ref"
@@ -23,6 +23,7 @@
         height="96"
         id="logo"
         class="rounded-full w-9 h-9"
+        alt="logo"
       />
     </NuxtLink>
     <button
@@ -68,9 +69,10 @@
 
 <script lang="ts" setup>
 const { locale } = useI18n()
-const store = useSanityStore()
-const header = await store.getHeader()
 const localePath = useLocalePath()
+
+const sanityStore = useSanityStore()
+const header = await sanityStore.getHeader()
 
 const getLink = (link: string) => {
   if (link.startsWith('https://')) {

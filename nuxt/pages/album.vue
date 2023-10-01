@@ -55,7 +55,8 @@
 </template>
 
 <script lang="ts" setup>
-const store = useSanityStore()
-const album = await store.getAlbumPage()
 const localePath = useLocalePath()
+
+const sanityStore = useSanityStore()
+const album = await sanityStore.getAlbumPage()
 </script>

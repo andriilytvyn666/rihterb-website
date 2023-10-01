@@ -84,7 +84,6 @@
 <script lang="ts" setup>
 const clientStore = useClientStore()
 
-const store = useSanityStore()
-const magazine = await store.getMagazinePage()
-await store.getMainPage()
+const sanityStore = useSanityStore()
+const magazine = await sanityStore.getMagazinePage()
 </script>

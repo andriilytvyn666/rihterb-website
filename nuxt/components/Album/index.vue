@@ -9,6 +9,7 @@
         w="80"
         h="80"
         class="hidden rounded-lg sm:flex sm:w-20 sm:h-20 shadow-default"
+        alt="Nine lives album cover"
       />
       <SanityImage
         rel="preload"
@@ -37,7 +38,8 @@
 </template>
 
 <script lang="ts" setup>
-const store = useSanityStore()
-const album = (await store.getMainPage()).album
 const localePath = useLocalePath()
+
+const sanityStore = useSanityStore()
+const album = (await sanityStore.getMainPage()).album
 </script>

@@ -15,7 +15,7 @@ export default {
       fields: [
         {
           name: 'photo',
-          description: '334 x 334 webp',
+          description: '512 x 512 webp',
           type: 'image',
           validation: (rule: Rule) => rule.required(),
           options: {accept: 'image/webp'},

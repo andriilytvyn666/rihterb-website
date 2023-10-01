@@ -32,17 +32,6 @@
 <script lang="ts" setup>
 defineRobotMeta()
 
-const store = useSanityStore()
-
-await store.getMainPage()
-await store.getConcertPage()
-await store.getMoviePage()
-await store.getAlbumPage()
-await store.getMagazinePage()
-await store.getSupportPage()
-await store.getHeader()
-await store.getFooter()
-
 useSchemaOrg([
   defineWebSite({
     name: 'Ріхтер',

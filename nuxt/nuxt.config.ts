@@ -24,7 +24,7 @@ export default defineNuxtConfig({
     '@vueuse/nuxt',
     '@vueuse/motion/nuxt',
   ],
-  plugins: [{ src: '~/plugins/vercel.ts', mode: 'client' }],
+  // plugins: [{ src: '~/plugins/vercel.ts', mode: 'client' }],
   runtimeConfig: {
     public: {
       siteUrl: process.env.NUX_PUBLIC_SITE_URL || 'https://rihterb.pp.ua',
