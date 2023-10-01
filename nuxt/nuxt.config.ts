@@ -11,7 +11,7 @@ export default defineNuxtConfig({
     '@nuxtjs/tailwindcss',
     'nuxt-swiper',
     'nuxt-icons',
-    '@nuxtjs/i18n',
+    '@nuxtjs/i18n-edge',
     '@nuxt/image-edge',
     [
       '@pinia/nuxt',
