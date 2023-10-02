@@ -17,5 +17,4 @@
 ## Features
 - i18n support (Ukrainian, English)
 - Responsive design
-- Subtle animations
-- Content is managed using CMS
+- Content is managed using Sanity CMS
