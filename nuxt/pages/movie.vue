@@ -1,7 +1,7 @@
 <template>
   <NuxtLayout name="wrapper">
     <div
-      class="flex flex-col items-center justify-center gap-8 grow [&>*]:md:w-[43.75rem]"
+      class="flex flex-col items-center justify-center gap-8 my-auto [&>*]:md:w-[43.75rem]"
     >
       <div
         class="flex flex-col items-center w-full gap-5 text-center text-body-lg-600"
