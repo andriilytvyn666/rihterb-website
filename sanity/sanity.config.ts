@@ -31,39 +31,67 @@ export default defineConfig({
             S.listItem()
               .title('Website Blocks')
               .icon(BlockElementIcon)
-              .child(S.document().schemaType('websiteBlocks').documentId('websiteBlocks')),
+              .child(
+                S.document()
+                  .title('Website Blocks')
+                  .schemaType('websiteBlocks')
+                  .documentId('websiteBlocks')
+              ),
             S.listItem()
               .title('Main Page')
               .icon(HomeIcon)
-              .child(S.document().schemaType('mainPage').documentId('mainPage')),
+              .child(S.document().title('Main Page').schemaType('mainPage').documentId('mainPage')),
             S.listItem()
               .title('Concert Page')
               .icon(PlayIcon)
-              .child(S.document().schemaType('concertPage').documentId('concertPage')),
+              .child(
+                S.document()
+                  .title('Concert Page')
+                  .schemaType('concertPage')
+                  .documentId('concertPage')
+              ),
             S.listItem()
               .title('Support Page')
               .icon(HeartFilledIcon)
-              .child(S.document().schemaType('supportPage').documentId('supportPage')),
+              .child(
+                S.document()
+                  .title('Support Page')
+                  .schemaType('supportPage')
+                  .documentId('supportPage')
+              ),
             S.listItem()
               .title('Album Page')
               .icon(BlockContentIcon)
-              .child(S.document().schemaType('albumPage').documentId('albumPage')),
+              .child(
+                S.document().title('Album Page').schemaType('albumPage').documentId('albumPage')
+              ),
             S.listItem()
               .title('Magazine Page')
               .icon(ImageIcon)
-              .child(S.document().schemaType('magazinePage').documentId('magazinePage')),
+              .child(
+                S.document()
+                  .title('Magazine Page')
+                  .schemaType('magazinePage')
+                  .documentId('magazinePage')
+              ),
             S.listItem()
               .title('Movie Page')
               .icon(ImageIcon)
-              .child(S.document().schemaType('moviePage').documentId('moviePage')),
+              .child(
+                S.document().title('Movie Page').schemaType('moviePage').documentId('moviePage')
+              ),
             S.listItem()
               .title('Shared - Header')
               .icon(InfoOutlineIcon)
-              .child(S.document().schemaType('header').documentId('header')),
+              .child(
+                S.document().title('Shared - Header').schemaType('header').documentId('header')
+              ),
             S.listItem()
               .title('Shared - Footer')
               .icon(LinkIcon)
-              .child(S.document().schemaType('footer').documentId('footer')),
+              .child(
+                S.document().title('Shared - Footer').schemaType('footer').documentId('footer')
+              ),
             ...S.documentTypeListItems().filter(
               (listItem) =>
                 ![
