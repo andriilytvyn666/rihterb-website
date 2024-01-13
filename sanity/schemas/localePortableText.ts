@@ -15,7 +15,16 @@ export default {
     title: lang.title,
     name: lang.id,
     type: 'array',
-    of: [{type: 'block'}],
+    of: [
+      {
+        type: 'block',
+        styles: [],
+        lists: [],
+        marks: {
+          decorators: [],
+        },
+      },
+    ],
     fieldset: lang.id === defaultLanguage ? null : 'translations',
   })),
 }

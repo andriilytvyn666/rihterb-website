@@ -11,8 +11,8 @@ export default defineNuxtConfig({
     '@nuxtjs/tailwindcss',
     'nuxt-swiper',
     'nuxt-icons',
-    '@nuxtjs/i18n-edge',
-    '@nuxt/image-edge',
+    '@nuxtjs/i18n',
+    '@nuxt/image',
     [
       '@pinia/nuxt',
       {
@@ -29,6 +29,10 @@ export default defineNuxtConfig({
     public: {
       siteUrl: process.env.NUX_PUBLIC_SITE_URL || 'https://rihterb.pp.ua',
     },
+  },
+  devServer: {
+    host: '0.0.0.0',
+    port: 3000,
   },
   gtag: {
     id: 'G-LMTHM8SJTC',
@@ -68,7 +72,6 @@ export default defineNuxtConfig({
       cookieKey: 'i18n_redirected',
       redirectOn: 'root',
     },
-    vueI18n: './i18n.config.ts',
     locales: [
       {
         name: 'English',

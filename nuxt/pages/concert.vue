@@ -53,13 +53,13 @@
 </template>
 
 <script lang="ts" setup>
-import { PortableText } from '@portabletext/vue'
+import { PortableText, type PortableTextComponents } from '@portabletext/vue'
 
 const sanityStore = useSanityStore()
 const concert = await sanityStore.getConcertPage()
 
 // TODO: Figure out types
-const customComponents = {
+const customComponents: PortableTextComponents = {
   marks: {
     link: ({ value }, { slots }) => {
       const rel = !value.href.startsWith('/')
