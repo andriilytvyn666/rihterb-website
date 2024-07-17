@@ -1,8 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  // extends: ['nuxt-seo-kit'],
   modules: [
-    'nuxt-gtag', // 'nuxt-simple-sitemap',
+    'nuxt-gtag',
     'nuxt-simple-robots',
     'nuxt-schema-org',
     '@nuxtjs/tailwindcss',
@@ -20,9 +19,9 @@ export default defineNuxtConfig({
     '@vueuse/nuxt',
     '@vueuse/motion/nuxt',
     '@nuxt/eslint',
+    'nuxt-icon-tw',
   ],
 
-  // plugins: [{ src: '~/plugins/vercel.ts', mode: 'client' }],
   runtimeConfig: {
     public: {
       siteUrl: process.env.NUX_PUBLIC_SITE_URL || 'https://rihterb.pp.ua',
@@ -40,10 +39,6 @@ export default defineNuxtConfig({
 
   imports: {
     dirs: ['stores'],
-  },
-
-  robots: {
-    sitemap: ['/sitemap.xml'],
   },
 
   schemaOrg: {
