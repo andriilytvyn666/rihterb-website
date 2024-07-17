@@ -2,17 +2,17 @@
   <header class="flex items-center justify-between" id="header">
     <nav class="hidden gap-4" id="left">
       <NuxtLink
-        :to="getLink(header.navLinks[0].link)"
+        :to="getLink(header.navLinksLeft[0].link)"
         class="hover:-translate-y-1"
       >
-        {{ getLocalizedString($i18n.locale, header.navLinks[0].name) }}
+        {{ getLocalizedString($i18n.locale, header.navLinksLeft[0].name) }}
       </NuxtLink>
       <span class="separator">/</span>
       <NuxtLink
-        :to="getLink(header.navLinks[1].link)"
+        :to="getLink(header.navLinksLeft[1].link)"
         class="hover:-translate-y-1"
       >
-        {{ getLocalizedString($i18n.locale, header.navLinks[1].name) }}
+        {{ getLocalizedString($i18n.locale, header.navLinksLeft[1].name) }}
       </NuxtLink>
     </nav>
     <NuxtLink :to="localePath('/', $i18n.locale)" aria-label="Homepage">
@@ -52,16 +52,20 @@
       <span class="separator">/</span>
       <NuxtLink
         target="_blank"
-        :to="header.listenLink"
+        :to="header.navLinksRight[0].link"
         class="hover:-translate-y-1"
-        >{{ $t('header.listen') }}</NuxtLink
+        >{{
+          getLocalizedString($i18n.locale, header.navLinksRight[0].name)
+        }}</NuxtLink
       >
       <span class="separator">/</span>
       <NuxtLink
         target="_blank"
-        :to="header.socialsLink"
+        :to="header.navLinksRight[1].link"
         class="hover:-translate-y-1"
-        >{{ $t('header.socials') }}</NuxtLink
+        >{{
+          getLocalizedString($i18n.locale, header.navLinksRight[1].name)
+        }}</NuxtLink
       >
     </nav>
   </header>

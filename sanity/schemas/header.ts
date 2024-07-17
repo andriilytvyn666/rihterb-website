@@ -7,27 +7,24 @@ export default {
   fields: [
     {
       name: 'logo',
-      description: '48 x 48 webp',
+      description: 'розмір 48 x 48 або більше',
       type: 'image',
       validation: (rule: Rule) => rule.required(),
-      options: {accept: 'image/webp'},
+      options: {accept: 'image/*'},
     },
     {
-      name: 'navLinks',
+      name: 'navLinksLeft',
       description: 'обмеження - 2 лінки',
       type: 'array',
       of: [{type: 'navLink'}],
       validation: (rule: Rule) => rule.required().max(2).min(2),
     },
     {
-      name: 'listenLink',
-      type: 'string',
-      validation: (rule: Rule) => rule.required(),
-    },
-    {
-      name: 'socialsLink',
-      type: 'string',
-      validation: (rule: Rule) => rule.required(),
+      name: 'navLinksRight',
+      description: 'обмеження - 2 лінки',
+      type: 'array',
+      of: [{type: 'navLink'}],
+      validation: (rule: Rule) => rule.required().max(2).min(2),
     },
   ],
 }

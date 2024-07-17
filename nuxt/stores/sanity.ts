@@ -60,7 +60,7 @@ export const useSanityStore = defineStore('sanity-store', () => {
   const getHeader = async (): Promise<Header> =>
     sanityFetch(
       header,
-      groq`*[_type == "header"][0] {logo, navLinks, listenLink, socialsLink }`
+      groq`*[_type == "header"][0] {logo, navLinks, navLinksLeft, navLinksRight, listenLink, socialsLink }`
     )
 
   const getAlbumPage = async (): Promise<AlbumPage> =>

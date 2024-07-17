@@ -139,9 +139,8 @@ type Footer = {
 
 type Header = {
   logo: image
-  navLinks: navLink[]
-  listenLink: string
-  socialsLink: string
+  navLinksLeft: navLink[]
+  navLinksRight: navLink[]
 }
 
 type navLink = {
