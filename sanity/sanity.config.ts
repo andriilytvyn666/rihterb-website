@@ -10,10 +10,8 @@ import {
   ImageIcon,
   InfoOutlineIcon,
   HomeIcon,
-  SchemaIcon,
   BlockElementIcon,
 } from '@sanity/icons'
-import {vercelDeployTool} from 'sanity-plugin-vercel-deploy'
 
 export default defineConfig({
   name: 'default',
@@ -109,7 +107,7 @@ export default defineConfig({
             ),
           ]),
     }),
-    vercelDeployTool(),
+    // vercelDeployTool(),
     visionTool(),
   ],
 
