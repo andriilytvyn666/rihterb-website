@@ -1,11 +1,8 @@
-import eslintPlugin from 'vite-plugin-eslint'
-
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   // extends: ['nuxt-seo-kit'],
   modules: [
-    'nuxt-gtag',
-    'nuxt-simple-sitemap',
+    'nuxt-gtag', // 'nuxt-simple-sitemap',
     'nuxt-simple-robots',
     'nuxt-schema-org',
     '@nuxtjs/tailwindcss',
@@ -19,49 +16,56 @@ export default defineNuxtConfig({
         autoImports: ['defineStore', 'acceptHMRUpdate'],
       },
     ],
-    '@pinia-plugin-persistedstate/nuxt',
     '@nuxtjs/sanity',
     '@vueuse/nuxt',
     '@vueuse/motion/nuxt',
+    '@nuxt/eslint',
   ],
+
   // plugins: [{ src: '~/plugins/vercel.ts', mode: 'client' }],
   runtimeConfig: {
     public: {
       siteUrl: process.env.NUX_PUBLIC_SITE_URL || 'https://rihterb.pp.ua',
     },
   },
+
   devServer: {
     host: '0.0.0.0',
     port: 3000,
   },
+
   gtag: {
     id: 'G-LMTHM8SJTC',
   },
+
   imports: {
     dirs: ['stores'],
   },
+
   robots: {
     sitemap: ['/sitemap.xml'],
   },
+
   schemaOrg: {
     host: 'https://rihterb.pp.ua',
   },
+
   image: {
     sanity: {
       projectId: 'lh08fn64',
       dataset: 'production',
     },
   },
+
   sanity: {
     projectId: 'lh08fn64',
     dataset: 'production',
     apiVersion: '2023-03-07',
     minimal: true,
   },
-  vite: {
-    plugins: [eslintPlugin()],
-  },
+
   css: ['~/assets/css/tailwind.css'],
+
   i18n: {
     baseUrl: 'https://rihterb.pp.ua',
     defaultLocale: 'uk',
@@ -91,4 +95,6 @@ export default defineNuxtConfig({
       },
     ],
   },
+
+  compatibilityDate: '2024-07-17',
 })
