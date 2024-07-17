@@ -12,37 +12,37 @@ module.exports = {
     },
     fontSize: {
       'body-lg-600': [
-        '1.5rem',
+        '1.375rem',
         {
-          lineHeight: '2rem',
+          lineHeight: '1.875rem',
           fontWeight: '600',
         },
       ],
       'body-md-600': [
-        '1.25rem',
+        '1.125rem',
         {
-          lineHeight: '1.75rem',
+          lineHeight: '1.5rem',
           fontWeight: '600',
         },
       ],
       'body-md-500': [
-        '1.25rem',
+        '1.125rem',
         {
-          lineHeight: '1.75rem',
+          lineHeight: '1.625rem',
           fontWeight: '500',
         },
       ],
       'h-lg-700': [
-        '1.875rem',
+        '1.625rem',
         {
-          lineHeight: '2.25rem',
+          lineHeight: '2rem',
           fontWeight: '700',
         },
       ],
       'footer-md-600': [
-        '1rem',
+        '0.875rem',
         {
-          lineHeight: '1.5rem',
+          lineHeight: '1.125rem',
           fontWeight: '600',
         },
       ],

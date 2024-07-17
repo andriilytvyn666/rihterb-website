@@ -10,7 +10,7 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-smooth: never;
-    @apply transition-colors transition-opacity duration-300 ease-in-out;
+    @apply transition-colors duration-300 ease-in-out;
   }
 
   *::-webkit-scrollbar {
@@ -19,7 +19,7 @@
 
   a,
   button {
-    @apply transition-transform duration-300 ease-in-out;
+    @apply transition-all duration-300 ease-in-out;
   }
 
   img {

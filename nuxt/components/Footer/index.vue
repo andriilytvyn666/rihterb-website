@@ -1,15 +1,19 @@
 <template>
   <footer id="footer" v-if="links !== undefined">
-    <div class="flex flex-col items-center justify-between" id="copyright">
+    <div
+      class="flex flex-col items-start justify-between w-full gap-1 px-2 line-clamp-1"
+      id="copyright"
+    >
       <span>{{ $t('copyright') }}</span>
       <a
-        href="https://andriilytvyn.pp.ua"
+        href="https://nneeeooo.pp.ua"
         target="_blank"
-        class="hover:underline"
-        >{{ $t('dev') }}</a
+        class="hover:underline line-clamp-1"
+      >
+        Design & Development by Andrii Lytvyn</a
       >
     </div>
-    <div id="links">
+    <div id="links" class="flex w-full px-2 mx-auto sm:w-fit">
       <FooterIcon name="spotify" :link="links.spotify" />
       <FooterIcon name="youtubemusic" :link="links.youtubemusic" />
       <FooterIcon name="applemusic" :link="links.applemusic" />
@@ -35,7 +39,7 @@ const links = await sanityStore.getFooter()
 #footer {
   @apply h-[8.75rem] sm:h-24 flex flex-col-reverse gap-5;
   @apply items-center justify-center sm:justify-between;
-  @apply mt-8 sm:mt-12;
+  /* @apply mt-8 sm:mt-0; */
 }
 
 @screen sm {

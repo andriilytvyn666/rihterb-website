@@ -8,8 +8,8 @@
       class="rounded-lg max-h-[20rem] sm:max-h-[16rem] md:max-h-[17.875rem] shadow-default aspect-square"
       alt="Vasily Richter"
     />
-    <div class="flex flex-col justify-between gap-8 sm:gap-0">
-      <div class="flex flex-col text-center sm:text-left">
+    <div class="flex flex-col justify-center gap-8 sm:gap-6">
+      <div class="flex flex-col gap-2 text-center sm:text-left">
         <h2 class="section-title">
           {{ getLocalizedString($i18n.locale, about.name) }}
         </h2>
