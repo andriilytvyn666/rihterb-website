@@ -1,7 +1,7 @@
 h-[24rem]
 <template>
   <div
-    class="flex flex-col items-center justify-between gap-8 p-5 overflow-hidden rounded-lg sm:p-8 bg-dark-alt"
+    class="flex flex-col items-center justify-between gap-8 p-5 overflow-hidden rounded-lg sm:p-6 bg-dark-alt"
   >
     <div class="">
       <Swiper
