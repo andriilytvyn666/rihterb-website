@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex flex-col items-center justify-between gap-8 p-5 rounded-lg sm:p-8 sm:gap-0 sm:flex-row bg-dark-alt"
+    class="flex flex-col items-center justify-between gap-8 p-5 rounded-lg sm:p-6 sm:gap-0 sm:flex-row bg-dark-alt"
   >
     <div class="flex flex-col items-center gap-8 sm:flex-row">
       <SanityImage
