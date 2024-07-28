@@ -123,4 +123,8 @@ const magazine = await store.getMagazinePage()
 .fade-leave-to {
   @apply opacity-0;
 }
+
+img {
+  @apply transition-all duration-300 ease-in-out;
+}
 </style>

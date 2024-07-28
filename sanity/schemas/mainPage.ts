@@ -15,10 +15,10 @@ export default {
       fields: [
         {
           name: 'photo',
-          description: '512 x 512 webp',
+          description: 'розмір 512 x 512 або більше',
           type: 'image',
           validation: (rule: Rule) => rule.required(),
-          options: {accept: 'image/webp'},
+          options: {accept: 'image/*'},
         },
         {
           name: 'name',
@@ -91,10 +91,10 @@ export default {
       fields: [
         {
           name: 'image',
-          description: '500 x 500 webp',
+          description: 'розмір 500 x 500 або більше',
           type: 'image',
           validation: (rule: Rule) => rule.required(),
-          options: {accept: 'image/webp'},
+          options: {accept: 'image/*'},
         },
         {
           name: 'title',
@@ -122,13 +122,13 @@ export default {
       fields: [
         {
           name: 'images',
-          description: 'any x 725 webp',
+          description: 'картинки висотою 725 (ширина будь-яка) або більше',
           type: 'array',
           validation: (rule: Rule) => rule.required().min(2).max(10),
           of: [
             {
               type: 'image',
-              options: {accept: 'image/webp'},
+              options: {accept: 'image/*'},
               validation: (rule: Rule) => rule.required(),
             },
           ],
@@ -159,13 +159,13 @@ export default {
       fields: [
         {
           name: 'images',
-          description: 'any x 400 webp',
+          description: 'картинки висотою 400 (ширина будь-яка)',
           type: 'array',
           validation: (rule: Rule) => rule.required().min(2).max(10),
           of: [
             {
               type: 'image',
-              options: {accept: 'image/webp'},
+              options: {accept: 'image/*'},
               validation: (rule: Rule) => rule.required(),
             },
           ],

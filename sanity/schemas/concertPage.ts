@@ -7,9 +7,9 @@ export default {
   fields: [
     {
       name: 'poster',
-      description: '700 x 700 webp',
+      description: 'розмір 700 x 700 або більше',
       type: 'image',
-      options: {accept: 'image/webp'},
+      options: {accept: 'image/*'},
       validation: (rule: Rule) => rule.required(),
     },
     {

@@ -7,9 +7,9 @@ export default {
   fields: [
     {
       name: 'image',
-      description: '376 x 376 webp',
+      description: 'розмір 376 x 376 або більше',
       type: 'image',
-      options: {accept: 'image/webp'},
+      options: {accept: 'image/*'},
       validation: (rule: Rule) => rule.required(),
     },
     {
