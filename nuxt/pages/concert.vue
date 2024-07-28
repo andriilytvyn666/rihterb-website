@@ -1,6 +1,6 @@
 <template>
   <NuxtLayout name="wrapper">
-    <div class="flex flex-col items-center gap-8">
+    <div class="flex flex-col items-center h-full gap-8 my-auto">
       <!-- 43.75rem -->
       <div
         class="flex flex-col items-center justify-center gap-8 grow [&>*]:md:w-[36rem]"

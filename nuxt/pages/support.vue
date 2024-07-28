@@ -42,7 +42,7 @@
             </p>
           </div>
           <div
-            class="flex-row flex gap-4 justify-center flex-wrap [&>*]:w-fit [&>*]:btn-dark-outline"
+            class="md:flex grid grid-cols-2 w-full gap-4 justify-center flex-wrap md:[&>*]:w-fit [&>*]:w-full [&>*]:btn-dark-outline"
           >
             <Button
               :to="support.patreon.link"
