@@ -1,6 +1,6 @@
 <template>
   <NuxtLayout name="wrapper">
-    <div class="flex flex-col gap-8 justify-center my-auto md:flex-row">
+    <div class="flex flex-col justify-center gap-8 my-auto md:flex-row">
       <h2 class="text-center text-hl-yellow text-h-lg-700 md:hidden">
         {{ getLocalizedString($i18n.locale, album.title) }}
       </h2>
@@ -22,8 +22,8 @@
             />
           </div>
         </div>
-        <div class="flex flex-col gap-4 w-full sm:flex-row text-dark">
-          <Button
+        <div class="flex flex-col w-full gap-4 sm:flex-row text-dark">
+          <!-- <Button
             class="btn-light sm:w-full hover:-translate-y-1"
             :to="localePath('/magazine', $i18n.locale)"
             :name="
@@ -31,7 +31,7 @@
             "
           >
             <NuxtIcon name="feather/image" filled />
-          </Button>
+          </Button> -->
           <Button
             :to="album.buttons.listen.link"
             class="btn-highlight sm:w-full hover:-translate-y-1"
