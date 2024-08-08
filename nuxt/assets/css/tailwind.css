@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -36,11 +34,10 @@
   }
 
   ::selection {
-    @apply bg-dark-border-alt;
   }
 
   body {
-    @apply bg-dark;
+    @apply bg-black;
     @apply text-white;
   }
 
@@ -54,29 +51,8 @@
   li {
     @apply select-text;
   }
-}
 
-@layer components {
-  .section-title {
-    @apply text-h-lg-700 text-hl-yellow;
-  }
-
-  .section-text {
-    @apply text-body-md-600 text-light;
-  }
-
-  .btn-dark-outline {
-    @apply border bg-dark border-dark-border hover:bg-dark-alt;
-  }
-  .btn-light-outline {
-    @apply border bg-light border-dark-border hover:bg-light-secondary text-dark;
-  }
-
-  .btn-light {
-    @apply bg-light text-dark hover:bg-light-secondary;
-  }
-
-  .btn-highlight {
-    @apply bg-hl-yellow text-dark hover:bg-hl-yellow-secondary;
+  * {
+    @apply text-body;
   }
 }

@@ -6,7 +6,6 @@ export default defineNuxtConfig({
     'nuxt-schema-org',
     '@nuxtjs/tailwindcss',
     'nuxt-swiper',
-    'nuxt-icons',
     '@nuxtjs/i18n',
     '@nuxt/image',
     [
@@ -20,6 +19,7 @@ export default defineNuxtConfig({
     '@vueuse/motion/nuxt',
     '@nuxt/eslint',
     'nuxt-icon-tw',
+    '@nuxt/fonts',
   ],
 
   runtimeConfig: {

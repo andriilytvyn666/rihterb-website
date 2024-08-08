@@ -1,35 +1,13 @@
 <template>
-  <NuxtLayout name="wrapper">
-    <div v-for="block in blocks.order" :key="block.name">
-      <About
-        v-if="block.name == 'About' && block.visible"
-        class="mb-4 sm:mb-6"
-      />
-      <Concert
-        v-if="block.name == 'Concert' && block.visible"
-        class="my-4 sm:my-6"
-      />
-      <Movie
-        v-if="block.name == 'Movie' && block.visible"
-        class="my-4 sm:my-6"
-      />
-      <Album
-        v-if="block.name == 'Album' && block.visible"
-        class="my-4 sm:my-6"
-      />
-      <Magazine
-        v-if="block.name == 'Magazine' && block.visible"
-        class="my-4 sm:my-6"
-      />
-      <Support
-        v-if="block.name == 'Support' && block.visible"
-        class="my-4 sm:my-6"
-      />
+  <NuxtLayout name="new">
+    <div class="grid grid-cols-4 gap-12 h-fit">
+      <div
+        class="w-[400px] h-[400px] rounded-2xl bg-gray-700 flex g items-center justify-center text-white"
+        :key="i"
+        v-for="i in [...Array(32).keys()]"
+      >
+        hello
+      </div>
     </div>
   </NuxtLayout>
 </template>
-
-<script setup lang="ts">
-const sanityStore = useSanityStore()
-const blocks = await sanityStore.getWebsiteBlocks()
-</script>
