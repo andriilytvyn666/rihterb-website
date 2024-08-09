@@ -12,6 +12,8 @@ import moviePage from './moviePage'
 import websiteBlocks from './websiteBlocks'
 import pageBlock from './pageBlock'
 import concertPage from './concertPage'
+import homepage from './homepage'
+import homeCard from './homeCard'
 
 export const schemaTypes = [
   concertPage,
@@ -28,4 +30,7 @@ export const schemaTypes = [
   magazinePage,
   navLink,
   websiteBlocks,
+
+  homepage,
+  homeCard,
 ]

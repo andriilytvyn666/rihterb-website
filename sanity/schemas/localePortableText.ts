@@ -4,13 +4,6 @@ export default {
   title: 'Localized portable text',
   name: 'localePortableText',
   type: 'object',
-  fieldsets: [
-    {
-      title: 'Translations',
-      name: 'translations',
-      options: {collapsible: true},
-    },
-  ],
   fields: supportedLanguages.map((lang) => ({
     title: lang.title,
     name: lang.id,
@@ -25,6 +18,5 @@ export default {
         },
       },
     ],
-    fieldset: lang.id === defaultLanguage ? null : 'translations',
   })),
 }

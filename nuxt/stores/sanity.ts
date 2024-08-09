@@ -11,6 +11,8 @@ export const useSanityStore = defineStore('sanity-store', () => {
   const websiteBlocks = ref<WebsiteBlocks>()
   const concertPage = ref<ConcertPage>()
 
+  const homepage = ref<Homepage>()
+
   const sanityFetch = async <T>(ref: Ref, query: string): Promise<T> => {
     if (ref.value !== undefined) return ref.value
 
@@ -19,6 +21,9 @@ export const useSanityStore = defineStore('sanity-store', () => {
 
     return ref.value
   }
+
+  const getHomepage = async (): Promise<Homepage> =>
+    sanityFetch<Homepage>(homepage, groq`*[_type == "homepage"][0] { blocks }`)
 
   const getWebsiteBlocks = async (): Promise<WebsiteBlocks> =>
     sanityFetch<WebsiteBlocks>(
@@ -93,6 +98,8 @@ export const useSanityStore = defineStore('sanity-store', () => {
     )
 
   return {
+    getHomepage,
+
     getConcertPage,
     getMainPage,
     getSupportPage,

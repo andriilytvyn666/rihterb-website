@@ -27,13 +27,16 @@ export default defineConfig({
           .title('Main')
           .items([
             S.listItem()
+              .title('Homepage')
+              .child(S.document().title('Homepage').schemaType('homepage').documentId('homepage')),
+            S.listItem()
               .title('Website Blocks')
               .icon(BlockElementIcon)
               .child(
                 S.document()
                   .title('Website Blocks')
                   .schemaType('websiteBlocks')
-                  .documentId('websiteBlocks')
+                  .documentId('websiteBlocks'),
               ),
             S.listItem()
               .title('Main Page')
@@ -46,7 +49,7 @@ export default defineConfig({
                 S.document()
                   .title('Concert Page')
                   .schemaType('concertPage')
-                  .documentId('concertPage')
+                  .documentId('concertPage'),
               ),
             S.listItem()
               .title('Support Page')
@@ -55,13 +58,13 @@ export default defineConfig({
                 S.document()
                   .title('Support Page')
                   .schemaType('supportPage')
-                  .documentId('supportPage')
+                  .documentId('supportPage'),
               ),
             S.listItem()
               .title('Album Page')
               .icon(BlockContentIcon)
               .child(
-                S.document().title('Album Page').schemaType('albumPage').documentId('albumPage')
+                S.document().title('Album Page').schemaType('albumPage').documentId('albumPage'),
               ),
             S.listItem()
               .title('Magazine Page')
@@ -70,25 +73,25 @@ export default defineConfig({
                 S.document()
                   .title('Magazine Page')
                   .schemaType('magazinePage')
-                  .documentId('magazinePage')
+                  .documentId('magazinePage'),
               ),
             S.listItem()
               .title('Movie Page')
               .icon(ImageIcon)
               .child(
-                S.document().title('Movie Page').schemaType('moviePage').documentId('moviePage')
+                S.document().title('Movie Page').schemaType('moviePage').documentId('moviePage'),
               ),
             S.listItem()
               .title('Shared - Header')
               .icon(InfoOutlineIcon)
               .child(
-                S.document().title('Shared - Header').schemaType('header').documentId('header')
+                S.document().title('Shared - Header').schemaType('header').documentId('header'),
               ),
             S.listItem()
               .title('Shared - Footer')
               .icon(LinkIcon)
               .child(
-                S.document().title('Shared - Footer').schemaType('footer').documentId('footer')
+                S.document().title('Shared - Footer').schemaType('footer').documentId('footer'),
               ),
             ...S.documentTypeListItems().filter(
               (listItem) =>
@@ -103,7 +106,8 @@ export default defineConfig({
                   'moviePage',
                   'websiteBlocks',
                   'concertPage',
-                ].includes(`${listItem.getId()}`)
+                  'homepage',
+                ].includes(`${listItem.getId()}`),
             ),
           ]),
     }),

@@ -1,6 +1,6 @@
 <template>
   <div class="flex flex-col gap-4 min-w-[25rem] w-full md:w-fit">
-    <div class="flex rounded-2xl aspect-square overflow-clip">
+    <div class="flex border rounded-2xl aspect-square overflow-clip border-bg1">
       <NuxtImg src="userpic.png" class="w-full h-full" />
     </div>
     <div class="flex flex-col gap-3">

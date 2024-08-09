@@ -1,3 +1,20 @@
+// documents
+type Homepage = {
+  blocks: homeCard[]
+}
+
+// objects
+type homeCard = {
+  image: image
+  textOnTop: boolean
+  openInNewTab: boolean
+  title: localeString
+  description: localePortableText
+  link: string
+  linkText: localeString
+}
+
+// deprecated
 type About = {
   photo: image
   name: localeString
