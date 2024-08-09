@@ -82,6 +82,13 @@ module.exports = {
           fontWeight: '600',
         },
       ],
+      'footer': [
+        '0.875rem',
+        {
+          lineHeight: '1.125rem',
+          fontWeight: '600',
+        },
+      ],
     },
     extend: {
       screens: {

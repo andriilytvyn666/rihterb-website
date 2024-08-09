@@ -1,8 +1,6 @@
 <template>
-  <div class="flex flex-col gap-4">
-    <div
-      class="w-[25rem] h-[25rem] rounded-2xl aspect-square flex overflow-clip"
-    >
+  <div class="flex flex-col gap-4 min-w-[25rem] w-full md:w-fit">
+    <div class="flex rounded-2xl aspect-square overflow-clip">
       <NuxtImg src="userpic.png" class="w-full h-full" />
     </div>
     <div class="flex flex-col gap-3">
@@ -12,7 +10,7 @@
         >
           Вася Ріхтер
         </h1>
-        <h2 class="leading- whitespace-nowrap">
+        <h2 class="font-sans leading- whitespace-nowrap text-body">
           граю музику для вас і ваших мам
         </h2>
       </div>
@@ -22,18 +20,21 @@
           target="_blank"
           title="spotify"
           icon="simple-icons:spotify"
+          primary
         />
         <ButtonLink
           link="https://google.com"
           target="_blank"
           title="apple music"
           icon="simple-icons:applemusic"
+          primary
         />
         <ButtonLink
           link="https://google.com"
           target="_blank"
           title="yt music"
           icon="simple-icons:youtubemusic"
+          primary
         />
       </div>
     </div>

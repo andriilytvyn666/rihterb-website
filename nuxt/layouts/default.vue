@@ -1,10 +1,14 @@
 <template>
   <div class="flex flex-col min-h-screen">
+    <DevOnly>
+      <DebugIndicator />
+    </DevOnly>
     <Header class="sticky top-0" />
     <div
       class="flex flex-col items-center justify-center py-24 overflow-scroll grow"
     >
       <slot />
     </div>
+    <Footer />
   </div>
 </template>

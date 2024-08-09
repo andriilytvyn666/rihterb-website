@@ -31,11 +31,11 @@ export default defineNuxtConfig({
     provider: 'local',
     families: [
       {
-        name: 'Helvetica Bold',
+        name: 'Helvetica-Bold',
         provider: 'local',
       },
       {
-        name: 'Inter',
+        name: 'Inter-VariableFont_slnt,wght',
         provider: 'local',
       },
     ],

@@ -51,8 +51,4 @@
   li {
     @apply select-text;
   }
-
-  * {
-    @apply text-body;
-  }
 }
