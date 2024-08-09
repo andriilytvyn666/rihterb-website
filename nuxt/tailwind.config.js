@@ -8,7 +8,8 @@ module.exports = {
   ],
   theme: {
     fontFamily: {
-      sans: 'Helvetica, Arial, sans-serif',
+      sans: 'Helvetica',
+      inter: 'Inter',
     },
     fontSize: {
       'body': [
@@ -26,7 +27,7 @@ module.exports = {
         },
       ],
       'header': [
-        '0.875rem',
+        '1rem',
         {
           lineHeight: '1.125rem',
           fontWeight: '600',

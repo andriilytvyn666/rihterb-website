@@ -27,7 +27,19 @@ export default defineNuxtConfig({
       siteUrl: process.env.NUX_PUBLIC_SITE_URL || 'https://rihterb.pp.ua',
     },
   },
-
+  fonts: {
+    provider: 'local',
+    families: [
+      {
+        name: 'Helvetica Bold',
+        provider: 'local',
+      },
+      {
+        name: 'Inter',
+        provider: 'local',
+      },
+    ],
+  },
   devServer: {
     host: '0.0.0.0',
     port: 3000,

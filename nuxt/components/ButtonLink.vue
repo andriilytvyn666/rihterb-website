@@ -1,12 +1,11 @@
 <template>
   <NuxtLink
     :to="link"
-    :alt="title"
     :target="target"
-    class="flex items-center gap-2"
+    class="flex bg-fg1 text-bg1 w-fit py-2.5 px-4 gap-3 rounded-lg items-center"
   >
     <Icon :name="icon" />
-    <span class="font-inter text-header whitespace-nowrap leading-1">{{
+    <span class="text-button font-inter whitespace-nowrap leading-1">{{
       title
     }}</span>
   </NuxtLink>

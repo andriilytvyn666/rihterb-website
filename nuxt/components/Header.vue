@@ -1,120 +1,34 @@
 <template>
-  <header class="flex items-center justify-between" id="header">
-    <nav class="hidden gap-4" id="left">
-      <NuxtLink
-        :to="getLink(header.navLinksLeft[0].link)"
-        class="hover:-translate-y-1"
-      >
-        {{ getLocalizedString($i18n.locale, header.navLinksLeft[0].name) }}
-      </NuxtLink>
-      <span class="separator">/</span>
-      <NuxtLink
-        :to="getLink(header.navLinksLeft[1].link)"
-        class="hover:-translate-y-1"
-      >
-        {{ getLocalizedString($i18n.locale, header.navLinksLeft[1].name) }}
-      </NuxtLink>
-    </nav>
-    <NuxtLink :to="localePath('/', $i18n.locale)" aria-label="Homepage">
-      <SanityImage
-        rel="preload"
-        :asset-id="header.logo.asset._ref"
-        width="96"
-        height="96"
-        id="logo"
-        class="rounded-full w-9 h-9"
-        alt="logo"
-      />
+  <div class="flex justify-between w-full p-6 bg-black">
+    <NuxtLink to="/" class="flex justify-center gap-3">
+      <NuxtImg src="logo-header.webp" alt="logo" class="w-5 h-5" />
+      <h1 class="text-[#F8A711] text-logo">Вася Ріхтер</h1>
     </NuxtLink>
-    <button
-      id="right-mobile"
-      @click="$i18n.setLocale('uk')"
-      v-if="$i18n.locale === 'en'"
-    >
-      укр
-    </button>
-    <button id="right-mobile" @click="$i18n.setLocale('en')" v-else>eng</button>
-    <nav class="hidden gap-4" id="right">
-      <button
-        @click="$i18n.setLocale('uk')"
-        v-if="$i18n.locale === 'en'"
-        class="hover:-translate-y-1"
-      >
-        укр
-      </button>
-      <button
-        @click="$i18n.setLocale('en')"
-        v-else
-        class="hover:-translate-y-1"
-      >
-        eng
-      </button>
-      <span class="separator">/</span>
-      <NuxtLink
+    <div class="flex gap-6">
+      <HeaderLink
+        title="лінк"
+        icon="simple-icons:spotify"
+        link="https://google.com"
         target="_blank"
-        :to="header.navLinksRight[0].link"
-        class="hover:-translate-y-1"
-        >{{
-          getLocalizedString($i18n.locale, header.navLinksRight[0].name)
-        }}</NuxtLink
-      >
-      <span class="separator">/</span>
-      <NuxtLink
+      />
+      <HeaderLink
+        title="лінк"
+        icon="simple-icons:spotify"
+        link="https://google.com"
         target="_blank"
-        :to="header.navLinksRight[1].link"
-        class="hover:-translate-y-1"
-        >{{
-          getLocalizedString($i18n.locale, header.navLinksRight[1].name)
-        }}</NuxtLink
-      >
-    </nav>
-  </header>
+      />
+      <HeaderLink
+        title="лінк"
+        icon="simple-icons:spotify"
+        link="https://google.com"
+        target="_blank"
+      />
+      <HeaderLink
+        title="лінк"
+        icon="simple-icons:spotify"
+        link="https://google.com"
+        target="_blank"
+      />
+    </div>
+  </div>
 </template>
-
-<script lang="ts" setup>
-const { locale } = useI18n()
-const localePath = useLocalePath()
-
-const sanityStore = useSanityStore()
-const header = await sanityStore.getHeader()
-
-const getLink = (link: string) => {
-  if (link.startsWith('https://')) {
-    return link
-  } else return localePath(link, locale.value)
-}
-</script>
-
-<style lang="postcss">
-.separator {
-  @apply text-dark-secondary;
-}
-
-#right-mobile {
-  @apply text-body-md-500;
-}
-
-#header {
-  @apply px-2 py-6;
-  @apply text-body-md-600 mb-8 sm:mb-12;
-}
-
-@screen md {
-  #logo {
-    @apply w-12 h-12;
-  }
-
-  #header {
-    @apply px-0 py-5;
-  }
-
-  #left,
-  #right {
-    @apply flex;
-  }
-
-  #right-mobile {
-    @apply hidden;
-  }
-}
-</style>
