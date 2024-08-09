@@ -1,5 +1,5 @@
 <template>
-  <div class="grid grid-cols-1 gap-12 md:grid-cols-4 h-fit">
+  <div class="grid grid-cols-4 gap-12 py-24 mx-auto my-auto w-fit">
     <About />
     <Card top />
     <Card />

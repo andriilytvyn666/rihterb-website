@@ -4,9 +4,7 @@
       <DebugIndicator />
     </DevOnly>
     <Header class="sticky top-0" />
-    <div
-      class="flex flex-col items-center justify-center py-24 overflow-scroll grow"
-    >
+    <div class="flex flex-col overflow-scroll grow">
       <slot />
     </div>
     <Footer />
