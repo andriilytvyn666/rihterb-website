@@ -23,7 +23,10 @@ export const useSanityStore = defineStore('sanity-store', () => {
   }
 
   const getHomepage = async (): Promise<Homepage> =>
-    sanityFetch<Homepage>(homepage, groq`*[_type == "homepage"][0] { blocks }`)
+    sanityFetch<Homepage>(
+      homepage,
+      groq`*[_type == "homepage"][0] { about, blocks }`
+    )
 
   const getWebsiteBlocks = async (): Promise<WebsiteBlocks> =>
     sanityFetch<WebsiteBlocks>(

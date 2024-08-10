@@ -1,7 +1,9 @@
 import {defineConfig} from 'sanity'
-import {deskTool} from 'sanity/desk'
+import {structureTool} from 'sanity/structure'
 import {visionTool} from '@sanity/vision'
 import {schemaTypes} from './schemas'
+import {iconify} from 'sanity-plugin-iconify'
+
 import {
   PlayIcon,
   LinkIcon,
@@ -21,7 +23,8 @@ export default defineConfig({
   dataset: 'production',
 
   plugins: [
-    deskTool({
+    iconify({showName: true}),
+    structureTool({
       structure: (S) =>
         S.list()
           .title('Main')

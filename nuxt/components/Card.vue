@@ -12,16 +12,15 @@
     <div class="flex flex-col gap-4">
       <div class="flex flex-col gap-2">
         <h2 class="text-accent text-caption font-inter">{{ title }}</h2>
-        <p class="font-sans text-body">
-          Субота, 08.06, Кирилівська 45, Community Garden Початок о 17:00, вхід
-          через Community Cafe
+        <p class="font-sans text-body line-clamp-2">
+          {{ description.uk }}
         </p>
       </div>
       <ButtonLink
-        icon="material-symbols:arrow-forward"
-        :title="linkText"
-        :link="link"
-        :target="newTab ? '_blank' : '_self'"
+        :icon="button.icon"
+        :title="button.title.uk"
+        :link="button.link"
+        :target="button.openInNewTab ? '_blank' : '_self'"
         class="w-full"
       />
     </div>
@@ -30,12 +29,10 @@
 
 <script lang="ts" setup>
 defineProps<{
-  top: boolean
+  top?: boolean
   title: string
-  description?: string
+  description: localePortableText
   image: image
-  link: string
-  linkText: string
-  newTab: boolean
+  button: buttonLink
 }>()
 </script>

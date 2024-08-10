@@ -14,6 +14,8 @@ import pageBlock from './pageBlock'
 import concertPage from './concertPage'
 import homepage from './homepage'
 import homeCard from './homeCard'
+import localeText from './localeText'
+import aboutInfo from './aboutInfo'
 
 export const schemaTypes = [
   concertPage,
@@ -33,4 +35,6 @@ export const schemaTypes = [
 
   homepage,
   homeCard,
+  localeText,
+  aboutInfo,
 ]

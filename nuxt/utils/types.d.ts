@@ -1,17 +1,31 @@
 // documents
 type Homepage = {
+  about: aboutInfo
   blocks: homeCard[]
 }
 
 // objects
+type aboutInfo = {
+  image: image
+  name: localeString
+  subtitle: localeString
+  buttons: buttonLink[]
+}
+
 type homeCard = {
   image: image
   textOnTop: boolean
-  openInNewTab: boolean
   title: localeString
-  description: localePortableText
+  description: localeText
+  button: buttonLink
+}
+
+type buttonLink = {
+  openInNewTab: boolean
+  primary: boolean
+  title: localeString
   link: string
-  linkText: localeString
+  icon: string
 }
 
 // deprecated
@@ -165,17 +179,17 @@ type navLink = {
   link: striing
 }
 
-type buttonLink = {
-  name: localeString
-  link: string
-}
-
 type localeString = {
   en: string
   uk: string
 }
 
 type localePortableText = {
+  en: Any
+  uk: Any
+}
+
+type localeText = {
   en: Any
   uk: Any
 }

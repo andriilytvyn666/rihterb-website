@@ -1,7 +1,7 @@
 <template>
   <NuxtLink
     :to="link"
-    :target="target"
+    :target="openInNewTab ? '_blank' : '_self'"
     :class="`${primary ? 'bg-fg1 text-bg1' : 'text-fg1 bg-bg2'} flex w-fit py-2.5 px-4 gap-3 rounded-lg justify-center items-center`"
   >
     <Icon :name="icon" />
@@ -16,7 +16,7 @@ defineProps<{
   title: string
   link: string
   icon: string
-  target: '_blank' | '_self' | '_parent' | '_top'
+  openInNewTab: boolean
   primary?: boolean
 }>()
 </script>

@@ -6,41 +6,41 @@ export default {
   fields: [
     {
       name: 'image',
+      title: 'Картинка',
+      description: 'Будь-який формат; співвідношення сторін 1:1; розмір 400x400px або більше',
       type: 'image',
       accept: [{type: 'image/*'}],
       validation: (rule: Rule) => rule.required(),
     },
     {
+      name: 'button',
+      options: {
+        collapsible: true,
+        collapsed: true,
+      },
+      title: 'Нашаштування кнопки',
+      type: 'buttonLink',
+      validation: (rule: Rule) => rule.required(),
+    },
+    {
       name: 'textOnTop',
+      title: 'Текст над картинкою',
       type: 'boolean',
       initialValue: false,
       validation: (rule: Rule) => rule.required(),
     },
-    {
-      name: 'openInNewTab',
-      type: 'boolean',
-      initialValue: true,
-      validation: (rule: Rule) => rule.required(),
-    },
+
     {
       name: 'title',
+      title: 'Заголовок',
       type: 'localeString',
       validation: (rule: Rule) => rule.required(),
     },
     {
       name: 'description',
-      description: 'обмеження 2 рядки',
-      type: 'localePortableText',
-      validation: (rule: Rule) => rule.required(),
-    },
-    {
-      name: 'link',
-      type: 'string',
-      validation: (rule: Rule) => rule.required(),
-    },
-    {
-      name: 'linkText',
-      type: 'localeString',
+      title: 'Опис',
+      description: 'Максимум 2 рядки, решта буде обрізана',
+      type: 'localeText',
       validation: (rule: Rule) => rule.required(),
     },
   ],
