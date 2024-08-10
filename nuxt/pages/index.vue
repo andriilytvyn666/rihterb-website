@@ -2,8 +2,8 @@
   <div class="grid grid-cols-4 gap-12 py-24 mx-auto my-auto w-fit">
     <About
       :image="homepage.about.image"
-      :name="homepage.about.name.uk"
-      :subtitle="homepage.about.subtitle.uk"
+      :name="homepage.about.name"
+      :subtitle="homepage.about.subtitle"
       :buttons="homepage.about.buttons"
     />
     <Card
@@ -11,7 +11,7 @@
       :key="block.title.en"
       :top="block.textOnTop"
       :image="block.image"
-      :title="block.title.uk"
+      :title="block.title"
       :description="block.description"
       :button="block.button"
     />
@@ -28,4 +28,8 @@
 <script lang="ts" setup>
 const store = useSanityStore()
 const homepage = await store.getHomepage()
+
+useSeoMeta({
+  title: 'Ріхтер',
+})
 </script>

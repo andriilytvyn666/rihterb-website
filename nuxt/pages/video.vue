@@ -2,7 +2,7 @@
   <div class="flex grow bg-fg2">
     <iframe
       class="w-full"
-      :src="getYtEmbedLink('https://youtube.com/watch?v=SqsXu7z0iM0')"
+      :src="getYtEmbedLink(video.youtubeLink)"
       title="YouTube video player"
       frameborder="0"
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -22,8 +22,8 @@
 </template>
 
 <script lang="ts" setup>
-// const sanityStore = useSanityStore()
-// const movie = await sanityStore.getMoviePage()
+const sanityStore = useSanityStore()
+const video = await sanityStore.getVideoPage()
 
 const getYtEmbedLink = (link: string) => {
   if (
@@ -35,9 +35,15 @@ const getYtEmbedLink = (link: string) => {
     }`
   }
 
-  // https://youtu.be/SqsXu7z0iM0?si=Of9MV-KSFAQEzJoq
-  if (link.startsWith('https://youtu.be')) {
+  if (
+    link.startsWith('https://youtu.be') ||
+    link.startsWith('https://www.youtu.be')
+  ) {
     return `https://www.youtube-nocookie.com/embed/${link.split('/')[3]}`
   }
 }
+
+useSeoMeta({
+  title: 'Ріхтер',
+})
 </script>

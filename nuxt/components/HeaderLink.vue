@@ -7,14 +7,14 @@
   >
     <Icon :name="icon" />
     <span class="font-inter text-header whitespace-nowrap leading-1">{{
-      title
+      getLocalizedString($i18n.locale, title)
     }}</span>
   </NuxtLink>
 </template>
 
 <script lang="ts" setup>
 defineProps<{
-  title: string
+  title: localeString
   link: string
   icon: string
   openInNewTab: boolean

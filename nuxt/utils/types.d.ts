@@ -6,8 +6,13 @@ type Homepage = {
 
 type Header = {
   logo: image
+  title: localeString
   buttons: headerButton[]
   buttonMobile: headerButton
+}
+
+type VideoPage = {
+  youtubeLink: string
 }
 
 // objects
@@ -72,13 +77,6 @@ type Movie = {
   title: localeString
   text: localeString
   buttonName: localeString
-}
-
-type MoviePage = {
-  title: localeString
-  youtubeLink: string
-  listenText: localeString
-  magazineText: localeString
 }
 
 type Support = {

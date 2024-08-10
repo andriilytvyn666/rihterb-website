@@ -7,7 +7,6 @@ import albumPage from './albumPage'
 import supportPage from './supportPage'
 import buttonLink from './buttonLink'
 import magazinePage from './magazinePage'
-import moviePage from './moviePage'
 import websiteBlocks from './websiteBlocks'
 import pageBlock from './pageBlock'
 import concertPage from './concertPage'
@@ -16,12 +15,13 @@ import homeCard from './homeCard'
 import localeText from './localeText'
 import aboutInfo from './aboutInfo'
 import headerButton from './headerButton'
+import videoPage from './videoPage'
 
 export const schemaTypes = [
   concertPage,
   pageBlock,
   localeString,
-  moviePage,
+
   localePortableText,
   buttonLink,
   mainPage,
@@ -33,6 +33,7 @@ export const schemaTypes = [
   websiteBlocks,
 
   homepage,
+  videoPage,
   homeCard,
   localeText,
   aboutInfo,

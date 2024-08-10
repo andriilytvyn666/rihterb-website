@@ -36,6 +36,10 @@ export default defineConfig({
               .title('Header')
               .child(S.document().title('Header').schemaType('header').documentId('header')),
             S.listItem()
+              .title('Video')
+              .icon(ImageIcon)
+              .child(S.document().title('Video').schemaType('videoPage').documentId('videoPage')),
+            S.listItem()
               .title('Website Blocks')
               .icon(BlockElementIcon)
               .child(
@@ -81,12 +85,6 @@ export default defineConfig({
                   .schemaType('magazinePage')
                   .documentId('magazinePage'),
               ),
-            S.listItem()
-              .title('Movie Page')
-              .icon(ImageIcon)
-              .child(
-                S.document().title('Movie Page').schemaType('moviePage').documentId('moviePage'),
-              ),
 
             S.listItem()
               .title('Shared - Footer')
@@ -104,7 +102,7 @@ export default defineConfig({
                   'albumPage',
                   'magazinePage',
                   'navLink',
-                  'moviePage',
+                  'videoPage',
                   'websiteBlocks',
                   'concertPage',
                   'homepage',

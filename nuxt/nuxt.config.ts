@@ -50,7 +50,7 @@ export default defineNuxtConfig({
   },
 
   imports: {
-    dirs: ['stores'],
+    dirs: ['./stores', './utils'],
   },
 
   schemaOrg: {

@@ -15,17 +15,17 @@
         <h1
           class="font-inter text-title text-accent leading-1 whitespace-nowrap"
         >
-          {{ name }}
+          {{ getLocalizedString($i18n.locale, name) }}
         </h1>
         <h2 class="font-sans leading- whitespace-nowrap text-body">
-          {{ subtitle }}
+          {{ getLocalizedString($i18n.locale, subtitle) }}
         </h2>
       </div>
       <div class="flex gap-2">
         <ButtonLink
           v-for="button in buttons"
           :key="button.title.en"
-          :title="button.title.uk"
+          :title="getLocalizedString($i18n.locale, button.title)"
           :link="button.link"
           :icon="button.icon"
           :open-in-new-tab="button.openInNewTab"
@@ -60,8 +60,8 @@
 
 <script lang="ts" setup>
 defineProps<{
-  name: string
-  subtitle: string
+  name: localeString
+  subtitle: localeString
   image: image
   buttons: buttonLink[]
 }>()

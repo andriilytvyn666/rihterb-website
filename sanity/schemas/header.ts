@@ -14,6 +14,12 @@ export default {
       options: {accept: 'image/*'},
     },
     {
+      name: 'title',
+      title: 'Текст логотипу',
+      type: 'localeString',
+      validation: (rule: Rule) => rule.required(),
+    },
+    {
       name: 'buttons',
       title: 'Кнопки (десктопна версія)',
       description: 'Максимум 10 кнопок',

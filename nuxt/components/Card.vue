@@ -14,16 +14,19 @@
     </div>
     <div class="flex flex-col gap-4">
       <div class="flex flex-col gap-2">
-        <h2 class="text-accent text-caption font-inter">{{ title }}</h2>
+        <h2 class="text-accent text-caption font-inter">
+          {{ getLocalizedString($i18n.locale, title) }}
+        </h2>
         <p class="font-sans text-body line-clamp-2">
-          {{ description.uk }}
+          {{ getLocalizedString($i18n.locale, description) }}
         </p>
       </div>
       <ButtonLink
         :icon="button.icon"
-        :title="button.title.uk"
+        :title="getLocalizedString($i18n.locale, button.title)"
         :link="button.link"
         :target="button.openInNewTab ? '_blank' : '_self'"
+        :open-in-new-tab="button.openInNewTab"
         class="w-full"
       />
     </div>
@@ -33,8 +36,8 @@
 <script lang="ts" setup>
 defineProps<{
   top?: boolean
-  title: string
-  description: localePortableText
+  title: localeString
+  description: localeString
   image: image
   button: buttonLink
 }>()

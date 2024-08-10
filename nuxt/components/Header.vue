@@ -10,13 +10,15 @@
         alt="logo"
         class="w-5 h-5"
       />
-      <h1 class="text-[#F8A711] text-logo">Вася Ріхтер</h1>
+      <h1 class="text-[#F8A711] text-logo">
+        {{ getLocalizedString($i18n.locale, header.title) }}
+      </h1>
     </NuxtLink>
     <div class="flex gap-6">
       <HeaderLink
         v-for="button in header.buttons"
         :key="button.title.en"
-        :title="button.title.uk"
+        :title="button.title"
         :icon="button.icon"
         :link="button.link"
         :open-in-new-tab="button.openInNewTab"
