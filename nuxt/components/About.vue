@@ -3,6 +3,9 @@
     <div class="flex border rounded-2xl aspect-square overflow-clip border-bg1">
       <NuxtImg
         provider="sanity"
+        :width="400"
+        :height="400"
+        :quality="100"
         :src="image.asset._ref"
         class="w-full h-full"
       />

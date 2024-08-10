@@ -6,6 +6,9 @@
       <NuxtImg
         provider="sanity"
         :src="image.asset._ref"
+        :width="400"
+        :height="400"
+        :quality="100"
         class="w-full h-full"
       />
     </div>
