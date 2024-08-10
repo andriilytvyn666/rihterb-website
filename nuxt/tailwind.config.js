@@ -12,7 +12,7 @@ module.exports = {
       'xl': '1320px',
       'lg': '1024px',
       'md': '768px',
-      'sm': '640px',
+      'sm': '560px',
       'xs': '320px',
     },
     fontFamily: {

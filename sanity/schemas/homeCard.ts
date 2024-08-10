@@ -7,7 +7,7 @@ export default {
     {
       name: 'image',
       title: 'Картинка',
-      description: 'Будь-який формат; співвідношення сторін 1:1; розмір 400x400px або більше',
+      description: 'Будь-який формат; співвідношення сторін 1:1; розмір 800x800px або більше',
       type: 'image',
       accept: [{type: 'image/*'}],
       validation: (rule: Rule) => rule.required(),

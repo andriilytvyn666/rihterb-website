@@ -1,10 +1,9 @@
 <template>
-  <div class="flex flex-col gap-4 sm:max-w-[32rem] lg:max-w-[25rem]">
+  <div class="flex flex-col gap-4 sm:max-w-[28rem] lg:w-full xl:max-w-[25rem]">
     <div class="flex border rounded-2xl aspect-square overflow-clip border-bg1">
       <NuxtImg
         provider="sanity"
-        :width="400"
-        :height="400"
+        sizes="600px sm:800px lg:600px"
         :quality="100"
         :src="image.asset._ref"
         class="w-full h-full"

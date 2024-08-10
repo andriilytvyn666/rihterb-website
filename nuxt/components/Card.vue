@@ -1,13 +1,12 @@
 <template>
   <div
-    :class="`${top ? 'flex-col-reverse' : 'flex-col'} flex gap-4 sm:max-w-[32rem] lg:max-w-[25rem]`"
+    :class="`${top ? 'flex-col-reverse' : 'flex-col'} flex gap-4 sm:max-w-[28rem] lg:w-full xl:max-w-[25rem]`"
   >
     <div class="flex border rounded-2xl aspect-square overflow-clip border-bg1">
       <NuxtImg
         provider="sanity"
         :src="image.asset._ref"
-        :width="400"
-        :height="400"
+        sizes="600px sm:800px lg:600px"
         :quality="100"
         class="w-full h-full"
       />

@@ -62,6 +62,15 @@ export default defineNuxtConfig({
       projectId: 'lh08fn64',
       dataset: 'production',
     },
+    screens: {
+      'xs': 320,
+      'sm': 560,
+      'md': 768,
+      'lg': 1024,
+      'xl': 1320,
+      'xxl': 1800,
+      '2xl': 1800,
+    },
   },
 
   sanity: {
