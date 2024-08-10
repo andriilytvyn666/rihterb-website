@@ -1,6 +1,6 @@
 <template>
   <div
-    :class="`${top ? 'flex-col-reverse' : 'flex-col'} flex gap-4 w-full md:w-[25rem]`"
+    :class="`${top ? 'flex-col-reverse' : 'flex-col'} flex gap-4 sm:max-w-[32rem] lg:max-w-[25rem]`"
   >
     <div class="flex border rounded-2xl aspect-square overflow-clip border-bg1">
       <NuxtImg

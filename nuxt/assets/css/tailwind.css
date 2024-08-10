@@ -37,8 +37,8 @@
   }
 
   body {
-    @apply bg-black;
-    @apply text-white;
+    @apply bg-[#000000];
+    @apply text-fg1;
   }
 
   h1,

@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col gap-4 max-w-[25rem] md:w-fit">
+  <div class="flex flex-col gap-4 sm:max-w-[32rem] lg:max-w-[25rem]">
     <div class="flex border rounded-2xl aspect-square overflow-clip border-bg1">
       <NuxtImg
         provider="sanity"
@@ -21,8 +21,9 @@
           {{ getLocalizedString($i18n.locale, subtitle) }}
         </h2>
       </div>
-      <div class="flex gap-2">
+      <div class="flex w-full gap-2 flex-nowrap">
         <ButtonLink
+          class="w-full lg:w-fit"
           v-for="button in buttons"
           :key="button.title.en"
           :title="getLocalizedString($i18n.locale, button.title)"
