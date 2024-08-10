@@ -7,24 +7,28 @@ export default {
   fields: [
     {
       name: 'logo',
-      description: 'розмір 48 x 48 або більше',
+      title: 'Логотип',
+      description: 'Будь-який формат; співвідношення сторін 1:1; розмір 20x20px або більше',
       type: 'image',
       validation: (rule: Rule) => rule.required(),
       options: {accept: 'image/*'},
     },
     {
-      name: 'navLinksLeft',
-      description: 'обмеження - 2 лінки',
+      name: 'buttons',
+      title: 'Кнопки (десктопна версія)',
+      description: 'Максимум 10 кнопок',
       type: 'array',
-      of: [{type: 'navLink'}],
-      validation: (rule: Rule) => rule.required().max(2).min(2),
+      of: [{type: 'headerButton'}],
+      validation: (rule: Rule) => rule.required().max(10),
     },
     {
-      name: 'navLinksRight',
-      description: 'обмеження - 2 лінки',
-      type: 'array',
-      of: [{type: 'navLink'}],
-      validation: (rule: Rule) => rule.required().max(2).min(2),
+      name: 'buttonMobile',
+      title: 'Кнопка (мобільна версія)',
+      type: 'headerButton',
+      options: {
+        collapsible: true,
+        collapsed: true,
+      },
     },
   ],
 }

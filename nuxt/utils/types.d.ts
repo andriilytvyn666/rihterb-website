@@ -4,6 +4,12 @@ type Homepage = {
   blocks: homeCard[]
 }
 
+type Header = {
+  logo: image
+  buttons: headerButton[]
+  buttonMobile: headerButton
+}
+
 // objects
 type aboutInfo = {
   image: image
@@ -23,6 +29,13 @@ type homeCard = {
 type buttonLink = {
   openInNewTab: boolean
   primary: boolean
+  title: localeString
+  link: string
+  icon: string
+}
+
+type headerButton = {
+  openInNewTab: boolean
   title: localeString
   link: string
   icon: string
@@ -166,12 +179,6 @@ type Footer = {
   youtube: string
   patreon: string
   bandcamp: string
-}
-
-type Header = {
-  logo: image
-  navLinksLeft: navLink[]
-  navLinksRight: navLink[]
 }
 
 type navLink = {

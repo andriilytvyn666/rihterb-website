@@ -33,6 +33,9 @@ export default defineConfig({
               .title('Homepage')
               .child(S.document().title('Homepage').schemaType('homepage').documentId('homepage')),
             S.listItem()
+              .title('Header')
+              .child(S.document().title('Header').schemaType('header').documentId('header')),
+            S.listItem()
               .title('Website Blocks')
               .icon(BlockElementIcon)
               .child(
@@ -84,12 +87,7 @@ export default defineConfig({
               .child(
                 S.document().title('Movie Page').schemaType('moviePage').documentId('moviePage'),
               ),
-            S.listItem()
-              .title('Shared - Header')
-              .icon(InfoOutlineIcon)
-              .child(
-                S.document().title('Shared - Header').schemaType('header').documentId('header'),
-              ),
+
             S.listItem()
               .title('Shared - Footer')
               .icon(LinkIcon)

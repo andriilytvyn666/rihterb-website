@@ -1,7 +1,6 @@
 import { defineStore } from 'pinia'
 
 export const useSanityStore = defineStore('sanity-store', () => {
-  const header = ref<Header>()
   const footer = ref<Footer>()
   const mainPage = ref<MainPage>()
   const supportPage = ref<SupportPage>()
@@ -12,6 +11,7 @@ export const useSanityStore = defineStore('sanity-store', () => {
   const concertPage = ref<ConcertPage>()
 
   const homepage = ref<Homepage>()
+  const header = ref<Header>()
 
   const sanityFetch = async <T>(ref: Ref, query: string): Promise<T> => {
     if (ref.value !== undefined) return ref.value
@@ -26,6 +26,12 @@ export const useSanityStore = defineStore('sanity-store', () => {
     sanityFetch<Homepage>(
       homepage,
       groq`*[_type == "homepage"][0] { about, blocks }`
+    )
+
+  const getHeader = async (): Promise<Header> =>
+    sanityFetch<Header>(
+      header,
+      groq`*[_type == "header"][0] { logo, buttons, buttonMobile }`
     )
 
   const getWebsiteBlocks = async (): Promise<WebsiteBlocks> =>
@@ -64,13 +70,6 @@ export const useSanityStore = defineStore('sanity-store', () => {
       groq`*[_type == "supportPage"][0] { images, title, text, patreon, bandcamp, paypal, diaka, mono }`
     )
 
-  // TODO: refactor
-  const getHeader = async (): Promise<Header> =>
-    sanityFetch(
-      header,
-      groq`*[_type == "header"][0] {logo, navLinks, navLinksLeft, navLinksRight, listenLink, socialsLink }`
-    )
-
   const getAlbumPage = async (): Promise<AlbumPage> =>
     sanityFetch(
       albumPage,
@@ -102,11 +101,11 @@ export const useSanityStore = defineStore('sanity-store', () => {
 
   return {
     getHomepage,
+    getHeader,
 
     getConcertPage,
     getMainPage,
     getSupportPage,
-    getHeader,
     getFooter,
     getAlbumPage,
     getMagazinePage,

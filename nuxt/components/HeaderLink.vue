@@ -2,7 +2,7 @@
   <NuxtLink
     :to="link"
     :alt="title"
-    :target="target"
+    :target="openInNewTab ? '_blank' : '_self'"
     class="flex items-center gap-2"
   >
     <Icon :name="icon" />
@@ -17,6 +17,6 @@ defineProps<{
   title: string
   link: string
   icon: string
-  target: '_blank' | '_self' | '_parent' | '_top'
+  openInNewTab: boolean
 }>()
 </script>
