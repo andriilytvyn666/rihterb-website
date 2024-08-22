@@ -35,7 +35,7 @@ export default defineNuxtConfig({
         provider: 'local',
       },
       {
-        name: 'Inter-VariableFont_slnt,wght',
+        name: 'Inter',
         provider: 'local',
       },
     ],
