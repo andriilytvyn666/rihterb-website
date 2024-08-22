@@ -28,7 +28,6 @@ export default defineNuxtConfig({
     },
   },
   fonts: {
-    provider: 'local',
     families: [
       {
         name: 'Helvetica-Bold',
@@ -36,7 +35,7 @@ export default defineNuxtConfig({
       },
       {
         name: 'Inter',
-        provider: 'local',
+        provider: 'google',
       },
     ],
   },

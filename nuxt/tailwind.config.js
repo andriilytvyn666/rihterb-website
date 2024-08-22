@@ -17,7 +17,7 @@ module.exports = {
     },
     fontFamily: {
       sans: 'Helvetica',
-      inter: 'Inter',
+      inter: 'Inter, sans-serif',
     },
     fontSize: {
       'body': [
