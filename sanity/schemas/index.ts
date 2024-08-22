@@ -12,10 +12,12 @@ import pageBlock from './pageBlock'
 import concertPage from './concertPage'
 import homepage from './homepage'
 import homeCard from './homeCard'
-import localeText from './localeText'
+import localeText2 from './localeText2'
+import localeText30 from './localeText30'
 import aboutInfo from './aboutInfo'
 import headerButton from './headerButton'
 import videoPage from './videoPage'
+import eventPage from './eventPage'
 
 export const schemaTypes = [
   concertPage,
@@ -31,11 +33,13 @@ export const schemaTypes = [
   albumPage,
   magazinePage,
   websiteBlocks,
+  eventPage,
 
   homepage,
   videoPage,
   homeCard,
-  localeText,
+  localeText2,
+  localeText30,
   aboutInfo,
   headerButton,
 ]

@@ -1,24 +1,24 @@
 <template>
-  <div class="flex grow bg-fg2">
-    <iframe
-      class="w-full"
-      :src="getYtEmbedLink(video.youtubeLink)"
-      title="YouTube video player"
-      frameborder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-      allowfullscreen
-    />
+  <div class="flex flex-col justify-center md:grow">
+    <div class="flex md:grow bg-fg2 md:aspect-auto aspect-square">
+      <iframe
+        class="w-full"
+        :src="getYtEmbedLink(video.youtubeLink)"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen
+      />
+    </div>
+    <div class="flex flex-col gap-2 mx-4 mt-4 md:hidden">
+      <h1 class="text-caption text-accent font-inter">
+        {{ getLocalizedString($i18n.locale, video.title) }}
+      </h1>
+      <span class="whitespace-pre-line text-body">
+        {{ getLocalizedString($i18n.locale, video.text) }}
+      </span>
+    </div>
   </div>
-  <!-- <div class="flex flex-col h-full bg-fg-2 rounded-2xl overflow-clip">
-    <iframe
-      class="w-full h-full aspect-video"
-      :src="getYtEmbedLink('https://youtube.com/watch?v=SqsXu7z0iM0')"
-      title="YouTube video player"
-      frameborder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-      allowfullscreen
-    />
-  </div> -->
 </template>
 
 <script lang="ts" setup>

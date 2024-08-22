@@ -40,6 +40,11 @@ export default defineConfig({
               .icon(ImageIcon)
               .child(S.document().title('Video').schemaType('videoPage').documentId('videoPage')),
             S.listItem()
+              .title('Event')
+              .icon(ImageIcon)
+              .child(S.document().title('Event').schemaType('eventPage').documentId('eventPage')),
+
+            S.listItem()
               .title('Website Blocks')
               .icon(BlockElementIcon)
               .child(
@@ -97,6 +102,7 @@ export default defineConfig({
                 ![
                   'mainPage',
                   'supportPage',
+                  'eventPage',
                   'footer',
                   'header',
                   'albumPage',

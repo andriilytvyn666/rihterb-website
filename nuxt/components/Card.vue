@@ -1,6 +1,6 @@
 <template>
   <div
-    :class="`${top ? 'flex-col-reverse' : 'flex-col'} flex gap-4 sm:max-w-[28rem] lg:w-full xl:max-w-[25rem]`"
+    :class="`${top ? 'flex-col-reverse' : 'flex-col'} flex gap-4  sm:max-w-[28rem] lg:w-full xl:max-w-[25rem]`"
   >
     <div class="flex border rounded-2xl aspect-square overflow-clip border-bg1">
       <NuxtImg
@@ -16,7 +16,7 @@
         <h2 class="text-accent text-caption font-inter">
           {{ getLocalizedString($i18n.locale, title) }}
         </h2>
-        <p class="font-sans text-body line-clamp-2">
+        <p class="font-sans whitespace-pre-line text-body line-clamp-2">
           {{ getLocalizedString($i18n.locale, description) }}
         </p>
       </div>

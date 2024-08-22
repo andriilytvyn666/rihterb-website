@@ -11,5 +11,19 @@ export default {
       type: 'url',
       validation: (rule: Rule) => rule.required(),
     },
+    {
+      name: 'title',
+      title: 'Заголовок',
+      description: 'Тільки мобільна версія',
+      type: 'localeString',
+      validation: (rule: Rule) => rule.required(),
+    },
+    {
+      name: 'text',
+      title: 'Текст',
+      description: 'Тільки мобільна версія',
+      type: 'localeText30',
+      validation: (rule: Rule) => rule.required(),
+    },
   ],
 }

@@ -55,13 +55,6 @@ module.exports = {
           fontWeight: '800',
         },
       ],
-      'caption-mobile': [
-        '1.5rem',
-        {
-          lineHeight: '1.75rem',
-          fontWeight: '800',
-        },
-      ],
       'logo': [
         '1rem',
         {

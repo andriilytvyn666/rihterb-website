@@ -40,7 +40,7 @@ export default {
       name: 'description',
       title: 'Опис',
       description: 'Максимум 2 рядки, решта буде обрізана',
-      type: 'localeText',
+      type: 'localeText2',
       validation: (rule: Rule) => rule.required(),
     },
   ],

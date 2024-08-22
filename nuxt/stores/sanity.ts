@@ -8,7 +8,7 @@ export const useSanityStore = defineStore('sanity-store', () => {
   const magazinePage = ref<MagazinePage>()
   const videoPage = ref<VideoPage>()
   const websiteBlocks = ref<WebsiteBlocks>()
-  const concertPage = ref<ConcertPage>()
+  const eventPage = ref<EventPage>()
 
   const homepage = ref<Homepage>()
   const header = ref<Header>()
@@ -40,10 +40,10 @@ export const useSanityStore = defineStore('sanity-store', () => {
       groq`*[_type == "websiteBlocks"][0] { order }`
     )
 
-  const getConcertPage = async (): Promise<ConcertPage> =>
-    sanityFetch<ConcertPage>(
-      concertPage,
-      groq`*[_type == "concertPage"][0] { title, poster, description, tickets, instagram }`
+  const getEventPage = async (): Promise<EventPage> =>
+    sanityFetch<EventPage>(
+      eventPage,
+      groq`*[_type == "eventPage"][0] { image, title, text, buttons }`
     )
 
   const getMagazinePage = async (): Promise<MagazinePage> =>
@@ -55,7 +55,7 @@ export const useSanityStore = defineStore('sanity-store', () => {
   const getVideoPage = async (): Promise<VideoPage> =>
     sanityFetch<VideoPage>(
       videoPage,
-      groq`*[_type == "moviePage"][0] { title, youtubeLink, listenText, magazineText }`
+      groq`*[_type == "videoPage"][0] { title, text, youtubeLink }`
     )
 
   const getMainPage = async (): Promise<MainPage> =>
@@ -102,14 +102,14 @@ export const useSanityStore = defineStore('sanity-store', () => {
   return {
     getHomepage,
     getHeader,
+    getVideoPage,
 
-    getConcertPage,
+    getEventPage,
     getMainPage,
     getSupportPage,
     getFooter,
     getAlbumPage,
     getMagazinePage,
-    getVideoPage,
     getWebsiteBlocks,
   }
 })

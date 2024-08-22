@@ -2,7 +2,7 @@ import {defaultLanguage, supportedLanguages} from '../fieldLocalization'
 
 export default {
   title: 'Localized text',
-  name: 'localeText',
+  name: 'localeText2',
   type: 'object',
   fields: supportedLanguages.map((lang) => ({
     title: lang.title,

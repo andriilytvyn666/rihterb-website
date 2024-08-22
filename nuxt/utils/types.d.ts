@@ -13,6 +13,15 @@ type Header = {
 
 type VideoPage = {
   youtubeLink: string
+  title: localeString
+  text: localeText
+}
+
+type EventPage = {
+  title: localeString
+  text: localeText
+  image: image
+  buttons: buttonLink[]
 }
 
 // objects

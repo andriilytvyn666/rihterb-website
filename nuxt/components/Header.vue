@@ -1,5 +1,5 @@
 <template>
-  <div class="flex justify-between w-full p-6 bg-black">
+  <div class="flex justify-between w-full p-6 bg-[#000000]">
     <NuxtLink to="/" class="flex justify-center gap-3">
       <NuxtImg
         provider="sanity"
