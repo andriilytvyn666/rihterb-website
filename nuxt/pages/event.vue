@@ -5,10 +5,12 @@
         class="sm:max-w-[25rem] flex border rounded-2xl aspect-square overflow-clip border-bg1 shrink-0"
       >
         <NuxtImg
-          src="card.jpg"
+          provider="sanity"
           sizes="600px sm:800px lg:600px"
           :quality="100"
+          :src="event.image.asset._ref"
           class="w-full h-full"
+          alt="Event Image"
         />
       </div>
       <div class="flex flex-col gap-4 md:mt-8 md:min-w-[37.5rem]">

@@ -45,6 +45,13 @@ export default defineConfig({
               .child(S.document().title('Event').schemaType('eventPage').documentId('eventPage')),
 
             S.listItem()
+              .title('Release')
+              .icon(ImageIcon)
+              .child(
+                S.document().title('Release').schemaType('releasePage').documentId('releasePage'),
+              ),
+
+            S.listItem()
               .title('Website Blocks')
               .icon(BlockElementIcon)
               .child(

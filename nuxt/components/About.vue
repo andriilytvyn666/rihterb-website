@@ -7,6 +7,7 @@
         :quality="100"
         :src="image.asset._ref"
         class="w-full h-full"
+        alt="Vasily Richter's Photo"
       />
     </div>
     <div class="flex flex-col gap-3">
@@ -31,28 +32,6 @@
           :open-in-new-tab="button.openInNewTab"
           :primary="button.primary"
         />
-
-        <!-- <ButtonLink
-          link="https://google.com"
-          target="_blank"
-          title="spotify"
-          icon="simple-icons:spotify"
-          primary
-        />
-        <ButtonLink
-          link="https://google.com"
-          target="_blank"
-          title="apple music"
-          icon="simple-icons:applemusic"
-          primary
-        />
-        <ButtonLink
-          link="https://google.com"
-          target="_blank"
-          title="yt music"
-          icon="simple-icons:youtubemusic"
-          primary
-        /> -->
       </div>
     </div>
   </div>

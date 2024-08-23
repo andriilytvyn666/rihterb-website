@@ -10,14 +10,23 @@
         alt="logo"
         class="w-5 h-5"
       />
-      <h1 class="text-[#F8A711] text-logo">
+      <h1 class="text-[#F8A711] text-logo line-clamp-1 whitespace-nowrap">
         {{ getLocalizedString($i18n.locale, header.title) }}
       </h1>
     </NuxtLink>
-    <div class="flex gap-6">
+    <div class="hidden gap-6 md:flex">
       <HeaderLink
         v-for="button in header.buttons"
         :key="button.title.en"
+        :title="button.title"
+        :icon="button.icon"
+        :link="button.link"
+        :open-in-new-tab="button.openInNewTab"
+      />
+    </div>
+    <div class="flex gap-6 md:hidden">
+      <HeaderLink
+        \]
         :title="button.title"
         :icon="button.icon"
         :link="button.link"
@@ -30,4 +39,5 @@
 <script lang="ts" setup>
 const store = useSanityStore()
 const header = await store.getHeader()
+const button = header.buttons[0]
 </script>

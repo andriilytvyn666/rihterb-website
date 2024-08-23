@@ -18,11 +18,13 @@ import aboutInfo from './aboutInfo'
 import headerButton from './headerButton'
 import videoPage from './videoPage'
 import eventPage from './eventPage'
+import releasePage from './releasePage'
 
 export const schemaTypes = [
   concertPage,
   pageBlock,
   localeString,
+  releasePage,
 
   localePortableText,
   buttonLink,

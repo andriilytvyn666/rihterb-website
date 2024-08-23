@@ -4,7 +4,7 @@ export const useSanityStore = defineStore('sanity-store', () => {
   const footer = ref<Footer>()
   const mainPage = ref<MainPage>()
   const supportPage = ref<SupportPage>()
-  const albumPage = ref<AlbumPage>()
+  const releasePage = ref<ReleasePage>()
   const magazinePage = ref<MagazinePage>()
   const videoPage = ref<VideoPage>()
   const websiteBlocks = ref<WebsiteBlocks>()
@@ -70,14 +70,14 @@ export const useSanityStore = defineStore('sanity-store', () => {
       groq`*[_type == "supportPage"][0] { images, title, text, patreon, bandcamp, paypal, diaka, mono }`
     )
 
-  const getAlbumPage = async (): Promise<AlbumPage> =>
+  const getReleasePage = async (): Promise<ReleasePage> =>
     sanityFetch(
-      albumPage,
-      groq`*[_type == "albumPage"][0]
+      releasePage,
+      groq`*[_type == "releasePage"][0]
       {
-        image,
+        cover,
         title,
-        text,
+        description,
         buttons,
         spotifyLink
       }`
@@ -108,7 +108,7 @@ export const useSanityStore = defineStore('sanity-store', () => {
     getMainPage,
     getSupportPage,
     getFooter,
-    getAlbumPage,
+    getReleasePage,
     getMagazinePage,
     getWebsiteBlocks,
   }

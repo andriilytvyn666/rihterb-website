@@ -11,6 +11,14 @@ type Header = {
   buttonMobile: headerButton
 }
 
+type ReleasePage = {
+  title: localeString
+  description: localeText
+  buttons: buttonLink[]
+  cover: image
+  spotifyLink: string
+}
+
 type VideoPage = {
   youtubeLink: string
   title: localeString
