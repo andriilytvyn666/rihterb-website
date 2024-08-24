@@ -19,7 +19,7 @@
       </div>
       <div class="flex flex-col gap-0 md:flex-row md:gap-2">
         <span class="font-inter text-footer line-clamp-1"
-          >Copyright © 2023 Василій Ріхтер</span
+          >Copyright © {{ new Date().getFullYear() }} Василій Ріхтер</span
         >
         <span class="hidden md:inline">/</span>
         <NuxtLink
