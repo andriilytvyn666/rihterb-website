@@ -2,18 +2,14 @@ import {defineConfig} from 'sanity'
 import {structureTool} from 'sanity/structure'
 import {visionTool} from '@sanity/vision'
 import {schemaTypes} from './schemas'
-import {iconify} from 'sanity-plugin-iconify'
-
 import {
-  PlayIcon,
-  LinkIcon,
-  BlockContentIcon,
-  HeartFilledIcon,
-  ImageIcon,
-  InfoOutlineIcon,
-  HomeIcon,
-  BlockElementIcon,
-} from '@sanity/icons'
+  RiHome2Line,
+  RiVideoLine,
+  RiCalendarLine,
+  RiMusic2Line,
+  RiExternalLinkLine,
+  RiStarLine,
+} from 'react-icons/ri'
 
 export default defineConfig({
   name: 'default',
@@ -23,87 +19,49 @@ export default defineConfig({
   dataset: 'production',
 
   plugins: [
-    iconify({showName: true}),
     structureTool({
       structure: (S) =>
         S.list()
-          .title('Main')
+          .title('Менюшка')
           .items([
             S.listItem()
-              .title('Homepage')
-              .child(S.document().title('Homepage').schemaType('homepage').documentId('homepage')),
-            S.listItem()
-              .title('Header')
-              .child(S.document().title('Header').schemaType('header').documentId('header')),
-            S.listItem()
-              .title('Video')
-              .icon(ImageIcon)
-              .child(S.document().title('Video').schemaType('videoPage').documentId('videoPage')),
-            S.listItem()
-              .title('Event')
-              .icon(ImageIcon)
-              .child(S.document().title('Event').schemaType('eventPage').documentId('eventPage')),
+              .title('Домашня')
+              .icon(RiHome2Line)
+              .child(S.document().title('Домашня /').schemaType('homepage').documentId('homepage')),
 
             S.listItem()
-              .title('Release')
-              .icon(ImageIcon)
+              .title('Відео')
+              .icon(RiVideoLine)
               .child(
-                S.document().title('Release').schemaType('releasePage').documentId('releasePage'),
+                S.document().title('Відео /video').schemaType('videoPage').documentId('videoPage'),
               ),
-
             S.listItem()
-              .title('Website Blocks')
-              .icon(BlockElementIcon)
+              .title('Івент')
+              .icon(RiCalendarLine)
               .child(
                 S.document()
-                  .title('Website Blocks')
-                  .schemaType('websiteBlocks')
-                  .documentId('websiteBlocks'),
-              ),
-            S.listItem()
-              .title('Main Page')
-              .icon(HomeIcon)
-              .child(S.document().title('Main Page').schemaType('mainPage').documentId('mainPage')),
-            S.listItem()
-              .title('Concert Page')
-              .icon(PlayIcon)
-              .child(
-                S.document()
-                  .title('Concert Page')
-                  .schemaType('concertPage')
-                  .documentId('concertPage'),
-              ),
-            S.listItem()
-              .title('Support Page')
-              .icon(HeartFilledIcon)
-              .child(
-                S.document()
-                  .title('Support Page')
-                  .schemaType('supportPage')
-                  .documentId('supportPage'),
-              ),
-            S.listItem()
-              .title('Album Page')
-              .icon(BlockContentIcon)
-              .child(
-                S.document().title('Album Page').schemaType('albumPage').documentId('albumPage'),
-              ),
-            S.listItem()
-              .title('Magazine Page')
-              .icon(ImageIcon)
-              .child(
-                S.document()
-                  .title('Magazine Page')
-                  .schemaType('magazinePage')
-                  .documentId('magazinePage'),
+                  .title('Івент /event, /tour')
+                  .schemaType('eventPage')
+                  .documentId('eventPage'),
               ),
 
             S.listItem()
-              .title('Shared - Footer')
-              .icon(LinkIcon)
+              .title('Реліз')
+              .icon(RiMusic2Line)
               .child(
-                S.document().title('Shared - Footer').schemaType('footer').documentId('footer'),
+                S.document()
+                  .title('Реліз /release, /ep, /single, /album')
+                  .schemaType('releasePage')
+                  .documentId('releasePage'),
               ),
+            S.listItem()
+              .title('Гедер')
+              .icon(RiExternalLinkLine)
+              .child(S.document().title('Гедер').schemaType('header').documentId('header')),
+            S.listItem()
+              .title('Футер')
+              .icon(RiExternalLinkLine)
+              .child(S.document().title('Футер').schemaType('footer').documentId('footer')),
             ...S.documentTypeListItems().filter(
               (listItem) =>
                 ![
@@ -119,12 +77,13 @@ export default defineConfig({
                   'websiteBlocks',
                   'concertPage',
                   'homepage',
+                  'releasePage',
                 ].includes(`${listItem.getId()}`),
             ),
           ]),
     }),
     // vercelDeployTool(),
-    visionTool(),
+    // visionTool(),
   ],
 
   schema: {

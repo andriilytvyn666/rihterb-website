@@ -27,6 +27,7 @@ type ReleasePage = {
   buttons: buttonLink[]
   cover: image
   spotifyLink: string
+  isPlayerColourful: boolean
 }
 
 type VideoPage = {

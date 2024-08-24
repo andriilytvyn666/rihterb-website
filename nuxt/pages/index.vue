@@ -18,13 +18,6 @@
         :description="block.description"
         :button="block.button"
       />
-      <!-- <div
-      class="w-[400px] h-[400px] rounded-2xl bg-gray-700 flex g items-center justify-center text-white"
-      :key="i"
-      v-for="i in [...Array(32).keys()]"
-    >
-      hello
-    </div> -->
     </div>
   </div>
 </template>

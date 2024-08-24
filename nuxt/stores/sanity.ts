@@ -79,7 +79,8 @@ export const useSanityStore = defineStore('sanity-store', () => {
         title,
         description,
         buttons,
-        spotifyLink
+        spotifyLink,
+        isPlayerColourful
       }`
     )
 

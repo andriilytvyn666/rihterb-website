@@ -13,15 +13,16 @@ export default {
       validation: (rule: Rule) => rule.required(),
     },
     {
-      name: 'title',
-      title: 'Назва',
-      type: 'localeString',
+      name: 'isPlayerColourful',
+      title: 'Динамічний колір плеєра',
+      type: 'boolean',
+      initialValue: false,
       validation: (rule: Rule) => rule.required(),
     },
     {
-      name: 'description',
-      title: 'Опис',
-      type: 'localeText30',
+      name: 'title',
+      title: 'Назва',
+      type: 'localeString',
       validation: (rule: Rule) => rule.required(),
     },
     {
@@ -37,6 +38,16 @@ export default {
       type: 'array',
       of: [{type: 'buttonLink'}],
       validation: (rule: Rule) => rule.min(1).max(3).required(),
+    },
+    {
+      name: 'description',
+      options: {
+        collapsible: true,
+        collapsed: false,
+      },
+      title: 'Опис',
+      type: 'localeText30',
+      validation: (rule: Rule) => rule.required(),
     },
   ],
 }

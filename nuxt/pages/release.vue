@@ -43,7 +43,7 @@
         style="border-radius: 12px"
         :src="`https://open.spotify.com/embed/album/${
           release.spotifyLink.split('/').slice(-1)[0].split('?')[0]
-        }?utm_source=generator&theme=0`"
+        }?utm_source=generator&theme=${release.isPlayerColourful ? '1' : '0'}`"
         frameBorder="0"
         allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
         loading="lazy"

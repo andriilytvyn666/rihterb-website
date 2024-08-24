@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
   <NuxtLayout name="magazine">
     <MagazineBg class="opacity-0 sm:opacity-100" />
     <MagazineBgMobile class="sm:opacity-0" />
@@ -86,4 +86,4 @@ const clientStore = useClientStore()
 
 const sanityStore = useSanityStore()
 const magazine = await sanityStore.getMagazinePage()
-</script>
+</script> -->
