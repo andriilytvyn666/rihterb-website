@@ -24,6 +24,8 @@
         :link="localePath('/')"
         class="w-[18.75rem]"
         icon="mdi:arrow-left"
+        :open-in-new-tab="false"
+        :primary="false"
       />
     </div>
   </NuxtLayout>
