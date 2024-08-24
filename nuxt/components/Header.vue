@@ -26,11 +26,10 @@
     </div>
     <div class="flex gap-6 md:hidden">
       <HeaderLink
-        \]
-        :title="button.title"
-        :icon="button.icon"
-        :link="button.link"
-        :open-in-new-tab="button.openInNewTab"
+        :title="header.buttonMobile.title"
+        :icon="header.buttonMobile.icon"
+        :link="header.buttonMobile.link"
+        :open-in-new-tab="header.buttonMobile.openInNewTab"
       />
     </div>
   </div>
@@ -39,5 +38,4 @@
 <script lang="ts" setup>
 const store = useSanityStore()
 const header = await store.getHeader()
-const button = header.buttons[0]
 </script>

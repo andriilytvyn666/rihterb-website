@@ -1,7 +1,7 @@
 <template>
   <div class="flex flex-col min-h-screen">
     <DevOnly>
-      <DebugIndicator />
+      <!-- <DebugIndicator /> -->
     </DevOnly>
     <Header class="sticky top-0" />
     <div class="flex flex-col overflow-scroll grow">

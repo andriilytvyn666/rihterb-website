@@ -3,7 +3,7 @@ import {Rule} from 'sanity'
 export default {
   name: 'eventPage',
   type: 'document',
-  title: 'Video',
+  title: 'Event Page',
   fields: [
     {
       name: 'image',

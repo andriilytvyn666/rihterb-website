@@ -86,16 +86,9 @@ export const useSanityStore = defineStore('sanity-store', () => {
   const getFooter = async (): Promise<Footer> =>
     sanityFetch(
       footer,
-      groq`*[_type == "footerLinks"][0]
+      groq`*[_type == "footer"][0]
       {
-        spotify,
-        youtubemusic,
-        applemusic,
-        instagram, 
-        telegram,
-        youtube,
-        patreon,
-        bandcamp
+        links
       }`
     )
 

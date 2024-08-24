@@ -39,7 +39,7 @@
     </div>
     <div class="md:max-w-[25rem]">
       <iframe
-        class="w-full md:min-w-[25rem] h-full aspect-square"
+        class="w-full md:min-w-[25rem] md:min-h-[25rem] min-h-[100vw] h-full aspect-square"
         style="border-radius: 12px"
         :src="`https://open.spotify.com/embed/album/${
           release.spotifyLink.split('/').slice(-1)[0].split('?')[0]

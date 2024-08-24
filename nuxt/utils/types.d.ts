@@ -1,3 +1,13 @@
+type footerLink = {
+  link: string
+  icon: string
+  openInNewTab: boolean
+}
+
+type Footer = {
+  links: fpoterLink[]
+}
+
 // documents
 type Homepage = {
   about: aboutInfo
@@ -183,17 +193,6 @@ type MagazinePage = {
   title: localeString
   text: localeString
   pages: image[]
-}
-
-type Footer = {
-  spotify: string
-  youtubemusic: string
-  applemusic: string
-  instagram: string
-  telegram: string
-  youtube: string
-  patreon: string
-  bandcamp: string
 }
 
 type navLink = {

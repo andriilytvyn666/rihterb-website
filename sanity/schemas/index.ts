@@ -19,18 +19,20 @@ import headerButton from './headerButton'
 import videoPage from './videoPage'
 import eventPage from './eventPage'
 import releasePage from './releasePage'
+import footerLink from './footerLink'
 
 export const schemaTypes = [
   concertPage,
   pageBlock,
   localeString,
   releasePage,
+  footerLink,
+  footer,
 
   localePortableText,
   buttonLink,
   mainPage,
   supportPage,
-  footer,
   header,
   albumPage,
   magazinePage,
