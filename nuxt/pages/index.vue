@@ -32,8 +32,4 @@
 <script lang="ts" setup>
 const store = useSanityStore()
 const homepage = await store.getHomepage()
-
-useSeoMeta({
-  title: 'Ріхтер',
-})
 </script>

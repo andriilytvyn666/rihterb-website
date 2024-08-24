@@ -1,6 +1,6 @@
 <template>
   <NuxtLink
-    :to="link"
+    :to="localePath(link)"
     :alt="title"
     :target="openInNewTab ? '_blank' : '_self'"
     class="flex items-center gap-2 hover:-translate-y-1 hover:opacity-80"
@@ -19,4 +19,6 @@ defineProps<{
   icon: string
   openInNewTab: boolean
 }>()
+
+const localePath = useLocalePath()
 </script>

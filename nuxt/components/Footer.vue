@@ -11,7 +11,7 @@
           English
         </button>
         <button
-          :class="` ${$i18n.locale === 'uk' ? 'text-fg2' : 'hover:text-fg2'} text-footer`"
+          :class="` ${['ru', 'bel', 'uk'].includes($i18n.locale) ? 'text-fg2' : 'hover:text-fg2'} text-footer`"
           @click="setLocale('uk')"
         >
           Українська

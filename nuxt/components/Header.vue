@@ -1,6 +1,6 @@
 <template>
   <div class="flex justify-between w-full p-6 bg-[#000000]">
-    <NuxtLink to="/" class="flex justify-center gap-3">
+    <NuxtLink :to="localePath('/')" class="flex justify-center gap-3">
       <NuxtImg
         provider="sanity"
         :src="header.logo.asset._ref"
@@ -38,4 +38,6 @@
 <script lang="ts" setup>
 const store = useSanityStore()
 const header = await store.getHeader()
+
+const localePath = useLocalePath()
 </script>

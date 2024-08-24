@@ -82,31 +82,34 @@ export default defineNuxtConfig({
   css: ['~/assets/css/tailwind.css'],
 
   i18n: {
-    baseUrl: 'https://rihterb.pp.ua',
     defaultLocale: 'uk',
     detectBrowserLanguage: {
-      alwaysRedirect: true,
+      alwaysRedirect: false,
       fallbackLocale: 'en',
-      useCookie: true,
-      cookieKey: 'i18n_redirected',
       redirectOn: 'root',
     },
+    strategy: 'prefix_except_default',
     locales: [
       {
         name: 'English',
-        iso: 'en-US',
+        language: 'en-US',
         code: 'en',
         isCatchallLocale: true,
       },
       {
         name: 'Українська',
-        iso: 'uk-UA',
+        language: 'uk-UA',
         code: 'uk',
       },
       {
         name: 'Українська також',
-        iso: 'ru-RU',
+        language: 'ru-RU',
         code: 'ru',
+      },
+      {
+        name: 'Українська також',
+        language: 'be-BY',
+        code: 'bel',
       },
     ],
   },

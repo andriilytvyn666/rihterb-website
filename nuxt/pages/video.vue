@@ -42,8 +42,4 @@ const getYtEmbedLink = (link: string) => {
     return `https://www.youtube-nocookie.com/embed/${link.split('/')[3]}`
   }
 }
-
-useSeoMeta({
-  title: 'Ріхтер',
-})
 </script>
