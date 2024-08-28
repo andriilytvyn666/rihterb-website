@@ -18,7 +18,9 @@
           <h1 class="text-caption font-inter text-accent">
             {{ getLocalizedString($i18n.locale, event.title) }}
           </h1>
-          <p class="font-sans whitespace-pre-line text-body text-fg1">
+          <p
+            class="font-sans whitespace-pre-line text-body text-fg1 max-w-[25rem]"
+          >
             {{ getLocalizedString($i18n.locale, event.text) }}
           </p>
         </div>

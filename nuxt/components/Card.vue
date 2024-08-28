@@ -2,7 +2,7 @@
   <div
     :class="`${top ? 'flex-col-reverse' : 'flex-col'} flex gap-4  sm:max-w-[28rem] lg:w-full xl:max-w-[25rem]`"
   >
-    <div class="flex border rounded-2xl aspect-square overflow-clip border-bg1">
+    <div class="flex overflow-clip rounded-2xl border aspect-square border-bg1">
       <NuxtImg
         provider="sanity"
         :src="image.asset._ref"
@@ -13,7 +13,7 @@
     </div>
     <div class="flex flex-col gap-4">
       <div class="flex flex-col gap-2">
-        <h2 class="text-accent text-caption font-inter">
+        <h2 class="text-accent text-caption font-inter line-clamp-2">
           {{ getLocalizedString($i18n.locale, title) }}
         </h2>
         <p class="font-sans whitespace-pre-line text-body line-clamp-2">
@@ -26,6 +26,7 @@
         :link="button.link"
         :target="button.openInNewTab ? '_blank' : '_self'"
         :open-in-new-tab="button.openInNewTab"
+        :primary="button.primary"
         class="w-full"
       />
     </div>
