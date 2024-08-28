@@ -1,7 +1,7 @@
 <template>
   <div class="flex overflow-x-hidden justify-center items-center grow">
     <div
-      :class="`grid grid-cols-1 gap-6 mx-4 md:mx-6 lg:gap-8 xl:gap-8 2xl:gap-12 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 ${homepage.blocks.length >= 4 ? ' 2xl:grid-cols-4' : '2xl:flex'} w-fit`"
+      :class="`grid grid-cols-1 gap-6 mx-4 md:mx-6 lg:gap-8 xl:gap-8 2xl:gap-12 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 ${homepage.blocks.length >= 4 ? ' 2xl:grid-cols-4' : '2xl:flex'} w-fit`"
     >
       <About
         :image="homepage.about.image"
