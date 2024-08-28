@@ -1,12 +1,13 @@
 import {defaultLanguage, supportedLanguages} from '../fieldLocalization'
 
 export default {
-  title: 'Localized string',
-  name: 'localeString',
+  title: 'Localized text',
+  name: 'localeText2',
   type: 'object',
   fields: supportedLanguages.map((lang) => ({
     title: lang.title,
     name: lang.id,
-    type: 'string',
+    rows: 2,
+    type: 'text',
   })),
 }

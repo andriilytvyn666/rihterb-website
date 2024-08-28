@@ -1,7 +1,7 @@
 import {Rule} from 'sanity'
 
 export default {
-  name: 'buttonLink',
+  name: 'headerButton',
   type: 'object',
   preview: {
     select: {
@@ -14,13 +14,6 @@ export default {
       title: 'Відкривати у новій вкладці',
       type: 'boolean',
       initialValue: true,
-      validation: (rule: Rule) => rule.required(),
-    },
-    {
-      name: 'primary',
-      title: 'Інвертувати колір кнопки',
-      type: 'boolean',
-      initialValue: false,
       validation: (rule: Rule) => rule.required(),
     },
     {

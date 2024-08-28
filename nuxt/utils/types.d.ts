@@ -1,3 +1,80 @@
+type footerLink = {
+  link: string
+  icon: string
+  openInNewTab: boolean
+}
+
+type Footer = {
+  links: fpoterLink[]
+}
+
+// documents
+type Homepage = {
+  about: aboutInfo
+  blocks: homeCard[]
+}
+
+type Header = {
+  logo: image
+  title: localeString
+  buttons: headerButton[]
+  buttonMobile: headerButton
+}
+
+type ReleasePage = {
+  title: localeString
+  description: localeText
+  buttons: buttonLink[]
+  cover: image
+  spotifyLink: string
+  isPlayerColourful: boolean
+}
+
+type VideoPage = {
+  youtubeLink: string
+  title: localeString
+  text: localeText
+}
+
+type EventPage = {
+  title: localeString
+  text: localeText
+  image: image
+  buttons: buttonLink[]
+}
+
+// objects
+type aboutInfo = {
+  image: image
+  name: localeString
+  subtitle: localeString
+  buttons: buttonLink[]
+}
+
+type homeCard = {
+  image: image
+  textOnTop: boolean
+  title: localeString
+  description: localeText
+  button: buttonLink
+}
+
+type buttonLink = {
+  openInNewTab: boolean
+  primary: boolean
+  title: localeString
+  link: string
+  icon: string
+}
+
+type headerButton = {
+  openInNewTab: boolean
+  title: localeString
+  link: string
+  icon: string
+}
+
+// deprecated
 type About = {
   photo: image
   name: localeString
@@ -28,13 +105,6 @@ type Movie = {
   title: localeString
   text: localeString
   buttonName: localeString
-}
-
-type MoviePage = {
-  title: localeString
-  youtubeLink: string
-  listenText: localeString
-  magazineText: localeString
 }
 
 type Support = {
@@ -126,31 +196,9 @@ type MagazinePage = {
   pages: image[]
 }
 
-type Footer = {
-  spotify: string
-  youtubemusic: string
-  applemusic: string
-  instagram: string
-  telegram: string
-  youtube: string
-  patreon: string
-  bandcamp: string
-}
-
-type Header = {
-  logo: image
-  navLinksLeft: navLink[]
-  navLinksRight: navLink[]
-}
-
 type navLink = {
   name: localeString
   link: striing
-}
-
-type buttonLink = {
-  name: localeString
-  link: string
 }
 
 type localeString = {
@@ -159,6 +207,11 @@ type localeString = {
 }
 
 type localePortableText = {
+  en: Any
+  uk: Any
+}
+
+type localeText = {
   en: Any
   uk: Any
 }

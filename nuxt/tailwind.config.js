@@ -7,39 +7,83 @@ module.exports = {
     './nuxt.config.{js,ts}',
   ],
   theme: {
+    screens: {
+      '2xl': '1800px',
+      'xl': '1320px',
+      'lg': '1024px',
+      'md': '768px',
+      'sm': '560px',
+      'xs': '320px',
+    },
     fontFamily: {
-      sans: 'Inter, sans-serif',
+      sans: 'Helvetica',
+      inter: 'Inter, sans-serif',
     },
     fontSize: {
-      'body-lg-600': [
-        '1.375rem',
+      'body': [
+        '1rem',
         {
-          lineHeight: '1.875rem',
-          fontWeight: '600',
-        },
-      ],
-      'body-md-600': [
-        '1.125rem',
-        {
-          lineHeight: '1.5rem',
-          fontWeight: '600',
-        },
-      ],
-      'body-md-500': [
-        '1.125rem',
-        {
-          lineHeight: '1.625rem',
-          fontWeight: '500',
-        },
-      ],
-      'h-lg-700': [
-        '1.625rem',
-        {
-          lineHeight: '2rem',
+          lineHeight: '1.25rem',
           fontWeight: '700',
         },
       ],
-      'footer-md-600': [
+      'caption': [
+        '1.5rem',
+        {
+          lineHeight: '1.75rem',
+          fontWeight: '800',
+        },
+      ],
+      'header': [
+        '1rem',
+        {
+          lineHeight: '1.125rem',
+          fontWeight: '600',
+        },
+      ],
+      'title': [
+        '2rem',
+        {
+          lineHeight: '2.25rem',
+          fontWeight: '800',
+        },
+      ],
+      'title-mobile': [
+        '1.75rem',
+        {
+          lineHeight: '2rem',
+          fontWeight: '800',
+        },
+      ],
+      'logo': [
+        '1rem',
+        {
+          lineHeight: '1.25rem',
+          fontWeight: '700',
+        },
+      ],
+      'button-mobile': [
+        '0.75rem',
+        {
+          lineHeight: '1rem',
+          fontWeight: '600',
+        },
+      ],
+      'button': [
+        '0.875rem',
+        {
+          lineHeight: '1.125rem',
+          fontWeight: '600',
+        },
+      ],
+      'header-mobile': [
+        '1rem',
+        {
+          lineHeight: '1.25rem',
+          fontWeight: '600',
+        },
+      ],
+      'footer': [
         '0.875rem',
         {
           lineHeight: '1.125rem',
@@ -47,28 +91,12 @@ module.exports = {
         },
       ],
     },
-    extend: {
-      screens: {
-        xs: '320px',
-      },
-      colors: {
-        light: {
-          DEFAULT: '#ffffff',
-          secondary: '#d8d8d8',
-        },
-        dark: {
-          'DEFAULT': '#090909',
-          'secondary': '#939393',
-          'alt': '#181818',
-          'border': '#313131',
-          'border-alt': '#4D4D4D',
-        },
-        hl: {
-          'yellow': '#FFC657',
-          'yellow-secondary': '#d8a849',
-          'blue': '#3b82f6',
-        },
-      },
+    colors: {
+      accent: '#F8A711',
+      fg1: '#FFFAFA',
+      fg2: '#484848',
+      bg1: '#202020',
+      bg2: '#181818',
     },
   },
   plugins: [],

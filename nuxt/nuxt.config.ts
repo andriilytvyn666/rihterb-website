@@ -6,7 +6,6 @@ export default defineNuxtConfig({
     'nuxt-schema-org',
     '@nuxtjs/tailwindcss',
     'nuxt-swiper',
-    'nuxt-icons',
     '@nuxtjs/i18n',
     '@nuxt/image',
     [
@@ -20,6 +19,7 @@ export default defineNuxtConfig({
     '@vueuse/motion/nuxt',
     '@nuxt/eslint',
     'nuxt-icon-tw',
+    '@nuxt/fonts',
   ],
 
   runtimeConfig: {
@@ -27,7 +27,18 @@ export default defineNuxtConfig({
       siteUrl: process.env.NUX_PUBLIC_SITE_URL || 'https://rihterb.pp.ua',
     },
   },
-
+  fonts: {
+    families: [
+      {
+        name: 'Helvetica-Bold',
+        provider: 'local',
+      },
+      {
+        name: 'Inter',
+        provider: 'google',
+      },
+    ],
+  },
   devServer: {
     host: '0.0.0.0',
     port: 3000,
@@ -38,7 +49,7 @@ export default defineNuxtConfig({
   },
 
   imports: {
-    dirs: ['stores'],
+    dirs: ['./stores', './utils'],
   },
 
   schemaOrg: {
@@ -49,6 +60,15 @@ export default defineNuxtConfig({
     sanity: {
       projectId: 'lh08fn64',
       dataset: 'production',
+    },
+    screens: {
+      'xs': 320,
+      'sm': 560,
+      'md': 768,
+      'lg': 1024,
+      'xl': 1320,
+      'xxl': 1800,
+      '2xl': 1800,
     },
   },
 
@@ -62,31 +82,34 @@ export default defineNuxtConfig({
   css: ['~/assets/css/tailwind.css'],
 
   i18n: {
-    baseUrl: 'https://rihterb.pp.ua',
     defaultLocale: 'uk',
     detectBrowserLanguage: {
-      alwaysRedirect: true,
+      alwaysRedirect: false,
       fallbackLocale: 'en',
-      useCookie: true,
-      cookieKey: 'i18n_redirected',
       redirectOn: 'root',
     },
+    strategy: 'prefix_except_default',
     locales: [
       {
         name: 'English',
-        iso: 'en-US',
+        language: 'en-US',
         code: 'en',
         isCatchallLocale: true,
       },
       {
         name: 'Українська',
-        iso: 'uk-UA',
+        language: 'uk-UA',
         code: 'uk',
       },
       {
         name: 'Українська також',
-        iso: 'ru-RU',
+        language: 'ru-RU',
         code: 'ru',
+      },
+      {
+        name: 'Українська також',
+        language: 'be-BY',
+        code: 'bel',
       },
     ],
   },

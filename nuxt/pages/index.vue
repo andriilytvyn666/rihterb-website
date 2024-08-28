@@ -1,35 +1,28 @@
 <template>
-  <NuxtLayout name="wrapper">
-    <div v-for="block in blocks.order" :key="block.name">
+  <div class="flex overflow-x-hidden justify-center items-center grow">
+    <div
+      :class="`grid grid-cols-1 gap-6 mx-4 md:mx-6 lg:gap-8 xl:gap-8 2xl:gap-12 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 ${homepage.blocks.length >= 4 ? ' 2xl:grid-cols-4' : '2xl:flex'} w-fit`"
+    >
       <About
-        v-if="block.name == 'About' && block.visible"
-        class="mb-4 sm:mb-6"
+        :image="homepage.about.image"
+        :name="homepage.about.name"
+        :subtitle="homepage.about.subtitle"
+        :buttons="homepage.about.buttons"
       />
-      <Concert
-        v-if="block.name == 'Concert' && block.visible"
-        class="my-4 sm:my-6"
-      />
-      <Movie
-        v-if="block.name == 'Movie' && block.visible"
-        class="my-4 sm:my-6"
-      />
-      <Album
-        v-if="block.name == 'Album' && block.visible"
-        class="my-4 sm:my-6"
-      />
-      <Magazine
-        v-if="block.name == 'Magazine' && block.visible"
-        class="my-4 sm:my-6"
-      />
-      <Support
-        v-if="block.name == 'Support' && block.visible"
-        class="my-4 sm:my-6"
+      <Card
+        v-for="block in homepage.blocks"
+        :key="block.title.en"
+        :top="block.textOnTop"
+        :image="block.image"
+        :title="block.title"
+        :description="block.description"
+        :button="block.button"
       />
     </div>
-  </NuxtLayout>
+  </div>
 </template>
 
-<script setup lang="ts">
-const sanityStore = useSanityStore()
-const blocks = await sanityStore.getWebsiteBlocks()
+<script lang="ts" setup>
+const store = useSanityStore()
+const homepage = await store.getHomepage()
 </script>
