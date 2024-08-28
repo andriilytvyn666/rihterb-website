@@ -4,7 +4,7 @@
       <DebugIndicator />
     </DevOnly>
     <Header class="sticky top-0" />
-    <div class="flex overflow-scroll flex-col grow">
+    <div class="flex overflow-hidden flex-col grow">
       <slot />
     </div>
     <Footer />
