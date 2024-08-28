@@ -2,7 +2,7 @@
   <div class="flex justify-center md:items-center grow">
     <div class="flex flex-col gap-4 px-4 md:gap-8 md:flex-row">
       <div
-        class="sm:max-w-[25rem] flex border rounded-2xl aspect-square overflow-clip border-bg1 shrink-0"
+        class="md:max-w-[25rem] flex border rounded-2xl aspect-square overflow-clip border-bg1 shrink-0"
       >
         <NuxtImg
           provider="sanity"
@@ -13,7 +13,7 @@
           alt="Event Image"
         />
       </div>
-      <div class="flex flex-col gap-4 md:mt-8 md:min-w-[37.5rem]">
+      <div class="flex flex-col gap-4 md:mt-8 lg:min-w-[25rem]">
         <div class="flex flex-col gap-3">
           <h1 class="text-caption font-inter text-accent">
             {{ getLocalizedString($i18n.locale, event.title) }}
