@@ -21,10 +21,6 @@ export default defineNuxtConfig({
     'nuxt-icon-tw',
     '@nuxt/fonts',
   ],
-  routeRules: {
-    '/': { swr: true },
-    '/*': { swr: true },
-  },
   runtimeConfig: {
     public: {
       siteUrl: process.env.NUX_PUBLIC_SITE_URL || 'https://rihterb.pp.ua',
