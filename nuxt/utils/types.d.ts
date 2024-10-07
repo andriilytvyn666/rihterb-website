@@ -40,6 +40,7 @@ type EventPage = {
   title: localeString
   text: localeText
   image: image
+  images: image[]
   buttons: buttonLink[]
 }
 

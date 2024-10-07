@@ -43,7 +43,7 @@ export const useSanityStore = defineStore('sanity-store', () => {
   const getEventPage = async (): Promise<EventPage> =>
     sanityFetch<EventPage>(
       eventPage,
-      groq`*[_type == "eventPage"][0] { image, title, text, buttons }`
+      groq`*[_type == "eventPage"][0] { images, title, text, buttons }`
     )
 
   const getMagazinePage = async (): Promise<MagazinePage> =>

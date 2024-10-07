@@ -40,7 +40,7 @@ export default defineConfig({
               .icon(RiCalendarLine)
               .child(
                 S.document()
-                  .title('Івент /event, /tour')
+                  .title('Івент /event, /tour, /donate, /zbir, /banka')
                   .schemaType('eventPage')
                   .documentId('eventPage'),
               ),

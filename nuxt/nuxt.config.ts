@@ -32,10 +32,6 @@ export default defineNuxtConfig({
         name: 'Helvetica-Bold',
         provider: 'local',
       },
-      {
-        name: 'Inter',
-        provider: 'google',
-      },
     ],
   },
   devServer: {

@@ -6,11 +6,12 @@ export default {
   title: 'Event Page',
   fields: [
     {
-      name: 'image',
+      name: 'images',
       title: 'Фото',
       description: 'Будь-який формат; співвідношення сторін 1:1; розмір 800x800px або більше',
-      type: 'image',
-      validation: (rule: Rule) => rule.required(),
+      type: 'array',
+      of: [{type: 'image'}],
+      validation: (rule: Rule) => rule.min(1).max(2).required(),
     },
     {
       name: 'title',
