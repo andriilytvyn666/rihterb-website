@@ -10,7 +10,7 @@
           <NuxtImg
             provider="sanity"
             sizes="600px sm:800px lg:600px"
-            :quality="100"
+            :quality="95"
             :src="img.asset._ref"
             class="w-full h-full"
             alt="Event Image"
