@@ -1,14 +1,14 @@
 <template>
   <div class="flex justify-between w-full p-6 bg-[#000000]">
-    <NuxtLink :to="localePath('/')" class="flex justify-center gap-3">
+    <NuxtLink :to="localePath('/')" class="flex justify-center items-center gap-3">
       <NuxtImg
         provider="sanity"
         :src="header.logo.asset._ref"
-        :width="20"
-        :height="20"
+        :width="32"
+        :height="32"
         format="webp"
         alt="logo"
-        class="w-5 h-5"
+        class="w-8 h-8"
       />
       <h1 class="text-[#F8A711] text-logo line-clamp-1 whitespace-nowrap">
         {{ getLocalizedString($i18n.locale, header.title) }}
