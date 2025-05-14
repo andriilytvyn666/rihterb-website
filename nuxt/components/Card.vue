@@ -7,7 +7,7 @@
         provider="sanity"
         :src="image.asset._ref"
         sizes="600px sm:800px lg:600px"
-        :quality="100"
+        :quality="95"
         class="w-full h-full"
       />
     </div>
